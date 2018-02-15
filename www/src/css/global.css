@@ -1,0 +1,53 @@
+/*
+ Font Awesome Customizations - START
+ */
+
+.fa-edit:before, .fa-pencil-square-o:before {
+  color: #4B66A7;
+}
+.cfa-1_5x {
+  font-size: 1.5em;
+}
+.cfa-check_N:before {
+  content: "\f00d";
+  color: red;
+}
+.cfa-check_Y:before {
+  content: "\f00c";
+  color: green;
+}
+.cfa-check2_Y:before {
+  content: "\f00c";
+  color: green;
+}
+.cfa-edit_N:before {
+  content: "\f023";
+  color: #444444;
+}
+.cfa-edit_Y:before {
+  content: "\f09c";
+  color: green;
+}
+.cfa-warning_Y:before {
+  content: "\f071";
+  color: #CC8024;
+}
+
+/*
+ Font Awesome Customizations - END
+*/
+
+/* jQuery Tooltip */
+.ksjqTooltip {padding: 0; font: normal 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif; box-shadow: 5px 5px 10px #AAA;}
+
+.ksjqTooltip .ui-dialog-content {background: #F2F2F2!important;overflow:auto;}
+.ksjqTooltip h1 {font-weight: bold;font-size: 1.2em;margin-top: 6px;}
+.ksjqTooltip .legend {
+position: absolute;
+bottom: 2px;
+left: 4px;
+}
+.legend {
+font-size: .8em;
+color: #767676;
+}
