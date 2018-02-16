@@ -24,45 +24,47 @@ PRO |   Installing all tables                       |
 PRO _________________________________________________
 PRO
 
-PRO constraint_lookup
+PRO .constraint_lookup
 @constraint_lookup.sql
 
-PRO ks_session_load
+PRO .ks_session_load
 @ks_session_load.sql
 
-PRO ks_users
+PRO .ks_users
 @ks_users.sql
 
--- PRO ks_user_roles
--- @ks_user_roles.sql
+PRO .ks_roles
+@ks_roles.sql
 
-PRO ks_parameters
+PRO .ks_parameters
 @ks_parameters.sql
 
-PRO ks_tracks
+PRO .ks_tracks
 @ks_tracks.sql
 
-PRO ks_events
+PRO .ks_events
 @ks_events.sql
 
-PRO ks_event_tracks
+PRO .ks_event_tracks
 @ks_event_tracks.sql
 
-PRO ks_sessions
+PRO .ks_sessions
 @ks_sessions.sql
 
-PRO ks_session_votes
+PRO .ks_session_votes
 @ks_session_votes.sql
 
-PRO ks_tags
+PRO .ks_tags
 @ks_tags.sql
 
-PRO ks_session_status
+PRO .ks_session_status
 @ks_session_status.sql
 
-PRO ks_tags post install
+PRO .ks_tags post install
 @ks_tags_post_install.sql
 
+
+@ks_user_event_track_roles.sql
 
 PRO _________________________________________________
 PRO |   Views

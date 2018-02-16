@@ -9,7 +9,7 @@ select e.id, t.display_seq, t.name, t.alias, t.active_ind
      , ks_events e
  where t.active_ind = 'Y'
    and e.active_ind = 'Y'
-   -- and ((e.name = 'Kscope16' and t.alias = 'APEX') 
+   -- and ((e.name = 'Kscope16' and t.alias = 'APEX')
    --    or e.name = 'Kscope17'
    -- )
 /

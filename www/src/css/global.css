@@ -20,6 +20,14 @@
   content: "\f00c";
   color: green;
 }
+.cfa-open_Y:before {
+  content: "\f00c";
+  color: green;
+}
+.cfa-open_N:before {
+  content: "\f023";
+}
+
 .cfa-edit_N:before {
   content: "\f023";
   color: #444444;
@@ -36,6 +44,92 @@
 /*
  Font Awesome Customizations - END
 */
+
+
+/**
+ * Static pie charts
+ * http://dabblet.com/gist/66e1e52ac2a44ad87aa4
+ * By Lea Verou
+ */
+
+.pieContainer {
+   display: inline-block;
+   position: relative;
+}
+.pie {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  background:#DDD;
+  background-image: linear-gradient(to right, transparent 50%, yellowgreen 0);
+  color: transparent;
+  text-align: center;
+}
+.pie.full {
+  background-color: yellowgreen;
+}
+.pie.overtime {
+  /*Flip color, make overtime orange*/
+  background-image: linear-gradient(to right, transparent 50%, orange 0);
+  background-color: yellowgreen;
+}
+.pieLabel {
+  position: relative;
+  display: inline-block;
+  left: .5em;
+
+}
+.pieLabel.full {
+  color: #7cac39;
+}
+.pieLabel.overtime {
+  /*Red #d74242;*/
+  background-color: #eca013;
+  color: white;
+  padding: 1px 3px;
+}
+@keyframes spin {
+  to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+  50% { background: yellowgreen; }
+}   
+
+.pie::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  width: 50%; height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: inherit;
+  transform-origin: left;
+  animation: spin 50s linear infinite, bg 100s step-end infinite;
+  animation-play-state: paused;
+  animation-delay: inherit;
+}
+
+/* END pie */
+
+
+.color5 .a-Report-percentChart-fill {
+  background-color: #56B173;
+}
+.color4 .a-Report-percentChart-fill {
+  background-color: #227C7A;
+}
+.color3 .a-Report-percentChart-fill {
+  background-color: #7C4D81;
+}
+.color2 .a-Report-percentChart-fill {
+  background-color: #E78340;
+}
+.color1 .a-Report-percentChart-fill {
+  background-color: #E4746B;
+}
+
+
 
 /* jQuery Tooltip */
 .ksjqTooltip {padding: 0; font: normal 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif; box-shadow: 5px 5px 10px #AAA;}

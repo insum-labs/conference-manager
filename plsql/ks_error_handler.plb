@@ -244,6 +244,10 @@ AS
   l_constraint_name varchar2(255);
   l_logger_message varchar2(4000);
   l_logger_scope   varchar2(1000);
+
+  -- If an error has this code it means we don't want to see the ORA-code but the
+  -- APEX Process error the developer specified.
+  c_process_error number := -20999; 
 BEGIN
   -- The first thing we need to do is initialize the result variable.
   l_result := apex_error.init_error_result ( p_error => p_error );
@@ -287,12 +291,12 @@ BEGIN
          ELSE l_result.display_location
       END;
  
+
       -- If it is an ORA error that was raised lets do our best to figure it out
       -- and present the error text of to the end user in a nicer format.
       -- 
       -- To do this we'll get the "First Error Text" using the APEX_ERROR API
-        
-      IF p_error.ora_sqlcode IS NOT NULL then
+      IF p_error.ora_sqlcode IS NOT NULL and p_error.ora_sqlcode <> c_process_error then
       
             -- If it's a constraint violation then we'll try to get a matching "friendly" message from our 
             -- Lookup table. Below is a reference of common constraint violations you may want to handle.
@@ -323,7 +327,7 @@ BEGIN
                   WHEN p_error.ora_sqlcode = -1407
                   THEN 'Trying to insert a null value into a not null column.'
                   --WHEN p_error.ora_sqlcode =  -12899
-                  --THEN 'The value you entered was too large for the field. Please try again.'
+                  --THEN 'The value you entered was too large for the field. Please try again.'                    
                ELSE 
                   apex_error.get_first_ora_error_text (
                                     p_error => p_error )
@@ -337,11 +341,11 @@ BEGIN
       
       -- We can also use the APEX_ERROR API to automatically find the 
       -- item the error was associated with, IF they're not already set.
-      if l_result.page_item_name is null and l_result.column_alias is null then
+      if l_result.page_item_name is null and l_result.column_alias is null and l_constraint_name is null then
             apex_error.auto_set_associated_item (
                 p_error        => p_error,
                 p_error_result => l_result );
-        end if;
+      end if;
       
       
    END IF;   

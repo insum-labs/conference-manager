@@ -24,11 +24,15 @@ PROMPT ks_util
 PROMPT ks_error_handler
 @@ks_error_handler.pls
 
+PROMPT package_read_xlsx_clob
+@@package_read_xlsx_clob.pks
+
 PROMPT ks_session_load_api
 @@ks_session_load_api.pls
 
 PROMPT ks_session_api
 @@ks_session_api.pls
+
 
 
 PROMPT
@@ -51,6 +55,9 @@ PROMPT ks_api
 PROMPT ks_util
 @@ks_util.plb
 
+PROMPT package_read_xlsx_clob
+@@package_read_xlsx_clob.pkb
+
 PROMPT ks_session_load_api
 @@ks_session_load_api.plb
 
@@ -64,5 +71,5 @@ PROMPT ks_users_iu
 @@ks_users_iu.sql
 
 PROMPT Fixing user passwords
+update ks_users set password = 'empty';
 update ks_users set password = 'welcome';
-

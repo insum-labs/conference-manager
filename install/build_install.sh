@@ -13,9 +13,13 @@ cat ks_sessions.sql >> master_install.sql
 cat ks_session_votes.sql >> master_install.sql
 cat ks_tags.sql >> master_install.sql
 cat ks_session_status.sql >> master_install.sql
+cat ks_roles.sql >> master_install.sql
+cat ks_user_event_track_roles.sql >> master_install.sql
+cat ks_event_types.sql >> master_install.sql
 echo '--  Seed Values -----------------------------' >> master_install.sql
 cat ../conversion/seed_ks_tracks.sql >> master_install.sql
 cat ../conversion/seed_ks_sessions_status.sql >> master_install.sql
+cat ../conversion/ks_event_types.sql >> master_install.sql
 cat ../conversion/seed_ks_events.sql >> master_install.sql
 cat ../conversion/seed_ks_event_tracks.sql >> master_install.sql
 cat ../conversion/seed_constraint_lookup.sql >> master_install.sql

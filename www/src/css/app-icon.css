@@ -1,0 +1,18 @@
+.app-icon {
+    background-image: url(../img/app-icon.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    background-color: #ED813E;
+}
+.app-logo {
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.t-Login-logo {
+    width: 347px;
+    height: 73px;
+    border-radius: 0;
+}

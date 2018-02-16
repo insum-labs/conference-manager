@@ -14,11 +14,31 @@ begin
                         , sys_context('userenv','session_user')
                        );
   end if;
-  ks_tags_api.tag_sync(
-      p_new_tags      => :new.tags
-    , p_old_tags      => :old.tags
-    , p_content_type  => 'SESSION' || ':' || :new.event_track_id
-    , p_content_id    => :new.session_num );
+
+  if   inserting
+    or (updating and :new.event_track_id = :old.event_track_id)
+  then 
+    ks_tags_api.tag_sync(
+        p_new_tags      => :new.tags
+      , p_old_tags      => :old.tags
+      , p_content_type  => 'SESSION' || ':' || :new.event_track_id
+      , p_content_id    => :new.session_num );
+      
+  else --We are updating AND our event_track_id changed
+    ks_tags_api.tag_sync(
+        p_new_tags      => null
+      , p_old_tags      => :old.tags
+      , p_content_type  => 'SESSION' || ':' || :old.event_track_id
+      , p_content_id    => :new.session_num );
+
+    ks_tags_api.tag_sync(
+        p_new_tags      => :new.tags
+      , p_old_tags      => null
+      , p_content_type  => 'SESSION' || ':' || :new.event_track_id
+      , p_content_id    => :new.session_num );
+
+  end if;
+
 end;
 /
 
