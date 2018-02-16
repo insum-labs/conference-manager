@@ -5,8 +5,8 @@ Open Source Conference Abstract Voting and Content Selection Apps
 
 | app | Description |
 |:-|--|
-| 120124 | Voting App |
 | 83791 | Admin & Review App |
+| 120124 | Voting App |
 
 ## Install
 
@@ -21,8 +21,8 @@ The scripts are meant to be executed via command line (sqlcl for example) or upl
 
 Install the following APEX apps:
 ```
-@f120124.sql
 @f83791.sql
+@f120124.sql
 ```
 
 > **IMPORTANT:** Do install the supporting objects from app f120124.
@@ -35,5 +35,6 @@ begin
 end;
 /
 ```
+
 
 
