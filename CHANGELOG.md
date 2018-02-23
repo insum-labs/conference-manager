@@ -1,3 +1,9 @@
+# v2.0.6
+
+## Changes and Enhancements
+* Added ACE Level badge and "presented before" information to Session IR and Modal details.
+
+
 # v2.0.5
 
 ## Changes and Enhancements
