@@ -1,3 +1,13 @@
+
+# v3.0.0 | Kscope19
+
+## Changes and Enhancements
+* #17 Change "Blind Voting" to "Public Voting"
+
+## Bug Fixes
+* 
+
+
 # v2.0.6
 
 ## Changes and Enhancements
