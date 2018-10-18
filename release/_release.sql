@@ -6,7 +6,6 @@ set sqlblanklines on
 set define '^'
 
 
-
 -- *** DDL ***
 
 -- #17
@@ -16,10 +15,7 @@ alter table ks_events add blind_vote_flag varchar2(1);
 -- *** Objects ***
 
 
-
-
 -- *** DML ***
-
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
@@ -27,4 +23,3 @@ alter table ks_events add blind_vote_flag varchar2(1);
 
 PRO Recompiling objects
 exec dbms_utility.compile_schema(schema => user, compile_all => false);
-
