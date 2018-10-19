@@ -11,6 +11,13 @@ set define '^'
 
 -- #17
 alter table ks_events add blind_vote_flag varchar2(1);
+comment on column ks_events.blind_vote_begin_date is 'begin date of Public voting';
+comment on column ks_events.blind_vote_end_date is 'end date of Public voting';
+comment on column ks_events.blind_vote_flag is 'Indicates that the Public Voting will be "blind"';
+
+-- #11
+alter table ks_sessions add room_size_code varchar2(20);
+comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
 
 
 -- *** Objects ***
