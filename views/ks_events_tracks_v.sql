@@ -5,6 +5,7 @@ as
        , e.name event_name
        , t.display_seq
        , t.name track_name
+       , e.blind_vote_flag
        , nvl(t.alias, t.name) track_alias
        , nvl(t.blind_vote_begin_date , e.blind_vote_begin_date ) blind_vote_begin_date
        , nvl(t.committee_vote_begin_date, e.committee_vote_begin_date) committee_vote_begin_date

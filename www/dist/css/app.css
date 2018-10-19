@@ -1,13 +1,13 @@
 
 /* Use .page-9999 so only the voting app receives this special icon */
-.page-9999 .app-icon {
+.app-icon {
     background-image: url(../img/app-icon.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
     background-color: #ED813E;
 }
-.page-9999 .app-logo {
+.app-logo {
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
     background-size: cover;
