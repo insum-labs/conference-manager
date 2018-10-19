@@ -14,7 +14,8 @@ alter table ks_events add blind_vote_flag varchar2(1);
 
 
 -- *** Objects ***
-
+-- #3
+@@../install/ks_event_admins.sql
 
 
 

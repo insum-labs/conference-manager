@@ -2,7 +2,8 @@
 # v3.0.0 | Kscope19
 
 ## Changes and Enhancements
-* #17 Change "Blind Voting" to "Public Voting"
+* Change "Blind Voting" to "Public Voting" (#17)
+* Ability to specify an Event Admins (#3)
 
 ## Bug Fixes
 * 

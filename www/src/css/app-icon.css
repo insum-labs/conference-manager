@@ -1,17 +1,19 @@
-.app-icon {
+
+/* Use .page-9999 so only the voting app receives this special icon */
+.page-9999 .app-icon {
     background-image: url(../img/app-icon.svg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
     background-color: #ED813E;
 }
-.app-logo {
+.page-9999 .app-logo {
     background-image: url(../img/logo.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-.t-Login-logo {
+.page-9999 .t-Login-logo {
     width: 347px;
     height: 73px;
     border-radius: 0;
