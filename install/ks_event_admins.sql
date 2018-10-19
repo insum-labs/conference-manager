@@ -24,6 +24,9 @@ create table ks_event_admins (
 enable primary key using index
 /
 
+create unique index ks_event_admins_u01 on ks_event_admins (event_id, username);
+  
+
 comment on table ks_event_admins is 'List of Event Admins';
 
 comment on column ks_event_admins.id is 'Primary Key ID';
