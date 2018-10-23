@@ -26,6 +26,8 @@ comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|
 
 
 @@../views/ks_events_tracks_v.sql
+@@../views/ks_events_sec_v.sql
+
 
 -- *** DML ***
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
