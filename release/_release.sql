@@ -33,6 +33,10 @@ comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
 insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');
 
+update ks_roles
+   set name = 'Public Voter'
+ where role_type = 'VOTING'
+   and code = 'BLIND';
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
