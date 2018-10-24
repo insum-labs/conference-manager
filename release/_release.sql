@@ -6,16 +6,37 @@ set sqlblanklines on
 set define '^'
 
 
+
 -- *** DDL ***
 
 -- #17
 alter table ks_events add blind_vote_flag varchar2(1);
+comment on column ks_events.blind_vote_begin_date is 'begin date of Public voting';
+comment on column ks_events.blind_vote_end_date is 'end date of Public voting';
+comment on column ks_events.blind_vote_flag is 'Indicates that the Public Voting will be "blind"';
+
+-- #11
+alter table ks_sessions add room_size_code varchar2(20);
+comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
 
 
 -- *** Objects ***
+-- #3
+@@../install/ks_event_admins.sql
+
+
+@@../views/ks_events_tracks_v.sql
+@@../views/ks_events_sec_v.sql
 
 
 -- *** DML ***
+delete from ks_parameters where name_key in ('ADMIN_APP_ID');
+insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');
+
+update ks_roles
+   set name = 'Public Voter'
+ where role_type = 'VOTING'
+   and code = 'BLIND';
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
@@ -23,3 +44,4 @@ alter table ks_events add blind_vote_flag varchar2(1);
 
 PRO Recompiling objects
 exec dbms_utility.compile_schema(schema => user, compile_all => false);
+

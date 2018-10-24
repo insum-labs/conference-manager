@@ -29,6 +29,7 @@ create table ks_sessions (
   , external_sys_ref     varchar2(20)
   , presenter_user_id    varchar2(20)
   , co_presenter_user_id varchar2(20)
+  , room_size_code       varchar2(20)
   , created_by           varchar2(60) default
                            coalesce(
                               sys_context('APEX$SESSION','app_user')
@@ -58,6 +59,7 @@ comment on column ks_sessions.event_id is 'Event this session belongs to.';
 comment on column ks_sessions.event_track_id is 'Track this session was submitted.';
 comment on column ks_sessions.presenter is 'The name of the presenter for this session.';
 comment on column ks_sessions.company is 'The company the presenter works for.';
+comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
 comment on column ks_sessions.created_by is 'User that created this record';
 comment on column ks_sessions.created_on is 'Date the record was first created';
 comment on column ks_sessions.updated_by is 'User that last modified this record';
