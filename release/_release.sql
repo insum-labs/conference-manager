@@ -27,6 +27,7 @@ comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|
 
 @@../views/ks_events_tracks_v.sql
 @@../views/ks_events_sec_v.sql
+@@../views/ks_events_allowed_v.sql
 
 
 -- *** DML ***

@@ -1,5 +1,5 @@
-PRO ks_events_sec_v
-create or replace view ks_events_sec_v
+PRO ks_events_allowed_v
+create or replace view ks_events_allowed_v
 as
 with p as (select v('APP_USER') app_user from sys.dual)
 select e.id
@@ -32,6 +32,15 @@ select e.id
      select a.event_id
        from ks_event_admins a, p
       where a.username = p.app_user
+     union
+     -- Track Viewer
+     select et.event_id
+       from ks_events_tracks_v et
+          , ks_user_event_track_roles tr
+          , p
+      where tr.event_track_id = et.event_track_id
+        and tr.selection_role_code is not null -- (expecting: OWNER and VIEWER)
+        and tr.username = p.app_user
    )
  )
 /
