@@ -1,7 +1,7 @@
 PRO ks_events_allowed_v
 create or replace view ks_events_allowed_v
 as
-with p as (select v('APP_USER') app_user from sys.dual)
+with p as (select sys_context('APEX$SESSION','app_user') app_user from sys.dual)
 select e.id
      , e.name
      , e.alias
