@@ -4,6 +4,7 @@ create table ks_sessions (
   , event_id             number
   , event_track_id       number
   , session_num          number not null
+  , submission_date      date
   , sub_category         varchar2(500)
   , session_type         varchar2(500)
   , title                varchar2(500)
@@ -20,6 +21,8 @@ create table ks_sessions (
   , target_audience      varchar2(60)
   , presented_before_ind  varchar2(1) default on null 'N'
   , presented_before_where varchar2(4000)
+  , presented_anything_ind varchar2(1)
+  , presented_anything_where varchar2(4000)
   , technology_product   varchar2(500)
   , ace_level            varchar2(30)
   , video_link           varchar2(4000)
@@ -43,6 +46,7 @@ create table ks_sessions (
   , constraint sessions_ck_presb4_is_yn check (presented_before_ind in ('Y', 'N'))
   , constraint sessions_ck_demo_is_yn check (contains_demo_ind in ('Y', 'N'))
   , constraint sessions_ck_web_will_is_yn check (webinar_willing_ind in ('Y', 'N'))
+  , constraint ks_sessions_pres_any_yn check (presented_anything_ind in ('Y','N'))
   , constraint ks_events_fk foreign key ( event_id ) references ks_events ( id ) not deferrable
   , constraint ks_event_track_sessions_fk foreign key ( event_track_id ) references ks_event_tracks ( id ) not deferrable
 )
@@ -60,6 +64,8 @@ comment on column ks_sessions.event_track_id is 'Track this session was submitte
 comment on column ks_sessions.presenter is 'The name of the presenter for this session.';
 comment on column ks_sessions.company is 'The company the presenter works for.';
 comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
+comment on column ks_sessions.presented_anything_ind is 'Whether the presenter has ever done a live presentation(s), anywhere for anything.';
+comment on column ks_sessions.presented_anything_where is 'Where the presenter has done live presentation (of any kind)';
 comment on column ks_sessions.created_by is 'User that created this record';
 comment on column ks_sessions.created_on is 'Date the record was first created';
 comment on column ks_sessions.updated_by is 'User that last modified this record';

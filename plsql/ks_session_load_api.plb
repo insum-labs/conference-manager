@@ -841,6 +841,12 @@ begin
           elsif l_curr_col = 'PRESENTED_BEFORE_WHERE'
           then
             l_rows(l_rows_row).presented_before_where := substr(l_string_val,1,4000);
+          elsif l_curr_col = 'PRESENTED_ANYTHING_IND'
+          then
+            l_rows(l_rows_row).presented_anything_ind := l_string_val;
+          elsif l_curr_col = 'PRESENTED_ANYTHING_WHERE'
+          then
+            l_rows(l_rows_row).presented_anything_where := substr(l_string_val,1,4000);            
           elsif l_curr_col = 'VIDEO_LINK'
           then
             l_rows(l_rows_row).video_link := substr(l_string_val,1,4000);
@@ -909,6 +915,8 @@ begin
         , ace_level
         , presented_before_ind
         , presented_before_where
+        , presented_anything_ind
+        , presented_anything_where
         , video_link
         , co_presenter
         , co_presenter_company
@@ -938,6 +946,8 @@ begin
         , l_rows(i).ace_level
         , l_rows(i).presented_before_ind
         , l_rows(i).presented_before_where
+        , l_rows(i).presented_anything_ind
+        , l_rows(i).presented_anything_where
         , l_rows(i).video_link
         , l_rows(i).co_presenter
         , l_rows(i).co_presenter_company
@@ -958,6 +968,11 @@ begin
       );
 
   ks_log.log('END', l_scope);
+  
+  exception when others
+  then
+    ks_log.log('ERROR', l_scope);
+    raise;
 
 end load_xlsx_data;
 
@@ -1011,6 +1026,8 @@ begin
     , target_audience
     , presented_before_ind
     , presented_before_where
+    , presented_anything_ind
+    , presented_anything_where
     , technology_product
     , ace_level
     , video_link        
@@ -1045,6 +1062,14 @@ begin
           , 'N'
          )
        , s.presented_before_where
+       , decode(trim(lower(s.presented_anything_ind))
+          , null, 'N'
+          , 'n', 'N'
+          , 'yes', 'Y'
+          , 'y', 'Y'
+          , 'N'
+         )
+       , s.presented_anything_where
        , s.technology_product        
        , s.ace_level
        , s.video_link        
