@@ -49,6 +49,9 @@ comment on column ks_sessions.presented_anything_where is 'Where the presenter h
 -- #16
 @@../plsql/ks_session_load_api.plb
 
+-- #4
+@@../plsql/ks_error_handler.plb
+
 
 -- *** DML ***
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');

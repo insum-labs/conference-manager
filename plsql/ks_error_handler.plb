@@ -259,7 +259,14 @@ BEGIN
      -- 
      -- However the errors for Authorization Checks should be fine... So if it's 
      -- anything BUT an authroization check, we need to re-write the error 
-     IF p_error.apex_error_code <> 'APEX.AUTHORIZATION.ACCESS_DENIED' then
+     IF p_error.apex_error_code = 'APEX.SESSION.EXPIRED' then -- added for APEX5
+        -- Keep the error, but add more to it. And capture with logger below (for now).
+        -- Redirect to Home Page after 1.5 second.
+        l_result.message := p_error.message
+            || '<script>setTimeout(function(){window.top.location="f?p=' || v('APP_ID') || '";},1500);</script>';
+        -- leave the additional_info alone.
+        -- l_result.additional_info := '';
+     ELSIF p_error.apex_error_code <> 'APEX.AUTHORIZATION.ACCESS_DENIED' then
      
         
         -- We'll try to construct an error that has good information 
