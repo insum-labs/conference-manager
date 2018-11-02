@@ -15,7 +15,7 @@ procedure tag_sync (
     p_content_type      in varchar2,
     p_content_id        in number )
 as
-  -- l_scope  logger_logs.scope%type := gc_scope_prefix || 'tag_sync';
+    l_scope  ks_log.scope := gc_scope_prefix || 'tag_sync';
   -- l_params logger.tab_param;
 
     type tags is table of varchar2(255) index by varchar2(255);
@@ -27,11 +27,10 @@ as
     l_dummy_tag     varchar2(255);
     i               integer;
 
-
 begin
   -- we call tag_sync form a trigger, so lets not call logger unless we need to.
   -- logger.append_param(l_params, 'p_option_name', p_option_name);
-  -- logger.log('START', l_scope, null, l_params);
+    ks_log.log('START', l_scope);
 
     l_old_tags := apex_util.string_to_table(p_old_tags,':');
     l_new_tags := apex_util.string_to_table(p_new_tags,':');
@@ -87,6 +86,9 @@ begin
                                values (l_merge_tags(i), t.tag_count)
          when matched then update set s.tag_count = t.tag_count;
     end loop;
+
+    ks_log.log('START', l_scope);
+
 end tag_sync;
 
 /*******************************************************************
@@ -102,8 +104,12 @@ procedure maintain_filter_coll(
      , p_id     in varchar2
      , p_status in varchar2 := 'NO')
 is
+  l_scope  ks_log.scope := gc_scope_prefix || 'maintain_filter_coll';
+
   l_seq_id number;
 begin
+
+  ks_log.log('START', l_scope);
 
   /*
   The collections being used:
@@ -162,6 +168,8 @@ begin
 
     end if;
   end if;
+
+  ks_log.log('END', l_scope);
 
 end maintain_filter_coll;
 
