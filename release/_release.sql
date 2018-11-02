@@ -50,6 +50,11 @@ comment on column ks_sessions.presented_anything_where is 'Where the presenter h
 @@../plsql/ks_session_load_api.plb
 
 
+-- #1
+@@../plsql/ks_session_api.pls
+@@../plsql/ks_session_api.plb
+
+
 -- *** DML ***
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
 insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');

@@ -1,3 +1,4 @@
+alter session set PLSQL_CCFLAGS='VERBOSE_OUTPUT:TRUE'; --TODO jwall: comment on PROD
 create or replace package body ks_session_api
 is
 
@@ -202,6 +203,144 @@ exception
     raise;
 end  html_whitelist_tokenize;
 
+
+
+/**
+ * Description
+ *    Get the following data to allow navigation of the sessions:
+ *       - Previous Session Id
+ *       - Next Session Id
+ *       - Current Row
+ *       - Total Row
+ *
+ * @example
+ *
+ * @issue
+ *
+ * @author Juan Wall
+ * @created November 1, 2018
+ * @param p_id
+ * @param p_region_static_id
+ * @param p_page_id
+ * @return
+ * @param p_previous_id
+ * @param p_next_id
+ * @param p_total_rows
+ * @param p_current_row
+ */
+procedure session_id_navigation (
+   p_id in ks_sessions.id%type
+  ,p_region_static_id in varchar2
+  ,p_page_id in number
+  ,p_previous_id out ks_sessions.event_track_id%type
+  ,p_next_id out ks_sessions.event_track_id%type
+  ,p_total_rows out number
+  ,p_current_row out number
+)
+is
+  l_report apex_ir.t_report;
+  l_sql clob;
+  l_next_id number;
+  l_previous_id number;
+  l_order_by varchar2 (32000);
+  l_cur number;
+  l_res number;
+  l_total_rows number;
+  l_row_num number;
+  l_scope ks_log.scope := gc_scope_prefix || 'session_id_navigation';
+
+begin
+  ks_log.log('START', l_scope);
+
+    l_report := ks_util.get_ir_report (
+        p_page_id => p_page_id
+      , p_static_id => p_region_static_id
+    );
+            
+    l_sql := l_report.sql_query;  
+    $IF $$VERBOSE_OUTPUT $THEN
+      ks_log.log ('l_sql:' || l_sql, l_scope);
+    $END
+
+    --l_report.sql_query selects the columns indicated on the option "menu Action > Select Columns" from the SQL Query indicated on the App Builder's IR Configuration.
+    --The following line replaces the list of selected columns on l_report.sql_query by all the columns.
+    --Ex: SESSION_NUM is not displayed on the IR, so it is not selected on l_report.sql_query.
+    --Selecting all the columns with r.*, allows to order by any column indicated on the option "menu Action > Data > Sort" even if it is not included on "menu Action > Select Columns".
+    --Also, the total number of rows is calculated at this level.
+    l_sql := 'select count (id) over () as total_rows
+      ,r.*'
+     || substr (l_sql, instr (l_sql, ' from '));
+
+    l_order_by := ks_util.get_ir_order_by (p_ir_query => l_sql);
+
+    if l_order_by is null then
+      l_order_by := 'order by session_num';
+    end if;
+
+    l_sql := 'select  next
+      ,previous
+      ,total_rows
+      ,row_num
+    from (' ||
+        '   select    id
+                    , lead (id) over ( ' || l_order_by || ') next ' ||
+        '           , lag (id) over ( ' || l_order_by || ') previous ' ||
+        '           , total_rows ' ||
+        '           , row_number () over ( ' || l_order_by || ') as row_num ' ||
+        '   from (' || l_sql || 
+        ' ))  where id=:ID';
+    $IF $$VERBOSE_OUTPUT $THEN
+      ks_log.log ('l_sql:' || l_sql, l_scope);
+    $END
+
+    l_cur := dbms_sql.open_cursor;
+    $IF $$VERBOSE_OUTPUT $THEN
+      ks_log.log ('l_cur:' || l_cur, l_scope);
+    $END
+
+    dbms_sql.parse (l_cur, l_sql, dbms_sql.native);
+
+    for i in 1..l_report.binds.count
+    loop
+      dbms_sql.bind_variable (l_cur, l_report.binds(i).name, l_report.binds(i).value);
+      $IF $$VERBOSE_OUTPUT $THEN
+        ks_log.log (l_report.binds(i).name || ':' || l_report.binds(i).value, l_scope);
+      $END
+    end loop;
+
+    dbms_sql.bind_variable (l_cur, 'ID', p_id);
+    dbms_sql.define_column (l_cur, 1, p_next_id);
+    dbms_sql.define_column (l_cur, 2, p_previous_id);
+    dbms_sql.define_column (l_cur, 3, p_total_rows);
+    dbms_sql.define_column (l_cur, 4, p_current_row);
+
+    l_res := dbms_sql.execute(l_cur);
+
+    if dbms_sql.fetch_rows (l_cur) > 0 then
+      dbms_sql.column_value (l_cur, 1, p_next_id);
+      dbms_sql.column_value (l_cur, 2, p_previous_id);
+      dbms_sql.column_value (l_cur, 3, p_total_rows);
+      dbms_sql.column_value (l_cur, 4, p_current_row);
+    end if;
+
+    $IF $$VERBOSE_OUTPUT $THEN
+      ks_log.log('p_next_id:' || p_next_id, l_scope);
+      ks_log.log('p_previous_id:' || p_previous_id, l_scope);
+      ks_log.log('p_total_rows:' || p_total_rows, l_scope);
+      ks_log.log('p_current_row:' || p_current_row, l_scope);
+    $END
+
+    dbms_sql.close_cursor (l_cur);
+    ks_log.log('END', l_scope);
+exception
+  when others then
+    if dbms_sql.is_open (l_cur) then
+      dbms_sql.close_cursor (l_cur);
+    end if;
+
+    ks_log.log_error('Unhandled Exception', l_scope);
+    raise;
+end  session_id_navigation;
 
 end ks_session_api;
 /
