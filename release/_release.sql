@@ -46,6 +46,7 @@ comment on column ks_sessions.presented_anything_where is 'Where the presenter h
 @@../views/ks_events_sec_v.sql
 @@../views/ks_events_allowed_v.sql
 
+-- Added ks_log calls
 @@../plsql/ks_tags_api.plb
 
 -- #16
