@@ -34,7 +34,9 @@ comment on column ks_sessions.presented_anything_ind is 'Whether the presenter h
 comment on column ks_sessions.presented_anything_where is 'Where the presenter has done live presentation (of any kind)';
 
 
-
+-- #20
+alter table ks_session_votes add decline_vote_flag varchar2(1);
+comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstains form voting on a session.';
 
 
 -- *** Objects ***
