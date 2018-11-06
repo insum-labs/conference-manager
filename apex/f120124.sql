@@ -27,7 +27,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   17:44 Thursday November 1, 2018
+--   Date and Time:   10:48 Tuesday November 6, 2018
 --   Exported By:     JRIMBLAS
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -37,18 +37,18 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 
 -- Application Statistics:
 --   Pages:                     29
---     Items:                   92
+--     Items:                   95
 --     Computations:            12
 --     Validations:              6
 --     Processes:               40
---     Regions:                 74
---     Buttons:                 60
+--     Regions:                 75
+--     Buttons:                 62
 --     Dynamic Actions:         34
 --   Shared Components:
 --     Logic:
---       Items:                  8
+--       Items:                 10
 --       Processes:              1
---       Computations:           3
+--       Computations:           5
 --       Build Options:          7
 --     Navigation:
 --       Lists:                  5
@@ -100,7 +100,8 @@ wwv_flow_api.create_flow(
 ,p_page_protection_enabled_y_n=>'Y'
 ,p_checksum_salt=>'5DF33F8BFAC00D34B6659C04EC04F529604986871B53940194C5EF2C8B89C076'
 ,p_bookmark_checksum_function=>'SH512'
-,p_max_session_idle_sec=>20
+,p_max_session_length_sec=>43200
+,p_max_session_idle_sec=>0
 ,p_compatibility_mode=>'5.1'
 ,p_flow_language=>'en'
 ,p_flow_language_derived_from=>'SESSION'
@@ -113,7 +114,7 @@ wwv_flow_api.create_flow(
 ,p_documentation_banner=>'Application created from create application wizard 2017.10.05.'
 ,p_authentication=>'PLUGIN'
 ,p_authentication_id=>wwv_flow_api.id(191490075796602128)
-,p_application_tab_set=>1
+,p_application_tab_set=>0
 ,p_logo_image=>'TEXT:&A_APPLICATION_TITLE.'
 ,p_app_builder_icon_name=>'app-icon.svg'
 ,p_public_user=>'APEX_PUBLIC_USER'
@@ -133,7 +134,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181101172849'
+,p_last_upd_yyyymmddhh24miss=>'20181106102129'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>70
 ,p_ui_type_name => null
@@ -168,6 +169,17 @@ wwv_flow_api.create_list(
  p_id=>wwv_flow_api.id(28502257888882431709)
 ,p_name=>'Desktop Navigation Bar'
 ,p_list_status=>'PUBLIC'
+);
+wwv_flow_api.create_list_item(
+ p_id=>wwv_flow_api.id(567841966271835653)
+,p_list_item_display_sequence=>4
+,p_list_item_link_text=>'Admin App'
+,p_list_item_link_target=>'f?p=&G_ADMIN_APP_ID.::&APP_SESSION.'
+,p_list_item_icon=>'fa-external-link'
+,p_list_item_disp_cond_type=>'EXISTS'
+,p_list_item_disp_condition=>'select 1 from ks_events_allowed_v where sysdate between begin_date-365 and begin_date+365'
+,p_list_text_02=>'" id="navAdminApp"'
+,p_list_item_current_type=>'TARGET_PAGE'
 );
 wwv_flow_api.create_list_item(
  p_id=>wwv_flow_api.id(198222495572246691)
@@ -1556,6 +1568,12 @@ wwv_flow_api.create_flow_item(
 ,p_item_comment=>'Identifies Admin users'
 );
 wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(567831247680796649)
+,p_name=>'G_ADMIN_APP_ID'
+,p_scope=>'GLOBAL'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
  p_id=>wwv_flow_api.id(193096138102700121)
 ,p_name=>'G_EVENT_TRACK_ID'
 ,p_protection_level=>'I'
@@ -1569,6 +1587,12 @@ wwv_flow_api.create_flow_item(
 wwv_flow_api.create_flow_item(
  p_id=>wwv_flow_api.id(193203417763971003)
 ,p_name=>'G_VOTER_TYPE'
+,p_protection_level=>'I'
+);
+wwv_flow_api.create_flow_item(
+ p_id=>wwv_flow_api.id(567831496107797645)
+,p_name=>'G_VOTING_APP_ID'
+,p_scope=>'GLOBAL'
 ,p_protection_level=>'I'
 );
 end;
@@ -1592,6 +1616,24 @@ wwv_flow_api.create_flow_computation(
 ,p_computation_type=>'QUERY'
 ,p_computation_processed=>'REPLACE_EXISTING'
 ,p_computation=>'select id from KV_users where username = upper(:APP_USER)'
+);
+wwv_flow_api.create_flow_computation(
+ p_id=>wwv_flow_api.id(567832674150805107)
+,p_computation_sequence=>10
+,p_computation_item=>'G_ADMIN_APP_ID'
+,p_computation_point=>'ON_NEW_INSTANCE'
+,p_computation_type=>'FUNCTION_BODY'
+,p_computation_processed=>'REPLACE_EXISTING'
+,p_computation=>'return ks_util.get_param(''ADMIN_APP_ID'');'
+);
+wwv_flow_api.create_flow_computation(
+ p_id=>wwv_flow_api.id(567833080353806536)
+,p_computation_sequence=>10
+,p_computation_item=>'G_VOTING_APP_ID'
+,p_computation_point=>'ON_NEW_INSTANCE'
+,p_computation_type=>'FUNCTION_BODY'
+,p_computation_processed=>'REPLACE_EXISTING'
+,p_computation=>'return ks_util.get_param(''VOTING_APP_ID'');'
 );
 wwv_flow_api.create_flow_computation(
  p_id=>wwv_flow_api.id(28502321735382431906)
@@ -12597,8 +12639,8 @@ wwv_flow_api.create_page(
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Here you can see all the sessions submitted to track. Use the buttons to filter the sessions as needed.<br>',
 'As you open each session, you''ll have a chance to enter an optional comment and register your vote.<br> Selecting a vote value will automatically advance to the next session and save your comment.'))
-,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181101172849'
+,p_last_updated_by=>'JWALL'
+,p_last_upd_yyyymmddhh24miss=>'20181106100557'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(192281280895719044)
@@ -12641,6 +12683,7 @@ wwv_flow_api.create_page_plug(
 '     , v.comments',
 '     , v.vote',
 '     , v.id vote_id',
+'     , v.decline_vote_flag',
 '  from ks_sessions s',
 '     , all_session alls',
 '     , ks_session_votes v',
@@ -12936,6 +12979,14 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_label=>'Comments'
 ,p_column_type=>'STRING'
 );
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(566956122019037616)
+,p_db_column_name=>'DECLINE_VOTE_FLAG'
+,p_display_order=>220
+,p_column_identifier=>'AC'
+,p_column_label=>'Decline Vote Flag'
+,p_column_type=>'STRING'
+);
 wwv_flow_api.create_worksheet_rpt(
  p_id=>wwv_flow_api.id(192714239831786983)
 ,p_application_user=>'APXWS_DEFAULT'
@@ -12960,7 +13011,7 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_flashback_enabled=>'N'
 );
 wwv_flow_api.create_worksheet_condition(
- p_id=>wwv_flow_api.id(567377678403359445)
+ p_id=>wwv_flow_api.id(567828877271785689)
 ,p_report_id=>wwv_flow_api.id(192714239831786983)
 ,p_name=>'Voted'
 ,p_condition_type=>'HIGHLIGHT'
@@ -12975,7 +13026,7 @@ wwv_flow_api.create_worksheet_condition(
 ,p_row_font_color=>'#FFF'
 );
 wwv_flow_api.create_worksheet_condition(
- p_id=>wwv_flow_api.id(567378043106359445)
+ p_id=>wwv_flow_api.id(567829254196785689)
 ,p_report_id=>wwv_flow_api.id(192714239831786983)
 ,p_name=>'Seen'
 ,p_condition_type=>'HIGHLIGHT'
@@ -13209,7 +13260,7 @@ wwv_flow_api.create_page_button(
 ,p_button_template_id=>wwv_flow_api.id(28502226698127431684)
 ,p_button_image_alt=>'All Pending'
 ,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
-,p_button_redirect_url=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.:RP,20,RIR:P20_REPORT_TYPE,IRN_VOTE:REPORT_PENDING,'
+,p_button_redirect_url=>'f?p=&APP_ID.:20:&SESSION.::&DEBUG.:RP,20,RIR:P20_REPORT_TYPE,IRN_VOTE,IRN_DECLINE_VOTE_FLAG:REPORT_PENDING,,'
 ,p_button_css_classes=>'reportSelection'
 );
 wwv_flow_api.create_page_button(
@@ -13768,6 +13819,15 @@ wwv_flow_api.create_page(
 '}',
 '#P30_VOTE_CHECK_CONTAINER span.fa {',
 'color: #81BB5F; ',
+'}',
+'',
+'#P30_DECLINE_CHECK_CONTAINER {',
+'    position: fixed;',
+'    top: 10px;',
+'    right: 50px;',
+'}',
+'#P30_DECLINE_CHECK_CONTAINER span.fa {',
+'color: #0572CA; ',
 '}'))
 ,p_page_template_options=>'#DEFAULT#:ui-dialog--stretch'
 ,p_dialog_attributes=>'beforeClose:warnOnClose'
@@ -13780,8 +13840,8 @@ wwv_flow_api.create_page(
 'After you review the session, enter an optional comment and click on your vote score.  1 is the lowest value, 5 is the highest.<br>',
 'Selecting a vote will automatically save the comment, capture your score, and advance to the next session.<br>',
 ''))
-,p_last_updated_by=>'ZWILCOX'
-,p_last_upd_yyyymmddhh24miss=>'20181101132715'
+,p_last_updated_by=>'JWALL'
+,p_last_upd_yyyymmddhh24miss=>'20181106093039'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(193246475216756907)
@@ -13801,7 +13861,7 @@ wwv_flow_api.create_page_plug(
 ,p_region_css_classes=>'kv-solid-background'
 ,p_region_template_options=>'#DEFAULT#:t-Region--noPadding:js-showMaximizeButton:i-h240:t-Region--noUI:t-Region--scrollBody:margin-bottom-sm'
 ,p_plug_template=>wwv_flow_api.id(28502181188779431649)
-,p_plug_display_sequence=>30
+,p_plug_display_sequence=>48
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -13860,7 +13920,7 @@ wwv_flow_api.create_report_region(
  p_id=>wwv_flow_api.id(193248504481756928)
 ,p_name=>'See More'
 ,p_template=>wwv_flow_api.id(28502160052591431642)
-,p_display_sequence=>40
+,p_display_sequence=>58
 ,p_include_in_reg_disp_sel_yn=>'Y'
 ,p_region_template_options=>'#DEFAULT#:is-collapsed:t-Region--noUI:t-Region--scrollBody'
 ,p_component_template_options=>'#DEFAULT#:t-AVPList--leftAligned'
@@ -14013,7 +14073,7 @@ wwv_flow_api.create_page_plug(
 ,p_region_template_options=>'#DEFAULT#:t-Region--noPadding:js-showMaximizeButton:t-Region--noUI:t-Region--scrollBody:margin-bottom-none'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(28502181188779431649)
-,p_plug_display_sequence=>20
+,p_plug_display_sequence=>38
 ,p_include_in_reg_disp_sel_yn=>'N'
 ,p_plug_display_point=>'BODY'
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
@@ -14053,6 +14113,9 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_column=>3
 ,p_plug_display_point=>'BODY'
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_NOT_EQ_COND2'
+,p_plug_display_when_condition=>'P30_USER_IS_OWNER'
+,p_plug_display_when_cond2=>'Y'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -14096,6 +14159,24 @@ wwv_flow_api.create_page_plug(
 ,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
 ,p_plug_display_when_condition=>'G_HIDE_PRESENTER_IND'
 ,p_plug_display_when_cond2=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(566955780223037612)
+,p_plug_name=>'No vote'
+,p_region_template_options=>'#DEFAULT#:t-Alert--colorBG:t-Alert--horizontal:t-Alert--defaultIcons:t-Alert--info:t-Alert--removeHeading'
+,p_plug_template=>wwv_flow_api.id(28502146349057431630)
+,p_plug_display_sequence=>28
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_grid_column_span=>8
+,p_plug_display_column=>3
+,p_plug_display_point=>'BODY'
+,p_plug_source=>'Presenters or Co-Presenters cannot vote for their own Sessions.'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_plug_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_plug_display_when_condition=>'P30_USER_IS_OWNER'
+,p_plug_display_when_cond2=>'Y'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
@@ -14160,7 +14241,7 @@ wwv_flow_api.create_page_button(
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(195219805523403001)
-,p_button_sequence=>10
+,p_button_sequence=>20
 ,p_button_plug_id=>wwv_flow_api.id(193442239407512031)
 ,p_button_name=>'MARK_UNREAD'
 ,p_button_action=>'SUBMIT'
@@ -14173,8 +14254,20 @@ wwv_flow_api.create_page_button(
 ,p_icon_css_classes=>'fa-eye-slash'
 );
 wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(566955699829037611)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(193442239407512031)
+,p_button_name=>'DECLINE'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(28502226797942431684)
+,p_button_image_alt=>'Pass from voting'
+,p_button_position=>'REGION_TEMPLATE_DELETE'
+,p_icon_css_classes=>'fa-fast-forward'
+);
+wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(193998728705929325)
-,p_button_sequence=>20
+,p_button_sequence=>30
 ,p_button_plug_id=>wwv_flow_api.id(193442239407512031)
 ,p_button_name=>'SAVE'
 ,p_button_action=>'SUBMIT'
@@ -14183,6 +14276,21 @@ wwv_flow_api.create_page_button(
 ,p_button_image_alt=>'Save'
 ,p_button_position=>'REGION_TEMPLATE_DELETE'
 ,p_icon_css_classes=>'fa-check'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(566955839208037613)
+,p_button_sequence=>60
+,p_button_plug_id=>wwv_flow_api.id(566955780223037612)
+,p_button_name=>'NO_VOTE_NEXT'
+,p_button_action=>'SUBMIT'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight:t-Button--gapLeft'
+,p_button_template_id=>wwv_flow_api.id(28502226797942431684)
+,p_button_image_alt=>'Next'
+,p_button_position=>'REGION_TEMPLATE_NEXT'
+,p_button_condition=>'P30_NEXT_ID'
+,p_button_condition_type=>'ITEM_IS_NOT_NULL'
+,p_icon_css_classes=>'fa-chevron-right'
+,p_button_cattributes=>'title="Save & Next"'
 );
 wwv_flow_api.create_page_button(
  p_id=>wwv_flow_api.id(193762233299635571)
@@ -14215,7 +14323,7 @@ wwv_flow_api.create_page_branch(
 ,p_branch_type=>'REDIRECT_URL'
 ,p_branch_sequence=>30
 ,p_branch_condition_type=>'PLSQL_EXPRESSION'
-,p_branch_condition=>':REQUEST in (''APPLY_CHANGES_NEXT'', ''P30_VOTE'') and :P30_NEXT_ID is not null'
+,p_branch_condition=>':REQUEST in (''APPLY_CHANGES_NEXT'', ''P30_VOTE'', ''NO_VOTE_NEXT'') and :P30_NEXT_ID is not null'
 );
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(194347721274712751)
@@ -14473,7 +14581,7 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(214672913471353111)
 ,p_name=>'P30_VOTE_CHECK'
-,p_item_sequence=>70
+,p_item_sequence=>80
 ,p_item_plug_id=>wwv_flow_api.id(193246475216756907)
 ,p_prompt=>'Vote check'
 ,p_post_element_text=>'<span aria-hidden="true" class="fa fa-check-circle fa-4x" title="Voted &P30_VOTE."></span>'
@@ -14506,7 +14614,43 @@ wwv_flow_api.create_page_item(
 wwv_flow_api.create_page_item(
  p_id=>wwv_flow_api.id(566954993793037604)
 ,p_name=>'P30_NEXT_PREV_ID'
-,p_item_sequence=>80
+,p_item_sequence=>110
+,p_item_plug_id=>wwv_flow_api.id(193246475216756907)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(566955342218037608)
+,p_name=>'P30_USER_IS_OWNER'
+,p_item_sequence=>70
+,p_item_plug_id=>wwv_flow_api.id(193442864158512037)
+,p_display_as=>'NATIVE_HIDDEN'
+,p_attribute_01=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(566955956875037614)
+,p_name=>'P30_DECLINE_CHECK'
+,p_item_sequence=>90
+,p_item_plug_id=>wwv_flow_api.id(193246475216756907)
+,p_prompt=>'Vote check'
+,p_post_element_text=>'<span aria-hidden="true" class="fa fa-fast-forward fa-4x" title="Declined."></span>'
+,p_display_as=>'NATIVE_DISPLAY_ONLY'
+,p_begin_on_new_line=>'N'
+,p_grid_column=>11
+,p_grid_label_column_span=>0
+,p_display_when=>'P30_DECLINE_VOTE_FLAG'
+,p_display_when2=>'Y'
+,p_display_when_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
+,p_field_template=>wwv_flow_api.id(28502226038595431682)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'Y'
+,p_attribute_02=>'VALUE'
+,p_attribute_04=>'Y'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(566956014380037615)
+,p_name=>'P30_DECLINE_VOTE_FLAG'
+,p_item_sequence=>100
 ,p_item_plug_id=>wwv_flow_api.id(193246475216756907)
 ,p_display_as=>'NATIVE_HIDDEN'
 ,p_attribute_01=>'Y'
@@ -14580,6 +14724,9 @@ wwv_flow_api.create_page_da_action(
 ,p_affected_region_id=>wwv_flow_api.id(193442239407512031)
 ,p_attribute_01=>'t-Alert--colorBG t-Alert--success'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(100778828586685635)
 ,p_process_sequence=>10
@@ -14600,7 +14747,8 @@ wwv_flow_api.create_page_process(
 '  update ks_session_votes ',
 '     set vote     = l_vote,',
 '         comments = :P30_COMMENTS,',
-'         vote_type = :G_VOTER_TYPE',
+'         vote_type = :G_VOTER_TYPE,',
+'         decline_vote_flag = null',
 '   where 1=1',
 '     and username = :APP_USER',
 '     and session_id = :P30_ID',
@@ -14613,6 +14761,7 @@ wwv_flow_api.create_page_process(
 '                               , session_id',
 '                               , session_num',
 '                               , vote_type',
+'                               , decline_vote_flag',
 '                                )',
 '                          values(l_vote',
 '                               , :P30_COMMENTS',
@@ -14620,6 +14769,7 @@ wwv_flow_api.create_page_process(
 '                               , :P30_ID',
 '                               , :P30_SESSION_NUM',
 '                               , :G_VOTER_TYPE',
+'                               , decode (:P30_USER_IS_OWNER, ''N'', null, ''Y'')',
 '                                );',
 '  end if;    ',
 'end;'))
@@ -14679,96 +14829,12 @@ wwv_flow_api.create_page_process(
 ,p_attribute_04=>'ID'
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
-end;
-/
-begin
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(193360138550073510)
-,p_process_sequence=>20
-,p_process_point=>'BEFORE_HEADER'
-,p_process_type=>'NATIVE_FORM_PAGINATION'
-,p_process_name=>'Get Next/Prev ID''s'
-,p_attribute_02=>'KS_SESSIONS'
-,p_attribute_03=>'P30_ID'
-,p_attribute_04=>'ID'
-,p_attribute_07=>'SESSION_NUM'
-,p_attribute_09=>'P30_NEXT_ID'
-,p_attribute_10=>'P30_PREV_ID'
-,p_attribute_13=>'P30_COUNT'
-,p_attribute_14=>'event_track_id = :G_EVENT_TRACK_ID'
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-,p_process_when_type=>'NEVER'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(100779256350685639)
-,p_process_sequence=>40
-,p_process_point=>'BEFORE_HEADER'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Mark Viewed'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'declare',
-'    l_count number;',
-'begin',
-'    -- If there is no vote corresponding to this session id for this user',
-'    -- Create one with no vote_type',
-'    -- This is how we keep track the user has seen this session.',
-'',
-'    select count(*) ',
-'      into l_count',
-'      from ks_session_votes v',
-'     where 1=1',
-'       and v.session_id = :P30_ID',
-'       and v.username = :APP_USER',
-'       and v.vote_type = :G_VOTER_TYPE;',
-'   ',
-'   if l_count = 0',
-'   then',
-'    insert into ks_session_votes(vote',
-'                               , comments',
-'                               , username',
-'                               , session_id',
-'                               , session_num',
-'                               , vote_type',
-'                                )',
-'                          values(:P30_VOTE',
-'                               , null',
-'                               , :APP_USER',
-'                               , :P30_ID',
-'                               , :P30_SESSION_NUM',
-'                               , :G_VOTER_TYPE',
-'                                );   ',
-'   end if;',
-'',
-'end;'))
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-);
-wwv_flow_api.create_page_process(
- p_id=>wwv_flow_api.id(193360824312073517)
-,p_process_sequence=>50
-,p_process_point=>'BEFORE_HEADER'
-,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Init ks_session_vote items'
-,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
-'begin',
-'    select comments, vote, apex_util.get_since(nvl(updated_on, created_on)) || '' ('' || nvl(updated_on, created_on) || '')'' voted_on',
-'      into :P30_COMMENTS, :P30_VOTE, :P30_VOTED_ON',
-'     from ks_session_votes ',
-'    where 1=1',
-'      and session_id = :P30_ID',
-'      and username = :APP_USER;',
-'',
-'    exception when no_data_found',
-'    then ',
-'       :P30_VOTED_ON := ''-New-'';',
-'end;'))
-,p_error_display_location=>'INLINE_IN_NOTIFICATION'
-);
 wwv_flow_api.create_page_process(
  p_id=>wwv_flow_api.id(566955113116037606)
-,p_process_sequence=>60
+,p_process_sequence=>20
 ,p_process_point=>'BEFORE_HEADER'
 ,p_process_type=>'NATIVE_PLSQL'
-,p_process_name=>'Get Next/Prev ID''s 2'
+,p_process_name=>'Get Next/Prev ID''s'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'declare',
 '    l_next_id number;',
@@ -14792,6 +14858,91 @@ wwv_flow_api.create_page_process(
 '    :P30_COUNT := l_row_num || '' of '' || l_total_rows;',
 '    :P30_NEXT_ID := l_next_id;',
 '    ',
+'end;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(566955276284037607)
+,p_process_sequence=>30
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Display Hide Vote region'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin ',
+'    :P30_USER_IS_OWNER := ks_session_api.is_session_owner ( p_session_id => :P30_ID);',
+'end;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(100779256350685639)
+,p_process_sequence=>40
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Mark Viewed'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'declare',
+'    l_count number;',
+'    l_decline_vote_flag ks_session_votes.decline_vote_flag%type;',
+'begin',
+'    -- If there is no vote corresponding to this session id for this user',
+'    -- Create one with no vote_type',
+'    -- This is how we keep track the user has seen this session.',
+'',
+'    select count(*) ',
+'      into l_count',
+'      from ks_session_votes v',
+'     where 1=1',
+'       and v.session_id = :P30_ID',
+'       and v.username = :APP_USER',
+'       and v.vote_type = :G_VOTER_TYPE;',
+'      ',
+'  if :P30_USER_IS_OWNER = ''Y'' then',
+'    l_decline_vote_flag := ''Y'';',
+'  end if;',
+'  ',
+'  :P30_DECLINE_VOTE_FLAG := l_decline_vote_flag;',
+'',
+'   if l_count = 0',
+'   then',
+'    insert into ks_session_votes(vote',
+'                               , comments',
+'                               , username',
+'                               , session_id',
+'                               , session_num',
+'                               , vote_type',
+'                               , decline_vote_flag',
+'                                )',
+'                          values(:P30_VOTE',
+'                               , null',
+'                               , :APP_USER',
+'                               , :P30_ID',
+'                               , :P30_SESSION_NUM',
+'                               , :G_VOTER_TYPE',
+'                               , l_decline_vote_flag',
+'                                );',
+'   end if;',
+'',
+'end;'))
+,p_error_display_location=>'INLINE_IN_NOTIFICATION'
+);
+wwv_flow_api.create_page_process(
+ p_id=>wwv_flow_api.id(193360824312073517)
+,p_process_sequence=>50
+,p_process_point=>'BEFORE_HEADER'
+,p_process_type=>'NATIVE_PLSQL'
+,p_process_name=>'Init ks_session_vote items'
+,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'begin',
+'    select comments, vote, apex_util.get_since(nvl(updated_on, created_on)) || '' ('' || nvl(updated_on, created_on) || '')'' voted_on',
+'      into :P30_COMMENTS, :P30_VOTE, :P30_VOTED_ON',
+'     from ks_session_votes ',
+'    where 1=1',
+'      and session_id = :P30_ID',
+'      and username = :APP_USER;',
+'',
+'    exception when no_data_found',
+'    then ',
+'       :P30_VOTED_ON := ''-New-'';',
 'end;'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
