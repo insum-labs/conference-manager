@@ -342,5 +342,62 @@ exception
     raise;
 end  session_id_navigation;
 
+
+
+
+/**
+ * Description
+ *    Get the flag value indicating if the user in session is the presenter or copresenter
+ *    of the session.
+ *
+ * @example
+ *
+ * @issue
+ *
+ * @author Juan Wall
+ * @created November 5, 2018
+ * @param p_id
+ * @return 'Y','N'
+ */
+function is_session_owner (
+  p_session_id in ks_sessions.id%type
+)
+return varchar2
+is 
+  l_return varchar2(1) := 'N';
+  l_scope ks_log.scope := gc_scope_prefix || 'is_session_owner';
+
+  l_external_sys_ref ks_users.external_sys_ref%type;
+  l_presenter_user_id ks_sessions.presenter_user_id%type;
+  l_co_presenter_user_id ks_sessions.co_presenter_user_id%type;
+begin
+  ks_log.log('START', l_scope);
+
+  select  s.presenter_user_id
+         ,s.co_presenter_user_id
+  into    l_presenter_user_id
+         ,l_co_presenter_user_id
+  from    ks_sessions s
+  where   s.id = p_session_id;
+
+  select  u.external_sys_ref
+  into    l_external_sys_ref
+  from    ks_users u
+  where   u.username = v('APP_USER');
+
+  if l_external_sys_ref in (l_presenter_user_id, l_co_presenter_user_id) then
+      l_return := 'Y';
+  end if;
+
+  ks_log.log('END', l_scope);
+  return l_return;
+
+exception
+  when others then
+    ks_log.log_error('Unhandled Exception', l_scope);
+    raise;
+end is_session_owner;
+
+
 end ks_session_api;
 /

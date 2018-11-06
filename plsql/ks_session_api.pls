@@ -37,6 +37,12 @@ procedure session_id_navigation (
   ,p_total_rows out number
   ,p_current_row out number
 );
+
+
+function is_session_owner (
+  p_session_id in ks_sessions.id%type
+)
+return varchar2;
   
 end ks_session_api;
 /

@@ -446,14 +446,14 @@ end validate_data;
 -- Function: validate_column_names
 -- Purpose: This makes sure that the first row of the .xlsx file contains row names FOR EACH column in ks_session_load (minus event_id, track_id, and app_user)
 --
--- Inputs: l_column_names - varray of column names
+-- Inputs: p_column_names - varray of column names
 -- Output: returns true if valid, false if invalid
 -- Scope: Not  Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/09/2017
 --==============================================================================
-function validate_column_names (l_column_names in column_names_t)
+function validate_column_names (p_column_names in column_names_t)
 return boolean
 is
   l_scope ks_log.scope := 'validate_column_names';
@@ -464,7 +464,7 @@ is
   i number := 0;
   idx varchar2(4000);
 begin
-  --logger.append_param(l_params, 'l_column_names', l_column_names);
+  --logger.append_param(l_params, 'p_column_names', p_column_names);
   ks_log.log('START', l_scope);
 
 
@@ -476,18 +476,18 @@ begin
     l_column_names_dict(row.header) := 'not_matched';
   end loop;
 
-  for i in 1..l_column_names.count
+  for i in 1..p_column_names.count
   loop
-      if not l_column_names_dict.exists(trim(upper(l_column_names(i))))
+      if not l_column_names_dict.exists(trim(upper(p_column_names(i))))
       then
-        if not add_error_check_continue(p_message => 'The column "' || l_column_names(i) || '" does not match any column names specified in the instructions.'
+        if not add_error_check_continue(p_message => 'The column "' || p_column_names(i) || '" does not match any column names specified in the instructions.'
                                      ,  p_display_location => apex_error.c_inline_in_notification
                             )
         then
           return false;
         end if;
       else
-        l_column_names_dict(trim(upper(l_column_names(i)))) := 'matched';
+        l_column_names_dict(trim(upper(p_column_names(i)))) := 'matched';
       end if;
   end loop;
 
@@ -530,14 +530,14 @@ end validate_column_names;
 -- Function: validate_column_order
 -- Purpose: validates that the columns provided in the export file are in the correct order
 --
--- Inputs:  l_column_names - an array of colum names
+-- Inputs:  p_column_names - an array of colum names
 -- Output: returns true if valid, false if invalid
 -- Scope: Not Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes: THIS FUNCTION IS NOT USED - the function works, but turned out to not be useful.
 -- Author: Ben Shumway (Insum Solutions) - Oct/11/2017
 --==============================================================================
-function validate_column_order (l_column_names in column_names_t)
+function validate_column_order (p_column_names in column_names_t)
   return boolean
 is
   l_scope ks_log.scope := 'validate_column_order';
@@ -545,7 +545,7 @@ is
   l_idx number := 1;
   l_columns_in_their_order varchar2(4000);
 begin
-  --logger.append_param(l_params, 'l_column_names', l_column_names);
+  --logger.append_param(l_params, 'p_column_names', p_column_names);
   ks_log.log('START', l_scope);
 
   for row in (select trim(upper(lm.header_name)) header_name,
@@ -557,7 +557,7 @@ begin
             order by lm.display_seq
             )
   loop
-    if l_column_names(row.display_seq) != row.header_name
+    if p_column_names(row.display_seq) != row.header_name
     then
       select listagg(lm.header_name, ', ') within group (order by lm.display_seq) value
         into l_columns_in_their_order
@@ -568,7 +568,7 @@ begin
 
         apex_error.add_error(
                   p_message => 'The columns in the export file are in an incorrect order. The proper order is: ' ||
-                                  l_columns_in_their_order || '. At least this column is out of order: ' || l_column_names(l_idx)
+                                  l_columns_in_their_order || '. At least this column is out of order: ' || p_column_names(l_idx)
                 , p_display_location => apex_error.c_inline_in_notification
               );
       --This is a big error (lots of text), so exit here regardless of number of errors.
@@ -599,7 +599,7 @@ end validate_column_order;
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/11/2017
 --==============================================================================
-procedure init_index_map ( l_index_map in out nocopy index_map_t)
+procedure init_index_map ( p_index_map in out nocopy index_map_t)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'init_index_map';
   --l_params logger.tab_param;
@@ -616,7 +616,7 @@ begin
      order by m.display_seq
   )
   loop
-    l_index_map(to_char(row.display_seq)) := row.to_column_name;
+    p_index_map(to_char(row.display_seq)) := row.to_column_name;
     ks_log.log('mapped: ' || row.display_seq || ' to '  || row.to_column_name, l_scope);
   end loop;
 
