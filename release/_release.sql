@@ -74,30 +74,9 @@ update ks_roles
 
 
 -- #16
---Add space for column: presented_anything_ind
-update ks_load_mapping
-   set display_seq = display_seq + 1
- where display_seq >= 13;
-
-insert into ks_load_mapping(
-  table_name, display_seq, to_column_name, header_name
-  )
-values(
-  'KS_FULL_SESSION_LOAD', 13, 'PRESENTED_ANYTHING_IND', 'Have you ever presented before a live audience?'
-  );
-
---Add space for column: presented_anything_where
-update ks_load_mapping
-   set display_seq = display_seq + 1
- where display_seq >= 18;
- 
-insert into ks_load_mapping(
-  table_name, display_seq, to_column_name, header_name
-  )
-values(
-  'KS_FULL_SESSION_LOAD', 18, 'PRESENTED_ANYTHING_WHERE', 'If yes, at what events?'
-  );
-
+-- New columns presented_anything_ind, presented_anything_where
+-- fix order
+@@../conversion/seed_ks_load_mapping.sql
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
