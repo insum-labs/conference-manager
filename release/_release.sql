@@ -58,9 +58,12 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 @@../plsql/ks_error_handler.plb
 
 
--- #1
+-- #1, #22, #20
 @@../plsql/ks_session_api.pls
 @@../plsql/ks_session_api.plb
+
+-- #16
+@@../plsql/ks_session_load_api.plb
 
 
 -- *** DML ***
@@ -71,33 +74,6 @@ update ks_roles
    set name = 'Public Voter'
  where role_type = 'VOTING'
    and code = 'BLIND';
-
-
--- #16
---Add space for column: presented_anything_ind
-update ks_load_mapping
-   set display_seq = display_seq + 1
- where display_seq >= 13;
-
-insert into ks_load_mapping(
-  table_name, display_seq, to_column_name, header_name
-  )
-values(
-  'KS_FULL_SESSION_LOAD', 13, 'PRESENTED_ANYTHING_IND', 'Have you ever presented before a live audience?'
-  );
-
---Add space for column: presented_anything_where
-update ks_load_mapping
-   set display_seq = display_seq + 1
- where display_seq >= 18;
- 
-insert into ks_load_mapping(
-  table_name, display_seq, to_column_name, header_name
-  )
-values(
-  'KS_FULL_SESSION_LOAD', 18, 'PRESENTED_ANYTHING_WHERE', 'If yes, at what events?'
-  );
-
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
