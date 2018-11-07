@@ -76,6 +76,12 @@ update ks_roles
    and code = 'BLIND';
 
 
+-- #16
+-- New columns presented_anything_ind, presented_anything_where
+-- fix order
+@@../conversion/seed_ks_load_mapping.sql
+
+
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
 
 
