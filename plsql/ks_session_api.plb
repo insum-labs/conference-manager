@@ -361,12 +361,13 @@ end  session_id_navigation;
  */
 function is_session_owner (
   p_session_id in ks_sessions.id%type
+ ,p_user in varchar2
 )
 return varchar2
 is 
-  l_return varchar2(1) := 'N';
   l_scope ks_log.scope := gc_scope_prefix || 'is_session_owner';
-
+  
+  l_return varchar2(1) := 'N';
   l_external_sys_ref ks_users.external_sys_ref%type;
   l_presenter_user_id ks_sessions.presenter_user_id%type;
   l_co_presenter_user_id ks_sessions.co_presenter_user_id%type;
@@ -383,7 +384,7 @@ begin
   select  u.external_sys_ref
   into    l_external_sys_ref
   from    ks_users u
-  where   u.username = v('APP_USER');
+  where   u.username = p_user;
 
   if l_external_sys_ref in (l_presenter_user_id, l_co_presenter_user_id) then
       l_return := 'Y';

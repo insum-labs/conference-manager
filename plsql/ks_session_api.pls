@@ -41,6 +41,7 @@ procedure session_id_navigation (
 
 function is_session_owner (
   p_session_id in ks_sessions.id%type
+ ,p_user in varchar2
 )
 return varchar2;
   
