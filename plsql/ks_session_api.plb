@@ -1,4 +1,4 @@
-alter session set PLSQL_CCFLAGS='VERBOSE_OUTPUT:TRUE'; --TODO jwall: comment on PROD
+-- alter session set PLSQL_CCFLAGS='VERBOSE_OUTPUT:TRUE';
 create or replace package body ks_session_api
 is
 
@@ -347,7 +347,7 @@ end  session_id_navigation;
 
 /**
  * Description
- *    Get the flag value indicating if the user in session is the presenter or copresenter
+ *    Given a session and user, indicate if the given user is the presenter or copresenter
  *    of the session.
  *
  * @example
@@ -374,17 +374,17 @@ is
 begin
   ks_log.log('START', l_scope);
 
-  select  s.presenter_user_id
-         ,s.co_presenter_user_id
-  into    l_presenter_user_id
-         ,l_co_presenter_user_id
-  from    ks_sessions s
-  where   s.id = p_session_id;
+  select s.presenter_user_id
+       , s.co_presenter_user_id
+    into l_presenter_user_id
+       , l_co_presenter_user_id
+    from ks_sessions s
+   where s.id = p_session_id;
 
-  select  u.external_sys_ref
-  into    l_external_sys_ref
-  from    ks_users u
-  where   u.username = p_user;
+  select u.external_sys_ref
+    into l_external_sys_ref
+    from ks_users u
+   where u.username = p_user;
 
   if l_external_sys_ref in (l_presenter_user_id, l_co_presenter_user_id) then
       l_return := 'Y';
