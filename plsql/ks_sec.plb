@@ -156,5 +156,45 @@ begin
       raise;
 end post_login;
 
+
+/**
+ * Get the name for a given user
+ *
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Jorge Rimblas
+ * @created November 8, 2018
+ * @param name
+ * @return
+ */
+function get_name_from_user(p_username in varchar2) return varchar2
+is
+  l_scope  ks_log.scope := gc_scope_prefix || 'get_name_from_user';
+begin
+  ks_log.log('START', l_scope);
+
+  for n in (select full_name from ks_users_v where username = p_username)
+  loop
+    return n.full_name;
+  end loop;
+  
+  if instr(p_username, '@') > 0 then
+      return regexp_replace ( initcap( replace( substr ( p_username, 1, instr(p_username, '@') - 1 ), '.', ' ' ) ), '\s\w+\s', ' ' );
+  else
+      return initcap(p_username);
+  end if;
+
+
+  exception
+    when OTHERS then
+      ks_log.log_error('Unhandled Exception', l_scope);
+      raise;
+end get_name_from_user;
+
+
+
 end ks_sec;
 /
