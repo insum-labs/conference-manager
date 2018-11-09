@@ -47,6 +47,7 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 @@../views/ks_events_tracks_v.sql
 @@../views/ks_events_sec_v.sql
 @@../views/ks_events_allowed_v.sql
+@@../views/ks_session_load_coll_v.sql
 
 -- Added ks_log calls
 @@../plsql/ks_tags_api.plb
