@@ -7,6 +7,11 @@ is
 --*
 --------------------------------------------------------------------------------
 
+-- CONSTANTS
+/**
+ * @gc_loaded_session_coll: Name of the collection created during the load session wizard
+*/
+gc_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';
 
 --------------------------------------------------------------------------------
 
@@ -31,6 +36,11 @@ procedure purge_event(
   , p_track_id			in ks_sessions.event_track_id%TYPE default null
   , p_votes_only_ind	in varchar2
   , p_force_ind			in varchar2
+);
+
+procedure create_coll_loaded_session (
+    p_event_id   in ks_events.id%TYPE
+  , p_username   in varchar2 default v('APP_USER')
 );
 
 end ks_session_load_api;
