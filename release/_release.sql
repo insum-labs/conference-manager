@@ -41,37 +41,34 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 
 -- *** Objects ***
 -- #3
-@@../install/ks_event_admins.sql
-@@../install/ks_email_templates.sql
+@../install/ks_event_admins.sql
+@../install/ks_email_templates.sql
 
 
-@@../views/ks_events_tracks_v.sql
-@@../views/ks_events_sec_v.sql
-@@../views/ks_events_allowed_v.sql
-@@../views/ks_session_load_coll_v.sql
+@../views/ks_events_tracks_v.sql
+@../views/ks_events_sec_v.sql
+@../views/ks_events_allowed_v.sql
+@../views/ks_session_load_coll_v.sql
 
 -- Added ks_log calls
-@@../plsql/ks_tags_api.plb
-
--- #16
-@@../plsql/ks_session_load_api.plb
+@../plsql/ks_tags_api.plb
 
 -- #4
-@@../plsql/ks_error_handler.plb
+@../plsql/ks_error_handler.plb
 
 
 -- #1, #22, #20
-@@../plsql/ks_session_api.pls
-@@../plsql/ks_session_api.plb
+@../plsql/ks_session_api.pls
+@../plsql/ks_session_api.plb
 
 -- #16
-@@../plsql/ks_session_load_api.plb
+@../plsql/ks_session_load_api.plb
 
 -- #6
-@@../plsql/ks_email_api.pls
-@@../plsql/ks_email_api.plb
-@@../plsql/ks_notification_api.pls
-@@../plsql/ks_notification_api.plb
+@../plsql/ks_email_api.pls
+@../plsql/ks_email_api.plb
+@../plsql/ks_notification_api.pls
+@../plsql/ks_notification_api.plb
 
 
 -- *** DML ***
@@ -95,8 +92,8 @@ update ks_roles
 -- #16
 -- New columns presented_anything_ind, presented_anything_where
 -- fix order
-@@../conversion/seed_ks_load_mapping.sql
-@@../conversion/seed_ks_email_templates.sql
+@../conversion/seed_ks_load_mapping.sql
+@../conversion/seed_ks_email_templates.sql
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
