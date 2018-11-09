@@ -629,7 +629,6 @@ exception
 end init_index_map;
 
 
-
 /**
  * Description
  * Load data from xlsx into appropriate collection for parsing. All data is
@@ -1210,6 +1209,79 @@ begin
       raise_application_error (-20000,'Votes are present. Purge action aborted.');
     
 end purge_event;
+
+
+/**
+ * Description
+ * Create collection session loaded having
+ *    - The name of the track 
+ *    - The number of loaded sessions by track
+ *    - The checked flag (set Y by default)
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/07/2019
+ * @param 
+ */
+procedure create_coll_loaded_session (
+    p_event_id   in ks_events.id%TYPE
+  , p_username   in varchar2 default v('APP_USER')
+)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'create_coll_loaded_session';
+  l_sql varchar2 (32000);
+  l_param_names apex_application_global.vc_arr2;
+  l_param_values apex_application_global.vc_arr2;
+begin
+  ks_log.log('START', l_scope);
+  
+  l_sql := q'[select e.id --track id
+          ,count(*) --number of loaded sessions
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,s.event_track_id --track name
+  from    ks_full_session_load s
+  left    outer join ks_event_tracks e 
+  on      s.event_track_id = e.name 
+  and     e.event_id = :p_event_id
+  where   s.app_user = :p_username
+  group   by s.event_track_id
+         ,e.id]';
+
+  if apex_collection.collection_exists (p_collection_name => gc_loaded_session_coll) then 
+    apex_collection.delete_collection (p_collection_name  => gc_loaded_session_coll);
+  end if;
+
+  l_param_names(l_param_names.count + 1) := 'p_event_id';
+  l_param_values(l_param_values.count + 1) := p_event_id;
+  
+  l_param_names(l_param_names.count + 1) := 'p_username';
+  l_param_values(l_param_values.count + 1) := p_username;
+
+  apex_collection.create_collection_from_queryb2 (
+    p_collection_name => gc_loaded_session_coll
+   ,p_query           => l_sql
+   ,p_names           => l_param_names
+   ,p_values          => l_param_values
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception', l_scope);
+    raise;
+end create_coll_loaded_session;
+
 
 
 

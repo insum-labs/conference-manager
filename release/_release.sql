@@ -65,6 +65,12 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 -- #16
 @@../plsql/ks_session_load_api.plb
 
+-- #6
+@@../plsql/ks_email_api.pls
+@@../plsql/ks_email_api.plb
+@@../plsql/ks_notification_api.pls
+@@../plsql/ks_notification_api.plb
+
 
 -- *** DML ***
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
