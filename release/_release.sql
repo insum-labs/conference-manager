@@ -47,6 +47,7 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 @@../views/ks_events_tracks_v.sql
 @@../views/ks_events_sec_v.sql
 @@../views/ks_events_allowed_v.sql
+@@../views/ks_session_load_coll_v.sql
 
 -- Added ks_log calls
 @@../plsql/ks_tags_api.plb
@@ -75,6 +76,14 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 -- *** DML ***
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
 insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');
+
+delete from ks_parameters where name_key in ('SERVER_URL');
+insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'SERVER_URL', 'https://apex.oracle.com/pls/apex/f?p=', 'Server URL');
+
+delete from ks_parameters where name_key in ('LOAD_NOTIFICATION_TEMPLATE');
+insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'LOAD_NOTIFICATION_TEMPLATE', 'SESSION_LOAD', 'Email template for load notifications');
+
+
 
 update ks_roles
    set name = 'Public Voter'

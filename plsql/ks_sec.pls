@@ -27,5 +27,7 @@ function password_with_salt (p_password IN varchar2)
 
 procedure post_login;
  
+function get_name_from_user(p_username in varchar2) return varchar2;
+
 end ks_sec;
 /
