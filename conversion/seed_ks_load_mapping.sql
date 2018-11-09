@@ -1,4 +1,3 @@
-  1* spool seed_ks_load_mapping.sql
 REM INSERTING into KS_LOAD_MAPPING
 SET DEFINE OFF;
 PRO Removing previous mapping
