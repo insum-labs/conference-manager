@@ -12,15 +12,15 @@ is
 /**
  * @constant gc_scope_prefix: Standard logger package name
  * @constant gc_all_clob_columns: comma separeted list of columns that are clobs
+ * @constant c_loaded_session_coll: Name of the collection created during the load session wizard
  * @column_names_t: is the table type for columns taken from the export file.
  * @c_max_errors_to_display: the maximum number of errors to display to the user.
  * @index_map_t: maps column numbers from the export file to column names in ks_full_session_load
 */
 gc_scope_prefix      constant varchar2(31) := lower($$PLSQL_UNIT) || '.';
-
 gc_all_clob_columns  constant varchar2(4000) := 'SESSION_DESCRIPTION';
-
 c_session_load_table constant varchar2(30) := 'KS_FULL_SESSION_LOAD';
+c_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';
 
 c_max_errors_to_display constant number := 4;
 
@@ -1211,8 +1211,9 @@ begin
 end purge_event;
 
 
+
+
 /**
- * Description
  * Create collection session loaded having
  *    - The name of the track 
  *    - The number of loaded sessions by track
@@ -1226,20 +1227,20 @@ end purge_event;
  * @created Nov/07/2019
  * @param 
  */
-procedure create_coll_loaded_session (
+procedure create_loaded_session_coll (
     p_event_id   in ks_events.id%TYPE
   , p_username   in varchar2 default v('APP_USER')
 )
 is
-  l_scope ks_log.scope := gc_scope_prefix || 'create_coll_loaded_session';
+  l_scope ks_log.scope := gc_scope_prefix || 'create_loaded_session_coll';
   l_sql varchar2 (32000);
   l_param_names apex_application_global.vc_arr2;
   l_param_values apex_application_global.vc_arr2;
 begin
   ks_log.log('START', l_scope);
   
-  l_sql := q'[select e.id --track id
-          ,count(*) --number of loaded sessions
+  l_sql := q'[select e.id track_id
+          ,count(*) session_count
           ,null
           ,null
           ,null
@@ -1248,7 +1249,8 @@ begin
           ,null
           ,null
           ,null
-          ,s.event_track_id --track name
+          ,s.event_track_id track_name
+          ,'Y' notify_ind
   from    ks_full_session_load s
   left    outer join ks_event_tracks e 
   on      s.event_track_id = e.name 
@@ -1257,8 +1259,8 @@ begin
   group   by s.event_track_id
          ,e.id]';
 
-  if apex_collection.collection_exists (p_collection_name => gc_loaded_session_coll) then 
-    apex_collection.delete_collection (p_collection_name  => gc_loaded_session_coll);
+  if apex_collection.collection_exists (p_collection_name => c_loaded_session_coll) then 
+    apex_collection.delete_collection (p_collection_name  => c_loaded_session_coll);
   end if;
 
   l_param_names(l_param_names.count + 1) := 'p_event_id';
@@ -1268,7 +1270,7 @@ begin
   l_param_values(l_param_values.count + 1) := p_username;
 
   apex_collection.create_collection_from_queryb2 (
-    p_collection_name => gc_loaded_session_coll
+    p_collection_name => c_loaded_session_coll
    ,p_query           => l_sql
    ,p_names           => l_param_names
    ,p_values          => l_param_values
@@ -1280,8 +1282,54 @@ exception
   when others then
     ks_log.log('Unhandled Exception', l_scope);
     raise;
-end create_coll_loaded_session;
+end create_loaded_session_coll;
 
+
+
+/**
+ * Toggle the notification status of a loaded track
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/08/2019
+ * @param p_seq_id position in the collection
+ * @param p_notification_ind Y|N
+ */
+procedure toggle_track_notification(p_seq_id in number)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'toggle_track_notification';
+
+  l_notification_ind varchar2(1);
+
+begin
+  ks_log.log('START', l_scope);
+  ks_log.log('p_seq_id:' || p_seq_id, l_scope);
+  
+  -- Get the new value
+  select decode(notify_ind, 'Y', 'N', 'Y')
+    into l_notification_ind
+    from ks_session_load_coll_v
+   where seq_id = p_seq_id;
+
+  ks_log.log('l_notification_ind:' || l_notification_ind, l_scope);
+
+  apex_collection.update_member_attribute  (
+      p_collection_name => c_loaded_session_coll
+    , p_seq => p_seq_id
+    , p_attr_number => 2
+    , p_attr_value  => l_notification_ind
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception:' || sqlerrm, l_scope);
+    raise;
+end toggle_track_notification;
 
 
 

@@ -42,6 +42,7 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 -- *** Objects ***
 -- #3
 @@../install/ks_event_admins.sql
+@@../install/ks_email_templates.sql
 
 
 @@../views/ks_events_tracks_v.sql
@@ -95,6 +96,7 @@ update ks_roles
 -- New columns presented_anything_ind, presented_anything_where
 -- fix order
 @@../conversion/seed_ks_load_mapping.sql
+@@../conversion/seed_ks_email_templates.sql
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
