@@ -35,7 +35,9 @@ gc_email_override_key constant ks_parameters.name_key%type := 'EMAIL_OVERRIDE';
  */
 procedure send (
      p_to in varchar2
-    ,p_from in varchar2
+    ,p_cc in varchar2 default null
+    ,p_bcc in varchar2 default null
+    ,p_from in varchar2 default null
     ,p_replyto in varchar2 default null
     ,p_subj in varchar2
     ,p_body in clob
@@ -44,10 +46,12 @@ procedure send (
 is
   l_scope ks_log.scope := gc_scope_prefix || 'send';
   
-  c_original_emails_notification constant varchar2(100) := 'This email was originally sent to ';
+  c_original_emails_notification constant varchar2(100) := 'This email was originally sent as follows ';
 
   l_email_override ks_parameters.value%type;
   l_to varchar2(4000);
+  l_cc varchar2(4000);
+  l_bcc varchar2(4000);
   l_body clob;
   l_body_html clob;
 begin
@@ -57,21 +61,44 @@ begin
 
   if l_email_override is not null then 
     l_to := l_email_override;
-    l_body :=  c_original_emails_notification || p_to || chr(10) || chr(13) || p_body;
-    l_body_html := '<p>' || c_original_emails_notification || p_to || '<br></p>' || p_body_html;
+    l_cc := null;
+    l_bcc := null;
+    l_body :=  c_original_emails_notification || chr(10) || chr(13) 
+      || 'TO: ' || nvl (p_to, '-') || chr(10) || chr(13) 
+      || 'CC: ' || nvl (p_cc, '-') || chr(10) || chr(13) 
+      || 'BCC: ' || nvl (p_bcc, '-') || chr(10) || chr(13) 
+      || p_body;
+    l_body_html := '<p>' || c_original_emails_notification || '<br>'
+      || 'TO: ' || nvl (p_to, '-') || '<br>'
+      || 'CC: ' || nvl (p_cc, '-') || '<br>'
+      || 'BCC: ' || nvl (p_bcc, '-') || '</p>'
+      || p_body;
   else 
     l_to := p_to;
+    l_cc := p_cc;
+    l_bcc := p_bcc;
     l_body := p_body;
     l_body_html := p_body_html;
   end if;
 
+  ks_log.log ('l_to: ' || l_to, l_scope);
+  ks_log.log ('p_from: ' || p_from, l_scope);
+  ks_log.log ('l_body: ' || l_body, l_scope);
+  ks_log.log ('l_body_html: ' || l_body_html, l_scope);
+  ks_log.log ('p_subj: ' || p_subj, l_scope);
+  ks_log.log ('l_cc: ' || l_cc, l_scope);
+  ks_log.log ('l_bcc: ' || l_bcc, l_scope);
+  ks_log.log ('p_replyto: ' || p_replyto, l_scope);
+
   apex_mail.send (
      p_to => l_to
     ,p_from => p_from
-    ,p_replyto => p_replyto
-    ,p_subj => p_subj
     ,p_body => l_body
     ,p_body_html => l_body_html
+    ,p_subj => p_subj
+    ,p_cc => l_cc
+    ,p_bcc => l_bcc
+    ,p_replyto => p_replyto
   );
 
   ks_log.log('END', l_scope);
