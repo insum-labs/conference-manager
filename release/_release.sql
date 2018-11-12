@@ -19,6 +19,14 @@ comment on column ks_events.blind_vote_flag is 'Indicates that the Public Voting
 alter table ks_sessions add room_size_code varchar2(20);
 comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
 
+-- #13
+alter table ks_users add expired_passwd_flag varchar2(1);
+alter table ks_users add login_attempts number;
+alter table ks_users add last_login_date date;
+comment on column ks_users.expired_passwd_flag is 'Set to Y when the account password is expired.';
+comment on column ks_users.login_attempts is 'Number of unsuccessful login attempts since last login';
+comment on column ks_users.last_login_date is 'Date the user was las successful login in';
+
 
 -- #16
 -- Changes made by Ben Shumway

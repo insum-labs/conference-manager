@@ -5,9 +5,12 @@ create table ks_users (
   , first_name       varchar2(50)
   , last_name        varchar2(50)
   , email            varchar2(254)
+  , expired_passwd_flag varchar2(1)
   , active_ind       varchar2(1)   not null
   , admin_ind        varchar2(1)   not null
   , external_sys_ref varchar2(20)
+  , login_attempts   number
+  , last_login_date  date
   , created_by       varchar2(60)  default
                       coalesce(
                           sys_context('APEX$SESSION','app_user')
@@ -38,6 +41,9 @@ comment on table ks_users is 'All users in the system.';
 
 comment on column ks_users.username is 'Order for displaying the lines';
 comment on column ks_users.admin_ind is 'Is this a System Admin user Y/N?';
+comment on column ks_users.login_attempts is 'Number of unsuccessful login attempts since last login';
+comment on column ks_users.last_login_date is 'Date the user was las successful login in';
+comment on column ks_users.expired_passwd_flag is 'Set to Y when the account password is expired.';
 comment on column ks_users.active_ind is 'Is the record enabled Y/N?';
 comment on column ks_users.created_by is 'User that created this record';
 comment on column ks_users.created_on is 'Date the record was first created';

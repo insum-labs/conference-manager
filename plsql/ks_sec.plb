@@ -6,8 +6,10 @@ is
 -- CONSTANTS
 /**
  * @constant gc_scope_prefix Standard logger package name
+ * @constance c_max_attempts Maximumn number of invalid login attempts
  */
 gc_scope_prefix constant VARCHAR2(31) := lower($$PLSQL_UNIT) || '.';
+c_max_attempts  constant number := 5;
 
 /*****************************************************************************/
 g_salt salt_type := 'rQ/PfG?Z8(C*4RP';
@@ -38,17 +40,23 @@ is
   l_old_pass_hash    password_type;
   l_new_pass_hash    password_type;
   l_salt             salt_type;
+  l_user_id          ks_users.id%TYPE;
   l_active_ind       ks_users.active_ind%TYPE;
+  l_login_attempts   ks_users.login_attempts%TYPE;
+  l_expired_passwd_flag ks_users.expired_passwd_flag%TYPE;
 
 begin
 
-   select password, active_ind
-     into l_old_pass_w_salt
+   select id, password, active_ind, expired_passwd_flag, nvl(login_attempts, 0)
+     into l_user_id
+        , l_old_pass_w_salt
         , l_active_ind
+        , l_expired_passwd_flag
+        , l_login_attempts
      from ks_users
     where username = upper(p_username);
 
-   if l_active_ind = 'Y' then
+   if l_active_ind = 'Y' and l_login_attempts < c_max_attempts then
       l_old_pass_hash := SUBSTR(l_old_pass_w_salt, 1, INSTR(l_old_pass_w_salt, ':') - 1);
       l_salt := SUBSTR(l_old_pass_w_salt, INSTR(l_old_pass_w_salt, ':') + 1);
 
@@ -69,12 +77,24 @@ begin
 
       if l_retval then
         apex_util.set_authentication_result (p_code => C_AUTH_SUCCESS);
+        update ks_users
+           set login_attempts = 0
+             , last_login_date = sysdate
+         where id = l_user_id;
       else
         apex_util.set_authentication_result (p_code => C_AUTH_PASSWORD_INCORRECT);
+        update ks_users
+           set login_attempts = nvl(login_attempts,0) + 1
+             , active_ind = case when nvl(login_attempts,0) + 1 >= c_max_attempts then 'N' else active_ind end
+         where id = l_user_id;
       end if;
 
    else
      apex_util.set_authentication_result (p_code => C_AUTH_ACCOUNT_LOCKED);
+     update ks_users
+        set active_ind = 'N'
+      where id = l_user_id
+        and active_ind = 'Y';
    end if;
 
    return l_retval;
