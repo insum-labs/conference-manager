@@ -15,5 +15,8 @@ select u.id
      , u.created_on
      , u.updated_by
      , u.updated_on
+     , u.expired_passwd_flag
+     , u.login_attempts
+     , u.last_login_date
   from ks_users u
 /

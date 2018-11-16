@@ -65,6 +65,48 @@ end replace_substr_template;
 
 
 
+procedure fetch_user_substitions (
+  p_id in ks_users.id%type
+ ,p_substrings in out nocopy t_WordList
+)
+is 
+  l_scope logger_logs.scope%type := gc_scope_prefix || 'fetch_user_substitions';
+begin
+  ks_log.log('BEGIN', l_scope);
+
+  select  u.id
+         ,u.username
+         ,u.first_name
+         ,u.last_name
+         ,u.full_name
+         ,u.email
+         ,u.active_ind
+         ,u.admin_ind
+         ,u.external_sys_ref
+         ,u.expired_passwd_flag
+         ,u.login_attempts
+         ,u.last_login_date
+  into    p_substrings ('USER_ID')
+         ,p_substrings ('USERNAME')
+         ,p_substrings ('USER_FIRST_NAME')
+         ,p_substrings ('USER_LAST_NAME')
+         ,p_substrings ('USER_FULL_NAME')
+         ,p_substrings ('USER_EMAIL')
+         ,p_substrings ('USER_ACTIVE_IND')
+         ,p_substrings ('USER_ADMIN_IND')
+         ,p_substrings ('USER_EXTERNAL_SYS_REF')
+         ,p_substrings ('USER_EXPIRED_PASSWD_FLAG')
+         ,p_substrings ('USER_LOGIN_ATTEMPTS')
+         ,p_substrings ('USER_LAST_LOGIN_DATE')
+  from    ks_users_v u
+  where   u.id = p_id;
+
+  ks_log.log('END', l_scope);
+  
+end fetch_user_substitions;
+
+
+
 /**
  * Get ready all the parameters to notify by email.
  * @example
@@ -90,6 +132,7 @@ is
   l_scope logger_logs.scope%type := gc_scope_prefix || 'send_email';
 
   l_body clob;
+  l_body_html clob;
 begin
   ks_log.log('BEGIN', l_scope);
 
@@ -98,8 +141,11 @@ begin
       p_template_name => p_template_name
      ,p_substrings => p_substrings
     );
+
+    l_body_html := replace (l_body, chr(10), '<br>');
   else 
     l_body := p_body;
+    l_body_html := p_body_html;
   end if;
 
   ks_email_api.send (
@@ -110,7 +156,7 @@ begin
     ,p_replyto => null
     ,p_subj => p_subject
     ,p_body => l_body
-    ,p_body_html => p_body_html
+    ,p_body_html => l_body_html
   );
 
   ks_log.log('END', l_scope);
@@ -149,6 +195,7 @@ is
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
   l_voting_app_link ks_parameters.value%type;
+  l_admin_app_link ks_parameters.value%type;
 begin
   ks_log.log('START', l_scope);
 
@@ -156,10 +203,11 @@ begin
   l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
   l_template_name := ks_util.get_param('LOAD_NOTIFICATION_TEMPLATE');
   l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
+  l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
 
   l_substrings('VOTING_APP_LINK') := l_voting_app_link;
+  l_substrings('ADMIN_APP_LINK') := l_admin_app_link;
 
-  --TODO jwall: add a distinct on emails!!
   for rec in (
     with user_emails as (
       select  sl.track_name
@@ -218,6 +266,139 @@ exception
     ks_log.log('Unhandled Exception', l_scope);
     raise;
 end notify_track_session_load;
+
+
+
+/**
+ * 
+ * Send a notification of type Password Reset Request 
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/08/2019
+ * @param p_username
+ * @param p_password
+ * @param p_app_id
+ */
+procedure notify_reset_pwd_request (
+    p_id in ks_users.id%type
+   ,p_password in ks_users.password%type
+   ,p_app_id in ks_parameters.value%type
+)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'notify_reset_pwd_request';
+
+  c_subject_notification constant varchar2(30) := 'Reset Password Request';
+
+  l_substrings t_WordList;
+  l_from ks_parameters.value%type;
+  l_subject_prefix ks_parameters.value%type;
+  l_subject ks_parameters.value%type;
+  l_template_name ks_parameters.value%type;
+  l_admin_app_link ks_parameters.value%type;
+  l_voting_app_link ks_parameters.value%type;
+begin
+  ks_log.log('START', l_scope);
+
+  l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
+  l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
+  l_template_name := ks_util.get_param('RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE');
+  l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
+  l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
+
+  fetch_user_substitions (
+    p_id => p_id
+   ,p_substrings => l_substrings
+  );
+  
+  l_substrings('ADMIN_APP_LINK') := l_admin_app_link;
+  l_substrings('VOTING_APP_LINK') := l_voting_app_link;
+  l_substrings('TEMP_PASSWORD') := p_password;
+
+  l_subject := l_subject_prefix || c_subject_notification;
+
+  send_email (
+     p_to => l_substrings('USER_EMAIL')
+    ,p_from => l_from
+    ,p_cc => null
+    ,p_bcc => null
+    ,p_subject => l_subject 
+    ,p_body => null
+    ,p_body_html => null
+    ,p_template_name =>  l_template_name
+    ,p_substrings => l_substrings
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception', l_scope);
+    raise;
+end notify_reset_pwd_request;
+
+
+
+/**
+ * 
+ * Send a notification of type Password Reset Done to the user
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/13/2019
+ * @param p_username
+ */
+procedure notify_reset_pwd_done (
+    p_id in ks_users.id%type
+)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'notify_reset_pwd_done';
+
+  c_subject_notification constant varchar2(30) := 'Reset Password Done';
+
+  l_substrings t_WordList;
+  l_from ks_parameters.value%type;
+  l_subject_prefix ks_parameters.value%type;
+  l_subject ks_parameters.value%type;
+  l_template_name ks_parameters.value%type;
+begin
+  ks_log.log('START', l_scope);
+
+  l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
+  l_template_name := ks_util.get_param('RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE');
+  l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
+  l_subject := l_subject_prefix || c_subject_notification;
+
+  fetch_user_substitions (
+    p_id => p_id
+   ,p_substrings => l_substrings
+  );
+
+  send_email (
+     p_to => l_substrings('USER_EMAIL')
+    ,p_from => l_from
+    ,p_cc => null
+    ,p_bcc => null
+    ,p_subject => l_subject 
+    ,p_body => null
+    ,p_body_html => null
+    ,p_template_name =>  l_template_name
+    ,p_substrings => l_substrings
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception', l_scope);
+    raise;
+end notify_reset_pwd_done;
 
 end ks_notification_api;
 /

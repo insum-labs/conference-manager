@@ -16,7 +16,6 @@ gc_email_override_key constant ks_parameters.name_key%type := 'EMAIL_OVERRIDE';
 
 ------------------------------------------------------------------------------
 /**
- * Description
  *      Send an email to the original email accounts or 
  *      to the ones specified on email_override on the table ks_parameters.
  * @example
@@ -41,7 +40,7 @@ procedure send (
     ,p_replyto in varchar2 default null
     ,p_subj in varchar2
     ,p_body in clob
-    ,p_body_html in clob default null
+    ,p_body_html in clob
 )
 is
   l_scope ks_log.scope := gc_scope_prefix || 'send';
@@ -72,7 +71,8 @@ begin
       || 'TO: ' || nvl (p_to, '-') || '<br>'
       || 'CC: ' || nvl (p_cc, '-') || '<br>'
       || 'BCC: ' || nvl (p_bcc, '-') || '</p>'
-      || p_body;
+      || '<hr>'
+      || p_body_html;
   else 
     l_to := p_to;
     l_cc := p_cc;

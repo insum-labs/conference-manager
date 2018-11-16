@@ -9,7 +9,7 @@ procedure send (
     ,p_replyto in varchar2 default null
     ,p_subj in varchar2
     ,p_body in clob
-    ,p_body_html in clob default null
+    ,p_body_html in clob
 );
 
 end ks_email_api;

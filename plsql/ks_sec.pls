@@ -14,12 +14,17 @@ subtype salt_type               is varchar2(16);
 subtype password_type           is varchar2(128);
 subtype password_with_salt_type is varchar2(145); --Length of salt and password, plus 1 character seperator
 
+function password_match (
+  p_username in ks_users.username%type 
+ ,p_password in ks_users.password%type
+)
+return boolean;
 
 function is_valid_user (
        p_username IN varchar2
      , p_password IN varchar2
 )
-   return boolean;
+return boolean;
 
 function password_with_salt (p_password IN varchar2)
    return varchar2;
@@ -27,6 +32,21 @@ function password_with_salt (p_password IN varchar2)
 procedure post_login;
  
 function get_name_from_user(p_username in varchar2) return varchar2;
+
+procedure request_reset_password (
+    p_username in ks_users.username%type
+   ,p_app_id in ks_parameters.value%type
+);
+
+procedure reset_password (
+    p_username in ks_users.username%type
+   ,p_new_password in ks_users.password%type
+   ,p_new_password_2 in ks_users.password%type
+   ,p_error_msg out varchar2
+);
+
+function is_password_expired (p_username in ks_users.username%type)
+return boolean;
 
 end ks_sec;
 /

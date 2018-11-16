@@ -400,5 +400,119 @@ exception
 end is_session_owner;
 
 
+
+/**
+ * Description
+ *    Parse the "video link" text returning a line by link and formatting the link as a html anchor tag when applied.
+ *
+ * @example
+ *
+ * @issue
+ *
+ * @author Juan Wall
+ * @created November 15, 2018
+ * @param p_video_link
+ * @return parsed text containing the link as a html anchor tag.
+ */
+function parse_video_link (
+  p_video_link in ks_sessions.video_link%type
+)
+return varchar2
+is 
+  l_scope ks_log.scope := gc_scope_prefix || 'parse_video_link';
+  
+  c_link_format constant varchar2(1000) := '<a id="VIDEO_URL" href="#LINK#" target="_blank" alt="Video" title="Video">#LINK#</a>';
+  
+  l_links apex_t_varchar2;
+  l_key varchar2(1000);
+  l_link varchar2(32000);
+  l_return varchar2(32000);
+  l_is_not_first_line boolean := FALSE;
+begin
+  ks_log.log ('START', l_scope);
+
+  l_links := apex_string.split(p_video_link, '<br />');
+  l_key := l_links.first;
+  
+  while (l_key is not null)
+  loop
+    l_link := l_links (l_key);
+
+    if substr (trim (l_link), 1, 4) = 'http' then 
+      l_link := replace (c_link_format, '#LINK#', l_link);
+    end if;
+
+    if l_is_not_first_line then 
+      l_return := l_return || '<br>' || l_link;
+    else 
+      l_return := l_link;
+      l_is_not_first_line := TRUE;
+    end if;
+
+    l_key := l_links.next (l_key);
+  end loop;
+
+  ks_log.log ('END', l_scope);
+  return l_return;
+
+exception
+  when others then
+    ks_log.log_error('Unhandled Exception', l_scope);
+    raise;
+end parse_video_link;
+
+
+
+/**
+ * Description
+ *    Parse the "video link" text returning the first link formatted on an HTML anchor tag.
+ *
+ * @example
+ *
+ * @issue
+ *
+ * @author Juan Wall
+ * @created November 15, 2018
+ * @param p_video_link
+ * @return parsed text containing the first link as a html anchor tag.
+ */
+function get_first_video_link (
+  p_video_link in ks_sessions.video_link%type
+)
+return varchar2
+is 
+  l_scope ks_log.scope := gc_scope_prefix || 'get_first_video_link';
+  
+  l_links apex_t_varchar2;
+  l_key varchar2(1000);
+  l_link varchar2(32000);
+  l_return varchar2(32000);
+begin
+  ks_log.log ('START', l_scope);
+
+  l_links := apex_string.split(p_video_link, '<br />');
+  l_key := l_links.first;
+  
+  while (l_key is not null)
+  loop
+    l_link := l_links (l_key);
+
+    if substr (trim (l_link), 1, 4) = 'http' then 
+      l_return := l_link;
+      exit;
+    end if;
+
+    l_key := l_links.next (l_key);
+  end loop;
+
+  ks_log.log ('END', l_scope);
+  return l_return;
+
+exception
+  when others then
+    ks_log.log_error('Unhandled Exception', l_scope);
+    raise;
+end get_first_video_link;
+
 end ks_session_api;
 /

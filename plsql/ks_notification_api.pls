@@ -8,6 +8,11 @@ type t_WordList is table of varchar2(32000) index by varchar(30);
 -- CONSTANTS
 g_blank_sub_strings t_WordList; -- Leave blank
 ------------------------------------------------------------------------------
+procedure fetch_user_substitions (
+  p_id in ks_users.id%type
+ ,p_substrings in out nocopy t_WordList
+);
+
 procedure send_email (
    p_to in varchar2 default null
   ,p_from in varchar2
@@ -23,6 +28,16 @@ procedure send_email (
 procedure notify_track_session_load (    
     p_notify_owner in varchar2
   , p_notify_voter in varchar2
+);
+
+procedure notify_reset_pwd_request (
+    p_id in ks_users.id%type
+   ,p_password in ks_users.password%type
+   ,p_app_id in ks_parameters.value%type
+);
+
+procedure notify_reset_pwd_done (
+    p_id in ks_users.id%type
 );
 
 end ks_notification_api;
