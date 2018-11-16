@@ -64,6 +64,8 @@ comment on column ks_sessions.event_track_id is 'Track this session was submitte
 comment on column ks_sessions.presenter is 'The name of the presenter for this session.';
 comment on column ks_sessions.company is 'The company the presenter works for.';
 comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
+comment on column ks_sessions.presented_before_ind is 'Whether the session has been presented before';
+comment on column ks_sessions.presented_before_where is 'Where the presentaton been done before';
 comment on column ks_sessions.presented_anything_ind is 'Whether the presenter has ever done a live presentation(s), anywhere for anything.';
 comment on column ks_sessions.presented_anything_where is 'Where the presenter has done live presentation (of any kind)';
 comment on column ks_sessions.created_by is 'User that created this record';

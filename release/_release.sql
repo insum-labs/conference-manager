@@ -41,6 +41,9 @@ alter table ks_sessions add constraint ks_sessions_pres_any_yn check (presented_
 comment on column ks_sessions.presented_anything_ind is 'Whether the presenter has ever done a live presentation(s), anywhere for anything.';
 comment on column ks_sessions.presented_anything_where is 'Where the presenter has done live presentation (of any kind)';
 
+comment on column ks_sessions.presented_before_ind is 'Whether the session has been presented before';
+comment on column ks_sessions.presented_before_where is 'Where the presentaton been done before';
+
 
 -- #20
 alter table ks_session_votes add decline_vote_flag varchar2(1);
