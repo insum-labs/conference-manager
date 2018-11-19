@@ -1,5 +1,6 @@
 REM INSERTING into KS_EMAIL_TEMPLATES
-SET DEFINE OFF;
+SET DEFINE OFF
+SET SQLBLANKLINES ON
 Insert into KS_EMAIL_TEMPLATES (NAME,TEMPLATE_TEXT) values ('RESET_PASSWORD_REQUEST_NOTIFICATION','Hi #USER_FIRST_NAME#,
 
 You either have a brand new account with username #USERNAME# or a reset password has been requested for your account on the ODTUG Kscope Voting Apps.
@@ -18,7 +19,7 @@ Your password has been reset.
 
 If you did not reset it, please contact info@odtug.com
 ');
-Insert into KS_EMAIL_TEMPLATES (NAME,TEMPLATE_TEXT) values ('SESSION_LOAD','The "#TRACK_NAME#" has received #SESSION_COUNT# sessions.
+Insert into KS_EMAIL_TEMPLATES (NAME,TEMPLATE_TEXT) values ('SESSION_LOAD','The "#TRACK_NAME#" track has received #SESSION_COUNT# sessions.
 
 If the voting period is open go vote at:
 #VOTING_APP_LINK#
