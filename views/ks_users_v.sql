@@ -11,12 +11,12 @@ select u.id
      , u.active_ind
      , u.admin_ind
      , u.external_sys_ref
+     , u.expired_passwd_flag
+     , u.login_attempts
+     , u.last_login_date
      , u.created_by
      , u.created_on
      , u.updated_by
      , u.updated_on
-     , u.expired_passwd_flag
-     , u.login_attempts
-     , u.last_login_date
   from ks_users u
 /

@@ -52,6 +52,8 @@ begin
     or (instr (l_password, '12345') > 0)
     or (instr (l_password, 'GHJKL') > 0)
     or (instr (l_password, 'YUIOP') > 0)
+    or (instr (l_password, 'PASSWORD') > 0)
+    or (instr (l_password, 'WELCOME') > 0)
   then
    return true;
   end if;
@@ -364,13 +366,16 @@ begin
     select  u.id 
     into    l_id
     from    ks_users u
-    where   u.username = upper (p_username)
+    where   u.username = nvl (upper (p_username), '-')
     and     u.active_ind = 'Y';
   exception
     when no_data_found then
-      --if p_username does not exist, no error must be shown
+      --if p_username is not found, the following application error is raised 
+      -- (instead of the exception no_data_found) so the UI does not show any error message.
+      -- This was implemented as a security policy to avoid using the "Reset Password"
+      -- as a mechanism to know if a username is registered or not.
       ks_log.log('user ' || p_username || ' not found', l_scope);
-      raise_application_error(-20001,'User not found');
+      raise user_not_found;
   end;
   
   ks_log.log('l_id:' || l_id, l_scope);
@@ -426,7 +431,7 @@ is
   l_scope ks_log.scope := gc_scope_prefix || 'reset_password';
 
   c_not_equal_passwords constant varchar2(50) := 'Password and Repeat Passowrd must be the same.';
-  c_password_not_valid constant varchar2(50) := 'The password is not valid.';
+  c_password_not_valid constant varchar2(50) := 'The new password is too short or simple.';
 
   l_id ks_users.id%type;
 begin

@@ -24,10 +24,6 @@ select  s.id
       , s.tags      
       , t.votes_total
       , t.votes_average
-      , s.created_by
-      , s.created_on
-      , s.updated_by
-      , s.updated_on
       , s.presenter_email
       , s.session_summary
       , s.session_abstract
@@ -37,17 +33,6 @@ select  s.id
       , s.technology_product
       , s.ace_level
       , s.video_link
-      , s.contains_demo_ind
-      , s.webinar_willing_ind
-      , s.external_sys_ref
-      , s.presenter_user_id
-      , s.co_presenter_user_id
-      , s.presenter_biography
-      , s.co_presenter_company
-      , s.submission_date
-      , s.room_size_code
-      , s.presented_anything_ind
-      , s.presented_anything_where
       , trim (
         case
         when instr (s.video_link, 'http') > 0 
@@ -66,6 +51,21 @@ select  s.id
         else null
         end
       ) as first_video_link
+      , s.contains_demo_ind
+      , s.webinar_willing_ind
+      , s.external_sys_ref
+      , s.presenter_user_id
+      , s.co_presenter_user_id
+      , s.presenter_biography
+      , s.co_presenter_company
+      , s.submission_date
+      , s.room_size_code
+      , s.presented_anything_ind
+      , s.presented_anything_where
+      , s.created_by
+      , s.created_on
+      , s.updated_by
+      , s.updated_on
   from ks_sessions s
      , totals t
  where s.id = t.session_id (+)

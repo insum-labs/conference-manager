@@ -462,57 +462,5 @@ exception
 end parse_video_link;
 
 
-
-/**
- * Description
- *    Parse the "video link" text returning the first link formatted on an HTML anchor tag.
- *
- * @example
- *
- * @issue
- *
- * @author Juan Wall
- * @created November 15, 2018
- * @param p_video_link
- * @return parsed text containing the first link as a html anchor tag.
- */
-function get_first_video_link (
-  p_video_link in ks_sessions.video_link%type
-)
-return varchar2
-is 
-  l_scope ks_log.scope := gc_scope_prefix || 'get_first_video_link';
-  
-  l_links apex_t_varchar2;
-  l_key varchar2(1000);
-  l_link varchar2(32000);
-  l_return varchar2(32000);
-begin
-  ks_log.log ('START', l_scope);
-
-  l_links := apex_string.split(p_video_link, '<br />');
-  l_key := l_links.first;
-  
-  while (l_key is not null)
-  loop
-    l_link := l_links (l_key);
-
-    if substr (trim (l_link), 1, 4) = 'http' then 
-      l_return := l_link;
-      exit;
-    end if;
-
-    l_key := l_links.next (l_key);
-  end loop;
-
-  ks_log.log ('END', l_scope);
-  return l_return;
-
-exception
-  when others then
-    ks_log.log_error('Unhandled Exception', l_scope);
-    raise;
-end get_first_video_link;
-
 end ks_session_api;
 /

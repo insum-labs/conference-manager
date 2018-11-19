@@ -18,6 +18,8 @@ gc_email_override_key constant ks_parameters.name_key%type := 'EMAIL_OVERRIDE';
 /**
  *      Send an email to the original email accounts or 
  *      to the ones specified on email_override on the table ks_parameters.
+ *      The parameter "EMAIL_PREFIX" is added to the subject.
+ *      If p_to, p_cc and p_bcc are null, the procedure exists.
  * @example
  *
  * @issue
@@ -53,10 +55,20 @@ is
   l_bcc varchar2(4000);
   l_body clob;
   l_body_html clob;
+  l_subject_prefix ks_parameters.value%type;
+  l_subject varchar2(4000);
 begin
   ks_log.log('BEGIN', l_scope);
 
+  if trim (p_to) is null 
+      and trim (p_cc) is null
+      and trim (p_bcc) is null then 
+    return;
+  end if;
+
   l_email_override := ks_util.get_param (p_name_key => gc_email_override_key);
+  l_subject_prefix := ks_util.get_param ('EMAIL_PREFIX');
+  l_subject := l_subject_prefix || p_subj;
 
   if l_email_override is not null then 
     l_to := l_email_override;
@@ -85,7 +97,7 @@ begin
   ks_log.log ('p_from: ' || p_from, l_scope);
   ks_log.log ('l_body: ' || l_body, l_scope);
   ks_log.log ('l_body_html: ' || l_body_html, l_scope);
-  ks_log.log ('p_subj: ' || p_subj, l_scope);
+  ks_log.log ('l_subject: ' || l_subject, l_scope);
   ks_log.log ('l_cc: ' || l_cc, l_scope);
   ks_log.log ('l_bcc: ' || l_bcc, l_scope);
   ks_log.log ('p_replyto: ' || p_replyto, l_scope);
@@ -95,7 +107,7 @@ begin
     ,p_from => p_from
     ,p_body => l_body
     ,p_body_html => l_body_html
-    ,p_subj => p_subj
+    ,p_subj => l_subject
     ,p_cc => l_cc
     ,p_bcc => l_bcc
     ,p_replyto => p_replyto

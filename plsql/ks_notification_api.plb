@@ -109,6 +109,12 @@ end fetch_user_substitions;
 
 /**
  * Get ready all the parameters to notify by email.
+ * If the procedure receives a template name the p_body and p_body_html are ignored and only the template is used.
+ * The p_substrings values will be used to merge with the template.
+ * Leave p_template_name empty to use the p_body and p_body_html parameters.
+ * If p_to, p_cc and p_bcc are null, the procedure exists.
+ *
+ *
  * @example
  *
  * @issue
@@ -135,6 +141,12 @@ is
   l_body_html clob;
 begin
   ks_log.log('BEGIN', l_scope);
+
+  if trim (p_to) is null 
+      and trim (p_cc) is null
+      and trim (p_bcc) is null then 
+    return;
+  end if;
 
   if p_template_name is not null then 
     l_body := replace_substr_template (
@@ -191,7 +203,6 @@ is
 
   l_substrings t_WordList;
   l_from ks_parameters.value%type;
-  l_subject_prefix ks_parameters.value%type;
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
   l_voting_app_link ks_parameters.value%type;
@@ -200,7 +211,6 @@ begin
   ks_log.log('START', l_scope);
 
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
-  l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
   l_template_name := ks_util.get_param('LOAD_NOTIFICATION_TEMPLATE');
   l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
   l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
@@ -244,7 +254,7 @@ begin
     l_substrings('SESSION_COUNT') := rec.session_count;
     l_substrings('TRACK_NAME') := rec.track_name;
 
-    l_subject := l_subject_prefix || ' New sessions for: ' || rec.track_name;
+    l_subject := ' New sessions for: ' || rec.track_name;
 
     send_email (
        p_to => null
@@ -295,7 +305,6 @@ is
 
   l_substrings t_WordList;
   l_from ks_parameters.value%type;
-  l_subject_prefix ks_parameters.value%type;
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
   l_admin_app_link ks_parameters.value%type;
@@ -304,7 +313,6 @@ begin
   ks_log.log('START', l_scope);
 
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
-  l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
   l_template_name := ks_util.get_param('RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE');
   l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
   l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
@@ -318,7 +326,7 @@ begin
   l_substrings('VOTING_APP_LINK') := l_voting_app_link;
   l_substrings('TEMP_PASSWORD') := p_password;
 
-  l_subject := l_subject_prefix || c_subject_notification;
+  l_subject := c_subject_notification;
 
   send_email (
      p_to => l_substrings('USER_EMAIL')
@@ -364,7 +372,6 @@ is
 
   l_substrings t_WordList;
   l_from ks_parameters.value%type;
-  l_subject_prefix ks_parameters.value%type;
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
 begin
@@ -372,8 +379,7 @@ begin
 
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
   l_template_name := ks_util.get_param('RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE');
-  l_subject_prefix := ks_util.get_param('EMAIL_PREFIX');
-  l_subject := l_subject_prefix || c_subject_notification;
+  l_subject := c_subject_notification;
 
   fetch_user_substitions (
     p_id => p_id

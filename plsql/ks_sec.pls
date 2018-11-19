@@ -14,6 +14,9 @@ subtype salt_type               is varchar2(16);
 subtype password_type           is varchar2(128);
 subtype password_with_salt_type is varchar2(145); --Length of salt and password, plus 1 character seperator
 
+user_not_found exception;
+pragma exception_init (user_not_found, -20001);
+
 function password_match (
   p_username in ks_users.username%type 
  ,p_password in ks_users.password%type
