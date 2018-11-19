@@ -13,7 +13,7 @@ Open Source Conference Abstract Voting and Content Selection Apps
 Run the following scripts in order:
 ```
 @release/master_install.sql
-@release/master_release_v2.sql
+@release/master_release_v0200.sql
 ```
 
 
