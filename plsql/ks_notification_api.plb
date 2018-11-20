@@ -33,7 +33,7 @@ function replace_substr_template (
 )
 return clob
 is
-  l_scope logger_logs.scope%type := gc_scope_prefix || 'replace_substr_template';
+  l_scope ks_log.scope := gc_scope_prefix || 'replace_substr_template';
 
   l_msg clob;
   l_key varchar(30);
@@ -65,12 +65,27 @@ end replace_substr_template;
 
 
 
+
+/**
+ * Populate all the substrings available for a given user so they can be used in
+ * a template
+ *
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall
+ * @created November 10, 2018
+ * @param p_id `ks_users.id`
+ * @param p_substrings `t_WordList`
+ */
 procedure fetch_user_substitions (
   p_id in ks_users.id%type
  ,p_substrings in out nocopy t_WordList
 )
 is 
-  l_scope logger_logs.scope%type := gc_scope_prefix || 'fetch_user_substitions';
+  l_scope ks_log.scope := gc_scope_prefix || 'fetch_user_substitions';
 begin
   ks_log.log('BEGIN', l_scope);
 
@@ -107,12 +122,45 @@ end fetch_user_substitions;
 
 
 
+
+/**
+ * Fetch the application links into their tokens: VOTING_APP_LINK and ADMIN_APP_LINK
+ * These values can be used in an email template
+ *
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Jorge Rimblas
+ * @created November 19, 2018
+ * @param x_result_status
+ * @return
+ */
+procedure fetch_app_links(p_substrings in out nocopy t_WordList)
+is
+  l_scope  ks_log.scope := gc_scope_prefix || 'fetch_app_links';
+begin
+  ks_log.log('BEGIN', l_scope);
+
+  p_substrings('VOTING_APP_LINK') := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
+  p_substrings('ADMIN_APP_LINK') := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
+
+  ks_log.log('END', l_scope);
+end fetch_app_links;
+
+
+
+
+
 /**
  * Get ready all the parameters to notify by email.
- * If the procedure receives a template name the p_body and p_body_html are ignored and only the template is used.
- * The p_substrings values will be used to merge with the template.
- * Leave p_template_name empty to use the p_body and p_body_html parameters.
- * If p_to, p_cc and p_bcc are null, the procedure exists.
+ * If the procedure receives a template name (in `p_template_name`) then the `p_body`
+ * and `p_body_html` parameters are ignored and only the template is used.
+ * If present, the `p_substrings` "word list" values will be used to merge with the template.
+ * Leave `p_template_name` empty to use the `p_body` and `p_body_html` parameters.
+ * If all three destination `p_to`, `p_cc` and `p_bcc` are null, the procedure 
+ * exits without error.
  *
  *
  * @example
@@ -121,7 +169,7 @@ end fetch_user_substitions;
  *
  * @author Juan Wall
  * @created November 6, 2018
- * @param
+ * @param p_template_name optional template name as seen on `ks_email_templates`
  */
 procedure send_email (
    p_to in varchar2 default null
@@ -135,7 +183,7 @@ procedure send_email (
   ,p_substrings in t_WordList default g_blank_sub_strings
 )
 is
-  l_scope logger_logs.scope%type := gc_scope_prefix || 'send_email';
+  l_scope ks_log.scope := gc_scope_prefix || 'send_email';
 
   l_body clob;
   l_body_html clob;
@@ -206,18 +254,13 @@ is
   l_from ks_parameters.value%type;
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
-  l_voting_app_link ks_parameters.value%type;
-  l_admin_app_link ks_parameters.value%type;
 begin
   ks_log.log('START', l_scope);
 
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
   l_template_name := ks_util.get_param('LOAD_NOTIFICATION_TEMPLATE');
-  l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
-  l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
 
-  l_substrings('VOTING_APP_LINK') := l_voting_app_link;
-  l_substrings('ADMIN_APP_LINK') := l_admin_app_link;
+  fetch_app_links(l_substrings);
 
   for rec in (
     with user_emails as (
@@ -282,7 +325,10 @@ end notify_track_session_load;
 
 /**
  * 
- * Send a notification of type Password Reset Request 
+ * Send a user an email/notification with their new temporary password after a 
+ * "Reset Password" (by an Admin) or a "Forgot Password" action (by a user)
+ * The text of the email is defined by the template mentioned in the 
+ * `RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE` system parameter 
  *
  * @example
  * 
@@ -308,23 +354,18 @@ is
   l_from ks_parameters.value%type;
   l_subject ks_parameters.value%type;
   l_template_name ks_parameters.value%type;
-  l_admin_app_link ks_parameters.value%type;
-  l_voting_app_link ks_parameters.value%type;
 begin
   ks_log.log('START', l_scope);
 
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
   l_template_name := ks_util.get_param('RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE');
-  l_admin_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
-  l_voting_app_link := ks_util.get_param('SERVER_URL') || ks_util.get_param('VOTING_APP_ID');
 
   fetch_user_substitions (
     p_id => p_id
    ,p_substrings => l_substrings
   );
-  
-  l_substrings('ADMIN_APP_LINK') := l_admin_app_link;
-  l_substrings('VOTING_APP_LINK') := l_voting_app_link;
+  fetch_app_links(l_substrings);
+
   l_substrings('TEMP_PASSWORD') := p_password;
 
   l_subject := c_subject_notification;
@@ -353,7 +394,9 @@ end notify_reset_pwd_request;
 
 /**
  * 
- * Send a notification of type Password Reset Done to the user
+ * Notify a user after their password has been successfully changed (Reset Password)
+ * The text of the email is defined by the template mentioned in the 
+ * `RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE` system parameter 
  *
  * @example
  * 
@@ -361,7 +404,7 @@ end notify_reset_pwd_request;
  *
  * @author Juan Wall (Insum Solutions)
  * @created Nov/13/2019
- * @param p_username
+ * @param p_id ks_users.id
  */
 procedure notify_reset_pwd_done (
     p_id in ks_users.id%type
@@ -386,6 +429,7 @@ begin
     p_id => p_id
    ,p_substrings => l_substrings
   );
+  fetch_app_links(l_substrings);
 
   send_email (
      p_to => l_substrings('USER_EMAIL')
@@ -406,6 +450,10 @@ exception
     ks_log.log('Unhandled Exception', l_scope);
     raise;
 end notify_reset_pwd_done;
+
+
+
+
 
 end ks_notification_api;
 /
