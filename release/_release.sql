@@ -112,8 +112,11 @@ delete from ks_parameters where name_key in ('SERVER_URL');
 insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'SERVER_URL', 'https://apex.oracle.com/pls/apex/f?p=', 'Server URL');
 
 delete from ks_parameters where name_key in ('LOAD_NOTIFICATION_TEMPLATE');
-insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'LOAD_NOTIFICATION_TEMPLATE', 'SESSION_LOAD', 'Email template for load notifications');
+insert into ks_parameters(category, name_key, value, description) values ('Notifications', 'LOAD_NOTIFICATION_TEMPLATE', 'SESSION_LOAD', 'Name of email template for load notifications');
 
+
+insert into ks_parameters (category,name_key,value,description) values ('Notifications','RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE','RESET_PASSWORD_DONE_NOTIFICATION','Name of email template for when a reset password is executed');
+insert into ks_parameters (category,name_key,value,description) values ('Notifications','RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE','RESET_PASSWORD_REQUEST_NOTIFICATION','Name of email template for reset password request notifications');
 
 
 update ks_roles
