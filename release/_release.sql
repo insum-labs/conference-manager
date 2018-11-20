@@ -89,6 +89,7 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 @../plsql/ks_session_api.plb
 
 -- #16
+@../plsql/ks_session_load_api.pls
 @../plsql/ks_session_load_api.plb
 
 -- #6, #13
