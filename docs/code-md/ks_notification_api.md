@@ -7,6 +7,8 @@
 
 
 - [REPLACE_SUBSTR_TEMPLATE Function](#replace_substr_template)
+- [FETCH_USER_SUBSTITIONS Procedure](#fetch_user_substitions)
+- [FETCH_COMMON_LINKS Procedure](#fetch_common_links)
 - [SEND_EMAIL Procedure](#send_email)
 - [NOTIFY_TRACK_SESSION_LOAD Procedure](#notify_track_session_load)
 - [NOTIFY_RESET_PWD_REQUEST Procedure](#notify_reset_pwd_request)
@@ -56,11 +58,67 @@ Name | Description
 
 
  
+## FETCH_USER_SUBSTITIONS Procedure<a name="fetch_user_substitions"></a>
+
+
+<p>
+<p>Populate all the substrings available for a given user so they can be used in<br />a template</p>
+</p>
+
+### Syntax
+```plsql
+procedure fetch_user_substitions (
+  p_id in ks_users.id%type
+ ,p_substrings in out nocopy t_WordList
+)
+```
+
+### Parameters
+Name | Description
+--- | ---
+`p_id` | <code>ks_users.id</code>
+`p_substrings` | <code>t_WordList</code>
+ 
+ 
+
+
+
+
+
+ 
+## FETCH_COMMON_LINKS Procedure<a name="fetch_common_links"></a>
+
+
+<p>
+<p>Fetch common substitution strings that can be used on a template.</p><ul>
+<li>VOTING_APP_LINK</li>
+<li>ADMIN_APP_LINK</li>
+</ul>
+
+</p>
+
+### Syntax
+```plsql
+procedure fetch_common_links(p_substrings in out nocopy t_WordList)
+```
+
+### Parameters
+Name | Description
+--- | ---
+`x_result_status` | 
+ 
+ 
+
+
+
+
+
+ 
 ## SEND_EMAIL Procedure<a name="send_email"></a>
 
 
 <p>
-<p>Get ready all the parameters to notify by email.<br />If the procedure receives a template name the p_body and p_body_html are ignored and only the template is used.<br />The p_substrings values will be used to merge with the template.<br />Leave p_template_name empty to use the p_body and p_body_html parameters.<br />If p_to, p_cc and p_bcc are null, the procedure exists.</p>
+<p>Get ready all the parameters to notify by email.<br />If the procedure receives a template name (in <code>p_template_name</code>) then the <code>p_body</code><br />and <code>p_body_html</code> parameters are ignored and only the template is used.<br />If present, the <code>p_substrings</code> &quot;word list&quot; values will be used to merge with the template.<br />Leave <code>p_template_name</code> empty to use the <code>p_body</code> and <code>p_body_html</code> parameters.<br />If all three destination <code>p_to</code>, <code>p_cc</code> and <code>p_bcc</code> are null, the procedure<br />exits without error.</p>
 </p>
 
 ### Syntax
@@ -81,7 +139,7 @@ procedure send_email (
 ### Parameters
 Name | Description
 --- | ---
-`` | 
+`p_template_name` | optional template name as seen on <code>ks_email_templates</code>
  
  
 
@@ -94,7 +152,7 @@ Name | Description
 
 
 <p>
-<p>Notify the users of the tracks marked during the Load Session wizard.</p>
+<p>Notify users of newly loaded sessions. The loaded sessions are found in <code>ks_session_load_coll_v</code><br />Only the users for the tracks marked during the Load Session Wizard (<code>ks_session_load_coll_v.notify_ind</code>) will be notified.</p>
 </p>
 
 ### Syntax
@@ -108,8 +166,8 @@ procedure notify_track_session_load (
 ### Parameters
 Name | Description
 --- | ---
-`p_notify_owner` | 
-`p_notify_voter` | 
+`p_notify_owner` | Notify &quot;Track Owners&quot;, ie Track Leads (OWNER) and Track Observers (VIEWER). Those where <code>selection_role_code is not null</code>
+`p_notify_voter` | Notify &quot;Voters&quot;: those where <code>voting_role_code is not null</code>
  
  
 
@@ -122,7 +180,7 @@ Name | Description
 
 
 <p>
-<p>Send a notification of type Password Reset Request </p>
+<p>Send a user an email/notification with their new temporary password after a<br />&quot;Reset Password&quot; (by an Admin) or a &quot;Forgot Password&quot; action (by a user)<br />The text of the email is defined by the template mentioned in the<br /><code>RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE</code> system parameter </p>
 </p>
 
 ### Syntax
@@ -152,7 +210,7 @@ Name | Description
 
 
 <p>
-<p>Send a notification of type Password Reset Done to the user</p>
+<p>Notify a user after their password has been successfully changed (Reset Password)<br />The text of the email is defined by the template mentioned in the<br /><code>RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE</code> system parameter </p>
 </p>
 
 ### Syntax
@@ -165,7 +223,7 @@ procedure notify_reset_pwd_done (
 ### Parameters
 Name | Description
 --- | ---
-`p_username` | 
+`p_id` | ks_users.id
  
  
 

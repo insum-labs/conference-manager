@@ -303,6 +303,112 @@ return clob</code></pre>
                 </div>
             </section>
                <!-- Don't show private methods-->
+            <section id="FETCH_USER_SUBSTITIONS" data-magellan-target="FETCH_USER_SUBSTITIONS">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    FETCH_USER_SUBSTITIONS
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 10, 2018</small></h5>
+                <div class="description lead">
+                    <p>Populate all the substrings available for a given user so they can be used in<br />a template</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure fetch_user_substitions (
+  p_id in ks_users.id%type
+ ,p_substrings in out nocopy t_WordList
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_id</kbd> <code>ks_users.id</code></li>
+                                    <li><strong>@param </strong><kbd>p_substrings</kbd> <code>t_WordList</code></li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="FETCH_COMMON_LINKS" data-magellan-target="FETCH_COMMON_LINKS">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    FETCH_COMMON_LINKS
+                </h3>
+                <h5 class="text-right"><small>Created by Jorge Rimblas on November 19, 2018</small></h5>
+                <div class="description lead">
+                    <p>Fetch common substitution strings that can be used on a template.</p><ul>
+<li>VOTING_APP_LINK</li>
+<li>ADMIN_APP_LINK</li>
+</ul>
+
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure fetch_common_links(p_substrings in out nocopy t_WordList)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>x_result_status</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
             <section id="SEND_EMAIL" data-magellan-target="SEND_EMAIL">
                 <h3>
                     <span class="info label">Procedure</span>
@@ -310,7 +416,7 @@ return clob</code></pre>
                 </h3>
                 <h5 class="text-right"><small>Created by Juan Wall on November 6, 2018</small></h5>
                 <div class="description lead">
-                    <p>Get ready all the parameters to notify by email.<br />If the procedure receives a template name the p_body and p_body_html are ignored and only the template is used.<br />The p_substrings values will be used to merge with the template.<br />Leave p_template_name empty to use the p_body and p_body_html parameters.<br />If p_to, p_cc and p_bcc are null, the procedure exists.</p>
+                    <p>Get ready all the parameters to notify by email.<br />If the procedure receives a template name (in <code>p_template_name</code>) then the <code>p_body</code><br />and <code>p_body_html</code> parameters are ignored and only the template is used.<br />If present, the <code>p_substrings</code> &quot;word list&quot; values will be used to merge with the template.<br />Leave <code>p_template_name</code> empty to use the <code>p_body</code> and <code>p_body_html</code> parameters.<br />If all three destination <code>p_to</code>, <code>p_cc</code> and <code>p_bcc</code> are null, the procedure<br />exits without error.</p>
                 </div>
 
                 <div class="section-container code auto">
@@ -338,7 +444,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@param </strong><kbd></kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_template_name</kbd> optional template name as seen on <code>ks_email_templates</code></li>
  
                                 </ul>
                             </div>
@@ -354,7 +460,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
                                 </ul>
                             </div>
                         </div>
@@ -407,7 +513,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
                                 </ul>
                             </div>
                         </div>
@@ -422,7 +528,7 @@ return clob</code></pre>
                 </h3>
                 <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/08/2019</small></h5>
                 <div class="description lead">
-                    <p>Send a notification of type Password Reset Request </p>
+                    <p>Send a user an email/notification with their new temporary password after a<br />&quot;Reset Password&quot; (by an Admin) or a &quot;Forgot Password&quot; action (by a user)<br />The text of the email is defined by the template mentioned in the<br /><code>RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE</code> system parameter </p>
                 </div>
 
                 <div class="section-container code auto">
@@ -477,7 +583,7 @@ return clob</code></pre>
                 </h3>
                 <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/13/2019</small></h5>
                 <div class="description lead">
-                    <p>Send a notification of type Password Reset Done to the user</p>
+                    <p>Notify a user after their password has been successfully changed (Reset Password)<br />The text of the email is defined by the template mentioned in the<br /><code>RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE</code> system parameter </p>
                 </div>
 
                 <div class="section-container code auto">
@@ -497,7 +603,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_id</kbd> ks_users.id</li>
  
                                 </ul>
                             </div>
@@ -531,6 +637,10 @@ return clob</code></pre>
                 <ul class="vertical menu" data-magellan>
                       <!-- Don't show private methods-->
                     <li><a href="#REPLACE_SUBSTR_TEMPLATE">REPLACE_SUBSTR_TEMPLATE</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#FETCH_USER_SUBSTITIONS">FETCH_USER_SUBSTITIONS</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#FETCH_COMMON_LINKS">FETCH_COMMON_LINKS</a></li>
                        <!-- Don't show private methods-->
                     <li><a href="#SEND_EMAIL">SEND_EMAIL</a></li>
                        <!-- Don't show private methods-->
