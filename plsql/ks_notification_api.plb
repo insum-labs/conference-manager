@@ -124,8 +124,9 @@ end fetch_user_substitions;
 
 
 /**
- * Fetch the application links into their tokens: VOTING_APP_LINK and ADMIN_APP_LINK
- * These values can be used in an email template
+ * Fetch common substitution strings that can be used on a template.
+ *   * VOTING_APP_LINK
+ *   * ADMIN_APP_LINK
  *
  *
  * @example
@@ -137,9 +138,9 @@ end fetch_user_substitions;
  * @param x_result_status
  * @return
  */
-procedure fetch_app_links(p_substrings in out nocopy t_WordList)
+procedure fetch_common_links(p_substrings in out nocopy t_WordList)
 is
-  l_scope  ks_log.scope := gc_scope_prefix || 'fetch_app_links';
+  l_scope  ks_log.scope := gc_scope_prefix || 'fetch_common_links';
 begin
   ks_log.log('BEGIN', l_scope);
 
@@ -147,7 +148,7 @@ begin
   p_substrings('ADMIN_APP_LINK') := ks_util.get_param('SERVER_URL') || ks_util.get_param('ADMIN_APP_ID');
 
   ks_log.log('END', l_scope);
-end fetch_app_links;
+end fetch_common_links;
 
 
 
@@ -260,7 +261,7 @@ begin
   l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
   l_template_name := ks_util.get_param('LOAD_NOTIFICATION_TEMPLATE');
 
-  fetch_app_links(l_substrings);
+  fetch_common_links(l_substrings);
 
   for rec in (
     with user_emails as (
@@ -364,7 +365,7 @@ begin
     p_id => p_id
    ,p_substrings => l_substrings
   );
-  fetch_app_links(l_substrings);
+  fetch_common_links(l_substrings);
 
   l_substrings('TEMP_PASSWORD') := p_password;
 
@@ -429,7 +430,7 @@ begin
     p_id => p_id
    ,p_substrings => l_substrings
   );
-  fetch_app_links(l_substrings);
+  fetch_common_links(l_substrings);
 
   send_email (
      p_to => l_substrings('USER_EMAIL')
