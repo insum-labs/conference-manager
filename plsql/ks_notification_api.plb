@@ -183,7 +183,8 @@ end send_email;
 
 /**
  * 
- * Notify the users of the tracks marked during the Load Session wizard.
+ * Notify users of newly loaded sessions. The loaded sessions are found in `ks_session_load_coll_v`
+ * Only the users for the tracks marked during the Load Session Wizard (`ks_session_load_coll_v.notify_ind`) will be notified.
  *
  * @example
  * 
@@ -191,8 +192,8 @@ end send_email;
  *
  * @author Juan Wall (Insum Solutions)
  * @created Nov/08/2019
- * @param p_notify_owner
- * @param p_notify_voter
+ * @param p_notify_owner Notify "Track Owners", ie Track Leads (OWNER) and Track Observers (VIEWER). Those where `selection_role_code is not null`
+ * @param p_notify_voter Notify "Voters": those where `voting_role_code is not null`
  */
 procedure notify_track_session_load (
     p_notify_owner in varchar2

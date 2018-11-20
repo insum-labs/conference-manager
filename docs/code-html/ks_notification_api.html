@@ -369,7 +369,7 @@ return clob</code></pre>
                 </h3>
                 <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/08/2019</small></h5>
                 <div class="description lead">
-                    <p>Notify the users of the tracks marked during the Load Session wizard.</p>
+                    <p>Notify users of newly loaded sessions. The loaded sessions are found in <code>ks_session_load_coll_v</code><br />Only the users for the tracks marked during the Load Session Wizard (<code>ks_session_load_coll_v.notify_ind</code>) will be notified.</p>
                 </div>
 
                 <div class="section-container code auto">
@@ -390,8 +390,8 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@param </strong><kbd>p_notify_owner</kbd> </li>
-                                    <li><strong>@param </strong><kbd>p_notify_voter</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_notify_owner</kbd> Notify &quot;Track Owners&quot;, ie Track Leads (OWNER) and Track Observers (VIEWER). Those where <code>selection_role_code is not null</code></li>
+                                    <li><strong>@param </strong><kbd>p_notify_voter</kbd> Notify &quot;Voters&quot;: those where <code>voting_role_code is not null</code></li>
  
                                 </ul>
                             </div>
@@ -462,7 +462,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
                                 </ul>
                             </div>
                         </div>
@@ -513,7 +513,7 @@ return clob</code></pre>
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
                                 </ul>
                             </div>
                         </div>
