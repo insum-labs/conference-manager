@@ -50,23 +50,33 @@ alter table ks_session_votes add decline_vote_flag varchar2(1);
 comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstains form voting on a session.';
 
 
--- *** Objects ***
--- #3
-@../install/ks_event_admins.sql
-@../install/ks_email_templates.sql
+-- *** Views ***
 
+-- #3
+@../views/ks_users_v.sql
 
 @../views/ks_events_tracks_v.sql
 @../views/ks_events_sec_v.sql
 @../views/ks_events_allowed_v.sql
+
+-- #16
 @../views/ks_session_load_coll_v.sql
+
+-- #32 
+@../views/ks_sessions_v.sql
+
+
+
+-- *** Objects ***
+-- #3
+@../install/ks_event_admins.sql
+@../install/ks_email_templates.sql
 
 -- Added ks_log calls
 @../plsql/ks_tags_api.plb
 
 -- #4
 @../plsql/ks_error_handler.plb
-
 
 -- #1, #22, #20
 @../plsql/ks_session_api.pls
@@ -80,6 +90,18 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 @../plsql/ks_email_api.plb
 @../plsql/ks_notification_api.pls
 @../plsql/ks_notification_api.plb
+
+-- #13
+@../plsql/ks_email_api.pls
+@../plsql/ks_email_api.pls
+@../plsql/ks_notification_api.pls
+@../plsql/ks_notification_api.plb
+@../plsql/ks_sec.pls
+@../plsql/ks_sec.plb
+
+-- #32 
+@../plsql/ks_session_api.pls
+@../plsql/ks_session_api.plb
 
 
 -- *** DML ***

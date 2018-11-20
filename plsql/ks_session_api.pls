@@ -44,6 +44,12 @@ function is_session_owner (
  ,p_user in varchar2
 )
 return varchar2;
-  
+
+
+function parse_video_link (
+  p_video_link in ks_sessions.video_link%type
+)
+return varchar2;
+
 end ks_session_api;
 /

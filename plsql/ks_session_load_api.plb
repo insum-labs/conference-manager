@@ -630,7 +630,6 @@ end init_index_map;
 
 
 /**
- * Description
  * Load data from xlsx into appropriate collection for parsing. All data is
  * loaded to into the session APP_USER
  *
@@ -978,7 +977,6 @@ end load_xlsx_data;
 
 
 /**
- * Description
  *
  *
  * @example
