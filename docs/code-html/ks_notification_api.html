@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONFERENCE MANAGER - KS_LOG</title>
+    <title>CONFERENCE MANAGER - KS_NOTIFICATION_API</title>
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
     <!-- Prism CSS -->
@@ -194,8 +194,8 @@
                     <li class=""><a href="ks_api.html">KS_API</a></li>
                     <li class=""><a href="ks_email_api.html">KS_EMAIL_API</a></li>
                     <li class=""><a href="ks_error_handler.html">KS_ERROR_HANDLER</a></li>
-                    <li class="active"><a href="ks_log.html">KS_LOG</a></li>
-                    <li class=""><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
+                    <li class=""><a href="ks_log.html">KS_LOG</a></li>
+                    <li class="active"><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
                     <li class=""><a href="ks_sec.html">KS_SEC</a></li>
                     <li class=""><a href="ks_session_api.html">KS_SESSION_API</a></li>
                     <li class=""><a href="ks_session_load_api.html">KS_SESSION_LOAD_API</a></li>
@@ -214,7 +214,7 @@
 
             <!-- Main comment -->
             <section>
-                <h3>ks_log</h3>
+                <h3>ks_notification_api</h3>
                 <p class="lead">No global description.</p>
             </section>
             <!-- /Main comment -->
@@ -250,21 +250,25 @@
             <!-- /Exceptions -->
 
               <!-- Don't show private methods-->
-            <section id="LOG" data-magellan-target="LOG">
+            <section id="REPLACE_SUBSTR_TEMPLATE" data-magellan-target="REPLACE_SUBSTR_TEMPLATE">
                 <h3>
-                    <span class="info label">Procedure</span>
-                    LOG
+                    <span class="info label">Function</span>
+                    REPLACE_SUBSTR_TEMPLATE
                 </h3>
-                <h5 class="text-right"><small>Created by Jorge Rimblas on October 11, 2017</small></h5>
+                <h5 class="text-right"><small>Created by Juan Wall on November 6, 2018</small></h5>
                 <div class="description lead">
-                    <p>Description</p>
+                    <p>Get ready all the parameters to notify by email.</p>
                 </div>
 
                 <div class="section-container code auto">
                     <div class="section active" style="padding-top: 26px;">
                         <h4 class="title">Syntax</h4>
                         <div class="content">
-                            <pre class="language-sql"><code class="language-sql">procedure log(p_msg in varchar2, p_scope  in varchar2)</code></pre>
+                            <pre class="language-sql"><code class="language-sql">function replace_substr_template (
+   p_template_name in varchar2
+  ,p_substrings in t_WordList default g_blank_sub_strings
+)
+return clob</code></pre>
                         </div>
                     </div>
                 </div>
@@ -298,6 +302,224 @@
                     </div>
                 </div>
             </section>
+               <!-- Don't show private methods-->
+            <section id="SEND_EMAIL" data-magellan-target="SEND_EMAIL">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    SEND_EMAIL
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 6, 2018</small></h5>
+                <div class="description lead">
+                    <p>Get ready all the parameters to notify by email.<br />If the procedure receives a template name the p_body and p_body_html are ignored and only the template is used.<br />The p_substrings values will be used to merge with the template.<br />Leave p_template_name empty to use the p_body and p_body_html parameters.<br />If p_to, p_cc and p_bcc are null, the procedure exists.</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure send_email (
+   p_to in varchar2 default null
+  ,p_from in varchar2
+  ,p_cc in varchar2 default null
+  ,p_bcc in varchar2 default null
+  ,p_subject in varchar2
+  ,p_body in clob
+  ,p_body_html in clob default null
+  ,p_template_name in varchar2 default null
+  ,p_substrings in t_WordList default g_blank_sub_strings
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd></kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="NOTIFY_TRACK_SESSION_LOAD" data-magellan-target="NOTIFY_TRACK_SESSION_LOAD">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    NOTIFY_TRACK_SESSION_LOAD
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/08/2019</small></h5>
+                <div class="description lead">
+                    <p>Notify users of newly loaded sessions. The loaded sessions are found in <code>ks_session_load_coll_v</code><br />Only the users for the tracks marked during the Load Session Wizard (<code>ks_session_load_coll_v.notify_ind</code>) will be notified.</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure notify_track_session_load (
+    p_notify_owner in varchar2
+  , p_notify_voter in varchar2
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_notify_owner</kbd> Notify &quot;Track Owners&quot;, ie Track Leads (OWNER) and Track Observers (VIEWER). Those where <code>selection_role_code is not null</code></li>
+                                    <li><strong>@param </strong><kbd>p_notify_voter</kbd> Notify &quot;Voters&quot;: those where <code>voting_role_code is not null</code></li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="NOTIFY_RESET_PWD_REQUEST" data-magellan-target="NOTIFY_RESET_PWD_REQUEST">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    NOTIFY_RESET_PWD_REQUEST
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/08/2019</small></h5>
+                <div class="description lead">
+                    <p>Send a notification of type Password Reset Request </p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure notify_reset_pwd_request (
+    p_id in ks_users.id%type
+   ,p_password in ks_users.password%type
+   ,p_app_id in ks_parameters.value%type
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_password</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_app_id</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="NOTIFY_RESET_PWD_DONE" data-magellan-target="NOTIFY_RESET_PWD_DONE">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    NOTIFY_RESET_PWD_DONE
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/13/2019</small></h5>
+                <div class="description lead">
+                    <p>Send a notification of type Password Reset Done to the user</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure notify_reset_pwd_done (
+    p_id in ks_users.id%type
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
               
         </div>
         <!-- /Main Content -->
@@ -308,7 +530,15 @@
                 <h3>Content</h3>
                 <ul class="vertical menu" data-magellan>
                       <!-- Don't show private methods-->
-                    <li><a href="#LOG">LOG</a></li>
+                    <li><a href="#REPLACE_SUBSTR_TEMPLATE">REPLACE_SUBSTR_TEMPLATE</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#SEND_EMAIL">SEND_EMAIL</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#NOTIFY_TRACK_SESSION_LOAD">NOTIFY_TRACK_SESSION_LOAD</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#NOTIFY_RESET_PWD_REQUEST">NOTIFY_RESET_PWD_REQUEST</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#NOTIFY_RESET_PWD_DONE">NOTIFY_RESET_PWD_DONE</a></li>
                       
                 </ul>
             </nav>

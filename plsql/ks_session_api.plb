@@ -23,7 +23,6 @@ gc_parameter_tokens_name constant ks_parameters.name_key%type := 'ANONYMIZE_EXTR
 
 ------------------------------------------------------------------------------
 /**
- * Description
  *  Output of the form:
  *    apex_json.open_object;
  *    apex_json.write('presenter', p_presenter);
@@ -206,12 +205,11 @@ end  html_whitelist_tokenize;
 
 
 /**
- * Description
- *    Get the following data to allow navigation of the sessions:
- *       - Previous Session Id
- *       - Next Session Id
- *       - Current Row
- *       - Total Row
+ * Get the following data to allow navigation of the sessions:
+ *    - Previous Session ID
+ *    - Next Session ID
+ *    - Current Row
+ *    - Total Row
  *
  * @example
  *
@@ -346,9 +344,10 @@ end  session_id_navigation;
 
 
 /**
- * Description
- *    Given a session and user, indicate if the given user is the presenter or copresenter
- *    of the session.
+ * For a given track session and user, indicate if the given user is the presenter 
+ * or copresenter of the session.
+ * The comparison is done against the ks_users.external_sys_ref which identifies users
+ * in the external system.
  *
  * @example
  *
@@ -361,13 +360,14 @@ end  session_id_navigation;
  */
 function is_session_owner (
   p_session_id in ks_sessions.id%type
- ,p_user in varchar2
+ ,p_username   in varchar2
 )
 return varchar2
 is 
   l_scope ks_log.scope := gc_scope_prefix || 'is_session_owner';
   
   l_return varchar2(1) := 'N';
+
   l_external_sys_ref ks_users.external_sys_ref%type;
   l_presenter_user_id ks_sessions.presenter_user_id%type;
   l_co_presenter_user_id ks_sessions.co_presenter_user_id%type;
@@ -384,10 +384,10 @@ begin
   select u.external_sys_ref
     into l_external_sys_ref
     from ks_users u
-   where u.username = p_user;
+   where u.username = p_username;
 
   if l_external_sys_ref in (l_presenter_user_id, l_co_presenter_user_id) then
-      l_return := 'Y';
+    l_return := 'Y';
   end if;
 
   ks_log.log('END', l_scope);
@@ -402,8 +402,7 @@ end is_session_owner;
 
 
 /**
- * Description
- *    Parse the "video link" text returning a line by link and formatting the link as a html anchor tag when applied.
+ * Parse the "video link" text returning one line per link and formatting the link as an html anchor tag when applied.
  *
  * @example
  *

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CONFERENCE MANAGER - KS_LOG</title>
+    <title>CONFERENCE MANAGER - KS_EMAIL_API</title>
     <!-- Foundation CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.2.4/foundation.min.css">
     <!-- Prism CSS -->
@@ -192,9 +192,9 @@
                 <h3>Files</h3>
                 <ul class="menu vertical">
                     <li class=""><a href="ks_api.html">KS_API</a></li>
-                    <li class=""><a href="ks_email_api.html">KS_EMAIL_API</a></li>
+                    <li class="active"><a href="ks_email_api.html">KS_EMAIL_API</a></li>
                     <li class=""><a href="ks_error_handler.html">KS_ERROR_HANDLER</a></li>
-                    <li class="active"><a href="ks_log.html">KS_LOG</a></li>
+                    <li class=""><a href="ks_log.html">KS_LOG</a></li>
                     <li class=""><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
                     <li class=""><a href="ks_sec.html">KS_SEC</a></li>
                     <li class=""><a href="ks_session_api.html">KS_SESSION_API</a></li>
@@ -214,7 +214,7 @@
 
             <!-- Main comment -->
             <section>
-                <h3>ks_log</h3>
+                <h3>ks_email_api</h3>
                 <p class="lead">No global description.</p>
             </section>
             <!-- /Main comment -->
@@ -232,6 +232,9 @@
                         <h5 class="subheader">gc_scope_prefix</h5>
                         <pre class="language-sql"><code class="language-sql">gc_scope_prefix constant VARCHAR2(31) := lower($$PLSQL_UNIT) || '.';</code></pre>
                         <p class="lead">Standard logger package name</p>
+                        <h5 class="subheader">gc_email_override_key</h5>
+                        <pre class="language-sql"><code class="language-sql">gc_email_override_key constant ks_parameters.name_key%type := 'EMAIL_OVERRIDE';</code></pre>
+                        <p class="lead"></p>
             </section>
             <!-- /Constants -->
 
@@ -250,21 +253,30 @@
             <!-- /Exceptions -->
 
               <!-- Don't show private methods-->
-            <section id="LOG" data-magellan-target="LOG">
+            <section id="SEND" data-magellan-target="SEND">
                 <h3>
                     <span class="info label">Procedure</span>
-                    LOG
+                    SEND
                 </h3>
-                <h5 class="text-right"><small>Created by Jorge Rimblas on October 11, 2017</small></h5>
+                <h5 class="text-right"><small>Created by Juan Wall on November 6, 2018</small></h5>
                 <div class="description lead">
-                    <p>Description</p>
+                    <p>Send an email to the original email accounts or<br />     to the ones specified on email_override on the table ks_parameters.<br />     The parameter &quot;EMAIL_PREFIX&quot; is added to the subject.<br />     If p_to, p_cc and p_bcc are null, the procedure exists.</p>
                 </div>
 
                 <div class="section-container code auto">
                     <div class="section active" style="padding-top: 26px;">
                         <h4 class="title">Syntax</h4>
                         <div class="content">
-                            <pre class="language-sql"><code class="language-sql">procedure log(p_msg in varchar2, p_scope  in varchar2)</code></pre>
+                            <pre class="language-sql"><code class="language-sql">procedure send (
+     p_to in varchar2
+    ,p_cc in varchar2 default null
+    ,p_bcc in varchar2 default null
+    ,p_from in varchar2 default null
+    ,p_replyto in varchar2 default null
+    ,p_subj in varchar2
+    ,p_body in clob
+    ,p_body_html in clob
+)</code></pre>
                         </div>
                     </div>
                 </div>
@@ -275,7 +287,12 @@
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@param </strong><kbd></kbd> </li>
+                                    <li><strong>@param </strong><kbd> p_to
+ p_from
+ p_replyto
+ p_subj
+ p_body
+ p_body_html</kbd> </li>
  
                                 </ul>
                             </div>
@@ -308,7 +325,7 @@
                 <h3>Content</h3>
                 <ul class="vertical menu" data-magellan>
                       <!-- Don't show private methods-->
-                    <li><a href="#LOG">LOG</a></li>
+                    <li><a href="#SEND">SEND</a></li>
                       
                 </ul>
             </nav>

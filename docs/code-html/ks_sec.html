@@ -192,8 +192,10 @@
                 <h3>Files</h3>
                 <ul class="menu vertical">
                     <li class=""><a href="ks_api.html">KS_API</a></li>
+                    <li class=""><a href="ks_email_api.html">KS_EMAIL_API</a></li>
                     <li class=""><a href="ks_error_handler.html">KS_ERROR_HANDLER</a></li>
                     <li class=""><a href="ks_log.html">KS_LOG</a></li>
+                    <li class=""><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
                     <li class="active"><a href="ks_sec.html">KS_SEC</a></li>
                     <li class=""><a href="ks_session_api.html">KS_SESSION_API</a></li>
                     <li class=""><a href="ks_session_load_api.html">KS_SESSION_LOAD_API</a></li>
@@ -230,6 +232,9 @@
                         <h5 class="subheader">gc_scope_prefix</h5>
                         <pre class="language-sql"><code class="language-sql">gc_scope_prefix constant VARCHAR2(31) := lower($$PLSQL_UNIT) || '.';</code></pre>
                         <p class="lead">Standard logger package name</p>
+                        <h5 class="subheader">c_max_attempts</h5>
+                        <pre class="language-sql"><code class="language-sql">c_max_attempts  constant number := 5;</code></pre>
+                        <p class="lead"></p>
             </section>
             <!-- /Constants -->
 
@@ -252,6 +257,116 @@
             <!-- /Exceptions -->
 
               <!-- Don't show private methods-->
+            <section id="IS_INVALID_PASSWORD" data-magellan-target="IS_INVALID_PASSWORD">
+                <h3>
+                    <span class="info label">Function</span>
+                    IS_INVALID_PASSWORD
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 12, 2018</small></h5>
+                <div class="description lead">
+                    <p>Validate if the password respects the format rules</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function is_invalid_password (
+  p_password in ks_users.password%type  
+)
+return boolean</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_password</kbd> </li>
+                                    <br>
+                                    <li><strong>@return </strong><kbd>boolean</kbd></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="PASSWORD_MATCH" data-magellan-target="PASSWORD_MATCH">
+                <h3>
+                    <span class="info label">Function</span>
+                    PASSWORD_MATCH
+                </h3>
+                <h5 class="text-right"><small>Created by Jorge Rimblas on September 2, 2016</small></h5>
+                <div class="description lead">
+                    <p>Check if the given password match with the registered one.</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function password_match (
+  p_username in ks_users.username%type 
+ ,p_password in ks_users.password%type
+)
+return boolean</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_password</kbd> </li>
+                                    <br>
+                                    <li><strong>@return </strong><kbd>boolean</kbd></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>gc_scope_prefix</kdb> Standard logger package name</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
             <section id="IS_VALID_USER" data-magellan-target="IS_VALID_USER">
                 <h3>
                     <span class="info label">Function</span>
@@ -370,6 +485,217 @@
                     </div>
                 </div>
             </section>
+               <!-- Don't show private methods-->
+            <section id="GET_NAME_FROM_USER" data-magellan-target="GET_NAME_FROM_USER">
+                <h3>
+                    <span class="info label">Function</span>
+                    GET_NAME_FROM_USER
+                </h3>
+                <h5 class="text-right"><small>Created by Jorge Rimblas on November 8, 2018</small></h5>
+                <div class="description lead">
+                    <p>Get the name for a given user</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function get_name_from_user(p_username in varchar2) return varchar2</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>name</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="REQUEST_RESET_PASSWORD" data-magellan-target="REQUEST_RESET_PASSWORD">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    REQUEST_RESET_PASSWORD
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 13, 2018</small></h5>
+                <div class="description lead">
+                    <p>Request a Password Reset for the user</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure request_reset_password (
+   p_username in ks_users.username%type
+ , p_app_id in ks_parameters.value%type
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_app_id</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="RESET_PASSWORD" data-magellan-target="RESET_PASSWORD">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    RESET_PASSWORD
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 12, 2018</small></h5>
+                <div class="description lead">
+                    <p>Reset the user&#39;s password</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure reset_password (
+   p_username in ks_users.username%type
+ , p_new_password in ks_users.password%type
+ , p_new_password_2 in ks_users.password%type
+ , p_error_msg out varchar2
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_new_password</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_new_password_2</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_error_msg</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="IS_PASSWORD_EXPIRED" data-magellan-target="IS_PASSWORD_EXPIRED">
+                <h3>
+                    <span class="info label">Function</span>
+                    IS_PASSWORD_EXPIRED
+                </h3>
+                <h5 class="text-right"><small>Created by Jorge Rimblas on November 13, 2018</small></h5>
+                <div class="description lead">
+                    <p>Check if the username&#39;s password is expired</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function is_password_expired (p_username in ks_users.username%type)
+return boolean</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_username</kbd> </li>
+                                    <br>
+                                    <li><strong>@return </strong><kbd>boolean</kbd></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
               
         </div>
         <!-- /Main Content -->
@@ -380,11 +706,23 @@
                 <h3>Content</h3>
                 <ul class="vertical menu" data-magellan>
                       <!-- Don't show private methods-->
+                    <li><a href="#IS_INVALID_PASSWORD">IS_INVALID_PASSWORD</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#PASSWORD_MATCH">PASSWORD_MATCH</a></li>
+                       <!-- Don't show private methods-->
                     <li><a href="#IS_VALID_USER">IS_VALID_USER</a></li>
                        <!-- Don't show private methods-->
                     <li><a href="#PASSWORD_WITH_SALT">PASSWORD_WITH_SALT</a></li>
                        <!-- Don't show private methods-->
                     <li><a href="#POST_LOGIN">POST_LOGIN</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#GET_NAME_FROM_USER">GET_NAME_FROM_USER</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#REQUEST_RESET_PASSWORD">REQUEST_RESET_PASSWORD</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#RESET_PASSWORD">RESET_PASSWORD</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#IS_PASSWORD_EXPIRED">IS_PASSWORD_EXPIRED</a></li>
                       
                 </ul>
             </nav>

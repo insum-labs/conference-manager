@@ -192,8 +192,10 @@
                 <h3>Files</h3>
                 <ul class="menu vertical">
                     <li class=""><a href="ks_api.html">KS_API</a></li>
+                    <li class=""><a href="ks_email_api.html">KS_EMAIL_API</a></li>
                     <li class=""><a href="ks_error_handler.html">KS_ERROR_HANDLER</a></li>
                     <li class=""><a href="ks_log.html">KS_LOG</a></li>
+                    <li class=""><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
                     <li class=""><a href="ks_sec.html">KS_SEC</a></li>
                     <li class=""><a href="ks_session_api.html">KS_SESSION_API</a></li>
                     <li class="active"><a href="ks_session_load_api.html">KS_SESSION_LOAD_API</a></li>
@@ -235,6 +237,9 @@
                         <p class="lead"></p>
                         <h5 class="subheader">c_session_load_table</h5>
                         <pre class="language-sql"><code class="language-sql">c_session_load_table constant varchar2(30) := 'KS_FULL_SESSION_LOAD';</code></pre>
+                        <p class="lead"></p>
+                        <h5 class="subheader">c_loaded_session_coll</h5>
+                        <pre class="language-sql"><code class="language-sql">c_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';</code></pre>
                         <p class="lead"></p>
                         <h5 class="subheader">c_max_errors_to_display</h5>
                         <pre class="language-sql"><code class="language-sql">c_max_errors_to_display constant number := 4;</code></pre>
@@ -304,7 +309,7 @@
                 </h3>
                 <h5 class="text-right"><small>Created by Ben Shumway (Insum Solutions) on Oct/09/2017</small></h5>
                 <div class="description lead">
-                    <p>Description<br />Load data from xlsx into appropriate collection for parsing. All data is<br />loaded to into the session APP_USER</p>
+                    <p>Load data from xlsx into appropriate collection for parsing. All data is<br />loaded to into the session APP_USER</p>
                 </div>
 
                 <div class="section-container code auto">
@@ -341,7 +346,7 @@
                         <div class="content">
                             <div class="tags">
                                 <ul class="no-bullet">
-                                    <li><strong>@issue </strong><kbd>gc_all_clob_columns:</kdb> comma separeted list of columns that are clobs</li>
+                                    <li><strong>@issue </strong><kbd>c_loaded_session_coll:</kdb> Name of the collection created during the load session wizard</li>
                                 </ul>
                             </div>
                         </div>
@@ -356,7 +361,7 @@
                 </h3>
                 <h5 class="text-right"><small>Created by Jorge Rimblas on January 6, 2018</small></h5>
                 <div class="description lead">
-                    <p>Description</p>
+                    
                 </div>
 
                 <div class="section-container code auto">
@@ -474,6 +479,113 @@
                     </div>
                 </div>
             </section>
+               <!-- Don't show private methods-->
+            <section id="CREATE_LOADED_SESSION_COLL" data-magellan-target="CREATE_LOADED_SESSION_COLL">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    CREATE_LOADED_SESSION_COLL
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/07/2019</small></h5>
+                <div class="description lead">
+                    <p>Create collection session loaded having</p><ul>
+<li>The name of the track </li>
+<li>The number of loaded sessions by track</li>
+<li>The checked flag (set Y by default)</li>
+</ul>
+
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure create_loaded_session_coll (
+    p_event_id   in ks_events.id%TYPE
+  , p_username   in varchar2 default v('APP_USER')
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd></kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="TOGGLE_TRACK_NOTIFICATION" data-magellan-target="TOGGLE_TRACK_NOTIFICATION">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    TOGGLE_TRACK_NOTIFICATION
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall (Insum Solutions) on Nov/08/2019</small></h5>
+                <div class="description lead">
+                    <p>Toggle the notification status of a loaded track</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure toggle_track_notification(p_seq_id in number)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_seq_id</kbd> position in the collection</li>
+                                    <li><strong>@param </strong><kbd>p_notification_ind</kbd> Y|N</li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
               
         </div>
         <!-- /Main Content -->
@@ -489,6 +601,10 @@
                     <li><a href="#LOAD_SESSIONS">LOAD_SESSIONS</a></li>
                        <!-- Don't show private methods-->
                     <li><a href="#PURGE_EVENT">PURGE_EVENT</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#CREATE_LOADED_SESSION_COLL">CREATE_LOADED_SESSION_COLL</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#TOGGLE_TRACK_NOTIFICATION">TOGGLE_TRACK_NOTIFICATION</a></li>
                       
                 </ul>
             </nav>
