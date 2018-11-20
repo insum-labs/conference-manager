@@ -15,7 +15,8 @@ Open Source Conference Abstract Voting and Content Selection Apps
 Run the following scripts in order:
 ```
 @release/master_install.sql
-@release/master_release_v2.sql
+@release/master_release_v0200.sql
+@release/master_release_v0300.sql
 ```
 
 
@@ -32,6 +33,10 @@ Install the following APEX apps:
 If you change an App ID you'll want to update the parameters that store those values: 
 
 ```
+begin
+  ks_util.set_param('ADMIN_APP_ID', '83791');
+end;
+/
 begin
   ks_util.set_param('VOTING_APP_ID', '120124');
 end;
