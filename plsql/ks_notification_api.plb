@@ -328,6 +328,7 @@ end notify_track_session_load;
  * 
  * Send a user an email/notification with their new temporary password after a 
  * "Reset Password" (by an Admin) or a "Forgot Password" action (by a user)
+ *
  * The text of the email is defined by the template mentioned in the 
  * `RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE` system parameter 
  *
