@@ -440,9 +440,9 @@ begin
   select  u.id 
   into    l_id
   from    ks_users u
-  where   u.username = upper (p_username);
+  where   u.username = nvl (upper (p_username), '-');
 
-  if p_new_password != p_new_password_2 then
+  if nvl (p_new_password, '-') != nvl (p_new_password_2, '-') then
     p_error_msg := c_not_equal_passwords;
     return;
   end if;
