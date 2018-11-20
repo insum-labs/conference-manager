@@ -11,6 +11,8 @@
 - [LOAD_XLSX_DATA Procedure](#load_xlsx_data)
 - [LOAD_SESSIONS Procedure](#load_sessions)
 - [PURGE_EVENT Procedure](#purge_event)
+- [CREATE_LOADED_SESSION_COLL Procedure](#create_loaded_session_coll)
+- [TOGGLE_TRACK_NOTIFICATION Procedure](#toggle_track_notification)
 
 
 
@@ -33,6 +35,7 @@ Name | Code | Description
 gc_scope_prefix | <pre>gc_scope_prefix      constant varchar2(31) := lower($$PLSQL_UNIT) || '.';</pre> | 
 gc_all_clob_columns | <pre>gc_all_clob_columns  constant varchar2(4000) := 'SESSION_DESCRIPTION';</pre> | 
 c_session_load_table | <pre>c_session_load_table constant varchar2(30) := 'KS_FULL_SESSION_LOAD';</pre> | 
+c_loaded_session_coll | <pre>c_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';</pre> | 
 c_max_errors_to_display | <pre>c_max_errors_to_display constant number := 4;</pre> | 
 
 ## Exceptions<a name="exceptions"></a>
@@ -55,7 +58,7 @@ end | <pre>end load_xlsx_data;</pre> |
 
 
 <p>
-<p>Description<br />Load data from xlsx into appropriate collection for parsing. All data is<br />loaded to into the session APP_USER</p>
+<p>Load data from xlsx into appropriate collection for parsing. All data is<br />loaded to into the session APP_USER</p>
 </p>
 
 ### Syntax
@@ -82,7 +85,7 @@ Name | Description
 
 
 <p>
-<p>Description</p>
+
 </p>
 
 ### Syntax
@@ -142,6 +145,63 @@ Name | Description
 `p_track_id` | id of a specific track.
 `p_votes_only_ind` | to specify that only votes should be deleted.
 `p_force_ind` | to force the execution of the process even when votes                    are present.
+ 
+ 
+
+
+
+
+
+ 
+## CREATE_LOADED_SESSION_COLL Procedure<a name="create_loaded_session_coll"></a>
+
+
+<p>
+<p>Create collection session loaded having</p><ul>
+<li>The name of the track </li>
+<li>The number of loaded sessions by track</li>
+<li>The checked flag (set Y by default)</li>
+</ul>
+
+</p>
+
+### Syntax
+```plsql
+procedure create_loaded_session_coll (
+    p_event_id   in ks_events.id%TYPE
+  , p_username   in varchar2 default v('APP_USER')
+)
+```
+
+### Parameters
+Name | Description
+--- | ---
+`` | 
+ 
+ 
+
+
+
+
+
+ 
+## TOGGLE_TRACK_NOTIFICATION Procedure<a name="toggle_track_notification"></a>
+
+
+<p>
+<p>Toggle the notification status of a loaded track</p>
+</p>
+
+### Syntax
+```plsql
+procedure toggle_track_notification(p_seq_id in number)
+```
+
+### Parameters
+Name | Description
+--- | ---
+`p_seq_id` | position in the collection
+`p_notification_ind` | Y|N
  
  
 

@@ -192,8 +192,10 @@
                 <h3>Files</h3>
                 <ul class="menu vertical">
                     <li class=""><a href="ks_api.html">KS_API</a></li>
+                    <li class=""><a href="ks_email_api.html">KS_EMAIL_API</a></li>
                     <li class=""><a href="ks_error_handler.html">KS_ERROR_HANDLER</a></li>
                     <li class=""><a href="ks_log.html">KS_LOG</a></li>
+                    <li class=""><a href="ks_notification_api.html">KS_NOTIFICATION_API</a></li>
                     <li class=""><a href="ks_sec.html">KS_SEC</a></li>
                     <li class="active"><a href="ks_session_api.html">KS_SESSION_API</a></li>
                     <li class=""><a href="ks_session_load_api.html">KS_SESSION_LOAD_API</a></li>
@@ -264,7 +266,7 @@
                 </h3>
                 <h5 class="text-right"><small>Created by Jorge Rimblas on September 9, 2016</small></h5>
                 <div class="description lead">
-                    <p>Description<br /> Output of the form:<br />   apex_json.open_object;<br />   apex_json.write(&#39;presenter&#39;, p_presenter);<br />   apex_json.write(&#39;trackList&#39;, &#39;<ul><li>Track 1</li></ul>&#39;);<br />   apex_json.close_object;</p>
+                    <p>Output of the form:<br />   apex_json.open_object;<br />   apex_json.write(&#39;presenter&#39;, p_presenter);<br />   apex_json.write(&#39;trackList&#39;, &#39;<ul><li>Track 1</li></ul>&#39;);<br />   apex_json.close_object;</p>
                 </div>
 
                 <div class="section-container code auto">
@@ -365,6 +367,184 @@
                     </div>
                 </div>
             </section>
+               <!-- Don't show private methods-->
+            <section id="SESSION_ID_NAVIGATION" data-magellan-target="SESSION_ID_NAVIGATION">
+                <h3>
+                    <span class="info label">Procedure</span>
+                    SESSION_ID_NAVIGATION
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 1, 2018</small></h5>
+                <div class="description lead">
+                    <p>Get the following data to allow navigation of the sessions:</p><ul>
+<li>Previous Session ID</li>
+<li>Next Session ID</li>
+<li>Current Row</li>
+<li>Total Row</li>
+</ul>
+
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">procedure session_id_navigation (
+   p_id in ks_sessions.id%type
+  ,p_region_static_id in varchar2
+  ,p_page_id in number
+  ,p_previous_id out ks_sessions.event_track_id%type
+  ,p_next_id out ks_sessions.event_track_id%type
+  ,p_total_rows out number
+  ,p_current_row out number
+)</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_id</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_region_static_id</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_page_id</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_previous_id</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_next_id</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_total_rows</kbd> </li>
+                                    <li><strong>@param </strong><kbd>p_current_row</kbd> </li>
+ 
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="IS_SESSION_OWNER" data-magellan-target="IS_SESSION_OWNER">
+                <h3>
+                    <span class="info label">Function</span>
+                    IS_SESSION_OWNER
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 5, 2018</small></h5>
+                <div class="description lead">
+                    <p>For a given track session and user, indicate if the given user is the presenter<br />or copresenter of the session.<br />The comparison is done against the ks_users.external_sys_ref which identifies users<br />in the external system.</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function is_session_owner (
+  p_session_id in ks_sessions.id%type
+ ,p_username   in varchar2
+)
+return varchar2</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_id</kbd> </li>
+                                    <br>
+                                    <li><strong>@return </strong><kbd>&#x27;Y&#x27;,&#x27;N&#x27;</kbd></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+               <!-- Don't show private methods-->
+            <section id="PARSE_VIDEO_LINK" data-magellan-target="PARSE_VIDEO_LINK">
+                <h3>
+                    <span class="info label">Function</span>
+                    PARSE_VIDEO_LINK
+                </h3>
+                <h5 class="text-right"><small>Created by Juan Wall on November 15, 2018</small></h5>
+                <div class="description lead">
+                    <p>Parse the &quot;video link&quot; text returning one line per link and formatting the link as an html anchor tag when applied.</p>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Syntax</h4>
+                        <div class="content">
+                            <pre class="language-sql"><code class="language-sql">function parse_video_link (
+  p_video_link in ks_sessions.video_link%type
+)
+return varchar2</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Parameters</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@param </strong><kbd>p_video_link</kbd> </li>
+                                    <br>
+                                    <li><strong>@return </strong><kbd>parsed text containing the link as a html anchor tag.</kbd></li>
+                                     
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <div class="section-container code auto">
+                    <div class="section active" style="padding-top: 26px;">
+                        <h4 class="title">Related Issues</h4>
+                        <div class="content">
+                            <div class="tags">
+                                <ul class="no-bullet">
+                                    <li><strong>@issue </strong><kbd>&lt;/p&gt;</kdb> </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
               
         </div>
         <!-- /Main Content -->
@@ -378,6 +558,12 @@
                     <li><a href="#PRESENTER_TRACKS_JSON">PRESENTER_TRACKS_JSON</a></li>
                        <!-- Don't show private methods-->
                     <li><a href="#SWITCH_VOTES">SWITCH_VOTES</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#SESSION_ID_NAVIGATION">SESSION_ID_NAVIGATION</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#IS_SESSION_OWNER">IS_SESSION_OWNER</a></li>
+                       <!-- Don't show private methods-->
+                    <li><a href="#PARSE_VIDEO_LINK">PARSE_VIDEO_LINK</a></li>
                       
                 </ul>
             </nav>
