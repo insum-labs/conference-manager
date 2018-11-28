@@ -164,7 +164,9 @@ is
   l_co_presenter ks_sessions.co_presenter%type;
   l_company      ks_sessions.company%type;
 begin
+  $IF $$VERBOSE_OUTPUT $THEN
   ks_log.log('START', l_scope);
+  $END
 
   --The id is usually null when the user's session got reset
   --We don't want to create an ugly error on top of the page already showing errors
@@ -245,37 +247,55 @@ is
   l_res number;
   l_total_rows number;
   l_row_num number;
+  l_alias varchar2(1);
   l_scope ks_log.scope := gc_scope_prefix || 'session_id_navigation';
 
 begin
   ks_log.log('START', l_scope);
 
-    l_report := ks_util.get_ir_report (
-        p_page_id => p_page_id
-      , p_static_id => p_region_static_id
-    );
-            
-    l_sql := l_report.sql_query;  
-    $IF $$VERBOSE_OUTPUT $THEN
-      ks_log.log ('l_sql:' || l_sql, l_scope);
-    $END
+  l_report := ks_util.get_ir_report (
+      p_page_id => p_page_id
+    , p_static_id => p_region_static_id
+  );
+          
+  l_sql := l_report.sql_query;  
+  $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log ('l_sql:' || l_sql, l_scope);
+  $END
 
-    --l_report.sql_query selects the columns indicated on the option "menu Action > Select Columns" from the SQL Query indicated on the App Builder's IR Configuration.
-    --The following line replaces the list of selected columns on l_report.sql_query by all the columns.
-    --Ex: SESSION_NUM is not displayed on the IR, so it is not selected on l_report.sql_query.
-    --Selecting all the columns with r.*, allows to order by any column indicated on the option "menu Action > Data > Sort" even if it is not included on "menu Action > Select Columns".
-    --Also, the total number of rows is calculated at this level.
-    l_sql := 'select count (id) over () as total_rows
-      ,r.*'
-     || substr (l_sql, instr (l_sql, ' from '));
+  $IF wwv_flow_api.c_current >= 20180404 $THEN
+    -- in 18.1 the alias changed from r to i
+    l_alias := 'i';
+  $ELSE
+    l_alias := 'r';
+  $END
 
-    l_order_by := ks_util.get_ir_order_by (p_ir_query => l_sql);
+  --l_report.sql_query selects the columns indicated on the option "menu Action > Select Columns" from the SQL Query indicated on the App Builder's IR Configuration.
+  --The following line replaces the list of selected columns on l_report.sql_query by all the columns.
+  --Ex: SESSION_NUM is not displayed on the IR, so it is not selected on l_report.sql_query.
+  --Selecting all the columns with r.*, allows to order by any column indicated on the option "menu Action > Data > Sort" even if it is not included on "menu Action > Select Columns".
+  --Also, the total number of rows is calculated at this level.
+  l_sql := 'select count (id) over () as total_rows'
+       || ',' || l_alias || '.*'
+       || substr (l_sql, instr (l_sql, ' from '));
 
-    if l_order_by is null then
-      l_order_by := 'order by session_num';
-    end if;
+  l_order_by := ks_util.get_ir_order_by (p_ir_query => l_sql);
+  $IF wwv_flow_api.c_current >= 20180404 $THEN
+  -- in APEX 18.1 the order by construct changed and got an extra wrap ")i"
+  if instr(l_order_by, ')i') > 0 then
+    l_order_by := substr(l_order_by, 1, instr(l_order_by, ')i') -1);
+  end if;
+  $END
 
-    l_sql := 'select  next
+  $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log ('order by:' || l_order_by, l_scope);
+  $END
+
+  if l_order_by is null then
+    l_order_by := 'order by session_num';
+  end if;
+
+  l_sql := 'select next
       ,previous
       ,total_rows
       ,row_num
@@ -287,49 +307,47 @@ begin
         '           , row_number () over ( ' || l_order_by || ') as row_num ' ||
         '   from (' || l_sql || 
         ' ))  where id=:ID';
+
+  $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log ('New l_sql:' || l_sql, l_scope);
+  $END
+
+  l_cur := dbms_sql.open_cursor;
+
+  dbms_sql.parse (l_cur, l_sql, dbms_sql.native);
+
+  for i in 1..l_report.binds.count
+  loop
+    dbms_sql.bind_variable (l_cur, l_report.binds(i).name, l_report.binds(i).value);
     $IF $$VERBOSE_OUTPUT $THEN
-      ks_log.log ('l_sql:' || l_sql, l_scope);
+      ks_log.log (l_report.binds(i).name || ':' || l_report.binds(i).value, l_scope);
     $END
+  end loop;
 
-    l_cur := dbms_sql.open_cursor;
-    $IF $$VERBOSE_OUTPUT $THEN
-      ks_log.log ('l_cur:' || l_cur, l_scope);
-    $END
+  dbms_sql.bind_variable (l_cur, 'ID', p_id);
+  dbms_sql.define_column (l_cur, 1, p_next_id);
+  dbms_sql.define_column (l_cur, 2, p_previous_id);
+  dbms_sql.define_column (l_cur, 3, p_total_rows);
+  dbms_sql.define_column (l_cur, 4, p_current_row);
 
-    dbms_sql.parse (l_cur, l_sql, dbms_sql.native);
+  l_res := dbms_sql.execute(l_cur);
 
-    for i in 1..l_report.binds.count
-    loop
-      dbms_sql.bind_variable (l_cur, l_report.binds(i).name, l_report.binds(i).value);
-      $IF $$VERBOSE_OUTPUT $THEN
-        ks_log.log (l_report.binds(i).name || ':' || l_report.binds(i).value, l_scope);
-      $END
-    end loop;
+  if dbms_sql.fetch_rows (l_cur) > 0 then
+    dbms_sql.column_value (l_cur, 1, p_next_id);
+    dbms_sql.column_value (l_cur, 2, p_previous_id);
+    dbms_sql.column_value (l_cur, 3, p_total_rows);
+    dbms_sql.column_value (l_cur, 4, p_current_row);
+  end if;
 
-    dbms_sql.bind_variable (l_cur, 'ID', p_id);
-    dbms_sql.define_column (l_cur, 1, p_next_id);
-    dbms_sql.define_column (l_cur, 2, p_previous_id);
-    dbms_sql.define_column (l_cur, 3, p_total_rows);
-    dbms_sql.define_column (l_cur, 4, p_current_row);
+  $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('p_next_id:' || p_next_id, l_scope);
+    ks_log.log('p_previous_id:' || p_previous_id, l_scope);
+    ks_log.log('p_total_rows:' || p_total_rows, l_scope);
+    ks_log.log('p_current_row:' || p_current_row, l_scope);
+  $END
 
-    l_res := dbms_sql.execute(l_cur);
-
-    if dbms_sql.fetch_rows (l_cur) > 0 then
-      dbms_sql.column_value (l_cur, 1, p_next_id);
-      dbms_sql.column_value (l_cur, 2, p_previous_id);
-      dbms_sql.column_value (l_cur, 3, p_total_rows);
-      dbms_sql.column_value (l_cur, 4, p_current_row);
-    end if;
-
-    $IF $$VERBOSE_OUTPUT $THEN
-      ks_log.log('p_next_id:' || p_next_id, l_scope);
-      ks_log.log('p_previous_id:' || p_previous_id, l_scope);
-      ks_log.log('p_total_rows:' || p_total_rows, l_scope);
-      ks_log.log('p_current_row:' || p_current_row, l_scope);
-    $END
-
-    dbms_sql.close_cursor (l_cur);
-    ks_log.log('END', l_scope);
+  dbms_sql.close_cursor (l_cur);
+  ks_log.log('END', l_scope);
 exception
   when others then
     if dbms_sql.is_open (l_cur) then
