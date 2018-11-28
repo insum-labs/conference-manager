@@ -27,7 +27,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   15:13 Tuesday November 20, 2018
+--   Date and Time:   17:25 Wednesday November 28, 2018
 --   Exported By:     JRIMBLAS
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -134,7 +134,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181120151312'
+,p_last_upd_yyyymmddhh24miss=>'20181128170044'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -1565,6 +1565,7 @@ wwv_flow_api.create_flow_item(
 wwv_flow_api.create_flow_item(
  p_id=>wwv_flow_api.id(191489746381598571)
 ,p_name=>'G_ADMIN'
+,p_scope=>'GLOBAL'
 ,p_protection_level=>'I'
 ,p_item_comment=>'Identifies Admin users'
 );
