@@ -22,7 +22,7 @@ gc_all_clob_columns  constant varchar2(4000) := 'SESSION_DESCRIPTION';
 c_session_load_table constant varchar2(30) := 'KS_FULL_SESSION_LOAD';
 c_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';
 
-c_max_errors_to_display constant number := 4;
+c_max_errors_to_display constant number := 6;
 
 type column_names_t is varray(4000) of varchar2(4000);
 
@@ -75,7 +75,7 @@ end add_error_check_continue;
 
 
 --==============================================================================
--- Function: add_error_check_continue
+-- Function: check_continue
 -- Purpose: Checks if we've reached the threshold c_max_errors_to_display. If so, then it returns false.
 --
 -- Inputs:  p_message - message to be displayed
@@ -130,12 +130,16 @@ is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_uniqueness';
 
   l_count number;
+  l_username varchar2(60);
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select session_num
       from ks_full_session_load
+     where app_user = l_username
      group by session_num
     having count(*) > 1
   )
@@ -152,6 +156,7 @@ begin
   for row in (
     select external_sys_ref
       from ks_full_session_load
+     where app_user = l_username
      group by external_sys_ref
      having count(*) > 1
   )
@@ -195,14 +200,19 @@ function validate_not_null
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_not_null';
 
+  l_username varchar2(60);
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select title
       from ks_full_session_load
-     where session_num is null
-        or external_sys_ref is null
+     where app_user = l_username
+       and ( session_num is null
+          or external_sys_ref is null
+        )
   )
   loop
     if not add_error_check_continue(
@@ -218,7 +228,8 @@ begin
   for row in (
     select session_num || ':' || title name
       from ks_full_session_load
-     where event_track_id is null
+     where app_user = l_username
+       and event_track_id is null
   )
   loop
     if not add_error_check_continue(
@@ -229,7 +240,6 @@ begin
       return false;
     end if;
   end loop;
-
 
 
   if apex_error.get_error_count > 0
@@ -264,15 +274,18 @@ function validate_new_session(p_into_event_id varchar2)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_new_session';
 
+  l_username varchar2(60);
 begin
-
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select sl.session_num
       from ks_full_session_load sl
          , ks_sessions s
-     where s.session_num = sl.session_num
+     where sl.app_user = l_username
+       and s.session_num = sl.session_num
        and s.event_id = p_into_event_id
   )
   loop
@@ -290,7 +303,8 @@ begin
     select sl.external_sys_ref
       from ks_full_session_load sl
          , ks_sessions s
-     where s.external_sys_ref = sl.external_sys_ref
+     where sl.app_user = l_username
+       and s.external_sys_ref = sl.external_sys_ref
        and s.event_id = p_into_event_id
   )
   loop
@@ -337,15 +351,20 @@ function validate_correct_tracks(p_into_event_id varchar2)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_correct_tracks';
 
+  l_username varchar2(60);
+
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   --First check the track
   -- Sorry, ks_full_session_load.event_track_id is not an ID at all but a name!
   for row in (
     select distinct sl.event_track_id
       from ks_full_session_load sl
-     where event_track_id not in (
+     where sl.app_user = l_username
+       and sl.event_track_id not in (
         select name
           from ks_event_tracks
          where event_id = p_into_event_id

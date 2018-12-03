@@ -106,6 +106,8 @@ comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstai
 
 
 -- *** DML ***
+insert into constraint_lookup (constraint_name,message) values ('KS_USERNAME_U','User already exists.');
+
 delete from ks_parameters where name_key in ('ADMIN_APP_ID');
 insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');
 
