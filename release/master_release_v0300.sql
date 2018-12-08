@@ -3635,10 +3635,10 @@ begin
     l_subject := ' New sessions for: ' || rec.track_name;
 
     send_email (
-       p_to => null
+       p_to => rec.email
       ,p_from => l_from
       ,p_cc => null
-      ,p_bcc => rec.email
+      ,p_bcc => null
       ,p_subject => l_subject 
       ,p_body => null
       ,p_body_html => null
