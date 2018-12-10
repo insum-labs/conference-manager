@@ -27,7 +27,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   17:25 Wednesday November 28, 2018
+--   Date and Time:   13:53 Monday December 10, 2018
 --   Exported By:     JRIMBLAS
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -134,7 +134,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181128170044'
+,p_last_upd_yyyymmddhh24miss=>'20181210135217'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -14823,8 +14823,8 @@ wwv_flow_api.create_page(
 ,p_help_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'Here you can see all the sessions submitted to track. Use the buttons to filter the sessions as needed.<br>',
 'As you open each session, you''ll have a chance to enter an optional comment and register your vote.<br> Selecting a vote value will automatically advance to the next session and save your comment.'))
-,p_last_updated_by=>'JWALL'
-,p_last_upd_yyyymmddhh24miss=>'20181116162652'
+,p_last_updated_by=>'JRIMBLAS'
+,p_last_upd_yyyymmddhh24miss=>'20181210135217'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(192281280895719044)
@@ -14854,7 +14854,7 @@ wwv_flow_api.create_page_plug(
 '     , s.company',
 '     , s.co_presenter',
 '     , s.co_presenter_company',
-'     , decode(s.co_presenter, null, '''', ''fa-check'') co_presenter_flag',
+'     , decode(s.co_presenter, null, '''', ''Y'') co_presenter_flag',
 '     , alls.session_summary_protected session_summary',
 '     , alls.session_abstract_protected session_abstract',
 '     , alls.session_summary_protected session_summary_icon',
@@ -15091,7 +15091,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_display_order=>140
 ,p_column_identifier=>'W'
 ,p_column_label=>'Co?'
-,p_column_html_expression=>'<i class="fa #CO_PRESENTER_FLAG#" title="#CO_PRESENTER#, #CO_PRESENTER_COMPANY#"></i>'
+,p_column_html_expression=>'<i class="fa cfa-check_#CO_PRESENTER_FLAG# cfa-1_5x" title="#CO_PRESENTER#, #CO_PRESENTER_COMPANY#"></i>'
 ,p_column_type=>'STRING'
 ,p_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
 ,p_display_condition=>'G_HIDE_PRESENTER_IND'
