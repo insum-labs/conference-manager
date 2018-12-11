@@ -27,7 +27,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   13:53 Monday December 10, 2018
+--   Date and Time:   14:02 Tuesday December 11, 2018
 --   Exported By:     JRIMBLAS
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -134,7 +134,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181210135217'
+,p_last_upd_yyyymmddhh24miss=>'20181211140159'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -14824,7 +14824,7 @@ wwv_flow_api.create_page(
 'Here you can see all the sessions submitted to track. Use the buttons to filter the sessions as needed.<br>',
 'As you open each session, you''ll have a chance to enter an optional comment and register your vote.<br> Selecting a vote value will automatically advance to the next session and save your comment.'))
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181210135217'
+,p_last_upd_yyyymmddhh24miss=>'20181211140159'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(192281280895719044)
@@ -14860,6 +14860,7 @@ wwv_flow_api.create_page_plug(
 '     , alls.session_summary_protected session_summary_icon',
 '     , alls.session_abstract_protected session_abstract_icon',
 '     , s.session_type',
+'     , s.sub_category',
 '     , s.target_audience',
 '     , s.video_link',
 '     , s.first_video_link',
@@ -15093,6 +15094,7 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_label=>'Co?'
 ,p_column_html_expression=>'<i class="fa cfa-check_#CO_PRESENTER_FLAG# cfa-1_5x" title="#CO_PRESENTER#, #CO_PRESENTER_COMPANY#"></i>'
 ,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
 ,p_display_condition_type=>'VAL_OF_ITEM_IN_COND_EQ_COND2'
 ,p_display_condition=>'G_HIDE_PRESENTER_IND'
 ,p_display_condition2=>'N'
@@ -15120,9 +15122,17 @@ wwv_flow_api.create_worksheet_column(
 ,p_column_type=>'STRING'
 );
 wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(568634787646597747)
+,p_db_column_name=>'SUB_CATEGORY'
+,p_display_order=>180
+,p_column_identifier=>'AF'
+,p_column_label=>'Sub Category'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(193246252499756905)
 ,p_db_column_name=>'TARGET_AUDIENCE'
-,p_display_order=>180
+,p_display_order=>190
 ,p_column_identifier=>'I'
 ,p_column_label=>'Target audience'
 ,p_column_type=>'STRING'
@@ -15130,7 +15140,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(193442585486512034)
 ,p_db_column_name=>'VOTE'
-,p_display_order=>190
+,p_display_order=>200
 ,p_column_identifier=>'O'
 ,p_column_label=>'My Vote'
 ,p_column_html_expression=>'#VOTE#<span class="fa skipped#DECLINE_VOTE_FLAG#"></span>'
@@ -15140,7 +15150,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(100779337788685640)
 ,p_db_column_name=>'VOTE_ID'
-,p_display_order=>200
+,p_display_order=>210
 ,p_column_identifier=>'Q'
 ,p_column_label=>'Vote ID'
 ,p_column_type=>'NUMBER'
@@ -15148,7 +15158,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(566956122019037616)
 ,p_db_column_name=>'DECLINE_VOTE_FLAG'
-,p_display_order=>210
+,p_display_order=>220
 ,p_column_identifier=>'AC'
 ,p_column_label=>'Decline to Vote?'
 ,p_column_html_expression=>'<i class="fa cfa-check_#DECLINE_VOTE_FLAG# cfa-1_5x" title="#DECLINE_VOTE_FLAG#"></i>'
@@ -15158,7 +15168,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(195230008330497401)
 ,p_db_column_name=>'COMMENTS'
-,p_display_order=>220
+,p_display_order=>230
 ,p_column_identifier=>'R'
 ,p_column_label=>'Comments'
 ,p_column_type=>'STRING'
@@ -15166,7 +15176,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(569930561168791010)
 ,p_db_column_name=>'FIRST_VIDEO_LINK'
-,p_display_order=>230
+,p_display_order=>240
 ,p_column_identifier=>'AD'
 ,p_column_label=>'First Video Link'
 ,p_column_type=>'STRING'
@@ -15174,7 +15184,7 @@ wwv_flow_api.create_worksheet_column(
 wwv_flow_api.create_worksheet_column(
  p_id=>wwv_flow_api.id(569930638933791011)
 ,p_db_column_name=>'VIDEO_LINK'
-,p_display_order=>240
+,p_display_order=>250
 ,p_column_identifier=>'AE'
 ,p_column_label=>'Video link'
 ,p_column_type=>'STRING'
@@ -15187,7 +15197,7 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_status=>'PUBLIC'
 ,p_is_default=>'Y'
 ,p_display_rows=>500
-,p_report_columns=>'TITLE:PRESENTER:COMPANY:CO_PRESENTER_FLAG:VIDEO_ICON:SESSION_SUMMARY_ICON:SESSION_ABSTRACT_ICON:VOTE:'
+,p_report_columns=>'TITLE:PRESENTER:COMPANY:CO_PRESENTER_FLAG:VIDEO_ICON:SESSION_SUMMARY_ICON:SESSION_ABSTRACT_ICON:VOTE'
 ,p_sort_column_1=>'SESSION_NUM'
 ,p_sort_direction_1=>'ASC'
 ,p_sort_column_2=>'0'
@@ -15203,7 +15213,7 @@ wwv_flow_api.create_worksheet_rpt(
 ,p_flashback_enabled=>'N'
 );
 wwv_flow_api.create_worksheet_condition(
- p_id=>wwv_flow_api.id(570850133174491689)
+ p_id=>wwv_flow_api.id(576554206938154665)
 ,p_report_id=>wwv_flow_api.id(192714239831786983)
 ,p_name=>'Voted'
 ,p_condition_type=>'HIGHLIGHT'
@@ -15218,7 +15228,7 @@ wwv_flow_api.create_worksheet_condition(
 ,p_row_font_color=>'#FFF'
 );
 wwv_flow_api.create_worksheet_condition(
- p_id=>wwv_flow_api.id(570850525958491690)
+ p_id=>wwv_flow_api.id(576554678082154665)
 ,p_report_id=>wwv_flow_api.id(192714239831786983)
 ,p_name=>'Seen'
 ,p_condition_type=>'HIGHLIGHT'
@@ -15648,6 +15658,9 @@ wwv_flow_api.create_page_computation(
 ,p_compute_when=>'P20_REPORT_TYPE'
 ,p_compute_when_type=>'ITEM_IS_NULL'
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(192725971830984610)
 ,p_name=>'Selected Report Buttons'
@@ -15657,9 +15670,6 @@ wwv_flow_api.create_page_da_event(
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(192726095089984611)
 ,p_event_id=>wwv_flow_api.id(192725971830984610)
