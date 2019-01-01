@@ -27,7 +27,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   14:02 Tuesday December 11, 2018
+--   Date and Time:   12:51 Tuesday January 1, 2019
 --   Exported By:     JRIMBLAS
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -134,7 +134,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181211140159'
+,p_last_upd_yyyymmddhh24miss=>'20190101124928'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -17769,7 +17769,7 @@ wwv_flow_api.create_page(
 ,p_protection_level=>'C'
 ,p_cache_mode=>'NOCACHE'
 ,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181119141246'
+,p_last_upd_yyyymmddhh24miss=>'20190101124928'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(1136568830133659431)
@@ -17800,7 +17800,7 @@ wwv_flow_api.create_page_button(
 wwv_flow_api.create_page_branch(
  p_id=>wwv_flow_api.id(569615340128621877)
 ,p_branch_name=>'No Empty User'
-,p_branch_action=>'f?p=&APP_ID.:101:&SESSION.::&DEBUG.:RP,101::&success_msg=#SUCCESS_MSG#'
+,p_branch_action=>'f?p=&APP_ID.:9999:&SESSION.::&DEBUG.:RP,9999::&success_msg=#SUCCESS_MSG#'
 ,p_branch_point=>'BEFORE_HEADER'
 ,p_branch_type=>'REDIRECT_URL'
 ,p_branch_sequence=>10
