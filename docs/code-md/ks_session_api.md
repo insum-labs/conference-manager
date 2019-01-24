@@ -8,6 +8,9 @@
 
 - [PRESENTER_TRACKS_JSON Procedure](#presenter_tracks_json)
 - [SWITCH_VOTES Procedure](#switch_votes)
+- [SESSION_ID_NAVIGATION Procedure](#session_id_navigation)
+- [IS_SESSION_OWNER Function](#is_session_owner)
+- [PARSE_VIDEO_LINK Function](#parse_video_link)
 
 
 
@@ -32,7 +35,7 @@ gc_parameter_tokens_name | <pre>gc_parameter_tokens_name constant ks_parameters.
 
 
 <p>
-<p>Description<br /> Output of the form:<br />   apex_json.open_object;<br />   apex_json.write(&#39;presenter&#39;, p_presenter);<br />   apex_json.write(&#39;trackList&#39;, &#39;<ul><li>Track 1</li></ul>&#39;);<br />   apex_json.close_object;</p>
+<p>Output of the form:<br />   apex_json.open_object;<br />   apex_json.write(&#39;presenter&#39;, p_presenter);<br />   apex_json.write(&#39;trackList&#39;, &#39;<ul><li>Track 1</li></ul>&#39;);<br />   apex_json.close_object;</p>
 </p>
 
 ### Syntax
@@ -79,6 +82,107 @@ Name | Description
 `p_track_id` | id of a specific track.
 `p_username` | username of the user.
 `p_voting_role` | selected voting role for the user.
+ 
+ 
+
+
+
+
+
+ 
+## SESSION_ID_NAVIGATION Procedure<a name="session_id_navigation"></a>
+
+
+<p>
+<p>Get the following data to allow navigation of the sessions:</p><ul>
+<li>Previous Session ID</li>
+<li>Next Session ID</li>
+<li>Current Row</li>
+<li>Total Row</li>
+</ul>
+
+</p>
+
+### Syntax
+```plsql
+procedure session_id_navigation (
+   p_id in ks_sessions.id%type
+  ,p_region_static_id in varchar2
+  ,p_page_id in number
+  ,p_previous_id out ks_sessions.event_track_id%type
+  ,p_next_id out ks_sessions.event_track_id%type
+  ,p_total_rows out number
+  ,p_current_row out number
+)
+```
+
+### Parameters
+Name | Description
+--- | ---
+`p_id` | 
+`p_region_static_id` | 
+`p_page_id` | 
+`p_previous_id` | 
+`p_next_id` | 
+`p_total_rows` | 
+`p_current_row` | 
+ 
+ 
+
+
+
+
+
+ 
+## IS_SESSION_OWNER Function<a name="is_session_owner"></a>
+
+
+<p>
+<p>For a given track session and user, indicate if the given user is the presenter<br />or copresenter of the session.<br />The comparison is done against the ks_users.external_sys_ref which identifies users<br />in the external system.</p>
+</p>
+
+### Syntax
+```plsql
+function is_session_owner (
+  p_session_id in ks_sessions.id%type
+ ,p_username   in varchar2
+)
+return varchar2
+```
+
+### Parameters
+Name | Description
+--- | ---
+`p_id` | 
+*return* | &#x27;Y&#x27;,&#x27;N&#x27;
+ 
+ 
+
+
+
+
+
+ 
+## PARSE_VIDEO_LINK Function<a name="parse_video_link"></a>
+
+
+<p>
+<p>Parse the &quot;video link&quot; text returning one line per link and formatting the link as an html anchor tag when applied.</p>
+</p>
+
+### Syntax
+```plsql
+function parse_video_link (
+  p_video_link in ks_sessions.video_link%type
+)
+return varchar2
+```
+
+### Parameters
+Name | Description
+--- | ---
+`p_video_link` | 
+*return* | parsed text containing the link as a html anchor tag.
  
  
 

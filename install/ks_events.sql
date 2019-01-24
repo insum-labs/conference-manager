@@ -3,13 +3,14 @@ create table ks_events (
   , name                   varchar2(100) not null
   , alias                  varchar2(32)
   , location               varchar2(200)
+  , event_type             varchar2(20)  not null
   , begin_date             date          not null
   , end_date               date
   , blind_vote_begin_date  date
   , blind_vote_end_date    date
   , committee_vote_begin_date date
   , committee_vote_end_date   date
-  , event_type             varchar2(20) not null
+  , blind_vote_flag        varchar2(1)
   , active_ind             varchar2(1)   not null
   , created_by             varchar2(60) default
                              coalesce(
@@ -34,10 +35,11 @@ comment on table ks_events is 'List of Events (ie. Kscope17, ...)';
 comment on column ks_events.name is 'Event name';
 comment on column ks_events.alias is 'Event short name (if present)';
 comment on column ks_events.location is 'Event location (city, state)';
-comment on column ks_events.blind_vote_begin_date is 'begin date of blind voting';
-comment on column ks_events.blind_vote_end_date is 'end date of blind voting';
+comment on column ks_events.blind_vote_begin_date is 'begin date of Public voting';
+comment on column ks_events.blind_vote_end_date is 'end date of Public voting';
 comment on column ks_events.committee_vote_begin_date is 'begin date of committee voting';
 comment on column ks_events.committee_vote_end_date is 'end date of committee voting';
+comment on column ks_events.blind_vote_flag is 'Indicates that the Public Voting will be "blind"';
 comment on column ks_events.event_type is 'type of event';
 
 comment on column ks_events.active_ind is 'Is the record enabled Y/N?';

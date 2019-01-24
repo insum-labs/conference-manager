@@ -2,6 +2,7 @@ prompt seed constraint_lookup
 
 SET DEFINE OFF;
 delete from constraint_lookup;
+insert into constraint_lookup (constraint_name,message) values ('KS_USERNAME_U','User already exists.');
 insert into constraint_lookup (constraint_name,message) values ('KS_USERS_U01','User already exists.');
 insert into constraint_lookup (constraint_name,message) values ('KS_USERS_U02','Email already exists.');
 insert into constraint_lookup (constraint_name,message) values ('KS_SESSIONS_U01','Session already exists.');

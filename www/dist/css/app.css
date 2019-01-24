@@ -1,3 +1,5 @@
+
+/* Use .page-9999 so only the voting app receives this special icon */
 .app-icon {
     background-image: url(../img/app-icon.svg);
     background-repeat: no-repeat;
@@ -11,11 +13,13 @@
     background-size: cover;
 }
 
-.t-Login-logo {
+.page-20210 .t-Login-logo,
+.page-9999 .t-Login-logo {
     width: 347px;
     height: 73px;
     border-radius: 0;
 }
+
 /*
  Font Awesome Customizations - START
  */
@@ -58,11 +62,15 @@
   content: "\f071";
   color: #CC8024;
 }
+.cfa-note_Y:before {
+  content: "\f075";
+}
 
 /*
  Font Awesome Customizations - END
 */
 
+.delete-btn {color: #e53935;}
 
 /**
  * Static pie charts
@@ -131,13 +139,13 @@
   border-radius: 0 100% 100% 0 / 50%;
   background-color: inherit;
   -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
   -webkit-animation: spin 50s linear infinite, bg 100s step-end infinite;
-          animation: spin 50s linear infinite, bg 100s step-end infinite;
+  animation: spin 50s linear infinite, bg 100s step-end infinite;
   -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+  animation-play-state: paused;
   -webkit-animation-delay: inherit;
-          animation-delay: inherit;
+  animation-delay: inherit;
 }
 
 /* END pie */

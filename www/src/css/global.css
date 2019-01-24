@@ -40,11 +40,15 @@
   content: "\f071";
   color: #CC8024;
 }
+.cfa-note_Y:before {
+  content: "\f075";
+}
 
 /*
  Font Awesome Customizations - END
 */
 
+.delete-btn {color: #e53935;}
 
 /**
  * Static pie charts

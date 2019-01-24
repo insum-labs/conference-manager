@@ -12,17 +12,17 @@ is
 /**
  * @constant gc_scope_prefix: Standard logger package name
  * @constant gc_all_clob_columns: comma separeted list of columns that are clobs
+ * @constant c_loaded_session_coll: Name of the collection created during the load session wizard
  * @column_names_t: is the table type for columns taken from the export file.
  * @c_max_errors_to_display: the maximum number of errors to display to the user.
  * @index_map_t: maps column numbers from the export file to column names in ks_full_session_load
 */
 gc_scope_prefix      constant varchar2(31) := lower($$PLSQL_UNIT) || '.';
-
 gc_all_clob_columns  constant varchar2(4000) := 'SESSION_DESCRIPTION';
-
 c_session_load_table constant varchar2(30) := 'KS_FULL_SESSION_LOAD';
+c_loaded_session_coll constant varchar2 (30) := 'LOADED_SESSIONS';
 
-c_max_errors_to_display constant number := 4;
+c_max_errors_to_display constant number := 6;
 
 type column_names_t is varray(4000) of varchar2(4000);
 
@@ -75,7 +75,7 @@ end add_error_check_continue;
 
 
 --==============================================================================
--- Function: add_error_check_continue
+-- Function: check_continue
 -- Purpose: Checks if we've reached the threshold c_max_errors_to_display. If so, then it returns false.
 --
 -- Inputs:  p_message - message to be displayed
@@ -130,12 +130,16 @@ is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_uniqueness';
 
   l_count number;
+  l_username varchar2(60);
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select session_num
       from ks_full_session_load
+     where app_user = l_username
      group by session_num
     having count(*) > 1
   )
@@ -152,6 +156,7 @@ begin
   for row in (
     select external_sys_ref
       from ks_full_session_load
+     where app_user = l_username
      group by external_sys_ref
      having count(*) > 1
   )
@@ -195,14 +200,19 @@ function validate_not_null
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_not_null';
 
+  l_username varchar2(60);
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select title
       from ks_full_session_load
-     where session_num is null
-        or external_sys_ref is null
+     where app_user = l_username
+       and ( session_num is null
+          or external_sys_ref is null
+        )
   )
   loop
     if not add_error_check_continue(
@@ -218,7 +228,8 @@ begin
   for row in (
     select session_num || ':' || title name
       from ks_full_session_load
-     where event_track_id is null
+     where app_user = l_username
+       and event_track_id is null
   )
   loop
     if not add_error_check_continue(
@@ -229,7 +240,6 @@ begin
       return false;
     end if;
   end loop;
-
 
 
   if apex_error.get_error_count > 0
@@ -264,15 +274,18 @@ function validate_new_session(p_into_event_id varchar2)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_new_session';
 
+  l_username varchar2(60);
 begin
-
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   for row in (
     select sl.session_num
       from ks_full_session_load sl
          , ks_sessions s
-     where s.session_num = sl.session_num
+     where sl.app_user = l_username
+       and s.session_num = sl.session_num
        and s.event_id = p_into_event_id
   )
   loop
@@ -290,7 +303,8 @@ begin
     select sl.external_sys_ref
       from ks_full_session_load sl
          , ks_sessions s
-     where s.external_sys_ref = sl.external_sys_ref
+     where sl.app_user = l_username
+       and s.external_sys_ref = sl.external_sys_ref
        and s.event_id = p_into_event_id
   )
   loop
@@ -337,15 +351,20 @@ function validate_correct_tracks(p_into_event_id varchar2)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'validate_correct_tracks';
 
+  l_username varchar2(60);
+
 begin
   ks_log.log('START', l_scope);
+
+  l_username := v('APP_USER');
 
   --First check the track
   -- Sorry, ks_full_session_load.event_track_id is not an ID at all but a name!
   for row in (
     select distinct sl.event_track_id
       from ks_full_session_load sl
-     where event_track_id not in (
+     where sl.app_user = l_username
+       and sl.event_track_id not in (
         select name
           from ks_event_tracks
          where event_id = p_into_event_id
@@ -446,14 +465,14 @@ end validate_data;
 -- Function: validate_column_names
 -- Purpose: This makes sure that the first row of the .xlsx file contains row names FOR EACH column in ks_session_load (minus event_id, track_id, and app_user)
 --
--- Inputs: l_column_names - varray of column names
+-- Inputs: p_column_names - varray of column names
 -- Output: returns true if valid, false if invalid
 -- Scope: Not  Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/09/2017
 --==============================================================================
-function validate_column_names (l_column_names in column_names_t)
+function validate_column_names (p_column_names in column_names_t)
 return boolean
 is
   l_scope ks_log.scope := 'validate_column_names';
@@ -464,7 +483,7 @@ is
   i number := 0;
   idx varchar2(4000);
 begin
-  --logger.append_param(l_params, 'l_column_names', l_column_names);
+  --logger.append_param(l_params, 'p_column_names', p_column_names);
   ks_log.log('START', l_scope);
 
 
@@ -476,18 +495,18 @@ begin
     l_column_names_dict(row.header) := 'not_matched';
   end loop;
 
-  for i in 1..l_column_names.count
+  for i in 1..p_column_names.count
   loop
-      if not l_column_names_dict.exists(trim(upper(l_column_names(i))))
+      if not l_column_names_dict.exists(trim(upper(p_column_names(i))))
       then
-        if not add_error_check_continue(p_message => 'The column "' || l_column_names(i) || '" does not match any column names specified in the instructions.'
+        if not add_error_check_continue(p_message => 'The column "' || p_column_names(i) || '" does not match any column names specified in the instructions.'
                                      ,  p_display_location => apex_error.c_inline_in_notification
                             )
         then
           return false;
         end if;
       else
-        l_column_names_dict(trim(upper(l_column_names(i)))) := 'matched';
+        l_column_names_dict(trim(upper(p_column_names(i)))) := 'matched';
       end if;
   end loop;
 
@@ -530,14 +549,14 @@ end validate_column_names;
 -- Function: validate_column_order
 -- Purpose: validates that the columns provided in the export file are in the correct order
 --
--- Inputs:  l_column_names - an array of colum names
+-- Inputs:  p_column_names - an array of colum names
 -- Output: returns true if valid, false if invalid
 -- Scope: Not Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes: THIS FUNCTION IS NOT USED - the function works, but turned out to not be useful.
 -- Author: Ben Shumway (Insum Solutions) - Oct/11/2017
 --==============================================================================
-function validate_column_order (l_column_names in column_names_t)
+function validate_column_order (p_column_names in column_names_t)
   return boolean
 is
   l_scope ks_log.scope := 'validate_column_order';
@@ -545,7 +564,7 @@ is
   l_idx number := 1;
   l_columns_in_their_order varchar2(4000);
 begin
-  --logger.append_param(l_params, 'l_column_names', l_column_names);
+  --logger.append_param(l_params, 'p_column_names', p_column_names);
   ks_log.log('START', l_scope);
 
   for row in (select trim(upper(lm.header_name)) header_name,
@@ -557,7 +576,7 @@ begin
             order by lm.display_seq
             )
   loop
-    if l_column_names(row.display_seq) != row.header_name
+    if p_column_names(row.display_seq) != row.header_name
     then
       select listagg(lm.header_name, ', ') within group (order by lm.display_seq) value
         into l_columns_in_their_order
@@ -568,7 +587,7 @@ begin
 
         apex_error.add_error(
                   p_message => 'The columns in the export file are in an incorrect order. The proper order is: ' ||
-                                  l_columns_in_their_order || '. At least this column is out of order: ' || l_column_names(l_idx)
+                                  l_columns_in_their_order || '. At least this column is out of order: ' || p_column_names(l_idx)
                 , p_display_location => apex_error.c_inline_in_notification
               );
       --This is a big error (lots of text), so exit here regardless of number of errors.
@@ -599,7 +618,7 @@ end validate_column_order;
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/11/2017
 --==============================================================================
-procedure init_index_map ( l_index_map in out nocopy index_map_t)
+procedure init_index_map ( p_index_map in out nocopy index_map_t)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'init_index_map';
   --l_params logger.tab_param;
@@ -616,7 +635,7 @@ begin
      order by m.display_seq
   )
   loop
-    l_index_map(to_char(row.display_seq)) := row.to_column_name;
+    p_index_map(to_char(row.display_seq)) := row.to_column_name;
     ks_log.log('mapped: ' || row.display_seq || ' to '  || row.to_column_name, l_scope);
   end loop;
 
@@ -629,9 +648,7 @@ exception
 end init_index_map;
 
 
-
 /**
- * Description
  * Load data from xlsx into appropriate collection for parsing. All data is
  * loaded to into the session APP_USER
  *
@@ -841,6 +858,12 @@ begin
           elsif l_curr_col = 'PRESENTED_BEFORE_WHERE'
           then
             l_rows(l_rows_row).presented_before_where := substr(l_string_val,1,4000);
+          elsif l_curr_col = 'PRESENTED_ANYTHING_IND'
+          then
+            l_rows(l_rows_row).presented_anything_ind := l_string_val;
+          elsif l_curr_col = 'PRESENTED_ANYTHING_WHERE'
+          then
+            l_rows(l_rows_row).presented_anything_where := substr(l_string_val,1,4000);            
           elsif l_curr_col = 'VIDEO_LINK'
           then
             l_rows(l_rows_row).video_link := substr(l_string_val,1,4000);
@@ -909,6 +932,8 @@ begin
         , ace_level
         , presented_before_ind
         , presented_before_where
+        , presented_anything_ind
+        , presented_anything_where
         , video_link
         , co_presenter
         , co_presenter_company
@@ -938,6 +963,8 @@ begin
         , l_rows(i).ace_level
         , l_rows(i).presented_before_ind
         , l_rows(i).presented_before_where
+        , l_rows(i).presented_anything_ind
+        , l_rows(i).presented_anything_where
         , l_rows(i).video_link
         , l_rows(i).co_presenter
         , l_rows(i).co_presenter_company
@@ -958,13 +985,17 @@ begin
       );
 
   ks_log.log('END', l_scope);
+  
+  exception when others
+  then
+    ks_log.log('ERROR', l_scope);
+    raise;
 
 end load_xlsx_data;
 
 
 
 /**
- * Description
  *
  *
  * @example
@@ -1011,6 +1042,8 @@ begin
     , target_audience
     , presented_before_ind
     , presented_before_where
+    , presented_anything_ind
+    , presented_anything_where
     , technology_product
     , ace_level
     , video_link        
@@ -1045,6 +1078,14 @@ begin
           , 'N'
          )
        , s.presented_before_where
+       , decode(trim(lower(s.presented_anything_ind))
+          , null, 'N'
+          , 'n', 'N'
+          , 'yes', 'Y'
+          , 'y', 'Y'
+          , 'N'
+         )
+       , s.presented_anything_where
        , s.technology_product        
        , s.ace_level
        , s.video_link        
@@ -1185,6 +1226,127 @@ begin
       raise_application_error (-20000,'Votes are present. Purge action aborted.');
     
 end purge_event;
+
+
+
+
+/**
+ * Create collection session loaded having
+ *    - The name of the track 
+ *    - The number of loaded sessions by track
+ *    - The checked flag (set Y by default)
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/07/2019
+ * @param 
+ */
+procedure create_loaded_session_coll (
+    p_event_id   in ks_events.id%TYPE
+  , p_username   in varchar2 default v('APP_USER')
+)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'create_loaded_session_coll';
+  l_sql varchar2 (32000);
+  l_param_names apex_application_global.vc_arr2;
+  l_param_values apex_application_global.vc_arr2;
+begin
+  ks_log.log('START', l_scope);
+  
+  l_sql := q'[select e.id track_id
+          ,count(*) session_count
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,null
+          ,s.event_track_id track_name
+          ,'Y' notify_ind
+  from    ks_full_session_load s
+  left    outer join ks_event_tracks e 
+  on      s.event_track_id = e.name 
+  and     e.event_id = :p_event_id
+  where   s.app_user = :p_username
+  group   by s.event_track_id
+         ,e.id]';
+
+  if apex_collection.collection_exists (p_collection_name => c_loaded_session_coll) then 
+    apex_collection.delete_collection (p_collection_name  => c_loaded_session_coll);
+  end if;
+
+  l_param_names(l_param_names.count + 1) := 'p_event_id';
+  l_param_values(l_param_values.count + 1) := p_event_id;
+  
+  l_param_names(l_param_names.count + 1) := 'p_username';
+  l_param_values(l_param_values.count + 1) := p_username;
+
+  apex_collection.create_collection_from_queryb2 (
+    p_collection_name => c_loaded_session_coll
+   ,p_query           => l_sql
+   ,p_names           => l_param_names
+   ,p_values          => l_param_values
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception', l_scope);
+    raise;
+end create_loaded_session_coll;
+
+
+
+/**
+ * Toggle the notification status of a loaded track
+ *
+ * @example
+ * 
+ * @issue
+ *
+ * @author Juan Wall (Insum Solutions)
+ * @created Nov/08/2019
+ * @param p_seq_id position in the collection
+ * @param p_notification_ind Y|N
+ */
+procedure toggle_track_notification(p_seq_id in number)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'toggle_track_notification';
+
+  l_notification_ind varchar2(1);
+
+begin
+  ks_log.log('START', l_scope);
+  ks_log.log('p_seq_id:' || p_seq_id, l_scope);
+  
+  -- Get the new value
+  select decode(notify_ind, 'Y', 'N', 'Y')
+    into l_notification_ind
+    from ks_session_load_coll_v
+   where seq_id = p_seq_id;
+
+  ks_log.log('l_notification_ind:' || l_notification_ind, l_scope);
+
+  apex_collection.update_member_attribute  (
+      p_collection_name => c_loaded_session_coll
+    , p_seq => p_seq_id
+    , p_attr_number => 2
+    , p_attr_value  => l_notification_ind
+  );
+
+  ks_log.log('END', l_scope);
+
+exception
+  when others then
+    ks_log.log('Unhandled Exception:' || sqlerrm, l_scope);
+    raise;
+end toggle_track_notification;
 
 
 
