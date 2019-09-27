@@ -52,6 +52,8 @@ comment on column ks_sessions.presented_before_where is 'Where the presentaton b
 alter table ks_session_votes add decline_vote_flag varchar2(1);
 comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstains form voting on a session.';
 
+create index ks_session_votes_i01 on ks_session_votes(session_id);
+
 
 -- #3
 -- @../install/ks_event_admins.sql
@@ -4479,6 +4481,9 @@ If you''re a Track Lead you can use the Abstract Review App:
 #ADMIN_APP_LINK#
 ');
 
+
+-- New Status
+insert into ks_session_status (display_seq, code, name, active_ind) values (25, 'CANCELED', 'Canceled', 'Y');
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
