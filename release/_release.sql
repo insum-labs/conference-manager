@@ -13,6 +13,12 @@ set define '^'
 @../install/ks_event_communities.sql
 @../install/ks_event_community_tracks.sql
 
+-- #36
+create index ks_users_i01
+  on ks_users(external_sys_ref)
+/
+@../install/ks_event_comp_users.sql
+
 
 -- *** Views ***
 

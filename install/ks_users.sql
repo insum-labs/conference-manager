@@ -36,6 +36,9 @@ create unique index ks_users_u01
 create unique index ks_users_u02
   on ks_users(upper(email))
 /
+create index ks_users_i01
+  on ks_users(external_sys_ref)
+/
 
 comment on table ks_users is 'All users in the system.';
 
