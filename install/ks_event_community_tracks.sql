@@ -24,6 +24,8 @@ create table ks_event_community_tracks (
 enable primary key using index
 /
 
+create unique index ks_event_community_tracks_u01 on ks_event_community_tracks(community_id, track_id);
+
 comment on table ks_event_community_tracks is 'List of tracks in a community';
 
 comment on column ks_event_community_tracks.id is 'Primary Key ID';

@@ -9,6 +9,9 @@ set define '^'
 
 -- *** DDL ***
 
+-- #2
+@../install/ks_event_communities.sql
+@../install/ks_event_community_tracks.sql
 
 
 -- *** Views ***
@@ -20,6 +23,10 @@ set define '^'
 
 
 -- *** DML ***
+
+-- #2
+insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
+insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TRACKS_FK','The community cannot be removed when it has tracks.');
 
 
 
