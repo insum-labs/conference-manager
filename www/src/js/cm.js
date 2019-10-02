@@ -4,6 +4,35 @@ var cm = cm || {};
 
   cm.theme = {
 
+    // expand or collapse Nested Report plugin rows.
+    // The "Expand/Collapse All" header needs
+    // <a href="#0" class="expand-collapse-all" data-state="closed" title="Expand All"><span aria-hidden="true" class="fa fa-plus-square"></span></a>
+    //
+    expandCollapseAll: function(el) {
+      // the context ensures we stay within the report (either IR or Classic)
+      var $context = $(el).parents('.a-IRR-container'),
+          $expandAll;
+      if ($context.length === 0) {
+        // we're not within an IR, so find the classic repor
+        $context = $(el).parents('.t-Report');
+      }
+      $expandAll = $('.expand-collapse-all', $context);
+      if($expandAll.data('state') == 'opened') {
+        $('.pretius--expanded a', $context).click();
+        $expandAll.data('state', 'closed');
+        $expandAll.prop('title', 'Expand All');
+        $expandAll.find('.fa').removeClass().addClass('fa fa-plus-square');    
+      }
+      else {
+        //We are clicking rows that do NOT have a parent with class '.pretius--expanded'
+        //Solution taken from: https://stackoverflow.com/questions/6784741/how-to-select-an-element-which-parent-is-not-specified-class  
+        $('.showChildren', $context).not('.pretius--expanded .showChildren').click();
+        $expandAll.data('state', 'opened');
+        $expandAll.prop('title','Collapse All');  
+        $expandAll.find('.fa').removeClass().addClass('fa fa-minus-square');
+      }
+    },
+
     _irButtons: function() {
       // extend the IR to support a direct RESET
       if (typeof $.apex.interactiveReport === "function") {
