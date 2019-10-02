@@ -33,6 +33,7 @@ create table ks_sessions (
   , presenter_user_id    varchar2(20)
   , co_presenter_user_id varchar2(20)
   , room_size_code       varchar2(20)
+  , ranking              number
   , created_by           varchar2(60) default
                            coalesce(
                               sys_context('APEX$SESSION','app_user')
@@ -64,6 +65,7 @@ comment on column ks_sessions.event_track_id is 'Track this session was submitte
 comment on column ks_sessions.presenter is 'The name of the presenter for this session.';
 comment on column ks_sessions.company is 'The company the presenter works for.';
 comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
+comment on column ks_sessions.ranking is 'Used to specify the rank for a group of sessions.';
 comment on column ks_sessions.presented_before_ind is 'Whether the session has been presented before';
 comment on column ks_sessions.presented_before_where is 'Where the presentaton been done before';
 comment on column ks_sessions.presented_anything_ind is 'Whether the presenter has ever done a live presentation(s), anywhere for anything.';

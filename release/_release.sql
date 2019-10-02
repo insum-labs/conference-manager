@@ -13,6 +13,11 @@ set define '^'
 @../install/ks_event_communities.sql
 @../install/ks_event_community_tracks.sql
 
+-- #42
+alter table ks_sessions add ranking number;
+comment on column ks_sessions.ranking is 'Used to specify the rank for a group of sessions.';
+
+
 -- #36
 create index ks_users_i01
   on ks_users(external_sys_ref)
