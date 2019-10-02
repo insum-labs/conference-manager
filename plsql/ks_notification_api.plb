@@ -511,8 +511,13 @@ exception
     raise;
 end notify_reset_pwd_done;
 
+
+
+
+
+
 /**
- * Procedure used to notify track owners and/or voters when a session is moved between tracks.
+ * Notify track owners and/or voters when a session is moved between tracks.
  *
  * @example
  *
@@ -526,7 +531,7 @@ end notify_reset_pwd_done;
  * @param p_notify_owners_ind when 'Y', the notification will be send to track owners
  * @param p_notify_voters_ind when 'Y', the notification will be send to all voters
  */
-procedure session_moved_between_tracks (
+procedure notify_session_move (
     p_id in ks_sessions.id%type
    ,p_event_track_id in ks_sessions.event_track_id%type
    ,p_old_event_track_id in ks_sessions.event_track_id%type
@@ -534,7 +539,7 @@ procedure session_moved_between_tracks (
    ,p_notify_voters_ind in varchar2
 )
 is
-  l_scope ks_log.scope := gc_scope_prefix || 'session_moved_between_tracks';
+  l_scope ks_log.scope := gc_scope_prefix || 'notify_session_move';
   c_subject_notification constant varchar2(30) := 'Session Moved Between Tracks';
 
   cursor email_list_c
@@ -555,6 +560,8 @@ is
       )
     select listagg ( ue.email,',') within group (order by ue.email desc) as email_list
       from user_emails ue;
+
+
   l_to varchar2(4000);
   l_from ks_parameters.value%type;
   l_subject ks_parameters.value%type;
@@ -611,7 +618,7 @@ begin
     when others then
       ks_log.log('Unhandled Exception ', l_scope);
       raise;
-end session_moved_between_tracks;
+end notify_session_move;
 
 end ks_notification_api;
 /

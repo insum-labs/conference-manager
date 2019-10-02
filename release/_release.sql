@@ -30,6 +30,9 @@ create index ks_users_i01
 
 
 -- *** Objects ***
+-- #35
+@../plsql/ks_notification_api.pls
+@../plsql/ks_notification_api.plb
 
 
 
@@ -41,14 +44,18 @@ insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TR
 
 -- #35
 insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
+
+delete from ks_email_templates where name = 'SESSION_MOVED_BETWEEN_TRACKS';
 insert into ks_email_templates (name, template_text)
  values ('SESSION_MOVED_BETWEEN_TRACKS'
-  , q'{The session <span style="font-style: italic;">"#SESSION_TITLE#"</span> from #SPEAKER# has been moved from <span style="font-style: italic;">#FROM_TRACK#</span> to <span style="font-style: italic;font-weight: bold;">#TO_TRACK#</span>
-  Sub Category : <span style="font-style: italic;">#SUB_CATEGORY#</span>
-  Session Type : <span style="font-style: italic;">#SESSION_TYPE#</span>
+  , q'{The session <i>"#SESSION_TITLE#"</i> from #SPEAKER# has been moved from <i>#FROM_TRACK#</i> to <b>#TO_TRACK#</b>
 
-  All existing votes from <span style="font-style: italic;">#FROM_TRACK#</span> track have been removed.
-  Tags most likely should be revised.}');
+Sub Category : <i>#SUB_CATEGORY#</i>
+Session Type : <i>#SESSION_TYPE#</i>
+
+All existing votes from <i>#FROM_TRACK#</i> track have been removed.
+Tags most likely should be revised.
+}');
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE

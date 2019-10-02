@@ -27,4 +27,13 @@ If the voting period is open go vote at:
 If you''re a Track Lead you can use the Abstract Review App:
 #ADMIN_APP_LINK#
 ');
+insert into ks_email_templates (name, template_text)
+ values ('SESSION_MOVED_BETWEEN_TRACKS'
+  , q'{The session <i>"#SESSION_TITLE#"</i> from #SPEAKER# has been moved from <i>#FROM_TRACK#</i> to <b>#TO_TRACK#</b>
 
+Sub Category : <i>#SUB_CATEGORY#</i>
+Session Type : <i>#SESSION_TYPE#</i>
+
+All existing votes from <i>#FROM_TRACK#</i> track have been removed.
+Tags most likely should be revised.
+}');

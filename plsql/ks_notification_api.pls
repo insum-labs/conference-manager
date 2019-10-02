@@ -40,7 +40,7 @@ procedure notify_reset_pwd_done (
     p_id in ks_users.id%type
 );
 
-procedure session_moved_between_tracks (
+procedure notify_session_move (
     p_id in ks_sessions.id%type
    ,p_event_track_id in ks_sessions.event_track_id%type
    ,p_old_event_track_id in ks_sessions.event_track_id%type
