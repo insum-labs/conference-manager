@@ -25,7 +25,7 @@ procedure send_email (
   ,p_substrings in t_WordList default g_blank_sub_strings
 );
 
-procedure notify_track_session_load (    
+procedure notify_track_session_load (
     p_notify_owner in varchar2
   , p_notify_voter in varchar2
 );
@@ -38,6 +38,14 @@ procedure notify_reset_pwd_request (
 
 procedure notify_reset_pwd_done (
     p_id in ks_users.id%type
+);
+
+procedure session_moved_between_tracks (
+    p_id in ks_sessions.id%type
+   ,p_event_track_id in ks_sessions.event_track_id%type
+   ,p_old_event_track_id in ks_sessions.event_track_id%type
+   ,p_notify_owners_ind in varchar2
+   ,p_notify_voters_ind in varchar2
 );
 
 end ks_notification_api;

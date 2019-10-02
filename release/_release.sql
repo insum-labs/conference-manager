@@ -39,9 +39,18 @@ create index ks_users_i01
 insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
 insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TRACKS_FK','The community cannot be removed when it has tracks.');
 
+-- #35
+insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
+insert into ks_email_templates (name, template_text)
+ values ('SESSION_MOVED_BETWEEN_TRACKS'
+  , q'{The session <span style="font-style: italic;">"#SESSION_TITLE#"</span> from #SPEAKER# has been moved from <span style="font-style: italic;">#FROM_TRACK#</span> to <span style="font-style: italic;font-weight: bold;">#TO_TRACK#</span>
+  Sub Category : <span style="font-style: italic;">#SUB_CATEGORY#</span>
+  Session Type : <span style="font-style: italic;">#SESSION_TYPE#</span>
+
+  All existing votes from <span style="font-style: italic;">#FROM_TRACK#</span> track have been removed.
+  Tags most likely should be revised.}');
 
 
-  
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
 
 
