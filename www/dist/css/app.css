@@ -72,6 +72,8 @@
 
 .delete-btn {color: #e53935;}
 
+.hide {display: none;}
+
 /**
  * Static pie charts
  * http://dabblet.com/gist/66e1e52ac2a44ad87aa4
