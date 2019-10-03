@@ -18,3 +18,5 @@ insert into constraint_lookup (constraint_name,message) values ('KS_EVENTS_EVENT
 -- vvvvvvvvvvvvvvvvvvvvvvvvvvvv --
 insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
 insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TRACKS_FK','The community cannot be removed when it has tracks.');
+insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_FK', 'The track cannot be removed if it is associated with a community.');
+  
