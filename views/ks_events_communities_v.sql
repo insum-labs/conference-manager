@@ -3,7 +3,6 @@ as
   select e.id event_id
        , c.id event_community_id
        , c.name community_name
-       , c.active_ind community_active_ind
        , e.name event_name
        , e.begin_date begin_date
        , e.active_ind event_active_ind
