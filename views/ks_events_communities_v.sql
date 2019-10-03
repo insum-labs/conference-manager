@@ -1,3 +1,4 @@
+PRO ks_events_communities_v
 create or replace force editionable view ks_events_communities_v
 as
   select e.id event_id
@@ -12,4 +13,5 @@ as
             where ct.community_id =  c.id
          ) track_list
   from ks_events e
-  join ks_event_communities c on ( c.event_id = e.id);
+  join ks_event_communities c on ( c.event_id = e.id)
+/
