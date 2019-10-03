@@ -26,8 +26,9 @@ create index ks_users_i01
 
 
 -- *** Views ***
-
-
+-- #2
+@../views/ks_events_communities_v.sql
+@../views/ks_events_communities_tracks_v.sql
 
 -- *** Objects ***
 -- #35
@@ -41,7 +42,7 @@ create index ks_users_i01
 -- #2
 insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
 insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TRACKS_FK','The community cannot be removed when it has tracks.');
-
+insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_FK', 'The track cannot be removed if it is associated with a community.');
 -- #35
 insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
 
@@ -63,4 +64,3 @@ Tags most likely should be revised.
 
 PRO Recompiling objects
 exec dbms_utility.compile_schema(schema => user, compile_all => false);
-
