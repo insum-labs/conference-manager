@@ -11,7 +11,7 @@ is
 --------------------------------------------------------------------------------
 procedure presenter_tracks_json(
     p_event_id  in ks_events.id%TYPE
-  , p_presenter in ks_sessions.presenter%TYPE);
+  , p_presenter_user_id in ks_sessions.presenter_user_id%TYPE);
   
 procedure switch_votes (
 	p_event_id    in ks_sessions.event_id%TYPE
