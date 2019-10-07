@@ -31,12 +31,12 @@ gc_parameter_tokens_name constant ks_parameters.name_key%type := 'ANONYMIZE_EXTR
  *
  * @example
  *
- * @issue
+ * @issue #36 - use presenter_user_id to fetch the list of tracks
  *
  * @author Jorge Rimblas
  * @created September 9, 2016
  * @param p_event_id
- * @param p_presenter
+ * @param p_presenter_user_id
  * @return
  */
 procedure presenter_tracks_json(
@@ -477,7 +477,65 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end parse_video_link;
+/**
+ * The function returns presenter's comp per track - this is identical for all tracks for which the user has submitted sessions.
+ * Assumes that it will be called from within a SQL query, hence no track validation.
+ * 
+ * @example
+ * select presenter
+ *      , ks_session_api.get_presenter_comp (event_id, presenter_user_id) presenter_comp
+ *   from ks_sessions  
+ *  where event_id  = 105
+ *  order by presenter_comp desc;
+ *
+ * @issue #36
+ *
+ * @author Ramona Birsan
+ * @created 7 October 2019
+ * @param p_event_id   
+ * @param p_presenter_user_id
+ * @return number
+ */
+function get_presenter_comp (
+    p_event_id in ks_sessions.event_id%type 
+  , p_presenter_user_id in ks_sessions.presenter_user_id%type 
+) return number
+is 
+  l_scope  ks_log.scope := gc_scope_prefix || 'get_presenter_comp';
+  l_params logger.tab_param;
+  l_presenter_comp number(3,2) := 0;
+begin
+  logger.append_param(l_params, 'p_event_id', p_event_id);
+  logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  ks_log.log ('START', l_scope);
+  
+  -- "distinct event_track_id" is used because we calculate the total number of tracks which have at least one session accepted;
+  with comp_track_records 
+    as (select s.presenter_user_id, count(distinct s.event_track_id) as track_comp
+          from ks_sessions s
+         where s.status_code = 'ACCEPTED' 
+           and s.event_id = p_event_id 
+      group by s.event_track_id, s.presenter_user_id )
+    select round(1/sum (r.track_comp),2) into l_presenter_comp    
+      from comp_track_records r
+  group by r.presenter_user_id
+    having r.presenter_user_id = p_presenter_user_id
+     and not exists ( select cu.user_id
+                        from ks_event_comp_users cu 
+                        join ks_users u on (u.id = cu.user_id)
+                       where cu.event_id = p_event_id
+                         and u.external_sys_ref = p_presenter_user_id);
+                         
+  ks_log.log ('END', l_scope);
+  return l_presenter_comp;
 
+  exception
+    when no_data_found then
+      return l_presenter_comp;
+    when others then
+      ks_log.log_error('Unhandled Exception ', l_scope);
+      raise;
+end get_presenter_comp;
 
 end ks_session_api;
 /

@@ -51,5 +51,10 @@ function parse_video_link (
 )
 return varchar2;
 
+function get_presenter_comp (
+    p_event_id in ks_sessions.event_id%type 
+  , p_presenter_user_id in ks_sessions.presenter_user_id%type 
+) return number;
+
 end ks_session_api;
 /
