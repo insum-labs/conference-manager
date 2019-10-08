@@ -21,6 +21,48 @@ gc_token_exceptions constant varchar2(4000) := 'oracle|apex|epm|and|its|it|of';
 gc_parameter_tokens_name constant ks_parameters.name_key%type := 'ANONYMIZE_EXTRA_TOKENS';
 
 
+/**
+ * Private function, checks if the speaker/presenter is comped, i.e. is added to the list of comped users for the event
+ *
+ * @example
+ *
+ * @issue #36
+ *
+ * @author Ramona Birsan
+ * @created October 8, 2019
+ * @param p_presenter_user_id
+ * @return 1 if speaker/presenter is comped
+ */
+function is_speaker_comped (
+    p_event_id in ks_sessions.event_id%type
+  , p_presenter_user_id in ks_sessions.presenter_user_id%type
+) return number
+is
+  l_scope  ks_log.scope := gc_scope_prefix || 'is_speaker_comped';
+  l_params logger.tab_param; 
+  l_is_comped number(1) := 0;
+begin
+  logger.append_param(l_params, 'p_event_id', p_event_id);
+  logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  ks_log.log('START', l_scope);
+ 
+  select 1 into l_is_comped
+    from ks_event_comp_users cu 
+    join ks_users u on (u.id = cu.user_id)
+   where cu.event_id = p_event_id
+     and u.external_sys_ref = p_presenter_user_id;
+     
+  ks_log.log('END', l_scope);
+  return l_is_comped;
+  
+  exception 
+    when no_data_found then
+      return 0;
+    when others then
+      ks_log.log('Unhandled Exception ', l_scope);
+      raise;
+end is_speaker_comped;
+
 ------------------------------------------------------------------------------
 /**
  *  Output of the form:
@@ -481,23 +523,28 @@ end parse_video_link;
  * The function returns presenter's comp per track - this is identical for all tracks for which the user has submitted sessions.
  * Assumes that it will be called from within a SQL query, hence no track validation.
  * 
- * @example
- * select presenter
- *      , ks_session_api.get_presenter_comp (event_id, presenter_user_id) presenter_comp
- *   from ks_sessions  
- *  where event_id  = 105
- *  order by presenter_comp desc;
+ * @example - Displays presenter's comp for each associated track
+    select  s.event_track_id
+          , s.presenter_user_id
+          , ks_session_api.get_presenter_comp(s.event_id, s.event_track_id , s.presenter_user_id) as presenter_comp
+       from ks_sessions s
+      where s.event_id = :p_event_id
+        and s.presenter_user_id = :p_presenter_user_id
+   group by s.event_id, s.event_track_id, s.presenter_user_id
+   order by s.event_track_id
  *
  * @issue #36
  *
  * @author Ramona Birsan
- * @created 7 October 2019
+ * @created October 7, 2019
  * @param p_event_id   
+ * @param p_event_track_id
  * @param p_presenter_user_id
  * @return number
  */
 function get_presenter_comp (
     p_event_id in ks_sessions.event_id%type 
+  , p_event_track_id in ks_sessions.event_track_id%type    
   , p_presenter_user_id in ks_sessions.presenter_user_id%type 
 ) return number
 is 
@@ -506,26 +553,40 @@ is
   l_presenter_comp number(3,2) := 0;
 begin
   logger.append_param(l_params, 'p_event_id', p_event_id);
+  logger.append_param(l_params, 'p_event_track_id', p_event_track_id);
   logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
   ks_log.log ('START', l_scope);
   
-  -- "distinct event_track_id" is used because we calculate the total number of tracks which have at least one session accepted;
-  with comp_track_records 
-    as (select s.presenter_user_id, count(distinct s.event_track_id) as track_comp
-          from ks_sessions s
-         where s.status_code = 'ACCEPTED' 
-           and s.event_id = p_event_id 
-      group by s.event_track_id, s.presenter_user_id )
-    select round(1/sum (r.track_comp),2) into l_presenter_comp    
-      from comp_track_records r
-  group by r.presenter_user_id
-    having r.presenter_user_id = p_presenter_user_id
-     and not exists ( select cu.user_id
-                        from ks_event_comp_users cu 
-                        join ks_users u on (u.id = cu.user_id)
-                       where cu.event_id = p_event_id
-                         and u.external_sys_ref = p_presenter_user_id);
-                         
+  if is_speaker_comped (p_event_id, p_presenter_user_id) = 1 then 
+    l_presenter_comp := 0;
+  else
+    -- "distinct event_track_id" is used because we calculate the total number of tracks which have at least one session accepted;
+    with speaker_comp_track_ratio 
+         as (
+              select  r.presenter_user_id
+                    , round(1/sum (r.track_comp),2) as speaker_comp_ratio
+                from ( 
+                       select s.presenter_user_id
+                            , count(distinct s.event_track_id) as track_comp
+                         from ks_sessions s
+                        where s.status_code = 'ACCEPTED' 
+                          and s.event_id = p_event_id 
+                     group by s.event_track_id, s.presenter_user_id 
+                   ) r
+       group by r.presenter_user_id
+         having r.presenter_user_id = p_presenter_user_id )
+    select count (*) * tr.speaker_comp_ratio into l_presenter_comp
+      from speaker_comp_track_ratio tr
+     where exists ( select 1
+                      from ks_sessions ss
+                     where ss.status_code = 'ACCEPTED'
+                       and ss.event_id = p_event_id
+                       and ss.event_track_id = p_event_track_id
+                       and ss.presenter_user_id = p_presenter_user_id)
+  group by tr.speaker_comp_ratio;
+      
+  end if;
+  
   ks_log.log ('END', l_scope);
   return l_presenter_comp;
 
