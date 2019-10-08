@@ -62,6 +62,7 @@ select  s.id
       , s.room_size_code
       , s.presented_anything_ind
       , s.presented_anything_where
+      , s.ranking
       , s.created_by
       , s.created_on
       , s.updated_by
