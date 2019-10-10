@@ -63,6 +63,11 @@ begin
       raise;
 end is_speaker_comped;
 
+
+
+
+
+
 ------------------------------------------------------------------------------
 /**
  *  Output of the form:
@@ -519,8 +524,16 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end parse_video_link;
+
+
+
+
+
+
 /**
  * The function returns presenter's comp per track - this is identical for all tracks for which the user has submitted sessions.
+ * The function returns presenter's comp per track - this is identical for all tracks 
+ * for which the user has submitted sessions.
  * Assumes that it will be called from within a SQL query, hence no track validation.
  * 
  * @example - Displays presenter's comp for each associated track
@@ -560,22 +573,24 @@ begin
   if is_speaker_comped (p_event_id, p_presenter_user_id) = 1 then 
     l_presenter_comp := 0;
   else
-    -- "distinct event_track_id" is used because we calculate the total number of tracks which have at least one session accepted;
-    with speaker_comp_track_ratio 
-         as (
-              select  r.presenter_user_id
-                    , round(1/sum (r.track_comp),2) as speaker_comp_ratio
-                from ( 
-                       select s.presenter_user_id
-                            , count(distinct s.event_track_id) as track_comp
-                         from ks_sessions s
-                        where s.status_code = 'ACCEPTED' 
-                          and s.event_id = p_event_id 
-                     group by s.event_track_id, s.presenter_user_id 
-                   ) r
+    -- "distinct event_track_id" is used because we calculate the total number of 
+    -- tracks which have at least one session accepted
+    with speaker_comp_track_ratio as (
+      select  r.presenter_user_id
+            , round(1/sum (r.track_comp),2) as speaker_comp_ratio
+        from (
+             select s.presenter_user_id
+                  , count(distinct s.event_track_id) as track_comp
+               from ks_sessions s
+              where s.status_code = 'ACCEPTED' 
+                and s.event_id = p_event_id 
+              group by s.event_track_id, s.presenter_user_id 
+         ) r
        group by r.presenter_user_id
-         having r.presenter_user_id = p_presenter_user_id )
-    select count (*) * tr.speaker_comp_ratio into l_presenter_comp
+      having r.presenter_user_id = p_presenter_user_id
+    )
+    select count (*) * tr.speaker_comp_ratio 
+      into l_presenter_comp
       from speaker_comp_track_ratio tr
      where exists ( select 1
                       from ks_sessions ss
@@ -583,7 +598,7 @@ begin
                        and ss.event_id = p_event_id
                        and ss.event_track_id = p_event_track_id
                        and ss.presenter_user_id = p_presenter_user_id)
-  group by tr.speaker_comp_ratio;
+     group by tr.speaker_comp_ratio;
       
   end if;
   
@@ -597,6 +612,8 @@ begin
       ks_log.log_error('Unhandled Exception ', l_scope);
       raise;
 end get_presenter_comp;
+
+
 
 end ks_session_api;
 /
