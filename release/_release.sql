@@ -49,7 +49,7 @@ PRO . PACKAGES
 -- #36
 @../plsql/ks_session_api.pls
 @../plsql/ks_session_api.plb
-
+@../views/ks_events_comps_v.sql
 
 
 PRO _________________________________________________
