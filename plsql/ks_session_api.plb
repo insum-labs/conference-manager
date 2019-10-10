@@ -21,6 +21,7 @@ gc_token_exceptions constant varchar2(4000) := 'oracle|apex|epm|and|its|it|of';
 gc_parameter_tokens_name constant ks_parameters.name_key%type := 'ANONYMIZE_EXTRA_TOKENS';
 
 
+
 /**
  * Private function, checks if the speaker/presenter is comped, i.e. is added to the list of comped users for the event
  *
@@ -38,13 +39,16 @@ function is_speaker_comped (
   , p_presenter_user_id in ks_sessions.presenter_user_id%type
 ) return number
 is
+  pragma UDF;
   l_scope  ks_log.scope := gc_scope_prefix || 'is_speaker_comped';
-  l_params logger.tab_param; 
+  -- l_params logger.tab_param; 
   l_is_comped number(1) := 0;
 begin
-  logger.append_param(l_params, 'p_event_id', p_event_id);
-  logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  -- logger.append_param(l_params, 'p_event_id', p_event_id);
+  -- logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  $IF $$VERBOSE_OUTPUT $THEN
   ks_log.log('START', l_scope);
+  $END
  
   select 1 into l_is_comped
     from ks_event_comp_users cu 
@@ -52,7 +56,6 @@ begin
    where cu.event_id = p_event_id
      and u.external_sys_ref = p_presenter_user_id;
      
-  ks_log.log('END', l_scope);
   return l_is_comped;
   
   exception 
@@ -466,6 +469,7 @@ end is_session_owner;
 
 
 
+
 /**
  * Parse the "video link" text returning one line per link and formatting the link as an html anchor tag when applied.
  *
@@ -531,10 +535,10 @@ end parse_video_link;
 
 
 /**
- * The function returns presenter's comp per track - this is identical for all tracks for which the user has submitted sessions.
  * The function returns presenter's comp per track - this is identical for all tracks 
  * for which the user has submitted sessions.
  * Assumes that it will be called from within a SQL query, hence no track validation.
+ * And the UDF pragma
  * 
  * @example - Displays presenter's comp for each associated track
     select  s.event_track_id
@@ -561,14 +565,18 @@ function get_presenter_comp (
   , p_presenter_user_id in ks_sessions.presenter_user_id%type 
 ) return number
 is 
+  pragma UDF;
+
   l_scope  ks_log.scope := gc_scope_prefix || 'get_presenter_comp';
-  l_params logger.tab_param;
+  -- l_params logger.tab_param;
   l_presenter_comp number(3,2) := 0;
 begin
-  logger.append_param(l_params, 'p_event_id', p_event_id);
-  logger.append_param(l_params, 'p_event_track_id', p_event_track_id);
-  logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
-  ks_log.log ('START', l_scope);
+  -- logger.append_param(l_params, 'p_event_id', p_event_id);
+  -- logger.append_param(l_params, 'p_event_track_id', p_event_track_id);
+  -- logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  $IF $$VERBOSE_OUTPUT $THEN
+  ks_log.log('START', l_scope);
+  $END
   
   if is_speaker_comped (p_event_id, p_presenter_user_id) = 1 then 
     l_presenter_comp := 0;
@@ -602,7 +610,6 @@ begin
       
   end if;
   
-  ks_log.log ('END', l_scope);
   return l_presenter_comp;
 
   exception
