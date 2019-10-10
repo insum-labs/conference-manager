@@ -6,8 +6,8 @@ set sqlblanklines on
 set define '^'
 
 
-
--- *** DDL ***
+PRO _________________________________________________
+PRO . TABLES and DDL
 
 -- #2
 @../install/ks_event_communities.sql
@@ -25,19 +25,42 @@ create index ks_users_i01
 @../install/ks_event_comp_users.sql
 
 
--- *** Views ***
+
+PRO _________________________________________________
+PRO . VIEW
+
+@../views/ks_sessions_v.sql
+@../views/ks_users_v.sql
+
 -- #2
 @../views/ks_events_communities_v.sql
 @../views/ks_events_communities_tracks_v.sql
 
--- *** Objects ***
+
+
+
+PRO _________________________________________________
+PRO . PACKAGES
+
 -- #35
 @../plsql/ks_notification_api.pls
 @../plsql/ks_notification_api.plb
 
+-- #36
+@../plsql/ks_session_api.pls
+@../plsql/ks_session_api.plb
 
 
--- *** DML ***
+
+PRO _________________________________________________
+PRO . DML
+
+PRO .. Make presenter_user_id mandatory
+@../conversion/populate_presenter_user_id.sql
+
+alter table ks_sessions modify presenter_user_id not null;
+
+
 
 -- #2
 insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
