@@ -345,7 +345,7 @@ is
   l_tokens         varchar2(4000);
   found_match      boolean := true;
   l_index          number := -1;
-  l_regex          varchar2(4000);  
+  l_regex          varchar2(4000);
   l_infinite_check number := 0;
 begin
   -- ks_log.log('BEGIN', l_scope);
@@ -364,7 +364,7 @@ begin
   l_tokens := regexp_replace(l_tokens, p_token_exceptions, '', 1, 0, 'i');
   --Get rid of all multiple spaces so that everything is only one space apart
   l_tokens := regexp_replace(l_tokens, '\s{2,}', ' ');
-  
+
   l_tokens := trim(l_tokens);
   --Replace spaces with |
   l_tokens := regexp_replace(l_tokens, '\s', '|');
@@ -373,7 +373,7 @@ begin
 
   --I wanted to use something like the oneliner below, but pl/sql doesn't support lookaheads (yet)
   --l_output := regexp_replace(p_string, '(\W)('|| l_tokens || ')(?=\W)', '\1XXXX', 1, 0, 'i');
-  
+
 
   l_regex := '(^|\W)(' || l_tokens || ')(\W|$)';
   --ks_log.log('l_regex:' || l_regex, l_scope);
@@ -384,7 +384,7 @@ begin
 
   while(l_index != 0)
   loop
-    
+
     l_index  := regexp_instr(l_output, l_regex, 1, 1, 0, 'i');
 
     if(l_index != 0)
@@ -411,11 +411,46 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end replace_tokens;
+/**
+ * Given IR type, determine if there are any filters applied
+ * Filters are identified by the precense of the :APXWS_EXPR_n and
+ * :APXWS_SEARCH_STRING_n binds
+ *
+ * @author Jorge Rimblas
+ * @created October 11, 2019
+ * @param p_ir_t An IR type apex_ir.t_report
+ * @return boolean
+ */
+function ir_has_filters(
+    p_ir_t      in apex_ir.t_report
+)
+  return boolean
+is
+  l_scope             logger_logs.scope%type := gc_scope_prefix || 'ir_has_filters';
+  l_params            logger.tab_param;
+  l_bind     apex_plugin_util.t_bind;
+  l_index    pls_integer;
+  l_found    boolean;
+begin
+--  logger.log('START', l_scope, null, l_params);
 
-
-
-
-
-
+  l_index := p_ir_t.binds.first;
+  l_found := false;
+  while (l_index is not null and not l_found)
+  loop
+--    logger.log('p_ir_t.binds(l_index):' || p_ir_t.binds(l_index).name || ':' || p_ir_t.binds(l_index).value, l_scope, null, l_params);
+    -- Search for binds named APXWS_EXPR_n
+    if  p_ir_t.binds(l_index).name like 'APXWS_EXPR%'
+     or p_ir_t.binds(l_index).name like 'APXWS_SEARCH_STRING%' then
+      l_found := true;
+    end if;
+    l_index := p_ir_t.binds.next(l_index);
+  end loop;
+  return l_found;
+exception
+    when OTHERS then
+--      logger.log_error('Unhandled Exception', l_scope, null, l_params);
+      raise;
+end ir_has_filters;
 end ks_util;
 /
