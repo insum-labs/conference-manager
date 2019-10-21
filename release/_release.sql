@@ -25,6 +25,12 @@ create index ks_users_i01
 @../install/ks_event_comp_users.sql
 
 
+-- 
+PRO .. Allow multi-byte chars for tags
+alter table ks_tags modify tag varchar2(255 char);
+alter table ks_tag_sums modify tag varchar2(255 char);
+alter table ks_tag_type_sums modify tag varchar2(255 char);
+
 
 PRO _________________________________________________
 PRO . VIEW
@@ -49,6 +55,10 @@ PRO . PACKAGES
 -- #36
 @../plsql/ks_session_api.pls
 @../plsql/ks_session_api.plb
+
+
+@../plsql/ks_tags_api.plb
+
 
 
 @../views/ks_events_comps_v.sql
