@@ -65,6 +65,15 @@ PRO . PACKAGES
 @../plsql/ks_session_api.plb
 
 
+-- #44
+@../plsql/ks_session_load_api.pls
+@../plsql/ks_session_load_api.plb
+
+
+@../plsql/ks_util.pls
+@../plsql/ks_util.plb
+
+
 @../plsql/ks_tags_api.plb
 
 

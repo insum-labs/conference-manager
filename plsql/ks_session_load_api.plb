@@ -990,7 +990,7 @@ begin
         , l_rows(i).presenter
         , l_rows(i).session_abstract
         , l_rows(i).session_summary
-        , l_rows(i).tags || nvl2(l_rows(i).session_length, ':', '') || l_rows(i).session_length
+        , l_rows(i).tags || nvl2(l_rows(i).session_length, nvl2(l_rows(i).tags, ':', ''), '') || l_rows(i).session_length
         , l_rows(i).session_length
         , l_rows(i).target_audience
         , l_rows(i).technology_product

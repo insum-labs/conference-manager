@@ -30,8 +30,8 @@ as
 begin
   -- we call tag_sync form a trigger, so lets not call logger unless we need to.
   -- logger.append_param(l_params, 'p_option_name', p_option_name);
-    ks_log.log('START', l_scope);
     $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('START', l_scope);
     ks_log.log('p_content_type: ' || p_content_type, l_scope);
     ks_log.log('  p_content_id: ' || p_content_id, l_scope);
     ks_log.log('p_new_tags: ' || p_new_tags, l_scope);
@@ -112,7 +112,9 @@ begin
            update set s.tag_count = t.tag_count;
     end loop;
 
+    $IF $$VERBOSE_OUTPUT $THEN
     ks_log.log('END', l_scope);
+    $END
 
 end tag_sync;
 
