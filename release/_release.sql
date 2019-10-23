@@ -22,14 +22,22 @@ comment on column ks_sessions.ranking is 'Used to specify the rank for a group o
 create index ks_users_i01
   on ks_users(external_sys_ref)
 /
+
 @../install/ks_event_comp_users.sql
 
 
 -- 
 PRO .. Allow multi-byte chars for tags
-alter table ks_tags modify tag varchar2(255 char);
-alter table ks_tag_sums modify tag varchar2(255 char);
-alter table ks_tag_type_sums modify tag varchar2(255 char);
+-- alter table ks_tags modify tag varchar2(255);
+-- alter table ks_tag_sums modify tag varchar2(255);
+-- alter table ks_tag_type_sums modify tag varchar2(255);
+
+
+-- #44
+PRO .. Session Length
+alter table ks_full_session_load add session_length varchar2(500);
+alter table ks_sessions add session_length varchar2(500);
+
 
 
 PRO _________________________________________________
@@ -92,6 +100,9 @@ Session Type : <i>#SESSION_TYPE#</i>
 All existing votes from <i>#FROM_TRACK#</i> track have been removed.
 Tags most likely should be revised.
 }');
+
+-- ## 44
+@../conversion/seed_ks_load_mapping.sql
 
 
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE

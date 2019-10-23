@@ -26,7 +26,8 @@ c_max_errors_to_display constant number := 6;
 
 type column_names_t is varray(4000) of varchar2(4000);
 
-type index_map_t is table of varchar2(30) index by varchar2(10);
+-- type index_map_t is table of varchar2(30) index by varchar2(10);
+type index_map_t is table of varchar2(30) index by pls_integer;
 
 
 
@@ -487,10 +488,11 @@ begin
   ks_log.log('START', l_scope);
 
 
-  for row in (select trim(upper(lm.header_name)) header
-                from ks_load_mapping lm
-                where 1=1
-                  and table_name = c_session_load_table)
+  for row in (
+    select trim(upper(lm.header_name)) header
+      from ks_load_mapping lm
+     where table_name = c_session_load_table
+  )
   loop
     l_column_names_dict(row.header) := 'not_matched';
   end loop;
@@ -622,6 +624,8 @@ procedure init_index_map ( p_index_map in out nocopy index_map_t)
 is
   l_scope ks_log.scope := gc_scope_prefix || 'init_index_map';
   --l_params logger.tab_param;
+
+  l_index pls_integer;
 begin
   --logger.append_param(l_params, 'l_column_names', l_column_names);
   ks_log.log('START', l_scope);
@@ -631,13 +635,23 @@ begin
          , m.display_seq
       from ks_load_mapping m
      where m.table_name = c_session_load_table
-       and m.to_column_name is not null
      order by m.display_seq
   )
   loop
-    p_index_map(to_char(row.display_seq)) := row.to_column_name;
-    ks_log.log('mapped: ' || row.display_seq || ' to '  || row.to_column_name, l_scope);
+    p_index_map(p_index_map.count + 1) := nvl(row.to_column_name, '- not mapped -');
+    ks_log.log('mapped: ' || p_index_map.count || ' to '  || row.to_column_name, l_scope);
   end loop;
+
+  ks_log.log('map size: ' || p_index_map.count, l_scope);
+
+  $IF $$VERBOSE_OUTPUT $THEN
+  l_index := p_index_map.first;
+  while l_index is not null
+  loop
+    ks_log.log('p_index_map(' || l_index ||'): ' || p_index_map(l_index), l_scope);    
+    l_index := p_index_map.next(l_index);
+  end loop;
+  $END
 
   ks_log.log('END', l_scope);
 
@@ -683,7 +697,7 @@ is
   l_col_ind number;
 
   l_index_map index_map_t;
-  l_index varchar2(4000);
+  l_index pls_integer;
 
   --used to get the first 4000 bytes of any string data
   l_substr varchar2(4000);
@@ -698,6 +712,9 @@ is
 
   --An array of tags
   l_tags apex_application_global.vc_arr2;
+
+  --An array of session_length
+  l_session_length apex_application_global.vc_arr2;
     
 
 begin
@@ -711,19 +728,18 @@ begin
 
    select *
     bulk collect into l_cells
-    from
-    table(AS_READ_XLSX_CLOB.read(p_xlsx => p_xlsx))
-    order by row_nr, col_nr;
+    from table(AS_READ_XLSX_CLOB.read(p_xlsx => p_xlsx))
+   order by row_nr, col_nr;
 
    for i in 1 ..  l_cells.count
    loop
-      l_curr_row := to_number(l_cells(i).row_nr);
+      l_curr_row := l_cells(i).row_nr;
       $IF $$VERBOSE_OUTPUT $THEN
       ks_log.log('BEGIN cell: ' ||  l_cells(i).row_nr || ',' || l_cells(i).col_nr, l_scope);
       $END
 
       --NOTE: Assumption, the bulk collect gets all cells in order by row then column
-      if l_curr_row = 2 and l_cells(i).col_nr = '1'
+      if l_curr_row = 2 and l_cells(i).col_nr = 1
       then
         $IF $$VERBOSE_OUTPUT $THEN
         ks_log.log('Length of l_column_names: ' || l_column_names.count, l_scope);
@@ -735,25 +751,11 @@ begin
         --modify l_cells so that the column names are correct
         init_index_map(l_index_map);
 
-        $IF $$VERBOSE_OUTPUT $THEN
-        ks_log.log('l_index_map size: ' || l_index_map.count, l_scope);
-        $END
-        l_index := l_index_map.first;
-        while l_index is not null
-        loop
-          $IF $$VERBOSE_OUTPUT $THEN
-          ks_log.log('l_index_map(' || l_index ||'): ' || l_index_map(l_index), l_scope);
-          $END
-          
-          l_index := l_index_map.next(l_index);
-        end loop;
-
-      elsif l_curr_row = '1'
-      then
+      elsif l_curr_row = 1 then
         l_column_names.extend;
         --Get the column name (allows the .xlsx header to be defined "fuzzilly"
         $IF $$VERBOSE_OUTPUT $THEN
-        ks_log.log('Adding name: ' || l_cells(i).string_val, l_scope);
+        ks_log.log('Adding name: "' || l_cells(i).string_val || '"" to (' || i || ')', l_scope);
         $END
         l_column_names(i) := trim(upper(cast(l_cells(i).string_val as varchar2)));
      end if;
@@ -763,10 +765,9 @@ begin
      $END
 
      if l_curr_row > 1 then
-        if l_rows.count < l_curr_row -1
-        then
-          if l_reached_final_line
-          then
+
+        if l_rows.count < l_curr_row -1 then
+          if l_reached_final_line then
             l_rows.delete(l_rows.count);
             exit;
           else
@@ -792,8 +793,15 @@ begin
         
         if l_number_val is not null
         then
+          $IF $$VERBOSE_OUTPUT $THEN
+          ks_log.log('found number column, converting to vc', l_scope);
+          $END
           l_string_val := to_char(l_number_val);
         end if;
+
+        $IF $$VERBOSE_OUTPUT $THEN
+        ks_log.log('current:' || l_string_val, l_scope);
+        $END
 
 
         --The commented out code shows when the as_read_xlsx_clob package skips cells
@@ -808,9 +816,9 @@ begin
                                                                   then l_column_names.count 
                                                                   else mod(i, l_column_names.count)
                                                                   end);*/
-        l_index := l_cells(i).col_nr;                                                  
-        if l_index_map.exists(l_index)
-        then
+        l_index := l_cells(i).col_nr;
+        if l_index_map.exists(l_index) then
+
           l_curr_col := l_index_map(l_index);
           $IF $$VERBOSE_OUTPUT $THEN
           ks_log.log('l_curr_col: ' || l_curr_col, l_scope);
@@ -887,6 +895,14 @@ begin
               l_tags(i) := trim(l_tags(i));
             end loop;
             l_rows(l_rows_row).tags := substr(apex_util.table_to_string(l_tags,':'),1,1000);
+          elsif l_curr_col = 'SESSION_LENGTH'
+          then
+            l_session_length := apex_util.string_to_table(l_string_val,',');
+            for i in 1..l_session_length.count
+            loop
+              l_session_length(i) := trim(l_session_length(i));
+            end loop;
+            l_rows(l_rows_row).session_length := substr(apex_util.table_to_string(l_session_length,':'),1,500);
           elsif l_curr_col = 'CONTAINS_DEMO_IND'
           then
             l_rows(l_rows_row).contains_demo_ind := l_string_val;
@@ -943,6 +959,7 @@ begin
         , session_abstract
         , session_summary
         , tags
+        , session_length
         , target_audience
         , technology_product
         , contains_demo_ind
@@ -973,7 +990,8 @@ begin
         , l_rows(i).presenter
         , l_rows(i).session_abstract
         , l_rows(i).session_summary
-        , l_rows(i).tags
+        , l_rows(i).tags || nvl2(l_rows(i).session_length, ':', '') || l_rows(i).session_length
+        , l_rows(i).session_length
         , l_rows(i).target_audience
         , l_rows(i).technology_product
         , l_rows(i).contains_demo_ind
@@ -1109,7 +1127,8 @@ begin
        , coalesce(submission_date, sysdate)
     from ks_full_session_load s
          left outer join ks_event_tracks e on s.event_track_id = e.name and e.event_id = p_event_id
-   where s.app_user = p_username;
+   where s.app_user = p_username
+   order by s.session_num;
       
   x_load_count := SQL%ROWCOUNT;
 
