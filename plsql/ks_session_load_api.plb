@@ -1042,7 +1042,8 @@ begin
   ks_log.log('BEGIN', l_scope);
 
   insert into ks_sessions(
-      event_id
+      id
+    , event_id
     , event_track_id
     , external_sys_ref
     , session_num
@@ -1072,7 +1073,8 @@ begin
     , presenter_user_id
     , submission_date
    )            
-  select p_event_id
+  select null
+       , p_event_id
        , e.id
        , s.external_sys_ref
        , s.session_num
@@ -1129,7 +1131,7 @@ begin
          left outer join ks_event_tracks e on s.event_track_id = e.name and e.event_id = p_event_id
    where s.app_user = p_username
    order by s.session_num;
-      
+
   x_load_count := SQL%ROWCOUNT;
 
   ks_log.log('END', l_scope);
