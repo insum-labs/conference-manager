@@ -52,6 +52,9 @@
 
 .hide {display: none;}
 
+/* Center all IR edit columns */
+td[headers="LINK"] {text-align: center;}
+
 /**
  * Static pie charts
  * http://dabblet.com/gist/66e1e52ac2a44ad87aa4
