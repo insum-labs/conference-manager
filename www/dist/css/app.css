@@ -65,6 +65,10 @@
 .cfa-note_Y:before {
   content: "\f075";
 }
+.cfa-other_Y:before {
+  content: "\f111";
+  color: #cc9633;
+}
 
 /*
  Font Awesome Customizations - END
