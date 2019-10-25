@@ -26,7 +26,7 @@ create index ks_users_i01
 @../install/ks_event_comp_users.sql
 
 
--- 
+--
 PRO .. Allow multi-byte chars for tags
 -- alter table ks_tags modify tag varchar2(255);
 -- alter table ks_tag_sums modify tag varchar2(255);
@@ -80,6 +80,9 @@ PRO . PACKAGES
 
 @../views/ks_events_comps_v.sql
 
+-- #43 
+@../plsql/pretius_apex_nested_reports.sql
+@../plsql/pretius_apex_nested_reports.plb
 
 PRO _________________________________________________
 PRO . DML
