@@ -1055,6 +1055,7 @@ begin
     , co_presenter
     , co_presenter_company
     , tags
+    , session_length
     , presenter_email
     , session_abstract
     , session_summary
@@ -1086,6 +1087,7 @@ begin
        , s.co_presenter
        , s.co_presenter_company
        , s.tags
+       , s.session_length
        , s.presenter_email
        , s.session_abstract
        , s.session_summary

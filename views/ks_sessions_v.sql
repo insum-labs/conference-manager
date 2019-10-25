@@ -21,7 +21,8 @@ select  s.id
       , s.co_presenter
       , s.status_code
       , s.notes
-      , s.tags      
+      , s.tags
+      , s.session_length
       , t.votes_total
       , t.votes_average
       , s.presenter_email
