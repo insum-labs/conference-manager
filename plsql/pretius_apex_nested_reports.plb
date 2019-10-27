@@ -507,3 +507,4 @@ create or replace package body "PRETIUS_APEX_NESTED_REPORTS" is
   end pretius_row_details_ajax;
   
 end "PRETIUS_APEX_NESTED_REPORTS";
+/

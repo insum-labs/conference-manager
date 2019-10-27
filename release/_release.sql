@@ -76,13 +76,17 @@ PRO . PACKAGES
 
 @../plsql/ks_tags_api.plb
 
+-- #43 
+@../plsql/pretius_apex_nested_reports.pls
+@../plsql/pretius_apex_nested_reports.plb
+
+-- #43 
+@../plsql/ks_plugins.pls
+@../plsql/ks_plugins.plb
 
 
 @../views/ks_events_comps_v.sql
 
--- #43 
-@../plsql/pretius_apex_nested_reports.sql
-@../plsql/pretius_apex_nested_reports.plb
 
 PRO _________________________________________________
 PRO . DML
