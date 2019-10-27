@@ -1,5 +1,4 @@
-var scrollsave = 0,
-    sideBodyState = "open";
+var scrollsave = 0;
 
 // Derived from @J_Snyders code
 // Set title of the dialog Session Details
@@ -9,7 +8,7 @@ $("body").on("dialogcreate", ".ui-dialog--apex", function(e) {
 
 // Trigger the toggle when the NavBar is changed
 apex.jQuery("#t_TreeNav").on('theme42layoutchanged', function(event, obj) {
-    toggleBodySide(sideBodyState);
+    toggleBodySide($v("P2_BODY_SIDE_STATE"));
 });
 
 function toggleBodySide(state) {
@@ -22,8 +21,9 @@ function toggleBodySide(state) {
       openMargin=480,
       openSide=240;
 
-  sideBodyState = state;
-h
+  // this assignment will save the latest preference
+  $s("P2_BODY_SIDE_STATE", state);
+
   if ($("body").hasClass("js-navCollapsed")) {
     openMargin=280;
     closedMargin=40;
