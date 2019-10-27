@@ -11,6 +11,16 @@ apex.jQuery("#t_TreeNav").on('theme42layoutchanged', function(event, obj) {
     toggleBodySide($v("P2_BODY_SIDE_STATE"));
 });
 
+function _syncSizes() {
+  // fix special elements with the new dimensions
+  setTimeout(function(){
+    apex.event.trigger(window, 'resize');
+    // in 19.1 the resize event doesn't seem to be enough to adjust
+    // the sticky headers, so we issue a forceresize
+    $(".js-stickyTableHeader").trigger('forceresize');
+  }, 100);
+}
+
 function toggleBodySide(state) {
   var $side=$(".t-Body-side"),
       $body=$(".t-Body-content"),
@@ -30,14 +40,21 @@ function toggleBodySide(state) {
   }
 
   if (state === "close"){
-    $side.animate({width: closeSide}, 'fast', function(){$expandBtn.show(); });
-    $body.animate({'margin-left': closedMargin}, 'fast', function(){$expandBtn.show(); });
+    $side.animate({width: closeSide}, 'fast');
+    $body.animate({'margin-left': closedMargin}, 'fast', 
+      function(){
+        $expandBtn.show();
+        _syncSizes();
+      });
   }
   else {
     $side.animate({width: openSide}, 'fast');
-    $body.animate({'margin-left': openMargin}, 'fast');
+    $body.animate({'margin-left': openMargin}, 'fast', 
+      function(){
+        $expandBtn.show();
+        _syncSizes();
+      });
     $expandBtn.hide();   
   }
-  apex.event.trigger(window, 'resize');
 
 }
