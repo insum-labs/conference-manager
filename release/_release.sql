@@ -9,6 +9,10 @@ set define '^'
 PRO _________________________________________________
 PRO . TABLES and DDL
 
+PRO .. ks_session_votes_mv
+@../views/ks_session_votes_mv.sql
+
+
 -- #2
 @../install/ks_event_communities.sql
 @../install/ks_event_community_tracks.sql

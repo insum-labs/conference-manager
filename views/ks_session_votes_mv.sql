@@ -5,7 +5,6 @@ create materialized view log on ks_session_votes
 /
 create materialized view ks_session_votes_mv
   build immediate
-  refresh on commit
   enable query rewrite
 as
 select d.vote_type
