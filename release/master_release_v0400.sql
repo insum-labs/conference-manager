@@ -12,6 +12,29 @@ set define '^'
 PRO _________________________________________________
 PRO . TABLES and DDL
 
+PRO .. ks_session_votes_mv
+-- @../views/ks_session_votes_mv.sql
+PRO ks_session_votes_mv
+create materialized view log on ks_session_votes
+  with primary key
+  including new values
+/
+create materialized view ks_session_votes_mv
+  build immediate
+  enable query rewrite
+as
+select d.vote_type
+     , d.session_id
+     , sum(d.vote) votes_total
+     , avg(d.vote) votes_average
+     , count(*) votes_count
+ from ks_session_votes d
+group by d.vote_type
+       , d.session_id
+/
+create unique index ks_session_votes_mv_u01 on ks_session_votes_mv(session_id, vote_type);
+
+
 -- #2
 -- @../install/ks_event_communities.sql
 PRO .. ks_event_communities 
@@ -3655,8 +3678,8 @@ function ir_has_filters(
 )
   return boolean
 is
-  l_scope             logger_logs.scope%type := gc_scope_prefix || 'ir_has_filters';
-  l_params            logger.tab_param;
+  -- l_scope             logger_logs.scope%type := gc_scope_prefix || 'ir_has_filters';
+  -- l_params            logger.tab_param;
   l_bind     apex_plugin_util.t_bind;
   l_index    pls_integer;
   l_found    boolean;
@@ -3907,7 +3930,9 @@ create or replace package PRETIUS_APEX_NESTED_REPORTS as
   ) return apex_plugin.t_dynamic_action_ajax_result;
 
 end;
-/-- @../plsql/pretius_apex_nested_reports.plb
+/
+
+-- @../plsql/pretius_apex_nested_reports.plb
 create or replace package body "PRETIUS_APEX_NESTED_REPORTS" is
 
   ------------------------
@@ -4418,6 +4443,7 @@ create or replace package body "PRETIUS_APEX_NESTED_REPORTS" is
   
 end "PRETIUS_APEX_NESTED_REPORTS";
 /
+
 
 -- #43 
 -- @../plsql/ks_plugins.pls
