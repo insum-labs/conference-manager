@@ -426,8 +426,8 @@ function ir_has_filters(
 )
   return boolean
 is
-  l_scope             logger_logs.scope%type := gc_scope_prefix || 'ir_has_filters';
-  l_params            logger.tab_param;
+  -- l_scope             logger_logs.scope%type := gc_scope_prefix || 'ir_has_filters';
+  -- l_params            logger.tab_param;
   l_bind     apex_plugin_util.t_bind;
   l_index    pls_integer;
   l_found    boolean;
