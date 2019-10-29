@@ -27,8 +27,8 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   16:28 Monday October 28, 2019
---   Exported By:     RBIRSAN@INSUM.CA
+--   Date and Time:   01:30 Tuesday October 29, 2019
+--   Exported By:     JRIMBLAS@INSUM.CA
 --   Flashback:       0
 --   Export Type:     Application Export
 --   Version:         19.1.0.00.15
@@ -110,7 +110,7 @@ wwv_flow_api.create_flow(
 ,p_authentication=>'PLUGIN'
 ,p_authentication_id=>wwv_flow_api.id(191490075796602128)
 ,p_populate_roles=>'A'
-,p_application_tab_set=>1
+,p_application_tab_set=>0
 ,p_logo_image=>'TEXT:&A_APPLICATION_TITLE.'
 ,p_app_builder_icon_name=>'app-icon.svg'
 ,p_public_user=>'APEX_PUBLIC_USER'
@@ -130,8 +130,8 @@ wwv_flow_api.create_flow(
 ,p_error_handling_function=>'ks_error_handler.error_handler_logging'
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
-,p_last_updated_by=>'RBIRSAN@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191028162812'
+,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
+,p_last_upd_yyyymmddhh24miss=>'20191028200825'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -17348,8 +17348,18 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_javascript_code=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'function warnOnClose(event, ui){',
-'  var apexiFrame = $("iframe").get(0).contentWindow.apex;',
-'  var hasChange = apexiFrame.page.isChanged();',
+'// var apexiFrame = $("iframe").get(0).contentWindow.apex;',
+'// Added last() because apex.oracle.com is running Boomerang and effecting this selector',
+'  var apexiFrame,',
+'      hasChange = false;',
+'',
+'  try {',
+'     apexiFrame = $("iframe").last().get(0).contentWindow.apex;',
+'     hasChange = apexiFrame.page.isChanged();',
+'  }',
+'  catch (e) {',
+'      console.error(e);',
+'  }',
 ' ',
 '  if (hasChange) {',
 '    // var lMessage = apex.lang.getMessage( "APEX.WARN_ON_UNSAVED_CHANGES" );',
@@ -17409,8 +17419,8 @@ wwv_flow_api.create_page(
 'After you review the session, enter an optional comment and click on your vote score.  1 is the lowest value, 5 is the highest.<br>',
 'Selecting a vote will automatically save the comment, capture your score, and advance to the next session.<br>',
 ''))
-,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181119202104'
+,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
+,p_last_upd_yyyymmddhh24miss=>'20191028200825'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(193246475216756907)
@@ -18280,6 +18290,9 @@ wwv_flow_api.create_page_computation(
 '    );',
 ''))
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(193443028383512039)
 ,p_name=>'Close Dialog'
@@ -18289,9 +18302,6 @@ wwv_flow_api.create_page_da_event(
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(193443167871512040)
 ,p_event_id=>wwv_flow_api.id(193443028383512039)
