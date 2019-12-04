@@ -232,7 +232,7 @@ begin
   end if;
   l_output := regexp_replace(l_output, '_x000D_', '', 1, 0, 'i');
 
-  if p_anonymize = 'Y' then
+  if p_anonymize = 'Y' and nvl(ks_util.get_param('ANONYMIZE_TOKENS'), 'YES') = 'YES' then
     select s.presenter, s.company, s.co_presenter
       into l_presenter, l_company, l_co_presenter
       from ks_sessions s

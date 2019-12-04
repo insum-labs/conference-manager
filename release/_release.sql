@@ -109,6 +109,8 @@ insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUN
 -- #35
 insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
 
+insert into ks_parameters (category, name_key, value, description) values ('SYSTEM','ANONYMIZE_TOKENS','NO','YES|NO Set to NO to override anonimizing tokens, even for Blind Voting');
+
 delete from ks_email_templates where name = 'SESSION_MOVED_BETWEEN_TRACKS';
 insert into ks_email_templates (name, template_text)
  values ('SESSION_MOVED_BETWEEN_TRACKS'

@@ -1354,7 +1354,7 @@ begin
   end if;
   l_output := regexp_replace(l_output, '_x000D_', '', 1, 0, 'i');
 
-  if p_anonymize = 'Y' then
+  if p_anonymize = 'Y' and nvl(ks_util.get_param('ANONYMIZE_TOKENS'), 'YES') = 'YES' then
     select s.presenter, s.company, s.co_presenter
       into l_presenter, l_company, l_co_presenter
       from ks_sessions s
@@ -5994,6 +5994,8 @@ insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TR
 insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_FK', 'The track cannot be removed if it is associated with a community.');
 -- #35
 insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
+
+insert into ks_parameters (category, name_key, value, description) values ('SYSTEM','ANONYMIZE_TOKENS','NO','YES|NO Set to NO to override anonimizing tokens, even for Blind Voting');
 
 delete from ks_email_templates where name = 'SESSION_MOVED_BETWEEN_TRACKS';
 insert into ks_email_templates (name, template_text)
