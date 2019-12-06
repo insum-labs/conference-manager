@@ -28,7 +28,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   18:04 Wednesday December 4, 2019
+--   Date and Time:   18:21 Friday December 6, 2019
 --   Exported By:     JRIMBLAS@INSUM.CA
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -116,7 +116,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 4.1.0'
+,p_flow_version=>'Release 4.1.1'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -131,7 +131,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191204180357'
+,p_last_upd_yyyymmddhh24miss=>'20191206182100'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -19835,8 +19835,8 @@ wwv_flow_api.create_page(
 ,p_step_template=>wwv_flow_api.id(28502132800754431621)
 ,p_page_template_options=>'#DEFAULT#'
 ,p_page_is_public_y_n=>'Y'
-,p_last_updated_by=>'JRIMBLAS'
-,p_last_upd_yyyymmddhh24miss=>'20181119140214'
+,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
+,p_last_upd_yyyymmddhh24miss=>'20191206182042'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(28502322926929431915)
@@ -19965,7 +19965,9 @@ wwv_flow_api.create_page_process(
 ,p_process_name=>'Set Username Cookie'
 ,p_process_sql_clob=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'apex_authentication.send_login_username_cookie (',
-'    p_username => lower(:P9999_USERNAME) );'))
+'    p_username => lower(:P9999_USERNAME) ',
+'  , p_consent => true',
+');'))
 ,p_error_display_location=>'INLINE_IN_NOTIFICATION'
 );
 wwv_flow_api.create_page_process(
