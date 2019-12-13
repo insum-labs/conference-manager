@@ -188,22 +188,27 @@ end switch_votes;
 
 
 --==============================================================================
--- Function: html_whitelist_clob
+-- Function: html_whitelist_tokenize
 -- Purpose: returns a varchar2 where every chunk of 4000 characters has been html_whitelisted and tokenized
 --
 -- Inputs:  p_string - the clob or varchar2 to be escaped/tokenized
 --          p_session_id - the session id. We use this to get the name of the presenter/company/co-presenter
 --          p_anonymize - whether to hide the info
+--          p_escape_html - 
+--          p_sql_trim  - If Y return only 4000 chars so tat SQL doesn't fail
 -- Output:
 -- Scope: Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/26/2017
 --==============================================================================
-function html_whitelist_tokenize (p_string in varchar2,
-                                  p_session_id in number,
-                                  p_anonymize in varchar2 default 'N',
-                                  p_escape_html in varchar2 default 'Y')
+function html_whitelist_tokenize (
+    p_string      in clob
+  , p_session_id  in number
+  , p_anonymize   in varchar2 default 'N'
+  , p_escape_html in varchar2 default 'Y'
+  , p_sql_trim    in varchar2 default 'N'
+)
   return varchar2
 is
   l_scope ks_log.scope := gc_scope_prefix || 'html_whitelist_tokenize';
@@ -216,6 +221,7 @@ is
 begin
   $IF $$VERBOSE_OUTPUT $THEN
   ks_log.log('START', l_scope);
+  ks_log.log('p_session_id:' || p_session_id, l_scope);
   $END
 
   --The id is usually null when the user's session got reset
@@ -227,12 +233,21 @@ begin
 
   if p_escape_html = 'Y' then
     l_output := apex_escape.html_whitelist(p_string, gc_html_whitelist_tags);
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..output escaped', l_scope);
+    $END
   else
     l_output := p_string;
   end if;
   l_output := regexp_replace(l_output, '_x000D_', '', 1, 0, 'i');
+  $IF $$VERBOSE_OUTPUT $THEN
+  ks_log.log('..weird delimiters removed', l_scope);
+  $END
 
   if p_anonymize = 'Y' and nvl(ks_util.get_param('ANONYMIZE_TOKENS'), 'YES') = 'YES' then
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..anonymizing', l_scope);
+    $END
     select s.presenter, s.company, s.co_presenter
       into l_presenter, l_company, l_co_presenter
       from ks_sessions s
@@ -245,7 +260,18 @@ begin
 
   end if;
 
+  if p_sql_trim = 'Y' then
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..trimming for SQL', l_scope);
+    ks_log.log('..l_output:' || length(l_output), l_scope);
+    $END
 
+    l_output := substr(l_output,1,3700);
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..New l_output:' || length(l_output), l_scope);
+    $END
+
+  end if;
 
   return l_output;
 exception
@@ -253,6 +279,7 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end  html_whitelist_tokenize;
+
 
 
 

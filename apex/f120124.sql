@@ -28,7 +28,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   15:43 Friday December 13, 2019
+--   Date and Time:   17:39 Friday December 13, 2019
 --   Exported By:     JRIMBLAS@INSUM.CA
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -116,7 +116,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 4.1.2'
+,p_flow_version=>'Release 4.1.3'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -131,7 +131,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191213154347'
+,p_last_upd_yyyymmddhh24miss=>'20191213173800'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -16659,7 +16659,7 @@ wwv_flow_api.create_page(
 'Here you can see all the sessions submitted to track. Use the buttons to filter the sessions as needed.<br>',
 'As you open each session, you''ll have a chance to enter an optional comment and register your vote.<br> Selecting a vote value will automatically advance to the next session and save your comment.'))
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191204174706'
+,p_last_upd_yyyymmddhh24miss=>'20191213173507'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(192281280895719044)
@@ -16674,12 +16674,10 @@ wwv_flow_api.create_page_plug(
 ,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
 'with all_session as (',
 'select s.id ',
-'     --, ks_session_api.html_whitelist_tokenize(s.session_summary, s.id, case when :G_VOTER_TYPE = ''BLIND'' then ''Y'' else ''N'' end, ''N'') session_summary_protected',
-'    , ks_session_api.html_whitelist_tokenize(s.session_summary, s.id, case when exists (select e.blind_vote_flag from ks_events_tracks_v e where e.event_track_id = :G_EVENT_TRACK_ID and e.blind_vote_flag = ''Y'') then ''Y'' else ''N'' end, ''N'') session_sum'
-||'mary_protected',
-'     --, ks_session_api.html_whitelist_tokenize(substr(s.session_abstract,1,3900), s.id, case when :G_VOTER_TYPE = ''BLIND'' then ''Y'' else ''N'' end, ''N'') session_abstract_protected',
-'    , ks_session_api.html_whitelist_tokenize(substr(s.session_abstract,1,3900), s.id, case when exists (select e.blind_vote_flag from ks_events_tracks_v e where e.event_track_id = :G_EVENT_TRACK_ID and e.blind_vote_flag = ''Y'') then ''Y'' else ''N'' end, '
-||'''N'') session_abstract_protected',
+'    , ks_session_api.html_whitelist_tokenize(substr(s.session_summary,1,3700), s.id, case when exists (select e.blind_vote_flag from ks_events_tracks_v e where e.event_track_id = :G_EVENT_TRACK_ID and e.blind_vote_flag = ''Y'') then ''Y'' else ''N'' end, p'
+||'_escape_html => ''N'', p_sql_trim => ''Y'') session_summary_protected',
+'    , ks_session_api.html_whitelist_tokenize(substr(s.session_abstract,1,3700), s.id, case when exists (select e.blind_vote_flag from ks_events_tracks_v e where e.event_track_id = :G_EVENT_TRACK_ID and e.blind_vote_flag = ''Y'') then ''Y'' else ''N'' end, '
+||'p_escape_html => ''N'', p_sql_trim => ''Y'') session_abstract_protected',
 'from ks_sessions_v s',
 ')',
 'select s.id',
@@ -16693,8 +16691,8 @@ wwv_flow_api.create_page_plug(
 '     , decode(s.co_presenter, null, '''', ''Y'') co_presenter_flag',
 '     , alls.session_summary_protected session_summary',
 '     , alls.session_abstract_protected session_abstract',
-'     , alls.session_summary_protected session_summary_icon',
-'     , alls.session_abstract_protected session_abstract_icon',
+'     , substr(alls.session_summary_protected,1000) session_summary_icon',
+'     , substr(alls.session_abstract_protected,1000) session_abstract_icon',
 '     , s.session_type',
 '     , s.sub_category',
 '     , s.target_audience',
@@ -17498,9 +17496,6 @@ wwv_flow_api.create_page_da_event(
 ,p_bind_type=>'bind'
 ,p_bind_event_type=>'click'
 );
-end;
-/
-begin
 wwv_flow_api.create_page_da_action(
  p_id=>wwv_flow_api.id(192726095089984611)
 ,p_event_id=>wwv_flow_api.id(192725971830984610)
@@ -17512,6 +17507,9 @@ wwv_flow_api.create_page_da_action(
 '$(".reportSelection").removeClass("is-selected");',
 '$(this.triggeringElement).addClass("is-selected");'))
 );
+end;
+/
+begin
 wwv_flow_api.create_page_da_event(
  p_id=>wwv_flow_api.id(100780051368685647)
 ,p_name=>'Modal Close: Refresh All'
