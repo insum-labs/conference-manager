@@ -28,7 +28,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   18:21 Friday December 6, 2019
+--   Date and Time:   15:43 Friday December 13, 2019
 --   Exported By:     JRIMBLAS@INSUM.CA
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -116,7 +116,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 4.1.1'
+,p_flow_version=>'Release 4.1.2'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -131,7 +131,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191206182100'
+,p_last_upd_yyyymmddhh24miss=>'20191213154347'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -17875,7 +17875,7 @@ wwv_flow_api.create_page(
 'Selecting a vote will automatically save the comment, capture your score, and advance to the next session.<br>',
 ''))
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191204180314'
+,p_last_upd_yyyymmddhh24miss=>'20191213154150'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(193246475216756907)
@@ -18535,7 +18535,7 @@ wwv_flow_api.create_page_item(
 ,p_name=>'P30_VOTE'
 ,p_item_sequence=>10
 ,p_item_plug_id=>wwv_flow_api.id(193998600035929324)
-,p_prompt=>'Vote: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 = Low &nbsp;&nbsp;&mdash;&nbsp;&nbsp;    5 = High'
+,p_prompt=>'Vote: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1 = Low/Poor &nbsp;&nbsp;&mdash;&nbsp;&nbsp;    5 = High/Best'
 ,p_post_element_text=>wwv_flow_string.join(wwv_flow_t_varchar2(
 '<span aria-hidden="true" class="showSkippedIcon_&P30_DECLINE_VOTE_FLAG. fa fa-minus-circle cfa-1_5x" title="Declined to vote"></span>',
 ''))
