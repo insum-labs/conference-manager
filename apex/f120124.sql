@@ -28,7 +28,7 @@ prompt APPLICATION 120124 - ODTUG Kscope Voting
 -- Application Export:
 --   Application:     120124
 --   Name:            ODTUG Kscope Voting
---   Date and Time:   17:39 Friday December 13, 2019
+--   Date and Time:   15:31 Monday December 23, 2019
 --   Exported By:     JRIMBLAS@INSUM.CA
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -116,7 +116,7 @@ wwv_flow_api.create_flow(
 ,p_public_user=>'APEX_PUBLIC_USER'
 ,p_proxy_server=>nvl(wwv_flow_application_install.get_proxy,'')
 ,p_no_proxy_domains=>nvl(wwv_flow_application_install.get_no_proxy_domains,'')
-,p_flow_version=>'Release 4.1.3'
+,p_flow_version=>'Release 4.1.4'
 ,p_flow_status=>'AVAILABLE_W_EDIT_LINK'
 ,p_flow_unavailable_text=>'This application is currently unavailable at this time.'
 ,p_exact_substitutions_only=>'Y'
@@ -131,7 +131,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'ODTUG Kscope Voting'
 ,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
-,p_last_upd_yyyymmddhh24miss=>'20191213173800'
+,p_last_upd_yyyymmddhh24miss=>'20191223153056'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>82
 ,p_ui_type_name => null
@@ -19071,10 +19071,10 @@ wwv_flow_api.create_page(
 '   //Do nothing.',
 '}'))
 ,p_page_template_options=>'#DEFAULT#'
-,p_required_role=>'!'||wwv_flow_api.id(563839594051255702)
+,p_required_role=>'!'||wwv_flow_api.id(193095674597652097)
 ,p_dialog_chained=>'N'
-,p_last_updated_by=>'ZWILCOX'
-,p_last_upd_yyyymmddhh24miss=>'20181026172048'
+,p_last_updated_by=>'JRIMBLAS@INSUM.CA'
+,p_last_upd_yyyymmddhh24miss=>'20191223153046'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(194000134198929339)
