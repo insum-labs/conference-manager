@@ -1,0 +1,70 @@
+{
+  "identification": {
+    "itemName": "P5030_FILE_NAME",
+    "itemType": "File Browse..."
+  },
+  "label": {
+    "label": "File Name",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Required",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "elementWidth": null
+  },
+  "validation": {
+    "valueRequired": "N",
+    "elementMaxCharacters": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Null",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "storageType": "APEX_APPLICATION_TEMP_FILES",
+    "mimeTypeColumn": null,
+    "filenameColumn": null,
+    "characterSetColumn": null,
+    "blobLastUpdatedColumn": null,
+    "displayDownloadLink": null,
+    "downloadLinkText": null,
+    "contentDisposition": null,
+    "purgeFileAt": "REQUEST",
+    "allowMultipleFiles": null,
+    "fileTypes": null
+  }
+}

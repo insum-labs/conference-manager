@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "REMOVE_UI_DECORATION",
+  "displayName": "Remove UI Decoration",
+  "cssClasses": "t-Region--noUI",
+  "helpText": "Removes UI decoration (borders, backgrounds, shadows, etc) from the region.",
+  "isAdvanced": null
+}

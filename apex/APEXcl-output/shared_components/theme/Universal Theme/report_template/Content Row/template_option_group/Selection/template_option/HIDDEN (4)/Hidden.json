@@ -1,0 +1,8 @@
+{
+  "group": "Selection",
+  "name": "SELECTION_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideSelection",
+  "helpText": "Hides the Selection column from being rendered on the screen.",
+  "isAdvanced": null
+}

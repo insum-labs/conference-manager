@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Post Event Creation",
+    "pageProcessType": "PL/SQL Code",
+    "processRegion": null
+  },
+  "source": {
+    "plsqlProcessLocation": "Local Database"
+  },
+  "executionOptions": {
+    "executionSequence": 70,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "CREATE",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "RTM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-top-md",
+  "helpText": "Adds a medium top margin to the region.",
+  "isAdvanced": null
+}

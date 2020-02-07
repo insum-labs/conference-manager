@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Save the latest preference"
+  },
+  "executionOptions": {
+    "executionSequence": 110
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P2_BODY_SIDE_STATE"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

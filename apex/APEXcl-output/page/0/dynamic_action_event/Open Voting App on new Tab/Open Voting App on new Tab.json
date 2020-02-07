@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "name": "Open Voting App on new Tab"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "ready"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": "Never"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

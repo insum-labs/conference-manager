@@ -1,0 +1,2 @@
+Please upload an excel file (ending in .xlsx) containing the new sessions to be added to the system. <br />
+If your file ends in .csv, simply save it as .xlsx using microsoft excel.

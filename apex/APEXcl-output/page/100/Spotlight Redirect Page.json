@@ -1,0 +1,50 @@
+{
+  "identification": {
+    "name": "Spotlight Redirect Page",
+    "pageAlias": null,
+    "title": "Spotlight Redirect Page",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Normal",
+    "pageTemplate": null,
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "Do not focus cursor",
+    "pageWarnOnUnsavedChanges": "Y",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "pageAuthentication": "Page Requires Authentication",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Unrestricted",
+    "formAutoComplete": "Off",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Only for Success"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Session Loaded Summary"
+  },
+  "executionOptions": {
+    "executionSequence": 30,
+    "daEvent": "Toggle Item",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "attributes": {
+    "name": "APEX-Nitro",
+    "sequence": -999,
+    "processPoint": "On Load: Before Header (page template header)"
+  },
+  "source": {
+    "processErrorMessage": null
+  },
+  "conditions": {
+    "conditionType": "PL/SQL Expression"
+  },
+  "configuration": {
+    "buildOption": "DEV_ONLY"
+  },
+  "authorization": {
+    "authorizationScheme": null
+  },
+  "comments": {
+    "comments": null
+  }
+}

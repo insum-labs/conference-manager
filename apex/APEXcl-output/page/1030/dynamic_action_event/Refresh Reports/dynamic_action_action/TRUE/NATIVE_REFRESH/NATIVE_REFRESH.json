@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Presenters with Multiple Sessions"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Refresh Reports",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

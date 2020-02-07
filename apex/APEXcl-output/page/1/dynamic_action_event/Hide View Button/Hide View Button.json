@@ -1,0 +1,30 @@
+{
+  "identification": {
+    "name": "Hide View Button"
+  },
+  "executionOptions": {
+    "executionSequence": 60
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P1_SELECT_TRACK_ID"
+  },
+  "clientSideCondition": {
+    "jsCondition": "Item is null",
+    "jsConditionItem": "P1_SELECT_TRACK_ID",
+    "jsConditionElementType": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

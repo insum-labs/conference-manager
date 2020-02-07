@@ -1,0 +1,22 @@
+{
+  "identification": {
+    "computationItemName": "P5055_SELECT_EVENT_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "Before Regions"
+  },
+  "computation": {
+    "computationType": "Item",
+    "computationItemValue": "P5040_EVENT_ID"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

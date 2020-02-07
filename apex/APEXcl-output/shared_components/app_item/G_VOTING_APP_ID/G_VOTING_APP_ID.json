@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "itemName": "G_VOTING_APP_ID",
+    "scope": "Global"
+  },
+  "security": {
+    "sessionStateProtection": "Restricted - May not be set from browser"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "comments": {
+    "comments": null
+  }
+}

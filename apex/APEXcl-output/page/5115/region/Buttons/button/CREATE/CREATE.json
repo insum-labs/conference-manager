@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "CREATE",
+    "buttonLabel": "Assign User"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_NEXT"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "Y",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-user-plus"
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": "SQL INSERT action"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P5115_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

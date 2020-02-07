@@ -1,0 +1,16 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "daEvent": "Hide View Button",
+    "fireWhenEventResultIs": "False",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

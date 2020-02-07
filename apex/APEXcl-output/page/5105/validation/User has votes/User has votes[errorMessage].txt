@@ -1,0 +1,1 @@
+Can't change or delete user because they have vote history.

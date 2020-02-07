@@ -1,0 +1,8 @@
+{
+  "name": "BODY_TEXT",
+  "displayName": "Body Text",
+  "templateTypes": "REPORT",
+  "helpText": "Determines the height of the card body.",
+  "nullText": "Auto",
+  "isAdvanced": "N"
+}

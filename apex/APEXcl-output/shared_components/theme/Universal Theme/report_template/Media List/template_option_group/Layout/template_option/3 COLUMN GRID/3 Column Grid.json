@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "3_COLUMN_GRID",
+  "displayName": "3 Column Grid",
+  "cssClasses": "t-MediaList--cols t-MediaList--3cols",
+  "helpText": null,
+  "isAdvanced": null
+}

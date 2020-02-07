@@ -1,0 +1,59 @@
+{
+  "identification": {
+    "itemName": "P5026_SESSIONS",
+    "itemType": "Display Only"
+  },
+  "label": {
+    "label": "Sessions Loaded",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "SQL Query (return single value)",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P5026_ID"
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "escapeSpecialCharacters": "Y",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "sendOnPageSubmit": "Y",
+    "basedOn": "VALUE",
+    "showLineBreaks": "Y"
+  }
+}

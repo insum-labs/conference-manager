@@ -1,0 +1,8 @@
+{
+  "group": "Body Padding",
+  "name": "NOPADDING",
+  "displayName": "No Padding",
+  "cssClasses": "t-ButtonRegion--noPadding",
+  "helpText": null,
+  "isAdvanced": "No"
+}

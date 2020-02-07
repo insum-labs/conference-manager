@@ -1,0 +1,11 @@
+{
+  "identification": {
+    "name": "Global Page - Desktop",
+    "pageAlias": null,
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "templateOptions": "#DEFAULT#"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "ICONS",
+  "displayName": "Icons",
+  "templateTypes": "REPORT",
+  "helpText": "Controls how to handle icons in the report.",
+  "nullText": "No Icons",
+  "isAdvanced": "N"
+}

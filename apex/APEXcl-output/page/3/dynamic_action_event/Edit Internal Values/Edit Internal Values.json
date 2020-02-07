@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Edit Internal Values"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".editInternal"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

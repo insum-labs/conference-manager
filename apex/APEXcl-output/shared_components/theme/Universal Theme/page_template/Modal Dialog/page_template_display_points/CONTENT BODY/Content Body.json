@@ -1,0 +1,7 @@
+{
+  "name": "Content Body",
+  "templateSubstitution": "BODY",
+  "gridSupport": "Yes",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 12
+}

@@ -1,0 +1,27 @@
+{
+  "authorizationScheme": {
+    "name": "EDIT",
+    "schemeType": "Exists SQL Query",
+    "attribute02": null,
+    "attribute03": null,
+    "attribute04": null,
+    "attribute05": null,
+    "attribute06": null,
+    "attribute07": null,
+    "attribute08": null,
+    "attribute09": null,
+    "attribute10": null,
+    "attribute11": null,
+    "attribute12": null,
+    "attribute13": null,
+    "attribute14": null,
+    "attribute15": null,
+    "errorMessage": "You're not and edit user."
+  },
+  "evaluationPoint": {
+    "validateAuthorizationScheme": "Once per page view"
+  },
+  "comments": {
+    "comments": "Check on every page view if the user has access (is OWNER) to the selected Event / Track or if they are Admin"
+  }
+}

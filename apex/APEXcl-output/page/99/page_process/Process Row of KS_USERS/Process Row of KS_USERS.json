@@ -1,0 +1,38 @@
+{
+  "identification": {
+    "name": "Process Row of KS_USERS",
+    "pageProcessType": "Automatic Row Processing (DML) [Legacy]"
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "tableOwner": null,
+    "tableName": "KS_USERS",
+    "primaryKeyItem": "P99_USERNAME",
+    "primaryKeyColumn": "USERNAME",
+    "secondaryKeyItem": null,
+    "secondaryKeyColumn": null,
+    "rowVersionColumn": null,
+    "runtimeWhereClause": null,
+    "returnKeyIntoItem": null,
+    "returnSecondKeyIntoItem": null,
+    "supportedOperations": "U",
+    "lockRow": "Y"
+  }
+}

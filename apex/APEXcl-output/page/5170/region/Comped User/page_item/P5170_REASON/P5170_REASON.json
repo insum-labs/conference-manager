@@ -1,0 +1,91 @@
+{
+  "identification": {
+    "itemName": "P5170_REASON",
+    "itemType": "Text Field"
+  },
+  "label": {
+    "label": "Reason",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementWidth": 50,
+    "elementValuePlaceholder": null
+  },
+  "validation": {
+    "valueRequired": "N",
+    "elementMaxCharacters": 250
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "REASON",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "quickPicks": {
+    "quickPickLinkAttributes": null,
+    "quickPickLabel01": "Board Member",
+    "quickPickValue01": "Board Member",
+    "quickPickLabel02": "Conference Committee",
+    "quickPickValue02": "Conference Committee",
+    "quickPickLabel03": null,
+    "quickPickValue03": null,
+    "quickPickLabel04": null,
+    "quickPickValue04": null,
+    "quickPickLabel05": null,
+    "quickPickValue05": null,
+    "quickPickLabel06": null,
+    "quickPickValue06": null,
+    "quickPickLabel07": null,
+    "quickPickValue07": null,
+    "quickPickLabel08": null,
+    "quickPickValue08": null,
+    "quickPickLabel09": null,
+    "quickPickValue09": null,
+    "quickPickLabel10": null,
+    "quickPickValue10": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "submitWhenEnterPressed": "N",
+    "disabled": "N",
+    "sendOnPageSubmit": null,
+    "subtype": "TEXT",
+    "trimSpaces": "BOTH"
+  }
+}

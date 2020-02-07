@@ -1,0 +1,27 @@
+{
+  "identification": {
+    "name": "Display seq must be unique"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "No Rows returned",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": "P5050_DISPLAY_SEQ"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "PL/SQL Expression"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

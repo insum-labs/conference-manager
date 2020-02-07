@@ -1,0 +1,8 @@
+{
+  "name": "PAGE_LAYOUT",
+  "displayName": "Page Layout",
+  "templateTypes": "PAGE",
+  "helpText": null,
+  "nullText": "Floating (Default)",
+  "isAdvanced": "N"
+}

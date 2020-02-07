@@ -1,0 +1,73 @@
+{
+  "identification": {
+    "itemName": "P5026_EVENT_ID",
+    "itemType": "Select List"
+  },
+  "label": {
+    "label": "Event",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": 3,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementHeight": 1
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "displayExtraValues": "Y",
+    "displayNullValue": "Y",
+    "nullDisplayValue": null,
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "EVENT_ID",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": "Always",
+    "readOnlyHtmlAttributes": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "pageActionOnSelection": "NONE",
+    "allowMultiSelection": "N",
+    "executeValidations": null
+  }
+}

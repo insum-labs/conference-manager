@@ -1,0 +1,7 @@
+{
+  "name": "Body Footer",
+  "templateSubstitution": "REGION_POSITION_02",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": null
+}

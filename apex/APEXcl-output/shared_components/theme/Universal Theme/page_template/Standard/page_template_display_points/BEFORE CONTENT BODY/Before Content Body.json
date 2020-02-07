@@ -1,0 +1,7 @@
+{
+  "name": "Before Content Body",
+  "templateSubstitution": "REGION_POSITION_08",
+  "gridSupport": "Yes",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 12
+}

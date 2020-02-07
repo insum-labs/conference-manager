@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "CIRCULAR",
+  "displayName": "Circular",
+  "cssClasses": "t-BadgeList--circular",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,7 @@
+{
+  "name": "NOUI",
+  "displayName": "Remove UI Decoration",
+  "cssClasses": "t-Button--noUI",
+  "helpText": null,
+  "isAdvanced": "No"
+}

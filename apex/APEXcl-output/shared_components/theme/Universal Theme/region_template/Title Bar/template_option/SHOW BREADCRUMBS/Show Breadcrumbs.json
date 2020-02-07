@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "HIDE_BREADCRUMB",
+  "displayName": "Show Breadcrumbs",
+  "cssClasses": "t-BreadcrumbRegion--showBreadcrumb",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Body Height",
+  "name": "240PX",
+  "displayName": "240px",
+  "cssClasses": "i-h240",
+  "helpText": "Sets region body height to 240px.",
+  "isAdvanced": "No"
+}

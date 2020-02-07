@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "SAVE",
+    "buttonLabel": "Apply Changes"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_NEXT"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "Y",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-check"
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": "SQL UPDATE action"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P5015_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

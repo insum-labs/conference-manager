@@ -1,0 +1,8 @@
+{
+  "group": "Hide Steps For",
+  "name": "HIDESMALLSCREENS",
+  "displayName": "Small Screens (Tablet)",
+  "cssClasses": "t-Wizard--hideStepsSmall",
+  "helpText": "Hides the wizard progress steps for screens that are smaller than 768px wide.",
+  "isAdvanced": "No"
+}

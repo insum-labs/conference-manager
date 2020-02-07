@@ -1,0 +1,112 @@
+[
+  {
+    "identification": {
+      "columnName": "SUB_CATEGORY",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Sub category",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TOTALS",
+      "classicReportColumnType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Totals",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "end"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:2:&SESSION.:&P10_IR_REQUEST.:&DEBUG.:RP,RIR:IREQ_SUB_CATEGORY,IREQ_STATUS_CODE:#SUB_CATEGORY#,Accepted",
+      "linkText": "#TOTALS#",
+      "linkAttributes": null
+    },
+    "columnFormatting": {
+      "formattingCssClasses": null,
+      "cssStyle": null
+    },
+    "sorting": {
+      "columnSortSequence": 1,
+      "columnSortDirection": "Descending",
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

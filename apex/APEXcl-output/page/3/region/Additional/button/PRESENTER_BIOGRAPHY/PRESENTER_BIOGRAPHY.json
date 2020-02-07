@@ -1,0 +1,43 @@
+{
+  "identification": {
+    "buttonName": "PRESENTER_BIOGRAPHY",
+    "buttonLabel": "Presenter Bio"
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null,
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--link",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5:&SESSION.::&DEBUG.:RP,5:P5_ID,P5_SHOW_TYPE,P5_PRESENTER:&P3_ID.,PRESENTER_BIOGRAPHY,&P3_PRESENTER.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": "BIO_BTN",
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

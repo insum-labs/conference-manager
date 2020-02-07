@@ -1,0 +1,97 @@
+{
+  "identification": {
+    "itemName": "P3_STATUS_CODE",
+    "itemType": "Select List"
+  },
+  "label": {
+    "label": "Status",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": 3,
+    "labelColumnSpan": 1,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementHeight": 1
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "namedLov": "STATUSES",
+    "displayExtraValues": "Y",
+    "displayNullValue": "Y",
+    "nullDisplayValue": "- Pending -",
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "STATUS_CODE",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "quickPicks": {
+    "quickPickLinkAttributes": null,
+    "quickPickLabel01": "Accepted",
+    "quickPickValue01": "ACCEPTED",
+    "quickPickLabel02": "Rejected",
+    "quickPickValue02": "REJECTED",
+    "quickPickLabel03": null,
+    "quickPickValue03": null,
+    "quickPickLabel04": null,
+    "quickPickValue04": null,
+    "quickPickLabel05": null,
+    "quickPickValue05": null,
+    "quickPickLabel06": null,
+    "quickPickValue06": null,
+    "quickPickLabel07": null,
+    "quickPickValue07": null,
+    "quickPickLabel08": null,
+    "quickPickValue08": null,
+    "quickPickLabel09": null,
+    "quickPickValue09": null,
+    "quickPickLabel10": null,
+    "quickPickValue10": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "pageActionOnSelection": "NONE",
+    "allowMultiSelection": "N",
+    "executeValidations": null
+  }
+}

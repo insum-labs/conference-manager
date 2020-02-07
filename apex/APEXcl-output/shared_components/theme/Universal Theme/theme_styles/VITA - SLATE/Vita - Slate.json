@@ -1,0 +1,11 @@
+{
+  "name": "Vita - Slate",
+  "current": "N",
+  "isPublic": "Y",
+  "accessibilityTested": "N",
+  "cssFileUrls": null,
+  "themeRollerReadOnly": "Y",
+  "themeRollerInputFileUrls": "#THEME_IMAGES#less/theme/Vita-Slate.less",
+  "themeRollerOutputFileUrl": "#THEME_IMAGES#css/Vita-Slate#MIN#.css?v=#APEX_VERSION#",
+  "comment": null
+}

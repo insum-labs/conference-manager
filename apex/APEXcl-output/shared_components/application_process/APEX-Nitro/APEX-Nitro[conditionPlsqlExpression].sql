@@ -1,0 +1,1 @@
+owa_util.get_cgi_env('APEX-Nitro') is not null

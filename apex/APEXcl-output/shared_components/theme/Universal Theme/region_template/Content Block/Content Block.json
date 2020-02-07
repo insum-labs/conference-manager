@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "CONTENT_BLOCK",
+    "templateClass": 21,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-ContentBlock--h1"
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

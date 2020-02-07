@@ -1,0 +1,19 @@
+{
+  "identification": {
+    "daActionType": "Show"
+  },
+  "affectedElements": {
+    "affectedType": "JavaScript Expression"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Open Event Admin Dialog",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "showAllOnTheSameLine": "N"
+  }
+}

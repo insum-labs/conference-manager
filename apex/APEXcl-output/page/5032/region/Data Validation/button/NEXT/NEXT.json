@@ -1,0 +1,42 @@
+{
+  "identification": {
+    "buttonName": "NEXT",
+    "buttonLabel": "Load Sessions"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_NEXT",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--primary:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-refresh"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to URL",
+    "buttonTarget": "javascript:apex.submit({ request:\"NEXT\", showWait:true});",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

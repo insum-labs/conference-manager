@@ -1,0 +1,8 @@
+{
+  "group": "Icon Hover Animation",
+  "name": "PUSH",
+  "displayName": "Push",
+  "cssClasses": "t-Button--hoverIconPush",
+  "helpText": "The icon will animate to the right or left on button hover or focus.",
+  "isAdvanced": null
+}

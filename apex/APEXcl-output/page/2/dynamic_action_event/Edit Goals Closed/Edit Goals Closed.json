@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Edit Goals Closed"
+  },
+  "executionOptions": {
+    "executionSequence": 60
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Button",
+    "whenButton": "EDIT_GOALS"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EDIT"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

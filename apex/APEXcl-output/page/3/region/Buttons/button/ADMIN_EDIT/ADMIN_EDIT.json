@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "ADMIN_EDIT",
+    "buttonLabel": "Edit"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_CREATE"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--warning:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-pencil"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:15:&SESSION.::&DEBUG.:RP,15:P15_ID:&P3_ID.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID"
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

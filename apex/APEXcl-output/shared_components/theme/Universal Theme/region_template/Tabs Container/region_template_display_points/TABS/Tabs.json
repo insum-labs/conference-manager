@@ -1,0 +1,8 @@
+{
+  "name": "Tabs",
+  "placeholder": "SUB_REGIONS",
+  "hasGridSupport": "N",
+  "glvNewRow": "Y",
+  "maxFixedGridColumns": null,
+  "componentComment": null
+}

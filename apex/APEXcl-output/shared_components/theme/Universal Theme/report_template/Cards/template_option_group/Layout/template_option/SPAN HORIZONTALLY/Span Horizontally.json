@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "SPAN_HORIZONTALLY",
+  "displayName": "Span Horizontally",
+  "cssClasses": "t-Cards--spanHorizontally",
+  "helpText": null,
+  "isAdvanced": null
+}

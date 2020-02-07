@@ -1,0 +1,40 @@
+{
+  "identification": {
+    "buttonName": "ADD_EVENT_ADMIN",
+    "buttonLabel": "Add"
+  },
+  "layout": {
+    "buttonPosition": "Right of Page Title",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--small:t-Button--iconRight:t-Button--gapLeft",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-plus"
+  },
+  "behavior": {
+    "buttonAction": "Defined by Dynamic Action",
+    "buttonExecuteValidations": "Y",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

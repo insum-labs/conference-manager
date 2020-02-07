@@ -1,0 +1,73 @@
+[
+  {
+    "link": {
+      "irLinkColumn": "Exclude Link Column"
+    },
+    "appearance": {
+      "showNullValuesAs": "-"
+    },
+    "pagination": {
+      "irPaginationType": "Row Ranges X to Y",
+      "paginationDisplayPosition": "Bottom - Right"
+    },
+    "messages": {
+      "whenNoDataFoundMessage": "All sessions in this track have at least one  vote!",
+      "whenMoreDataFoundMessage": null
+    },
+    "searchBar": {
+      "includeSearchBar": "N",
+      "showFinderDropDown": "Y"
+    },
+    "actionsMenu": {
+      "showFilter": "Y",
+      "showSelectColumns": "Y",
+      "showRowsPerPage": "Y",
+      "showSort": "Y",
+      "showControlBreak": "Y",
+      "showHighlight": "Y",
+      "showComputation": "Y",
+      "showAggregate": "Y",
+      "showChart": "Y",
+      "showGroupBy": "Y",
+      "showPivot": "Y",
+      "showFlashback": "Y",
+      "allowUsersToSaveReports": "Y",
+      "allowUsersToSavePublicReport": "N",
+      "showReset": "Y",
+      "showHelp": "Y",
+      "showNotify": "N",
+      "showDownload": "Y"
+    },
+    "download": {
+      "downloadFormats": null,
+      "downloadFilename": null
+    },
+    "heading": {
+      "fixedHeader": "Page"
+    },
+    "iconView": {
+      "iconViewEnabled": "N",
+      "iconViewLinkColumn": null,
+      "iconViewImageSourceColumn": null,
+      "iconViewLabelColumn": null,
+      "iconViewImageAttributes": null,
+      "iconViewHtmlAltText": null,
+      "iconViewHtmlTitleText": null
+    },
+    "detailView": {
+      "detailViewEnabled": "N"
+    },
+    "advanced": {
+      "reportAlias": null,
+      "reportIdItem": null,
+      "emailFromAddress": null,
+      "oracleTextIndexColumn": null
+    },
+    "performance": {
+      "maximumRowCount": "1000000"
+    },
+    "attributes": {
+      "description": null
+    }
+  }
+]

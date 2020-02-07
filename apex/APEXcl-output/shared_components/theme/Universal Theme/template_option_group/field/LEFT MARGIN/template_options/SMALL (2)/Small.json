@@ -1,0 +1,7 @@
+{
+  "name": "FLM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-left-sm",
+  "helpText": "Adds a small left margin for this field.",
+  "isAdvanced": null
+}

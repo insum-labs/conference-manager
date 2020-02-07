@@ -1,0 +1,1 @@
+This event already has sessions in it. Loading a new file will append to the existing sessions. If the file contains a session id or session number that already exists, then the file will not be accepted.

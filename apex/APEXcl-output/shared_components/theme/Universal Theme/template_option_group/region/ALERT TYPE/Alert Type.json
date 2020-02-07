@@ -1,0 +1,8 @@
+{
+  "name": "ALERT_TYPE",
+  "displayName": "Alert Type",
+  "templateTypes": "REGION",
+  "helpText": "Sets the type of alert which can be used to determine the icon, icon color, and the background color.",
+  "nullText": null,
+  "isAdvanced": "N"
+}

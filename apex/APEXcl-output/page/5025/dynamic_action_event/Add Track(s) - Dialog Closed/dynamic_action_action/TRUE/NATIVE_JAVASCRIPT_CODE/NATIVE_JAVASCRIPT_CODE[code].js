@@ -1,0 +1,1 @@
+$('#communities-ir').trigger('apexrefresh');

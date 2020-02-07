@@ -1,0 +1,33 @@
+{
+  "identification": {
+    "itemName": "P5050_TABLE_NAME",
+    "itemType": "Hidden"
+  },
+  "advanced": {
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "TABLE_NAME",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "valueProtected": "Y"
+  }
+}

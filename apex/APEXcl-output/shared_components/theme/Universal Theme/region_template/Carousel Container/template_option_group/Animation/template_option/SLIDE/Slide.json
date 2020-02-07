@@ -1,0 +1,8 @@
+{
+  "group": "Animation",
+  "name": "SLIDE",
+  "displayName": "Slide",
+  "cssClasses": "t-Region--carouselSlide",
+  "helpText": null,
+  "isAdvanced": null
+}

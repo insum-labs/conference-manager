@@ -1,0 +1,31 @@
+{
+  "identification": {
+    "name": "Show/Hide Report By Track"
+  },
+  "executionOptions": {
+    "executionSequence": 100
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P1_SELECT_REPORT"
+  },
+  "clientSideCondition": {
+    "jsCondition": "Item = Value",
+    "jsConditionItem": "P1_SELECT_REPORT",
+    "jsCondValue": "BY_TRACK",
+    "jsConditionElementType": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

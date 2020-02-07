@@ -1,0 +1,85 @@
+[
+  {
+    "identification": {
+      "columnName": "ID",
+      "irColumnDisplayType": "Hidden Column"
+    },
+    "heading": {
+      "columnHeading": "Id"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TITLE",
+      "irColumnDisplayType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Session",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:3:&SESSION.::&DEBUG.:RP,3:P3_ID:#ID#",
+      "linkText": "#TITLE#",
+      "linkAttributes": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "N",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "N",
+      "allowUsersToHighlight": "N",
+      "allowUsersToControlBreak": "N",
+      "allowUsersToAggregate": "N",
+      "allowUsersToCompute": "N",
+      "allowUsersToChart": "N",
+      "allowUsersToGroupBy": "N",
+      "allowUsersToPivot": "N"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "BODY_STYLE",
+  "displayName": "Body Style",
+  "templateTypes": "REGION",
+  "helpText": "Controls the display of the region's body container.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

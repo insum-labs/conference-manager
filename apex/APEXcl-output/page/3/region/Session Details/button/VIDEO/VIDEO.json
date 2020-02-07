@@ -1,0 +1,42 @@
+{
+  "identification": {
+    "buttonName": "VIDEO",
+    "buttonLabel": "Video"
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "N",
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--small:t-Button--iconRight:t-Button--pillEnd",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-file-video-o"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to URL",
+    "buttonTarget": "javascript:window.open($v('P3_VIDEO_LINK'), '_blank')",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_VIDEO_LINK"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

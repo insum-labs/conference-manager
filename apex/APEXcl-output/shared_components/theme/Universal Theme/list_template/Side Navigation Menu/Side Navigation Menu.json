@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "SIDE_NAVIGATION_MENU",
+    "templateClass": 19,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": "#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.treeView#MIN#.js?v=#APEX_VERSION#"
+  },
+  "executeWhenPageLoads": "apex.jQuery('body').addClass('t-PageBody--leftNav');",
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": "</ul></li>",
+  "attributeDescriptions": {
+    "a01Label": "ID Attribute",
+    "a02Label": "Disabled True/False",
+    "a03Label": null,
+    "a04Label": "Title",
+    "a05Label": null,
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "js-navCollapsed--default:t-TreeNav--styleA"
+  },
+  "comments": {
+    "comment": null
+  }
+}

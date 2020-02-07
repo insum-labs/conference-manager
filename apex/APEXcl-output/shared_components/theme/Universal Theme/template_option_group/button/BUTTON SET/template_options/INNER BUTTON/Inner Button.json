@@ -1,0 +1,7 @@
+{
+  "name": "PILL",
+  "displayName": "Inner Button",
+  "cssClasses": "t-Button--pill",
+  "helpText": null,
+  "isAdvanced": "No"
+}

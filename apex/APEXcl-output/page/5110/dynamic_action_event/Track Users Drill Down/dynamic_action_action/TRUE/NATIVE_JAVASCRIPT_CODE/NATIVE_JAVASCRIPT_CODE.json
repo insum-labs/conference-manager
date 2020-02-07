@@ -1,0 +1,16 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "daEvent": "Track Users Drill Down",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Login Header",
+  "name": "LOGO_HEADER_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-Login-region--headerHidden",
+  "helpText": "Hides both the Region Icon and Title from the Login region.",
+  "isAdvanced": null
+}

@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Sessions"
+  },
+  "executionOptions": {
+    "executionSequence": 60,
+    "daEvent": "Sections \"Check All\"",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

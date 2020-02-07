@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Save By the Number Report Preference"
+  },
+  "executionOptions": {
+    "executionSequence": 110
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P1_SELECT_REPORT"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

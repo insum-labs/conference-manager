@@ -1,0 +1,14 @@
+{
+  "name": {
+    "identifier": "TEXT",
+    "templateclass": "Button",
+    "translatable": "No"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

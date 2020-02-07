@@ -1,0 +1,1 @@
+delete ks_session_votes d where d.session_id = :P15_ID;

@@ -1,0 +1,232 @@
+[
+  {
+    "identification": {
+      "columnName": "SUBMISSION_YEAR",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Submission Year",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "SUBMISSION_WEEK",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Submission Week",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "SUBMISSION_DATE",
+      "irColumnDisplayType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Submission date",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:1041:&SESSION.::&DEBUG.:RP,1041:P1041_YEAR,P1041_WEEK,P1041_EVENT_ID:#SUBMISSION_YEAR#,#SUBMISSION_WEEK#,&P1040_EVENT_ID.",
+      "linkText": "#SUBMISSION_DATE#",
+      "linkAttributes": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "SESSIONS",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Sessions",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "end",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": "999G999G999G999G999G999G990"
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

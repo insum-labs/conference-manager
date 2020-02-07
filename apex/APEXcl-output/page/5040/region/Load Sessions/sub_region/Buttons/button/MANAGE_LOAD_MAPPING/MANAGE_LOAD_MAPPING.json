@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "MANAGE_LOAD_MAPPING",
+    "buttonLabel": "Mapping..."
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_PREVIOUS",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--primary:t-Button--simple:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-gear"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5045:&SESSION.::&DEBUG.:RP::",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

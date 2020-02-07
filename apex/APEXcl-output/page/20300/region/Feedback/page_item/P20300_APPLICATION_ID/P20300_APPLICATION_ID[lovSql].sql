@@ -1,0 +1,1 @@
+select application_id||'. '||application_name d, application_id v from apex_applications where application_id = :P20300_APPLICATION_ID

@@ -1,0 +1,8 @@
+{
+  "name": "ICON_POSITION",
+  "displayName": "Icon Position",
+  "templateTypes": "BUTTON",
+  "helpText": "Sets the position of the icon relative to the label.",
+  "nullText": null,
+  "isAdvanced": "N"
+}

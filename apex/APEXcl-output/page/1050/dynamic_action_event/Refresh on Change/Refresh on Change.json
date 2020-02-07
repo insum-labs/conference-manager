@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Refresh on Change"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P1050_EXCLUDE_ME"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

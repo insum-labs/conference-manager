@@ -1,0 +1,8 @@
+{
+  "name": "COL_CONTENT_DESCRIPTION",
+  "displayName": "Description",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

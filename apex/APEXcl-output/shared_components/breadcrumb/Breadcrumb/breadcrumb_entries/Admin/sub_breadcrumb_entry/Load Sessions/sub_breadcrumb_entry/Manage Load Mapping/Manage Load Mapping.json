@@ -1,0 +1,9 @@
+{
+  "sequence": 10,
+  "shortName": "Manage Load Mapping",
+  "link": "f?p=&APP_ID.:5045:&SESSION.::&DEBUG.:5045::",
+  "page": 5045,
+  "conditionType": null,
+  "authorizationScheme": "EVENT ADMIN",
+  "buildOption": null
+}

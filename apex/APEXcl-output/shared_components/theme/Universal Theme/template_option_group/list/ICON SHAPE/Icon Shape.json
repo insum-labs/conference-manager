@@ -1,0 +1,8 @@
+{
+  "name": "ICON_SHAPE",
+  "displayName": "Icon Shape",
+  "templateTypes": "LIST",
+  "helpText": "Determines the shape of the icon.",
+  "nullText": "Circle",
+  "isAdvanced": "N"
+}

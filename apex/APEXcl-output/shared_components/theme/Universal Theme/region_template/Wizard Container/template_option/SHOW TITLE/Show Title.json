@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_TITLE",
+  "displayName": "Show Title",
+  "cssClasses": "t-Wizard--showTitle",
+  "helpText": null,
+  "isAdvanced": null
+}

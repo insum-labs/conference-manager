@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "computationItemName": "P5105_USERNAME"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "After Submit"
+  },
+  "computation": {
+    "computationType": "PL/SQL Expression"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

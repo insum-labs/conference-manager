@@ -1,0 +1,68 @@
+{
+  "identification": {
+    "itemName": "P15_CO_PRESENTER_COMPANY",
+    "itemType": "Text Field"
+  },
+  "label": {
+    "label": "Co Presenter Company",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementWidth": 60,
+    "elementValuePlaceholder": null
+  },
+  "validation": {
+    "valueRequired": "N",
+    "elementMaxCharacters": 500
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "CO_PRESENTER_COMPANY",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "submitWhenEnterPressed": "N",
+    "disabled": "N",
+    "sendOnPageSubmit": null,
+    "subtype": "TEXT",
+    "trimSpaces": "BOTH"
+  }
+}

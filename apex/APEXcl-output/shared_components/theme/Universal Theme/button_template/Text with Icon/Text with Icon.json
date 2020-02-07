@@ -1,0 +1,14 @@
+{
+  "name": {
+    "identifier": "TEXT_WITH_ICON",
+    "templateclass": "Button, Alternative 1",
+    "translatable": "No"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-Button--iconRight"
+  },
+  "comments": {
+    "comment": null
+  }
+}

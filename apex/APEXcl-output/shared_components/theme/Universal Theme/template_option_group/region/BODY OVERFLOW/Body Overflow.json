@@ -1,0 +1,8 @@
+{
+  "name": "BODY_OVERFLOW",
+  "displayName": "Body Overflow",
+  "templateTypes": "REGION",
+  "helpText": "Determines the scroll behavior when the region contents are larger than their container.",
+  "nullText": null,
+  "isAdvanced": "Y"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "FBM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-bottom-sm",
+  "helpText": "Adds a small bottom margin for this field.",
+  "isAdvanced": null
+}

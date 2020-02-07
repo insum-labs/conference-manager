@@ -1,0 +1,8 @@
+{
+  "group": "Icon Hover Animation",
+  "name": "SPIN",
+  "displayName": "Spin",
+  "cssClasses": "t-Button--hoverIconSpin",
+  "helpText": "The icon will spin on button hover or focus.",
+  "isAdvanced": null
+}

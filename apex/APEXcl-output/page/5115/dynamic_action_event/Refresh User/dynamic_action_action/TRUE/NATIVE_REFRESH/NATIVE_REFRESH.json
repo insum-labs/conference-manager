@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5115_USERNAME"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Refresh User",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

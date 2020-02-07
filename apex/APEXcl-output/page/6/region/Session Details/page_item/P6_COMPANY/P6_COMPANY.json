@@ -1,0 +1,69 @@
+{
+  "identification": {
+    "itemName": "P6_COMPANY",
+    "itemType": "Text Field"
+  },
+  "label": {
+    "label": "Company",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementWidth": 30,
+    "elementValuePlaceholder": null
+  },
+  "validation": {
+    "valueRequired": "N",
+    "elementMaxCharacters": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "COMPANY",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "submitWhenEnterPressed": "N",
+    "disabled": "N",
+    "sendOnPageSubmit": null,
+    "subtype": "TEXT",
+    "trimSpaces": "BOTH"
+  }
+}

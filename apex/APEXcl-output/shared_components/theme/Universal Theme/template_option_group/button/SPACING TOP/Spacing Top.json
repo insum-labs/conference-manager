@@ -1,0 +1,8 @@
+{
+  "name": "SPACING_TOP",
+  "displayName": "Spacing Top",
+  "templateTypes": "BUTTON",
+  "helpText": "Controls the spacing to the top of the button.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

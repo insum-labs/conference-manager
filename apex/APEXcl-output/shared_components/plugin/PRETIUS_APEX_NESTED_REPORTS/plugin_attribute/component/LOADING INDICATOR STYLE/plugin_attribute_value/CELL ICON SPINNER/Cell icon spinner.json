@@ -1,0 +1,7 @@
+{
+  "displayValue": "Cell icon spinner",
+  "returnValue": "CIS",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "Loading indicator is embeded within cell after triggering element."
+}

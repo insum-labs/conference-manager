@@ -1,0 +1,7 @@
+{
+  "name": "Dialog Header",
+  "templateSubstitution": "REGION_POSITION_01",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": null
+}

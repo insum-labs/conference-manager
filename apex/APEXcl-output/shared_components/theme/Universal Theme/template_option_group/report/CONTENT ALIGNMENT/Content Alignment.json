@@ -1,0 +1,8 @@
+{
+  "name": "CONTENT_ALIGNMENT",
+  "displayName": "Content Alignment",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Center (Default)",
+  "isAdvanced": "N"
+}

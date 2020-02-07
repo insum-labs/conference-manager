@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "daActionType": "Set Value"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5042_SEQ_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Toggle Item",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "N",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "setType": "JAVASCRIPT_EXPRESSION",
+    "value": null,
+    "plsqlExpression": null,
+    "itemsToSubmit": null,
+    "escapeSpecialCharacters": null,
+    "suppressChangeEvent": "N",
+    "returnItem": null
+  }
+}

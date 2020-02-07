@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "ABSTRACT",
+    "buttonLabel": "Abstract"
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "N",
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--small:t-Button--iconRight:t-Button--pill",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-question-circle"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5:&SESSION.::&DEBUG.:RP,5:P5_ID,P5_SHOW_TYPE:&P3_ID.,SESSION_ABSTRACT",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

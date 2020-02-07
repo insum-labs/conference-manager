@@ -1,0 +1,60 @@
+{
+  "identification": {
+    "itemName": "P20300_PAGE_ID",
+    "itemType": "Display Only"
+  },
+  "label": {
+    "label": "Page:",
+    "labelAlignment": "Right",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": null,
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "listOfValues": {
+    "displayExtraValues": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": "class=\"fielddatabold\"",
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Null",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "escapeSpecialCharacters": "Y",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "sendOnPageSubmit": "Y",
+    "basedOn": "LOV",
+    "showLineBreaks": "N"
+  }
+}

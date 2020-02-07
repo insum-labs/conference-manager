@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "OK",
+    "buttonLabel": "Ok"
+  },
+  "layout": {
+    "buttonPosition": "Below Region",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null,
+    "horizontalAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--primary:t-Button--simple",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-check"
+  },
+  "behavior": {
+    "buttonAction": "Defined by Dynamic Action",
+    "buttonExecuteValidations": "Y",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": "title=\"Ok, I agree\"",
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Upload Data to ks_sessions",
+    "pageProcessType": "PL/SQL Code",
+    "processRegion": null
+  },
+  "source": {
+    "plsqlProcessLocation": "Local Database"
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "NEXT",
+    "conditionType": "Rows returned"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

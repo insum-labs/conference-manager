@@ -1,0 +1,32 @@
+{
+  "reportTemplate": {
+    "identifier": "SEARCH_RESULTS",
+    "templateType": "Named Column (row template)",
+    "templateClass": 1,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null,
+    "executeWhenPageLoads": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "columnTemplates": {
+    "columnTemplateCondition1": ":LABEL_02 is null",
+    "columnTemplateCondition2": ":LABEL_03 is null",
+    "columnTemplateCondition3": ":LABEL_04 is null",
+    "columnTemplateCondition4": null
+  },
+  "rowHighlighting": {
+    "backgroundColorForCurrentRow": null,
+    "backgroundColorForCheckedRow": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": " (SELECT link_text, link_target, detail1, detail2, last_modified)"
+  }
+}

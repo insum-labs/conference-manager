@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_ICONS",
+  "displayName": "Show Icons",
+  "cssClasses": "t-MediaList--showIcons",
+  "helpText": null,
+  "isAdvanced": null
+}

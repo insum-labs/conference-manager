@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Save Scroll Pos"
+  },
+  "executionOptions": {
+    "executionSequence": 40
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".editSession"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

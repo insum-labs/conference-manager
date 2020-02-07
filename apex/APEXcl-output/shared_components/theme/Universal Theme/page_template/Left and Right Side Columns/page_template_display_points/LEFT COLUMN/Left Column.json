@@ -1,0 +1,7 @@
+{
+  "name": "Left Column",
+  "templateSubstitution": "REGION_POSITION_02",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 3
+}

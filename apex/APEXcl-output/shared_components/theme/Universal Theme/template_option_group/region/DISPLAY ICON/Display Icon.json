@@ -1,0 +1,8 @@
+{
+  "name": "DISPLAY_ICON",
+  "displayName": "Display Icon",
+  "templateTypes": "REGION",
+  "helpText": "Display the Hero Region icon.",
+  "nullText": "Yes (Default)",
+  "isAdvanced": "N"
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "TEXT_CONTENT",
+  "displayName": "Text Content",
+  "cssClasses": "t-Region--textContent",
+  "helpText": "Useful for displaying primarily text-based content, such as FAQs and more.",
+  "isAdvanced": null
+}

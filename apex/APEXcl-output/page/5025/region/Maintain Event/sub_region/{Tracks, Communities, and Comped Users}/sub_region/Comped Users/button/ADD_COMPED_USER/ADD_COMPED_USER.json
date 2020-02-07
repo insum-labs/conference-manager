@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "ADD_COMPED_USER",
+    "buttonLabel": "Add New User"
+  },
+  "layout": {
+    "buttonPosition": "Right of Interactive Report Search Bar",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-plus"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5170:&SESSION.::&DEBUG.:5170:P5170_EVENT_ID:&P5025_ID.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

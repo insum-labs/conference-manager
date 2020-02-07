@@ -1,0 +1,58 @@
+{
+  "identification": {
+    "name": "Edit Track Goals",
+    "pageAlias": null,
+    "title": "Edit Track Goals",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Modal Dialog",
+    "dialogTemplate": null,
+    "templateOptions2": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "dialog": {
+    "dialogWidth": "1024px",
+    "dialogHeight": null,
+    "dialogMaxWidth": null,
+    "dialogAttributes": null,
+    "dialogCssClasses": null,
+    "dialogChained": "Y"
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "Do not focus cursor",
+    "pageWarnOnUnsavedChanges": "N",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EDIT",
+    "pageAuthentication": "Page Requires Authentication",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Arguments Must Have Checksum",
+    "formAutoComplete": "On",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Always"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

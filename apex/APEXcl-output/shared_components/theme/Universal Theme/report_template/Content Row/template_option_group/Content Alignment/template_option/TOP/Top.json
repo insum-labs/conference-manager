@@ -1,0 +1,8 @@
+{
+  "group": "Content Alignment",
+  "name": "ALIGNMENT_TOP",
+  "displayName": "Top",
+  "cssClasses": "t-ContentRow--alignTop",
+  "helpText": "Aligns the content to the top of the row. This is useful when you expect that yours rows will vary in height (e.g. some rows will have longer descriptions than others).",
+  "isAdvanced": null
+}

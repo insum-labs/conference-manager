@@ -1,0 +1,8 @@
+{
+  "name": "REGION_RIGHT_MARGIN",
+  "displayName": "Right Margin",
+  "templateTypes": "REGION",
+  "helpText": "Set the right margin for this region.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

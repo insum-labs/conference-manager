@@ -1,0 +1,7 @@
+{
+  "displayValue": "Sorting data",
+  "returnValue": "SD",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option is checked, nested report supports sorting via column headings. Data is sorted using JavaScript function. Sort function supports NUMBER and VARCHAR2 column type."
+}

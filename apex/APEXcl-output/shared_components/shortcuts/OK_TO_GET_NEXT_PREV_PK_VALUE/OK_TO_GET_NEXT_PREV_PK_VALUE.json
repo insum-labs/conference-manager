@@ -1,0 +1,8 @@
+{
+  "name": "OK_TO_GET_NEXT_PREV_PK_VALUE",
+  "type": "Text with JavaScript Escaped Single Quotes",
+  "shortcut": "Are you sure you want to leave this page without saving?",
+  "errorText": null,
+  "buildOption": null,
+  "comments": null
+}

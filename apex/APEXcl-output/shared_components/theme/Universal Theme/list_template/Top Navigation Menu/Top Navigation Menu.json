@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "TOP_NAVIGATION_MENU",
+    "templateClass": 20,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": "var e = apex.jQuery(\"#t_MenuNav\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  if ( apex.actions ) {\n    apex.actions.addFromMarkup( e );\n  } else {\n    apex.debug.warn(\"Include actions.js to support menu shortcuts\");\n  }\n}\ne.menu({\n  behaveLikeTabs: e.hasClass(\"js-tabLike\"),\n  menubarShowSubMenuIcon: e.hasClass(\"js-showSubMenuIcons\") || null,\n  slide: e.hasClass(\"js-slide\"),\n  menubar: true,\n  menubarOverflow: true,\n  callout: e.hasClass(\"js-menu-callout\")\n});",
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": "</ul></li>",
+  "attributeDescriptions": {
+    "a01Label": "ID Attribute",
+    "a02Label": "Disabled True / False",
+    "a03Label": "Hide",
+    "a04Label": "Title Attribute",
+    "a05Label": "Shortcut Key",
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": "js-tabLike",
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

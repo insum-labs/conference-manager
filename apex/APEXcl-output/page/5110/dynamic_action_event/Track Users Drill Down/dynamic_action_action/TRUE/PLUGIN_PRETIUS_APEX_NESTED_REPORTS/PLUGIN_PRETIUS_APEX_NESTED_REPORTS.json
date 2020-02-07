@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "daActionType": "PLUGIN_PRETIUS_APEX_NESTED_REPORTS"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Track Users Drill Down",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N"
+  },
+  "attributes": {
+    "attribute01": "select apex_page.get_url(\n        p_page               =>  5115\n      , p_debug              =>  :DEBUG\n      , p_clear_cache        =>  5115\n      , p_items              =>  'P5115_ID'\n      , p_values             =>  uetr.id\n     ) URL\n     , u.full_name\n     , u.email\n     , nvl((select r.name from ks_roles r where r.code = nvl(uetr.selection_role_code,'')),'') as selection_role\n     , nvl((select r.name from ks_roles r where r.code = nvl(uetr.voting_role_code,'')),'') as voting_role\nfrom ks_user_event_track_roles uetr\n    join ks_users_v u on (uetr.username = u.username)\nwhere uetr.event_track_id = #ID#\norder by 4,5",
+    "attribute02": "AA:LI",
+    "attribute03": "CTDC",
+    "attribute04": "<table class=\"t-Report-report\">\n<thead>\n<tr>\n  <th class=\"t-Report-colHead\">&nbsp;</th>\n  <th class=\"t-Report-colHead\">Name</th>\n  <th class=\"t-Report-colHead\">email</th>\n  <th class=\"t-Report-colHead\">Selection Role</th>\n  <th class=\"t-Report-colHead\">Voting Role</th>\n</tr>\n</thead>\n<tbody>\n{{#data}}\n<tr>\n  <td class=\"t-Report-cell\"><a href=\"javascript: void(0)\" onclick=\"{{URL}}\" class=\"trackEventEdit\">&EDIT_BUTTON.</a></td>\n  <td class=\"t-Report-cell\" headers=\"FULL_NAME\">{{FULL_NAME}}</td>\n  <td class=\"t-Report-cell\" headers=\"EMAIL\">{{EMAIL}}</td>\n  <td class=\"t-Report-cell\" align=\"center\">{{SELECTION_ROLE}}</td>\n  <td class=\"t-Report-cell\" align=\"center\">{{VOTING_ROLE}}</td>\n</tr>\n{{/data}}\n</tbody>\n</table>",
+    "attribute05": null,
+    "attribute06": "#EBEBEB",
+    "attribute07": "300",
+    "attribute08": "#c5c5c5",
+    "attribute09": "#e3e3e3",
+    "attribute10": null
+  }
+}

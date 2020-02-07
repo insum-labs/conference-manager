@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5026_BLIND_VOTE_END_DATE"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "When Begin Date Changes Set End Date (Blind Vote)",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Body Overflow",
+  "name": "SCROLLBODY",
+  "displayName": "Scroll - Default",
+  "cssClasses": "t-Region--scrollBody",
+  "helpText": null,
+  "isAdvanced": "No"
+}

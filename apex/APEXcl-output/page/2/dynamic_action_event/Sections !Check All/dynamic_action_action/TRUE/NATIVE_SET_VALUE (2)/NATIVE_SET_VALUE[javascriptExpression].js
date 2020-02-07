@@ -1,0 +1,1 @@
+this.triggeringElement.getAttribute("id").split("_")[2]=="clear"?"NO":"YES"

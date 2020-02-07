@@ -1,0 +1,7 @@
+{
+  "name": "Inline Dialogs",
+  "templateSubstitution": "REGION_POSITION_04",
+  "gridSupport": "Yes",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 12
+}

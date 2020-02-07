@@ -1,0 +1,1 @@
+(this.triggeringElement.checked)?"YES":"NO"

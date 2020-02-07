@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "HIDE_LABEL_ON_MOBILE",
+  "displayName": "Hide Label on Mobile",
+  "cssClasses": "t-Button--mobileHideLabel",
+  "helpText": "This template options hides the button label on small screens.",
+  "isAdvanced": null
+}

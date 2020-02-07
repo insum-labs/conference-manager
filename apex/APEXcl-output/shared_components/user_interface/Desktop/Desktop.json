@@ -1,0 +1,36 @@
+{
+  "identification": {
+    "userInterfaceType": "Desktop",
+    "sequence": 10
+  },
+  "attributes": {
+    "autoDetect": "No",
+    "default": "Yes",
+    "homeUrl": "f?p=&APP_ID.:1:&SESSION.",
+    "loginUrl": "f?p=&APP_ID.:LOGIN_DESKTOP:&SESSION.",
+    "globalPage": 0,
+    "usersCanChooseThemeStyle": "No",
+    "addBuildWithApexToFooter": "No"
+  },
+  "navigationMenu": {
+    "navigationMenuList": "Desktop Navigation Menu",
+    "position": "Side",
+    "listTemplate": "Side Navigation Menu",
+    "templateOptions": "#DEFAULT#:js-navCollapsed--hidden:t-TreeNav--styleA"
+  },
+  "javascript": {
+    "contentDeliveryNetwork": null,
+    "javascriptFileUrls": "#APP_IMAGES#js/cm#MIN#.js",
+    "includeDeprecatedJavascript": null,
+    "includeJqueryMigrate": "No"
+  },
+  "css": {
+    "cssFileUrls": "#APP_IMAGES#css/app.css?version=#APP_VERSION#"
+  },
+  "navigationBar": {
+    "implementation": "List",
+    "navigationBarList": "Desktop Navigation Bar",
+    "listTemplate": "Navigation Bar",
+    "templateOptions": "#DEFAULT#:js-menu-callout"
+  }
+}

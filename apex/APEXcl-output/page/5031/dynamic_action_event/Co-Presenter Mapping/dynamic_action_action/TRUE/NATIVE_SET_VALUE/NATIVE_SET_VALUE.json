@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "daActionType": "Set Value"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5031_CO_PRESENTER"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Co-Presenter Mapping",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "setType": "JAVASCRIPT_EXPRESSION",
+    "value": null,
+    "plsqlExpression": null,
+    "itemsToSubmit": null,
+    "escapeSpecialCharacters": null,
+    "suppressChangeEvent": "N",
+    "returnItem": null
+  }
+}

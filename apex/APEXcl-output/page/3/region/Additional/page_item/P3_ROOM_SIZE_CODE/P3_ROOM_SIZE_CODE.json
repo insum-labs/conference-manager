@@ -1,0 +1,73 @@
+{
+  "identification": {
+    "itemName": "P3_ROOM_SIZE_CODE",
+    "itemType": "Select List"
+  },
+  "label": {
+    "label": "Room Size",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": 1,
+    "columnSpan": 2,
+    "labelColumnSpan": 1,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementHeight": 1
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "namedLov": "ROOM_SIZE_CODE",
+    "displayExtraValues": "Y",
+    "displayNullValue": "Y",
+    "nullDisplayValue": "- Choose -",
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "ROOM_SIZE_CODE",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "pageActionOnSelection": "NONE",
+    "allowMultiSelection": "N",
+    "executeValidations": null
+  }
+}

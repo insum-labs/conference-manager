@@ -1,0 +1,8 @@
+{
+  "group": "Badge Size",
+  "name": "96PX",
+  "displayName": "96px",
+  "cssClasses": "t-BadgeList--xlarge",
+  "helpText": null,
+  "isAdvanced": "No"
+}

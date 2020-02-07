@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "BLOCK",
+  "displayName": "Block",
+  "cssClasses": "t-Cards--featured t-Cards--block force-fa-lg",
+  "helpText": null,
+  "isAdvanced": null
+}

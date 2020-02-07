@@ -1,0 +1,58 @@
+{
+  "identification": {
+    "name": "Change Event Track",
+    "pageAlias": null,
+    "title": "Change Event Track",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Modal Dialog",
+    "dialogTemplate": null,
+    "templateOptions2": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "dialog": {
+    "dialogWidth": null,
+    "dialogHeight": null,
+    "dialogMaxWidth": null,
+    "dialogAttributes": null,
+    "dialogCssClasses": null,
+    "dialogChained": "Y"
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "Do not focus cursor",
+    "pageWarnOnUnsavedChanges": "Y",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "pageAuthentication": "Page Requires Authentication",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Unrestricted",
+    "formAutoComplete": "Off",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Only for Success"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

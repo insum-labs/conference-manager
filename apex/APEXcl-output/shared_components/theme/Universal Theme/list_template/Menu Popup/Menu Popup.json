@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "MENU_POPUP",
+    "templateClass": 20,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": "var e = apex.jQuery(\"##PARENT_STATIC_ID#_menu\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  apex.actions.addFromMarkup( e );\n}\ne.menu({ slide: e.hasClass(\"js-slide\"), iconType: 'fa', callout: e.hasClass(\"js-menu-callout\")});",
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": "</ul></li>",
+  "attributeDescriptions": {
+    "a01Label": "Data ID",
+    "a02Label": "Disabled (True/False)",
+    "a03Label": "Hidden (True/False)",
+    "a04Label": "Title Attribute",
+    "a05Label": "Shortcut",
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

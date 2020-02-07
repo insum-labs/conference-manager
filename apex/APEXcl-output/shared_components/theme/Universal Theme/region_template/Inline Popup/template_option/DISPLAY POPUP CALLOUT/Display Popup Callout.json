@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "DISPLAY_POPUP_CALLOUT",
+  "displayName": "Display Popup Callout",
+  "cssClasses": "js-popup-callout",
+  "helpText": "Use this option to add display a callout for the popup. Note that callout will only be displayed if the data-parent-element custom attribute is defined.",
+  "isAdvanced": null
+}

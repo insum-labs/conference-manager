@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "daActionType": "Execute PL/SQL Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Save the latest preference",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "N"
+  },
+  "attributes": {
+    "itemsToSubmit": "P2_BODY_SIDE_STATE",
+    "itemsToReturn": null,
+    "suppressChangeEvent": null
+  }
+}

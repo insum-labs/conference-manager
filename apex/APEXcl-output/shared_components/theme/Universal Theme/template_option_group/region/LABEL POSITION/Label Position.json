@@ -1,0 +1,8 @@
+{
+  "name": "LABEL_POSITION",
+  "displayName": "Label Position",
+  "templateTypes": "REGION",
+  "helpText": "Sets the position of the label relative to the form item.",
+  "nullText": "Inline - Default",
+  "isAdvanced": "Y"
+}

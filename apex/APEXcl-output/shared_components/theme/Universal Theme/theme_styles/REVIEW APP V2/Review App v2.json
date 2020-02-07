@@ -1,0 +1,11 @@
+{
+  "name": "Review App v2",
+  "current": "Y",
+  "isPublic": "Y",
+  "accessibilityTested": "N",
+  "cssFileUrls": null,
+  "themeRollerReadOnly": "N",
+  "themeRollerInputFileUrls": "#THEME_IMAGES#less/theme/Vita-Slate.less",
+  "themeRollerOutputFileUrl": "#THEME_DB_IMAGES#192212533970032920.css",
+  "comment": null
+}

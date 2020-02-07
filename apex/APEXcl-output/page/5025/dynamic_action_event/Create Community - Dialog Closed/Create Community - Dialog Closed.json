@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Create Community - Dialog Closed"
+  },
+  "executionOptions": {
+    "executionSequence": 30
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Button",
+    "whenButton": "CREATE_COMMUNITY"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

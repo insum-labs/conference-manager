@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "USE_COMPACT_STYLE",
+  "displayName": "Use Compact Style",
+  "cssClasses": "t-BreadcrumbRegion--compactTitle",
+  "helpText": "Uses a compact style for the breadcrumbs.",
+  "isAdvanced": null
+}

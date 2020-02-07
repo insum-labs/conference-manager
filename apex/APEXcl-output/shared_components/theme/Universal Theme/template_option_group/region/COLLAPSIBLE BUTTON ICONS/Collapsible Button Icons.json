@@ -1,0 +1,8 @@
+{
+  "name": "COLLAPSIBLE_BUTTON_ICONS",
+  "displayName": "Collapsible Button Icons",
+  "templateTypes": "REGION",
+  "helpText": "Determines which arrows to use to represent the icons for the collapse and expand button.",
+  "nullText": "Arrows",
+  "isAdvanced": "N"
+}

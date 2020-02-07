@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "REMOVE_PAGE_OVERLAY",
+  "displayName": "Remove Page Overlay",
+  "cssClasses": "js-popup-noOverlay",
+  "helpText": "This option will display the inline dialog without an overlay on the background.",
+  "isAdvanced": null
+}

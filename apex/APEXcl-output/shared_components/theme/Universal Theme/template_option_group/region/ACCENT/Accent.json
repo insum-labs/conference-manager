@@ -1,0 +1,8 @@
+{
+  "name": "ACCENT",
+  "displayName": "Accent",
+  "templateTypes": "REGION",
+  "helpText": "Set the Region's accent. This accent corresponds to a Theme-Rollable color and sets the background of the Region's Header.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "COLOREDBACKGROUND",
+  "displayName": "Highlight Background",
+  "cssClasses": "t-Alert--colorBG",
+  "helpText": "Set alert background color to that of the alert type (warning, success, etc.)",
+  "isAdvanced": "No"
+}

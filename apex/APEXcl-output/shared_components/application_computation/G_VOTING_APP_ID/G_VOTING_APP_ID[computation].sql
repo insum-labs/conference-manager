@@ -1,0 +1,1 @@
+return ks_util.get_param('VOTING_APP_ID');

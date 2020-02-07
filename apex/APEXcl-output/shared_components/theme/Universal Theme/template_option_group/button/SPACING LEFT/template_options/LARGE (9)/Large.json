@@ -1,0 +1,7 @@
+{
+  "name": "LARGELEFTMARGIN",
+  "displayName": "Large",
+  "cssClasses": "t-Button--gapLeft",
+  "helpText": null,
+  "isAdvanced": "No"
+}

@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Totals"
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "daEvent": "Restore Refresh",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "displayValue": "Cache results",
+  "returnValue": "CR",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If checked the result of the SQL query is retrieved only once for the specified table cell or jQuery selector."
+}

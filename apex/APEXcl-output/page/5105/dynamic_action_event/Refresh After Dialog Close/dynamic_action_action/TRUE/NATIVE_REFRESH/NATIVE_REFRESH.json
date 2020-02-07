@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Refresh"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "User Roles"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Refresh After Dialog Close",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

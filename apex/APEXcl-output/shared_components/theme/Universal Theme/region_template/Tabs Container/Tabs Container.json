@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "TABS_CONTAINER",
+    "templateClass": 5,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": "#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#"
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-TabsRegion-mod--simple"
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

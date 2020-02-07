@@ -1,0 +1,11 @@
+select "ID",
+"DISPLAY_SEQ",
+"CODE",
+"NAME",
+"ACTIVE_IND",
+"CREATED_BY",
+"CREATED_ON",
+"UPDATED_BY",
+"UPDATED_ON"
+from "#OWNER#"."KS_EVENT_TYPES" 
+  

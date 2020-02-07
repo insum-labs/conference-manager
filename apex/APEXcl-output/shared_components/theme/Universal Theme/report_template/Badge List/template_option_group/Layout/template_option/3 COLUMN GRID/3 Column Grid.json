@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "3COLUMNGRID",
+  "displayName": "3 Column Grid",
+  "cssClasses": "t-BadgeList--cols t-BadgeList--3cols",
+  "helpText": "Arrange badges in a 3 column grid",
+  "isAdvanced": "No"
+}

@@ -1,0 +1,1 @@
+select id from ks_users where username = :P5115_USERNAME

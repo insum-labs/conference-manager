@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "APPLY_CHANGES",
+    "buttonLabel": "Apply Changes"
+  },
+  "layout": {
+    "buttonPosition": "Below Region",
+    "horizontalAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "Y",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "attributes": {
+    "itemName": "G_ADMIN",
+    "scope": "Global"
+  },
+  "security": {
+    "sessionStateProtection": "Restricted - May not be set from browser"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "comments": {
+    "comments": "YES/NO for Admin Users. Set after login."
+  }
+}

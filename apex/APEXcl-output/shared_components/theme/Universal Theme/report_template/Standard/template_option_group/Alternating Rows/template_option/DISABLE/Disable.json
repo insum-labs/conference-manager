@@ -1,0 +1,8 @@
+{
+  "group": "Alternating Rows",
+  "name": "ALTROWCOLORSDISABLE",
+  "displayName": "Disable",
+  "cssClasses": "t-Report--staticRowColors",
+  "helpText": null,
+  "isAdvanced": "No"
+}

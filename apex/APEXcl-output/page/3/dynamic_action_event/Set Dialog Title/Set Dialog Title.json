@@ -1,0 +1,27 @@
+{
+  "identification": {
+    "name": "Set Dialog Title"
+  },
+  "executionOptions": {
+    "executionSequence": 30
+  },
+  "when": {
+    "event": "ready"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,1209 @@
+[
+  {
+    "identification": {
+      "columnName": "ID",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "ID",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "EVENT_TYPE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Type",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "NAME",
+      "irColumnDisplayType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Name",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:5025:&SESSION.::&DEBUG.:RP,5025:P5025_ID:#ID#",
+      "linkText": "#NAME#",
+      "linkAttributes": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "ALIAS",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Alias",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "LOCATION",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Location",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "BEGIN_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Begin Date",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "END_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "End Date",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "BLIND_VOTING_CURRENT_IND",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Public Voting <br>Open?",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": "<i class=\"fa cfa-open_#BLIND_VOTING_CURRENT_IND# cfa-1_5x\" title=\"#BLIND_VOTING_CURRENT_IND#\"></i>"
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "COMMITTEE_VOTING_CURRENT_IND",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Committee Voting <br>Open?",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": "<i class=\"fa cfa-open_#COMMITTEE_VOTING_CURRENT_IND# cfa-1_5x\" title=\"#COMMITTEE_VOTING_CURRENT_IND#\"></i>"
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "BLIND_VOTE_BEGIN_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Public Vote Begin",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "BLIND_VOTE_END_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Public Vote End",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "COMMITTEE_VOTE_BEGIN_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Committee Vote Begin Date",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "COMMITTEE_VOTE_END_DATE",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Committee Vote End Date",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TRACKS",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Tracks",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "end",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "SESSIONS",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Sessions",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "end",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": "999G999G999G999G999G999G990"
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "ACTIVE_IND",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Active?",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": "<i class=\"fa cfa-check_#ACTIVE_IND# cfa-1_5x\" title=\"#ACTIVE_IND#\"></i>"
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "CREATED_BY",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Created By",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "CREATED_ON",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Created On",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "UPDATED_BY",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Updated By",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "UPDATED_ON",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Updated On",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type",
+      "reportFilterDateRanges": "All"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "BLIND_VOTE_FLAG",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Blind Vote?",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "center",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": "<i class=\"fa cfa-check_#BLIND_VOTE_FLAG# cfa-1_5x\" title=\"#BLIND_VOTE_FLAG#\"></i>"
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

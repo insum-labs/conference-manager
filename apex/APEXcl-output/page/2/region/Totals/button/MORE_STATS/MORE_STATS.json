@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "MORE_STATS",
+    "buttonLabel": "More stats"
+  },
+  "layout": {
+    "buttonPosition": "Below Region",
+    "horizontalAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--noUI:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-search"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:10:&SESSION.::&DEBUG.:RP::",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

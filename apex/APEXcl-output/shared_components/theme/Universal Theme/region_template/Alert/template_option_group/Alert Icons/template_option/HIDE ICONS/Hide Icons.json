@@ -1,0 +1,8 @@
+{
+  "group": "Alert Icons",
+  "name": "HIDE_ICONS",
+  "displayName": "Hide Icons",
+  "cssClasses": "t-Alert--noIcon",
+  "helpText": "Hides alert icons",
+  "isAdvanced": null
+}

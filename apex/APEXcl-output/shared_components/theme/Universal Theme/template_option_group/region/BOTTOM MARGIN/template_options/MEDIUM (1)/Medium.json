@@ -1,0 +1,7 @@
+{
+  "name": "RBM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-bottom-md",
+  "helpText": "Adds a medium bottom margin to the region.",
+  "isAdvanced": null
+}

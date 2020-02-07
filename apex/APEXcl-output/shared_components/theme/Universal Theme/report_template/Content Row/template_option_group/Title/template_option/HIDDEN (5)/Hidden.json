@@ -1,0 +1,8 @@
+{
+  "group": "Title",
+  "name": "TITLE_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideTitle",
+  "helpText": "Hides the Title from being rendered on the screen.",
+  "isAdvanced": null
+}

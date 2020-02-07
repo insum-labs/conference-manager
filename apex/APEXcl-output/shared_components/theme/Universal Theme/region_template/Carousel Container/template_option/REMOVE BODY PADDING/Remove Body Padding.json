@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "NOBODYPADDING",
+  "displayName": "Remove Body Padding",
+  "cssClasses": "t-Region--noPadding",
+  "helpText": "Removes padding from region body.",
+  "isAdvanced": "No"
+}

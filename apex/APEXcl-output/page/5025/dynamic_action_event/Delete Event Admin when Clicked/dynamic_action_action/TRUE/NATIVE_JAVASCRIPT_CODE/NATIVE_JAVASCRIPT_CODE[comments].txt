@@ -1,0 +1,1 @@
+Force a Refresh of the Select2

@@ -1,0 +1,1 @@
+nvl(:P5165_DISPLAY_MESSAGE, '~') not in ('Y')

@@ -1,0 +1,2 @@
+You are about to switch the voting role for this user. 
+As a result, all current votes will also be switched (from <b>PUBLIC</b> to <b>COMMITTEE</b> or vice versa).

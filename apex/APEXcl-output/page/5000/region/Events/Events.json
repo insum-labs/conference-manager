@@ -1,0 +1,49 @@
+{
+  "identification": {
+    "title": "Events",
+    "regionType": "List"
+  },
+  "source": {
+    "sourceList": "ADMIN_EVENTS"
+  },
+  "layout": {
+    "regionPosition": "BODY",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "regionTemplate": "Standard",
+    "templateOptions": "#DEFAULT#:t-Region--scrollBody",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "itemDisplayPosition": "Above Content"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "regionImage": null,
+    "imageTagAttributes": null,
+    "regionDisplaySelector": "Y"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "customization": {
+    "customizable": "Not Customizable By End Users"
+  }
+}

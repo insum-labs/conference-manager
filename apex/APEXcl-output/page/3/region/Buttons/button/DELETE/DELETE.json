@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "DELETE",
+    "buttonLabel": "Delete"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_DELETE"
+  },
+  "appearance": {
+    "buttonTemplate": "Text",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "behavior": {
+    "buttonAction": "Redirect to URL",
+    "buttonTarget": "javascript:apex.confirm(htmldb_delete_message,'DELETE');",
+    "buttonExecuteValidations": "N",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": "SQL DELETE action"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Never"
+  },
+  "security": {
+    "authorizationScheme": "EDIT"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

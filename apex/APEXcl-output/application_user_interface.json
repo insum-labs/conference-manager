@@ -1,0 +1,13 @@
+{
+  "generalProperties": {
+    "mediaType": null,
+    "staticFilePrefix": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "logo": {
+    "logoType": "Text",
+    "logoText": "ODTUG Abstract Review"
+  }
+}

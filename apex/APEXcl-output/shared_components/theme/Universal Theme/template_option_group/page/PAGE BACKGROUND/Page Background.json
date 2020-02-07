@@ -1,0 +1,8 @@
+{
+  "name": "PAGE_BACKGROUND",
+  "displayName": "Page Background",
+  "templateTypes": "PAGE",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

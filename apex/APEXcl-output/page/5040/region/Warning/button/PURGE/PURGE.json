@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "PURGE",
+    "buttonLabel": "Purge..."
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_CLOSE",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--danger:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-trash"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5055:&SESSION.::&DEBUG.:RP,5055::",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

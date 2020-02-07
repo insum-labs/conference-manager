@@ -1,0 +1,7 @@
+{
+  "name": "LARGE_FIELD",
+  "displayName": "Large",
+  "cssClasses": "t-Form-fieldContainer--large",
+  "helpText": null,
+  "isAdvanced": null
+}

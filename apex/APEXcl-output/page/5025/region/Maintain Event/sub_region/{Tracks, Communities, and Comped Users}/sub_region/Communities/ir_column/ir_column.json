@@ -1,0 +1,166 @@
+[
+  {
+    "identification": {
+      "columnName": "EVENT_ID",
+      "irColumnDisplayType": "Hidden Column"
+    },
+    "heading": {
+      "columnHeading": "Event id"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "EVENT_COMMUNITY_ID",
+      "irColumnDisplayType": "Hidden Column"
+    },
+    "heading": {
+      "columnHeading": "Event community id"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "COMMUNITY_NAME",
+      "irColumnDisplayType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Community",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TRACKS",
+      "irColumnDisplayType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Tracks",
+      "headingAlignment": "center"
+    },
+    "singleRowView": {
+      "syncFormLabel": "Y"
+    },
+    "layout": {
+      "columnAlignment": "start",
+      "irColumnGroup": null
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:5165:&SESSION.::&DEBUG.:RP,5165:P5165_COMMUNITY_ID,P5165_EVENT_ID:#EVENT_COMMUNITY_ID#,#EVENT_ID#",
+      "linkText": "#TRACKS#",
+      "linkAttributes": null
+    },
+    "columnFilter": {
+      "irColumnFilterType": "Default Based on Column Type"
+    },
+    "advanced": {
+      "staticId": null
+    },
+    "enableUserTo": {
+      "allowUsersToHide": "Y",
+      "allowUsersToSort": "Y",
+      "allowUsersToFilter": "Y",
+      "allowUsersToHighlight": "Y",
+      "allowUsersToControlBreak": "Y",
+      "allowUsersToAggregate": "Y",
+      "allowUsersToCompute": "Y",
+      "allowUsersToChart": "Y",
+      "allowUsersToGroupBy": "Y",
+      "allowUsersToPivot": "Y"
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "help": {
+      "helpText": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

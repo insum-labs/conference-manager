@@ -1,0 +1,1 @@
+$(this.triggeringElement).closest('tr').find('a.showChildren').trigger('click');

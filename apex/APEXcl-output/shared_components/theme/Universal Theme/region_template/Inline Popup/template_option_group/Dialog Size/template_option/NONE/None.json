@@ -1,0 +1,8 @@
+{
+  "group": "Dialog Size",
+  "name": "NONE",
+  "displayName": "None",
+  "cssClasses": "js-dialog-nosize",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "name": "COL_SELECTION",
+  "displayName": "Selection",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

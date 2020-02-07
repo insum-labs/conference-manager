@@ -1,0 +1,8 @@
+{
+  "name": "HIDE_STEPS_FOR",
+  "displayName": "Hide Steps For",
+  "templateTypes": "REGION",
+  "helpText": null,
+  "nullText": null,
+  "isAdvanced": "N"
+}

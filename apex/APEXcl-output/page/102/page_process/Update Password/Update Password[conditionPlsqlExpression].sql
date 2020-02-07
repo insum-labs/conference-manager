@@ -1,0 +1,1 @@
+:P102_PASSWORD is not null and (:REQUEST = 'RESET_PASSWORD' or :REQUEST like 'P102_PASSWORD%')

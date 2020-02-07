@@ -1,0 +1,7 @@
+{
+  "name": "RTM_LARGE",
+  "displayName": "Large",
+  "cssClasses": "margin-top-lg",
+  "helpText": "Adds a large top margin to the region.",
+  "isAdvanced": null
+}

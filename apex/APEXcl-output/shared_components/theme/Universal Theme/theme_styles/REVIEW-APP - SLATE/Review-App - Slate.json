@@ -1,0 +1,11 @@
+{
+  "name": "Review-App - Slate",
+  "current": "N",
+  "isPublic": "N",
+  "accessibilityTested": "N",
+  "cssFileUrls": null,
+  "themeRollerReadOnly": "N",
+  "themeRollerInputFileUrls": "#THEME_IMAGES#less/theme/Vita-Slate.less",
+  "themeRollerOutputFileUrl": "#THEME_DB_IMAGES#130808365422021429482.css",
+  "comment": null
+}

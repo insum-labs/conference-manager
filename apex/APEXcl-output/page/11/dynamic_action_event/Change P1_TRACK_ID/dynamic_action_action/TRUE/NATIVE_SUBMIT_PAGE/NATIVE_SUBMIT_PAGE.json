@@ -1,0 +1,20 @@
+{
+  "identification": {
+    "daActionType": "Submit Page"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "daEvent": "Change P1_TRACK_ID",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "requestButtonName": null,
+    "showProcessing": "Y"
+  }
+}

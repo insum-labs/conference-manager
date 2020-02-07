@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Refresh"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Region",
+    "whenRegion": "Sessions"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

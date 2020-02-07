@@ -1,0 +1,1 @@
+This call with not only set the pref, but save P1_EVENT_ID into session state

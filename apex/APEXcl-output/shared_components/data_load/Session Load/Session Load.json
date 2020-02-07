@@ -1,0 +1,23 @@
+{
+  "dataLoadDefinition": {
+    "name": "Session Load",
+    "owner": "#OWNER#",
+    "tableName": "KS_SESSION_LOAD",
+    "uniqueColumn1": "SESSION_NUM",
+    "caseSensitive1": "No",
+    "uniqueColumn2": "VOTER",
+    "caseSensitive2": "No",
+    "uniqueColumn3": null,
+    "caseSensitive3": "No",
+    "skipValidation": "No"
+  },
+  "columnNameAliases": {
+    "columnAliasListOfValues": null
+  },
+  "manageConcurrency": {
+    "concurrencyColumnName": null
+  },
+  "comments": {
+    "comments": null
+  }
+}

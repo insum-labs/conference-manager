@@ -1,0 +1,7 @@
+{
+  "displayValue": "Replace cell content",
+  "returnValue": "RCC",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "Loading indicator replaces cell content. After AJAX finishes fetching data, cell content is restored to initial content."
+}

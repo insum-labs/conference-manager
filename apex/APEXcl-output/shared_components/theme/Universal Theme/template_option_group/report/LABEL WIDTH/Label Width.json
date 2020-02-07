@@ -1,0 +1,8 @@
+{
+  "name": "LABEL_WIDTH",
+  "displayName": "Label Width",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

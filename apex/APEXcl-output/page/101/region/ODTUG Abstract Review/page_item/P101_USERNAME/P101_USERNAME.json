@@ -1,0 +1,67 @@
+{
+  "identification": {
+    "itemName": "P101_USERNAME",
+    "itemType": "Text Field"
+  },
+  "label": {
+    "label": "Username",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Hidden",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": "icon-login-username",
+    "iconCssClasses": null,
+    "elementWidth": 40,
+    "elementValuePlaceholder": "username"
+  },
+  "validation": {
+    "valueRequired": "Y",
+    "elementMaxCharacters": 100
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Null",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "submitWhenEnterPressed": "N",
+    "disabled": "N",
+    "sendOnPageSubmit": null,
+    "subtype": "TEXT",
+    "trimSpaces": "NONE"
+  }
+}

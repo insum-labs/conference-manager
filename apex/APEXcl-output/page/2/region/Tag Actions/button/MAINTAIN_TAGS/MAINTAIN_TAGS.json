@@ -1,0 +1,36 @@
+{
+  "identification": {
+    "buttonName": "MAINTAIN_TAGS",
+    "buttonLabel": "Maintain Tags"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_NEXT"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight:t-Button--gapLeft:t-Button--gapTop",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-tags"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:7:&SESSION.::&DEBUG.:RP,7::",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EDIT"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

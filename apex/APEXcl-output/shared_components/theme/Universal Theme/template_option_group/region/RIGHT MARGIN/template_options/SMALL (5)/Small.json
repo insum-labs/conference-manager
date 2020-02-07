@@ -1,0 +1,7 @@
+{
+  "name": "RRM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-right-sm",
+  "helpText": "Adds a small right margin to the region.",
+  "isAdvanced": null
+}

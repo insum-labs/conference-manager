@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "name": "Set Dialog Title from Page 8"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "ready"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

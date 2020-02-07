@@ -1,0 +1,8 @@
+{
+  "name": "DIALOG_SIZE",
+  "displayName": "Dialog Size",
+  "templateTypes": "REGION",
+  "helpText": null,
+  "nullText": null,
+  "isAdvanced": "N"
+}

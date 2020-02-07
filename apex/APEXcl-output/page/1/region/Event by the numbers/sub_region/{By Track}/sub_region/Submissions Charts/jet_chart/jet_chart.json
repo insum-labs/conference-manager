@@ -1,0 +1,51 @@
+{
+  "chart": {
+    "jetChartType": "Donut"
+  },
+  "title": {
+    "chartTitle": null
+  },
+  "layout": {
+    "chartMaxWidth": null,
+    "chartHeight": null
+  },
+  "dataCursor": {
+    "jetDataCursor": "Automatic",
+    "jetDataCursorBehavior": "Automatic",
+    "jetHoverBehavior": "none"
+  },
+  "multiSeries": {
+    "jetSortOrder": "Label - Ascending"
+  },
+  "value": {
+    "pieOtherThreshold": 0,
+    "valueMin": null,
+    "valueFormatType": null,
+    "valueFormatScaling": "Automatic"
+  },
+  "settings": {
+    "pieSelectionEffect": "Highlight"
+  },
+  "animation": {
+    "animationOnDisplay": "None",
+    "animationOnDataChange": "None"
+  },
+  "tooltip": {
+    "jetShowTooltip": "Y",
+    "showSeriesName": "Y",
+    "jetShowValue": "Y"
+  },
+  "legend": {
+    "legendRendered": "on",
+    "legendTitle": null,
+    "legendPosition": "Automatic",
+    "hideAndShowBehavior": "None",
+    "jetLegendFontFamily": null,
+    "jetLegendFontStyle": null,
+    "jetLegendFontSize": null,
+    "jetLegendFontColor": null
+  },
+  "automaticRefresh": {
+    "refreshInterval": null
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "daActionType": "PLUGIN_ME.VMORNEAU.ANIMAPEX"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Shake Shake View Session",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N"
+  },
+  "attributes": {
+    "attribute01": "headShake",
+    "attribute02": null,
+    "attribute03": "0",
+    "attribute04": "2",
+    "attribute05": null,
+    "attribute06": null,
+    "attribute07": null,
+    "attribute08": null,
+    "attribute09": null,
+    "attribute10": null
+  }
+}

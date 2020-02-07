@@ -1,0 +1,8 @@
+{
+  "group": "Animation",
+  "name": "CARD_RAISE_CARD",
+  "displayName": "Raise Card",
+  "cssClasses": "t-Cards--animRaiseCard",
+  "helpText": null,
+  "isAdvanced": null
+}

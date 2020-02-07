@@ -1,0 +1,68 @@
+{
+  "identification": {
+    "itemName": "P5026_BLIND_VOTE_HELP",
+    "itemType": "Textarea"
+  },
+  "label": {
+    "label": "Blind Voter Help Text",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional - Above",
+    "templateOptions": "#DEFAULT#:t-Form-fieldContainer--stretchInputs",
+    "appearanceCssClasses": null,
+    "elementWidth": 30,
+    "elementHeight": 5,
+    "elementValuePlaceholder": null
+  },
+  "validation": {
+    "valueRequired": "N",
+    "elementMaxCharacters": 4000
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "BLIND_VOTE_HELP",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "resizable": "Y",
+    "autoheight": "N",
+    "characterCounter": "N",
+    "trimSpaces": "BOTH"
+  }
+}

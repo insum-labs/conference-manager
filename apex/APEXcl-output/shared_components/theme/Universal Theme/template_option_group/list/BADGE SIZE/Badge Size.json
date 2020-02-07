@@ -1,0 +1,8 @@
+{
+  "name": "BADGE_SIZE",
+  "displayName": "Badge Size",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": null,
+  "isAdvanced": "N"
+}

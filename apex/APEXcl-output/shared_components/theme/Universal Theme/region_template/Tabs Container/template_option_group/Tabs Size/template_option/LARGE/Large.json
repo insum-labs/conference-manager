@@ -1,0 +1,8 @@
+{
+  "group": "Tabs Size",
+  "name": "TABSLARGE",
+  "displayName": "Large",
+  "cssClasses": "t-TabsRegion-mod--large",
+  "helpText": null,
+  "isAdvanced": null
+}

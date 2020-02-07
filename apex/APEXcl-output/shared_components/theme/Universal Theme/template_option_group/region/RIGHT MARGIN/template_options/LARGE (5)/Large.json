@@ -1,0 +1,7 @@
+{
+  "name": "RRM_LARGE",
+  "displayName": "Large",
+  "cssClasses": "margin-right-lg",
+  "helpText": "Adds a large right margin to the region.",
+  "isAdvanced": null
+}

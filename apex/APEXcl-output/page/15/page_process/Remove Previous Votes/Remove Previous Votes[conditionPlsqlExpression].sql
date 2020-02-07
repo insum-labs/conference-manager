@@ -1,0 +1,1 @@
+:REQUEST = 'DELETE' or :P15_REMOVE_VOTES = 'Y'

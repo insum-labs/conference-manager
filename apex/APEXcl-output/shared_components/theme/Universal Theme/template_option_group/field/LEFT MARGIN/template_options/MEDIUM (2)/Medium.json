@@ -1,0 +1,7 @@
+{
+  "name": "FLM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-left-md",
+  "helpText": "Adds a medium left margin for this field.",
+  "isAdvanced": null
+}

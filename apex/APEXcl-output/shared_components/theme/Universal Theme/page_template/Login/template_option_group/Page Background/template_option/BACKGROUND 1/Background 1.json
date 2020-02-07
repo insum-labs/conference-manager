@@ -1,0 +1,8 @@
+{
+  "group": "Page Background",
+  "name": "PAGE_BACKGROUND_1",
+  "displayName": "Background 1",
+  "cssClasses": "t-LoginPage--bg1",
+  "helpText": null,
+  "isAdvanced": null
+}

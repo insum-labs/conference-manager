@@ -1,0 +1,7 @@
+{
+  "name": "FBM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-bottom-md",
+  "helpText": "Adds a medium bottom margin for this field.",
+  "isAdvanced": null
+}

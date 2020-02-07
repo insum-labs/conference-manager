@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_REGION_ICON",
+  "displayName": "Show Region Icon",
+  "cssClasses": "t-ContentBlock--showIcon",
+  "helpText": "Displays the region icon in the region header beside the region title",
+  "isAdvanced": null
+}

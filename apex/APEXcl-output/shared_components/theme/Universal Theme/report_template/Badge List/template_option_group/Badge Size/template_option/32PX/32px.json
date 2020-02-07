@@ -1,0 +1,8 @@
+{
+  "group": "Badge Size",
+  "name": "32PX",
+  "displayName": "32px",
+  "cssClasses": "t-BadgeList--small",
+  "helpText": null,
+  "isAdvanced": "No"
+}

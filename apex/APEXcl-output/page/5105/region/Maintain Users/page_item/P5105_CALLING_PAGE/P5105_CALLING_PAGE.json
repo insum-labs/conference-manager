@@ -1,0 +1,32 @@
+{
+  "identification": {
+    "itemName": "P5105_CALLING_PAGE",
+    "itemType": "Hidden"
+  },
+  "advanced": {
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Null",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "valueProtected": "Y"
+  }
+}

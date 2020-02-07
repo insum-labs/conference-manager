@@ -1,0 +1,8 @@
+{
+  "name": "LAYOUT",
+  "displayName": "Layout",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

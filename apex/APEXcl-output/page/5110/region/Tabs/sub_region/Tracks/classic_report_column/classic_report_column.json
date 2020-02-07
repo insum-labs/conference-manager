@@ -1,0 +1,251 @@
+[
+  {
+    "identification": {
+      "columnName": "VIEW_BTN",
+      "classicReportColumnType": "Link"
+    },
+    "heading": {
+      "columnHeading": "View",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "center"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "#0",
+      "linkText": "<span class=\"fa fa-search-plus\"></span><span class=\"ID\" style=\"display:none\">#ID#</span>",
+      "linkAttributes": "class=\"showUsers\" title=\"View assignments\""
+    },
+    "columnFormatting": {
+      "formattingCssClasses": null,
+      "cssStyle": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "ID",
+      "classicReportColumnType": "Hidden Column"
+    },
+    "sorting": {
+      "columnSortSequence": null
+    },
+    "exportPrinting": {
+      "printColumnWidth": null
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TRACK",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Track",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": 1,
+      "columnSortDirection": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "USERS",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "Users",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "end"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "ADD_BTN",
+      "classicReportColumnType": "Link"
+    },
+    "heading": {
+      "columnHeading": "Add User",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "center"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "link": {
+      "linkTarget": "f?p=&APP_ID.:5115:&SESSION.::&DEBUG.:RP,5115:P5115_TRACK_ID:#ID#",
+      "linkText": "<span class=\"fa fa-user-plus\" title=\"Assign user\"></span>",
+      "linkAttributes": "class=\"t-Button t-Button--small\" title=\"Assign new user\""
+    },
+    "columnFormatting": {
+      "formattingCssClasses": null,
+      "cssStyle": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "Y"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

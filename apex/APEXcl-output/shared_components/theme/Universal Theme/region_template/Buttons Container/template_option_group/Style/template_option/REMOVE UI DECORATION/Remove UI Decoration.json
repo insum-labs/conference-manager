@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "REMOVEUIDECORATION",
+  "displayName": "Remove UI Decoration",
+  "cssClasses": "t-ButtonRegion--noUI",
+  "helpText": null,
+  "isAdvanced": "No"
+}

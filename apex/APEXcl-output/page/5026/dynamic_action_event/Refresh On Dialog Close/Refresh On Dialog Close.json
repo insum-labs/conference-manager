@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Refresh On Dialog Close"
+  },
+  "executionOptions": {
+    "executionSequence": 30
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Region",
+    "whenRegion": "Users with Access"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

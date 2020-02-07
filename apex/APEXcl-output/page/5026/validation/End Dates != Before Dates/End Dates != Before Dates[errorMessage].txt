@@ -1,0 +1,1 @@
+Begin Dates must occur before End Dates (if no end date is specified, it default's to this event's voting end date.)

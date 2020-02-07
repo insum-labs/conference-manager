@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "computationItemName": "P5030_EVENT_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "After Header"
+  },
+  "computation": {
+    "computationType": "Item",
+    "computationItemValue": "P1_EVENT_ID"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P5030_EVENT_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

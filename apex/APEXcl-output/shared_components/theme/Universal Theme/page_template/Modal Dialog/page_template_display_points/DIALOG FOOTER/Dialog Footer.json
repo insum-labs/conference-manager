@@ -1,0 +1,7 @@
+{
+  "name": "Dialog Footer",
+  "templateSubstitution": "REGION_POSITION_03",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": null
+}

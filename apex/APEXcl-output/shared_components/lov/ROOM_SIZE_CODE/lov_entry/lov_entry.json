@@ -1,0 +1,35 @@
+[
+  {
+    "lovDispSequence": 1,
+    "lovDispValue": "Small",
+    "lovReturnValue": "S",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  },
+  {
+    "lovDispSequence": 2,
+    "lovDispValue": "Medium",
+    "lovReturnValue": "M",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  },
+  {
+    "lovDispSequence": 3,
+    "lovDispValue": "Large",
+    "lovReturnValue": "L",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  }
+]

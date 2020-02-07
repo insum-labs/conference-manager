@@ -1,0 +1,8 @@
+{
+  "group": "Alert Icons",
+  "name": "SHOW_CUSTOM_ICONS",
+  "displayName": "Show Custom Icons",
+  "cssClasses": "t-Alert--customIcons",
+  "helpText": "Set custom icons by modifying the Alert Region's Icon CSS Classes property.",
+  "isAdvanced": null
+}

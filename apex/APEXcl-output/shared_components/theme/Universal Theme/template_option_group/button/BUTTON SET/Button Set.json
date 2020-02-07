@@ -1,0 +1,8 @@
+{
+  "name": "BUTTON_SET",
+  "displayName": "Button Set",
+  "templateTypes": "BUTTON",
+  "helpText": "Enables you to group many buttons together into a pill. You can use this option to specify where the button is within this set. Set the option to Default if this button is not part of a button set.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

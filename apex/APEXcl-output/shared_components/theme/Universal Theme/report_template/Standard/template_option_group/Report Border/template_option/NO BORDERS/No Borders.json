@@ -1,0 +1,8 @@
+{
+  "group": "Report Border",
+  "name": "REMOVEALLBORDERS",
+  "displayName": "No Borders",
+  "cssClasses": "t-Report--noBorders",
+  "helpText": null,
+  "isAdvanced": "No"
+}

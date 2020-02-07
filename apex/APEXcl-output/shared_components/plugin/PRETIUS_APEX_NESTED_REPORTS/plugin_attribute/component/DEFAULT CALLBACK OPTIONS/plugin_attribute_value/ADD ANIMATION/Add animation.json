@@ -1,0 +1,7 @@
+{
+  "displayValue": "Add animation",
+  "returnValue": "AA",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option checked, animation is added while expanding / collapsing row."
+}

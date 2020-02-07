@@ -1,0 +1,7 @@
+{
+  "name": "DEV_ONLY",
+  "status": "Exclude",
+  "defaultOnExport": "Exclude",
+  "onUpgradeKeepStatus": "No",
+  "comment": "Exclude features that are under development"
+}

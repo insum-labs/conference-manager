@@ -1,0 +1,36 @@
+{
+  "identification": {
+    "buttonName": "EDIT_GOALS",
+    "buttonLabel": "&EDIT_BUTTON."
+  },
+  "layout": {
+    "buttonPosition": "Right of Page Title"
+  },
+  "appearance": {
+    "buttonTemplate": "Text",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--noUI",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:4:&SESSION.::&DEBUG.:RP,4:P4_ID:&P1_TRACK_ID.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": "title=\"Define your track goals\"",
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EDIT"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

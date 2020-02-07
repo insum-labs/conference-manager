@@ -1,0 +1,7 @@
+{
+  "name": "Footer",
+  "templateSubstitution": "REGION_POSITION_05",
+  "gridSupport": "Yes",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 6
+}

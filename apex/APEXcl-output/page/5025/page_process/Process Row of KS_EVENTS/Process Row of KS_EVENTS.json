@@ -1,0 +1,38 @@
+{
+  "identification": {
+    "name": "Process Row of KS_EVENTS",
+    "pageProcessType": "Automatic Row Processing (DML) [Legacy]"
+  },
+  "executionOptions": {
+    "executionSequence": 60,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "tableOwner": null,
+    "tableName": "KS_EVENTS",
+    "primaryKeyItem": "P5025_ID",
+    "primaryKeyColumn": "ID",
+    "secondaryKeyItem": null,
+    "secondaryKeyColumn": null,
+    "rowVersionColumn": null,
+    "runtimeWhereClause": null,
+    "returnKeyIntoItem": "P5025_ID",
+    "returnSecondKeyIntoItem": null,
+    "supportedOperations": "I:U:D",
+    "lockRow": "Y"
+  }
+}

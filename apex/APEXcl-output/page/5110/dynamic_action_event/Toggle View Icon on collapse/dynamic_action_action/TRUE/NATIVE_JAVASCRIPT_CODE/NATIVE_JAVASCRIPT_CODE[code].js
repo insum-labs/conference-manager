@@ -1,0 +1,1 @@
+$(this.triggeringElement).parents("tr.pretius_plugin_row").prev("tr").find("[headers='VIEW_BTN']").find("span.fa").toggleClass("fa-search-minus").toggleClass("fa-search-plus");

@@ -1,0 +1,8 @@
+{
+  "group": "Comments Style",
+  "name": "SPEECH_BUBBLES",
+  "displayName": "Speech Bubbles",
+  "cssClasses": "t-Comments--chat",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,7 @@
+{
+  "name": "RLM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-left-sm",
+  "helpText": "Adds a small left margin to the region.",
+  "isAdvanced": null
+}

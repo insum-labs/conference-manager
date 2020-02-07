@@ -1,0 +1,7 @@
+{
+  "displayValue": "Cache results",
+  "returnValue": "CR",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option checked, <b>Details query</b> resulting data is cached on first plugin use."
+}

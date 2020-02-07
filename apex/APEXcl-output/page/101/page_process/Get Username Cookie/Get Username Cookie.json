@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Get Username Cookie",
+    "pageProcessType": "PL/SQL Code",
+    "processRegion": null
+  },
+  "source": {
+    "plsqlProcessLocation": "Local Database"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "processPoint": "Before Header",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "On Error Page"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

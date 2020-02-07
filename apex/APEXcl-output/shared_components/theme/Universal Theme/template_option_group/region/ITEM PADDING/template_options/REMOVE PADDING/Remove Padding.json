@@ -1,0 +1,7 @@
+{
+  "name": "FORMREMOVEPADDING",
+  "displayName": "Remove Padding",
+  "cssClasses": "t-Form--noPadding",
+  "helpText": "Removes padding between items.",
+  "isAdvanced": "No"
+}

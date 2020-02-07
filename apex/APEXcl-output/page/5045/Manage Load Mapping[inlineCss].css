@@ -1,0 +1,7 @@
+td[headers="LINK"] {
+  text-align: center;
+}
+td[headers="DISPLAY_SEQ"]  {
+  position: relative;
+  cursor: move;
+}

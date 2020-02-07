@@ -1,0 +1,8 @@
+{
+  "group": "Misc",
+  "name": "MISC_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideMisc",
+  "helpText": "Hides the Misc column from being rendered on the screen.",
+  "isAdvanced": null
+}

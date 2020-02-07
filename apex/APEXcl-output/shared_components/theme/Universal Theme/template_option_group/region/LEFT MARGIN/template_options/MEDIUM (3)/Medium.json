@@ -1,0 +1,7 @@
+{
+  "name": "RLM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-left-md",
+  "helpText": "Adds a medium right margin to the region.",
+  "isAdvanced": null
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Vita - Dark",
+  "current": "N",
+  "isPublic": "Y",
+  "accessibilityTested": "N",
+  "cssFileUrls": null,
+  "themeRollerReadOnly": "Y",
+  "themeRollerInputFileUrls": "#THEME_IMAGES#less/theme/Vita-Dark.less",
+  "themeRollerOutputFileUrl": "#THEME_IMAGES#css/Vita-Dark#MIN#.css?v=#APEX_VERSION#",
+  "comment": null
+}

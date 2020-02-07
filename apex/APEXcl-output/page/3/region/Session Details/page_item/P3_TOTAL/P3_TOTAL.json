@@ -1,0 +1,59 @@
+{
+  "identification": {
+    "itemName": "P3_TOTAL",
+    "itemType": "Display Only"
+  },
+  "label": {
+    "label": "Total",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": 2,
+    "labelColumnSpan": 1,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#:t-Form-fieldContainer--large",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "SQL Query (return single value)",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID"
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "escapeSpecialCharacters": "Y",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "sendOnPageSubmit": "Y",
+    "basedOn": "VALUE",
+    "showLineBreaks": "Y"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Body Height",
+  "name": "640PX",
+  "displayName": "640px",
+  "cssClasses": "i-h640",
+  "helpText": "Sets body height to 640px.",
+  "isAdvanced": null
+}

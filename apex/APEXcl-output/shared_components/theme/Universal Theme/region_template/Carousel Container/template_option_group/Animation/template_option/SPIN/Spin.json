@@ -1,0 +1,8 @@
+{
+  "group": "Animation",
+  "name": "SPIN",
+  "displayName": "Spin",
+  "cssClasses": "t-Region--carouselSpin",
+  "helpText": null,
+  "isAdvanced": null
+}

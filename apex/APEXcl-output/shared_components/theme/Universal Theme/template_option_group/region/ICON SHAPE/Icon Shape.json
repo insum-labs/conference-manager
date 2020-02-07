@@ -1,0 +1,8 @@
+{
+  "name": "ICON_SHAPE",
+  "displayName": "Icon Shape",
+  "templateTypes": "REGION",
+  "helpText": "Determines the shape of the icon.",
+  "nullText": "Rounded Corners",
+  "isAdvanced": "N"
+}

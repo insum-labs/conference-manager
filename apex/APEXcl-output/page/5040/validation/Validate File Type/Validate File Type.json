@@ -1,0 +1,27 @@
+{
+  "identification": {
+    "name": "Validate File Type"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "PL/SQL Function Body (returning Boolean)",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": null
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

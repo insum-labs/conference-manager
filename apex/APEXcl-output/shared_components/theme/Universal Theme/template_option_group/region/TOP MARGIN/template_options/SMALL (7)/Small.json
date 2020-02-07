@@ -1,0 +1,7 @@
+{
+  "name": "RTM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-top-sm",
+  "helpText": "Adds a small top margin to the region.",
+  "isAdvanced": null
+}

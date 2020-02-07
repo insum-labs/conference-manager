@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Add Comped User"
+  },
+  "executionOptions": {
+    "executionSequence": 150
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Button",
+    "whenButton": "ADD_COMPED_USER"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

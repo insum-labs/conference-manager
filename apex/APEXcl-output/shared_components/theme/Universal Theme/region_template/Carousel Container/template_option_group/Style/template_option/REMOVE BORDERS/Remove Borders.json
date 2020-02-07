@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "NOBORDER",
+  "displayName": "Remove Borders",
+  "cssClasses": "t-Region--noBorder",
+  "helpText": "Removes borders from the region.",
+  "isAdvanced": "No"
+}

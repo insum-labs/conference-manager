@@ -1,0 +1,8 @@
+{
+  "name": "REGION_TITLE",
+  "displayName": "Region Title",
+  "templateTypes": "REGION",
+  "helpText": "Sets the source of the Title Bar region's title.",
+  "nullText": null,
+  "isAdvanced": "N"
+}

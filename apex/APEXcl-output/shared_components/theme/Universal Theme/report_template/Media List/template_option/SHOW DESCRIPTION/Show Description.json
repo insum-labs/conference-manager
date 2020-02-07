@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_DESCRIPTION",
+  "displayName": "Show Description",
+  "cssClasses": "t-MediaList--showDesc",
+  "helpText": null,
+  "isAdvanced": null
+}

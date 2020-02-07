@@ -1,0 +1,8 @@
+{
+  "name": "COL_ACTIONS",
+  "displayName": "Actions",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

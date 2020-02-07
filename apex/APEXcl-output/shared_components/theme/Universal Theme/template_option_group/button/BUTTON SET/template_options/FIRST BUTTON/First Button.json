@@ -1,0 +1,7 @@
+{
+  "name": "PILLSTART",
+  "displayName": "First Button",
+  "cssClasses": "t-Button--pillStart",
+  "helpText": "Use this for the start of a pill button.",
+  "isAdvanced": "No"
+}

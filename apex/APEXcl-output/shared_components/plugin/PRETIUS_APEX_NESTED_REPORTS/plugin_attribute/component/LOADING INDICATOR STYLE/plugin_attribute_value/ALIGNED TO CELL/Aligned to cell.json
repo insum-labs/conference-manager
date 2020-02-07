@@ -1,0 +1,7 @@
+{
+  "displayValue": "Aligned to cell",
+  "returnValue": "ATC",
+  "quickPick": "Yes",
+  "deprecated": "No",
+  "helpText": "Loading indicator is aligned to parent cell of triggering element."
+}

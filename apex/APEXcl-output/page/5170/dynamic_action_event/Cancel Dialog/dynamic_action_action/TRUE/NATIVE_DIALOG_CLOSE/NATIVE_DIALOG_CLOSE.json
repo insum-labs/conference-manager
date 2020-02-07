@@ -1,0 +1,19 @@
+{
+  "identification": {
+    "daActionType": "Close Dialog"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Cancel Dialog",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "itemsToReturn": null
+  }
+}

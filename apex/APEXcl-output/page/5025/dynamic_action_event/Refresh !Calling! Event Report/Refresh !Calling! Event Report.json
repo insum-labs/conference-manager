@@ -1,0 +1,27 @@
+{
+  "identification": {
+    "name": "Refresh \"Calling\" Event Report"
+  },
+  "executionOptions": {
+    "executionSequence": 60
+  },
+  "when": {
+    "event": "ready"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": "Request = Value",
+    "conditionValue1": "CREATED"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

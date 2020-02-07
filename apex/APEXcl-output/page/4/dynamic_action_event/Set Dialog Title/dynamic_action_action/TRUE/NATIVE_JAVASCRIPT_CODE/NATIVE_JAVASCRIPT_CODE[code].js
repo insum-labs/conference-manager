@@ -1,0 +1,1 @@
+apex.util.getTopApex().jQuery(".ui-dialog-content").dialog("option", "title", $v("P4_NAME"))

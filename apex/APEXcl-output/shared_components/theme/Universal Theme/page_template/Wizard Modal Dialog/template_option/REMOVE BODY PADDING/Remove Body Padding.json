@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "REMOVE_BODY_PADDING",
+  "displayName": "Remove Body Padding",
+  "cssClasses": "t-Dialog--noPadding",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "FEATURED",
+  "displayName": "Featured",
+  "cssClasses": "t-HeroRegion--featured",
+  "helpText": null,
+  "isAdvanced": null
+}

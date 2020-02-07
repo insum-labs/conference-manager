@@ -1,0 +1,8 @@
+{
+  "name": "COL_MISC",
+  "displayName": "Misc",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

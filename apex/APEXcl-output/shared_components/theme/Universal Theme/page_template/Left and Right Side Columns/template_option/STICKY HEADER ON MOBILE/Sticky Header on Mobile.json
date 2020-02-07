@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "STICKY_HEADER_ON_MOBILE",
+  "displayName": "Sticky Header on Mobile",
+  "cssClasses": "js-pageStickyMobileHeader",
+  "helpText": "This will position the contents of the Breadcrumb Bar region position so it sticks to the top of the screen for small screens.",
+  "isAdvanced": null
+}

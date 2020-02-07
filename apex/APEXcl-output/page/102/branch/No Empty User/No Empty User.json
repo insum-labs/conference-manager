@@ -1,0 +1,25 @@
+{
+  "identification": {
+    "name": "No Empty User"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "branchPoint": "Before Header"
+  },
+  "behavior": {
+    "branchType": "Page or URL (Redirect)",
+    "target": "f?p=&APP_ID.:101:&SESSION.::&DEBUG.:RP,101::&success_msg=#SUCCESS_MSG#",
+    "saveStateBeforeBranch": "N"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P102_USERNAME"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

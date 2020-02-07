@@ -1,0 +1,8 @@
+{
+  "group": "Row Highlighting",
+  "name": "ENABLE",
+  "displayName": "Enable",
+  "cssClasses": "t-Report--rowHighlight",
+  "helpText": "Enable row highlighting on mouse over",
+  "isAdvanced": "No"
+}

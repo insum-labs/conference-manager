@@ -1,0 +1,8 @@
+{
+  "group": "Body Style",
+  "name": "LIGHT_BACKGROUND",
+  "displayName": "Light Background",
+  "cssClasses": "t-ContentBlock--lightBG",
+  "helpText": "Gives the region body a slightly lighter background.",
+  "isAdvanced": null
+}

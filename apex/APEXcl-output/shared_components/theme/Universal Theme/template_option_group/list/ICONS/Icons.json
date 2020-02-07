@@ -1,0 +1,8 @@
+{
+  "name": "ICONS",
+  "displayName": "Icons",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": "No Icons",
+  "isAdvanced": "N"
+}

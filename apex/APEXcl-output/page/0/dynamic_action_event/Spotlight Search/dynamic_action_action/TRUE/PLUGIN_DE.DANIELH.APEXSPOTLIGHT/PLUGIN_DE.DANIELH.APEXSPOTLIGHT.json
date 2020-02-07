@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "daActionType": "PLUGIN_DE.DANIELH.APEXSPOTLIGHT"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "daEvent": "Spotlight Search",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "attribute01": "Y",
+    "attribute02": "ctrl+k,command+k,/",
+    "attribute03": "select title\n     , description\n     , link\n     , icon\nfrom (\nselect nvl(e.alias, e.name) || ': ' || nvl(t.alias, t.name) AS title\n     , 'Change to Track' AS description\n     , apex_util.prepare_url (p_url => 'f?p='||:APP_ID||':100:'||:APP_SESSION||':BRANCH_TO_PAGE_ACCEPT:' || :DEBUG || '::P100_EVENT_ID,P100_TRACK_ID:' || t.event_id || ',' || t.id) as link\n     , 'fa-rocket' AS icon\n  FROM ks_events_allowed_v e\n     , ks_event_tracks t\nwhere e.id = t.event_id\n  and e.active_ind = 'Y'\norder by e.begin_date desc, nvl(t.alias, t.name)\n)\nunion all\nselect title\n     , description\n     , link\n     , icon\nfrom (\nSELECT decode(aap.page_id, 1, 'Home', aap.page_title) AS title\n      ,'Go to page > ' || decode(aap.page_id, 1, 'Home', aap.page_title) AS description\n      ,apex_page.get_url(p_page => aap.page_id) AS link\n      ,'fa-arrow-right' AS icon\n  FROM apex_application_pages aap\n WHERE aap.application_id = :APP_ID\n   AND aap.page_mode = 'Normal'\n   AND aap.page_requires_authentication = 'Yes'\n   AND (   aap.page_id between 1 and 5000       \n       and aap.page_id != 100\n       and (aap.page_id not in (2, 10, 20) and :P1_TRACK_ID is null or :P1_TRACK_ID is not null)\n   )\n ORDER BY aap.page_id\n)",
+    "attribute04": null,
+    "attribute05": "Y",
+    "attribute06": "50",
+    "attribute07": "650",
+    "attribute08": "N",
+    "attribute09": "STANDARD",
+    "attribute10": "Y"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "displayValue": "Strech report",
+  "returnValue": "SR",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this options is checked, nested report table is streched to 100% width of parent row."
+}

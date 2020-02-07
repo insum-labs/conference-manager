@@ -1,0 +1,8 @@
+{
+  "group": "Icon",
+  "name": "ICON_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideIcon",
+  "helpText": "Hides the Icon from being rendered on the screen.",
+  "isAdvanced": null
+}

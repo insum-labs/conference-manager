@@ -1,0 +1,8 @@
+{
+  "group": "Callout Position",
+  "name": "AFTER",
+  "displayName": "After",
+  "cssClasses": "js-popup-pos-after",
+  "helpText": "Positions the callout after or typically to the right of the parent.",
+  "isAdvanced": null
+}

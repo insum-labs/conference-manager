@@ -1,0 +1,8 @@
+{
+  "name": "LOGIN_HEADER",
+  "displayName": "Login Header",
+  "templateTypes": "REGION",
+  "helpText": "Controls the display of the Login region header.",
+  "nullText": "Icon and Title (Default)",
+  "isAdvanced": "N"
+}

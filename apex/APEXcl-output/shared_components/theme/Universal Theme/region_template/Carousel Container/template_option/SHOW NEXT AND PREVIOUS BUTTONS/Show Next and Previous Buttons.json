@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_NEXT_AND_PREVIOUS_BUTTONS",
+  "displayName": "Show Next and Previous Buttons",
+  "cssClasses": "t-Region--showCarouselControls",
+  "helpText": null,
+  "isAdvanced": null
+}

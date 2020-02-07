@@ -1,0 +1,9 @@
+{
+  "sequence": 10,
+  "shortName": "Reports",
+  "link": "f?p=&APP_ID.:1000:&SESSION.::&DEBUG.:::",
+  "page": 1000,
+  "conditionType": null,
+  "authorizationScheme": null,
+  "buildOption": null
+}

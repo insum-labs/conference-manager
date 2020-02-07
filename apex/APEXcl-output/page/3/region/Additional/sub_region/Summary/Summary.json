@@ -1,0 +1,45 @@
+{
+  "identification": {
+    "title": "Summary",
+    "regionType": "PL/SQL Dynamic Content"
+  },
+  "layout": {
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "regionTemplate": "Standard",
+    "templateOptions": "#DEFAULT#:t-Region--noPadding:js-showMaximizeButton:t-Region--noUI:t-Region--scrollBody",
+    "appearanceCssClasses": "kv-solid-background",
+    "iconCssClasses": null,
+    "itemDisplayPosition": "Above Content"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "regionImage": null,
+    "imageTagAttributes": null,
+    "regionDisplaySelector": "N"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "customization": {
+    "customizable": "Not Customizable By End Users"
+  }
+}

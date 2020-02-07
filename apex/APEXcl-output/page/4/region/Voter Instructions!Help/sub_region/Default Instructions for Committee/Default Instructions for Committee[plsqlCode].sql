@@ -1,0 +1,1 @@
+sys.htp.p(ks_util.get_param('DEFAULT_COMMITTEE_VOTING_HELP'));

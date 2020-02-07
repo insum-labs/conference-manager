@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Refresh Reports"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P1020_EVENT_ID"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

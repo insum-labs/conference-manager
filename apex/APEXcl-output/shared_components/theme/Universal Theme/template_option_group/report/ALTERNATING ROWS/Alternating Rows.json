@@ -1,0 +1,8 @@
+{
+  "name": "ALTERNATING_ROWS",
+  "displayName": "Alternating Rows",
+  "templateTypes": "REPORT",
+  "helpText": "Shades alternate rows in the report with slightly different background colors.",
+  "nullText": null,
+  "isAdvanced": "N"
+}

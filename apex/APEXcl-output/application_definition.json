@@ -1,0 +1,73 @@
+{
+  "name": {
+    "name": "ODTUG Abstract Review",
+    "version": "release 4.0.7",
+    "applicationGroup": null
+  },
+  "properties": {
+    "allowFeedback": "No",
+    "compatibilityMode": "19.1",
+    "logging": "Yes",
+    "proxyServer": null,
+    "noProxyDomains": null,
+    "exactSubstitutions": "Yes - Perform only exact substitutions"
+  },
+  "applicationIcon": {
+    "iconFileName": null
+  },
+  "availability": {
+    "status": "Available with Developer Toolbar",
+    "unavailableApplicationText": "This application is currently unavailable at this time.",
+    "restrictToUserList": null,
+    "buildStatus": "Run and Build Application"
+  },
+  "substitutions": {
+    "substitutionString01": "EDIT_BUTTON",
+    "substitutionValue01": "<i class=\"fa fa-pencil-square-o cfa-1_5x\"></i>",
+    "substitutionString02": "VIEW_BUTTON",
+    "substitutionValue02": "<i class=\"fa fa-search fa-lg\"></i>",
+    "substitutionString03": "DATETIME_FORMAT_MASK",
+    "substitutionValue03": "DD-MON-YYYY HH:MIPM",
+    "substitutionString04": "DATE_FORMAT_MASK",
+    "substitutionValue04": "DD-MON-YYYY",
+    "substitutionString05": "LOV_NULL_TEXT",
+    "substitutionValue05": "- Choose -",
+    "substitutionString06": "G_NUMBER_FORMAT_MASK",
+    "substitutionValue06": "999G999G999G999G999G999G990D00",
+    "substitutionString07": null,
+    "substitutionValue07": null,
+    "substitutionString08": null,
+    "substitutionValue08": null,
+    "substitutionString09": null,
+    "substitutionValue09": null,
+    "substitutionString10": null,
+    "substitutionValue10": null,
+    "substitutionString11": null,
+    "substitutionValue11": null,
+    "substitutionString12": null,
+    "substitutionValue12": null,
+    "substitutionString13": null,
+    "substitutionValue13": null,
+    "substitutionString14": null,
+    "substitutionValue14": null,
+    "substitutionString15": null,
+    "substitutionValue15": null,
+    "substitutionString16": null,
+    "substitutionValue16": null,
+    "substitutionString17": null,
+    "substitutionValue17": null,
+    "substitutionString18": null,
+    "substitutionValue18": null,
+    "substitutionString19": null,
+    "substitutionValue19": null,
+    "substitutionString20": null,
+    "substitutionValue20": null
+  },
+  "errorHandling": {
+    "errorHandlingFunction": "ks_error_handler.error_handler_logging",
+    "defaultErrorDisplayLocation": "Inline with Field and in Notification"
+  },
+  "globalNotification": {
+    "globalNotification": null
+  }
+}

@@ -1,0 +1,1 @@
+$("#navVotingApp a").attr("target", "target='_blank'");

@@ -1,0 +1,32 @@
+{
+  "reportTemplate": {
+    "identifier": "MEDIA_LIST",
+    "templateType": "Named Column (row template)",
+    "templateClass": 1,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null,
+    "executeWhenPageLoads": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "columnTemplates": {
+    "columnTemplateCondition1": ":LINK is not null",
+    "columnTemplateCondition2": null,
+    "columnTemplateCondition3": null,
+    "columnTemplateCondition4": null
+  },
+  "rowHighlighting": {
+    "backgroundColorForCurrentRow": null,
+    "backgroundColorForCheckedRow": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": "t-MediaList--showDesc:t-MediaList--showIcons",
+    "presetTemplateOptions": "t-MediaList--stack"
+  },
+  "comments": {
+    "comment": " (SELECT link_text, link_target, detail1, detail2, last_modified)"
+  }
+}

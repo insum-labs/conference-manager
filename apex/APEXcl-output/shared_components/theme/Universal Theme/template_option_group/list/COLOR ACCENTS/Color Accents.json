@@ -1,0 +1,8 @@
+{
+  "name": "COLOR_ACCENTS",
+  "displayName": "Color Accents",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

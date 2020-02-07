@@ -1,0 +1,8 @@
+{
+  "group": "Dialog Size",
+  "name": "MEDIUM_600X400",
+  "displayName": "Medium (600x400)",
+  "cssClasses": "js-dialog-size600x400",
+  "helpText": null,
+  "isAdvanced": null
+}

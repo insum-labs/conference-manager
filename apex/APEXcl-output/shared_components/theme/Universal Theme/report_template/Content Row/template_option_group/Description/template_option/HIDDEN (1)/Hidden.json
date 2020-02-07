@@ -1,0 +1,8 @@
+{
+  "group": "Description",
+  "name": "DESCRIPTION_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideDescription",
+  "helpText": "Hides the Description from being rendered on the screen.",
+  "isAdvanced": null
+}

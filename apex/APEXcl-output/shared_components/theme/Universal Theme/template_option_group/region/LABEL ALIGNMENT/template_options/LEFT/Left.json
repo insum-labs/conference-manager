@@ -1,0 +1,7 @@
+{
+  "name": "FORMLEFTLABELS",
+  "displayName": "Left",
+  "cssClasses": "t-Form--leftLabels",
+  "helpText": "Align form labels to left.",
+  "isAdvanced": "No"
+}

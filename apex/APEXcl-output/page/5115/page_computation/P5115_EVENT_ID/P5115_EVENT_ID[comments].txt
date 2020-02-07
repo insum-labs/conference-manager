@@ -1,0 +1,1 @@
+Derive the EVENT_ID from an the existing record we're editing

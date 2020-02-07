@@ -1,0 +1,8 @@
+{
+  "group": "Row Highlighting",
+  "name": "ROWHIGHLIGHTDISABLE",
+  "displayName": "Disable",
+  "cssClasses": "t-Report--rowHighlightOff",
+  "helpText": "Disable row highlighting on mouse over",
+  "isAdvanced": "No"
+}

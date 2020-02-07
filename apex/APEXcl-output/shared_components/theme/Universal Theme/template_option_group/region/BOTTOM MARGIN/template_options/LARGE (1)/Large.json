@@ -1,0 +1,7 @@
+{
+  "name": "RBM_LARGE",
+  "displayName": "Large",
+  "cssClasses": "margin-bottom-lg",
+  "helpText": "Adds a large bottom margin to the region.",
+  "isAdvanced": null
+}

@@ -1,0 +1,7 @@
+{
+  "displayValue": "Loading indicator",
+  "returnValue": "LI",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option is checked, loading indicator is shown each time plugin fetches data from db (AJAX). Loading indicator style can be set in <strong>Loading indicator style</strong> attribute."
+}

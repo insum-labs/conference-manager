@@ -1,0 +1,1 @@
+apex_application.get_nls_group_separator

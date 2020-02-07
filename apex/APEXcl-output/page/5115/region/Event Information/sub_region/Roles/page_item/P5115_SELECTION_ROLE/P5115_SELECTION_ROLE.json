@@ -1,0 +1,73 @@
+{
+  "identification": {
+    "itemName": "P5115_SELECTION_ROLE",
+    "itemType": "Select List"
+  },
+  "label": {
+    "label": "Selection Role",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional - Above",
+    "templateOptions": "#DEFAULT#:t-Form-fieldContainer--large",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "elementHeight": 1
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "namedLov": "SELECTION_ROLE",
+    "displayExtraValues": "N",
+    "displayNullValue": "Y",
+    "nullDisplayValue": "- None -",
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "SELECTION_ROLE_CODE",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "pageActionOnSelection": "NONE",
+    "allowMultiSelection": "N",
+    "executeValidations": null
+  }
+}

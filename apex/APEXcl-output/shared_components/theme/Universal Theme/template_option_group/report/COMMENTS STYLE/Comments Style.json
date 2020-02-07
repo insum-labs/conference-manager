@@ -1,0 +1,8 @@
+{
+  "name": "COMMENTS_STYLE",
+  "displayName": "Comments Style",
+  "templateTypes": "REPORT",
+  "helpText": "Determines the style in which comments are displayed.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

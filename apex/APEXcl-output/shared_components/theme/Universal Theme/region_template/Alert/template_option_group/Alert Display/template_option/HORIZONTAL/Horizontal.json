@@ -1,0 +1,8 @@
+{
+  "group": "Alert Display",
+  "name": "HORIZONTAL",
+  "displayName": "Horizontal",
+  "cssClasses": "t-Alert--horizontal",
+  "helpText": "Show horizontal alert with buttons to the right.",
+  "isAdvanced": "No"
+}

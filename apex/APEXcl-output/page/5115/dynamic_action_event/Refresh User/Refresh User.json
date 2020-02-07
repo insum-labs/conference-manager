@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Refresh User"
+  },
+  "executionOptions": {
+    "executionSequence": 30
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Button",
+    "whenButton": "EDIT_USER"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

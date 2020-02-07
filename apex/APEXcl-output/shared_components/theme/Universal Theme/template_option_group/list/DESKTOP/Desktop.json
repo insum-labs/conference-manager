@@ -1,0 +1,8 @@
+{
+  "name": "DESKTOP",
+  "displayName": "Desktop",
+  "templateTypes": "LIST",
+  "helpText": "Determines the display for a desktop-sized screen",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

@@ -1,0 +1,479 @@
+[
+  {
+    "identification": {
+      "columnName": "EXTERNAL_SYS_REF",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "ESID",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "SESSION_NUM",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "SESSION_NUM",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "TITLE",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "SESSION",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "VOTER",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "VOTER",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "UID",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "UID",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "VOTE_TYPE",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "VOTE_TYPE",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "VOTE",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "VOTEVAL",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "DECLINE_VOTE_FLAG",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "SKIP_VOTE",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  },
+  {
+    "identification": {
+      "columnName": "COMMENTS",
+      "classicReportColumnType": "Plain Text"
+    },
+    "heading": {
+      "columnHeading": "COMMENT",
+      "headingAlignment": "center"
+    },
+    "layout": {
+      "columnAlignment": "start"
+    },
+    "appearance": {
+      "formatMask": null
+    },
+    "columnFormatting": {
+      "htmlExpression": null,
+      "formattingCssClasses": null,
+      "cssStyle": null,
+      "highlightWords": null
+    },
+    "sorting": {
+      "columnSortSequence": null,
+      "disableSortColumn": "N"
+    },
+    "exportPrinting": {
+      "includeInExportPrint": "Y",
+      "printColumnWidth": null
+    },
+    "advanced": {
+      "columnWidth": null,
+      "computeSum": "N",
+      "useAsRowHeader": "N"
+    },
+    "uiDefaultsReference": {
+      "uiDefaultRefTableOwner": null,
+      "uiDefaultRefTable": null,
+      "uiDefaultRefColumn": null
+    },
+    "serverSideCondition": {
+      "conditionType": null
+    },
+    "security": {
+      "authorizationScheme": null,
+      "escapeSpecialCharacters": "Y"
+    },
+    "configuration": {
+      "buildOption": null
+    },
+    "comments": {
+      "comments": null
+    }
+  }
+]

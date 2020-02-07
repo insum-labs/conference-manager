@@ -1,0 +1,8 @@
+{
+  "group": "Default State",
+  "name": "EXPANDED",
+  "displayName": "Expanded",
+  "cssClasses": "is-expanded",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,40 @@
+{
+  "identification": {
+    "buttonName": "SWITCH_ROLE",
+    "buttonLabel": "Switch Role...    "
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "N",
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--warning:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-exchange "
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Rows returned"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

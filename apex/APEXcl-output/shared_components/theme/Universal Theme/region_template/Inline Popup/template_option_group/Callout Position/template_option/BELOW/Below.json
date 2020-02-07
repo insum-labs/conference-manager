@@ -1,0 +1,8 @@
+{
+  "group": "Callout Position",
+  "name": "BELOW",
+  "displayName": "Below",
+  "cssClasses": "js-popup-pos-below",
+  "helpText": "Positions the callout below or typically to the bottom of the parent.",
+  "isAdvanced": null
+}

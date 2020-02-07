@@ -1,0 +1,32 @@
+{
+  "reportTemplate": {
+    "identifier": "ALERTS",
+    "templateType": "Named Column (row template)",
+    "templateClass": 14,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null,
+    "executeWhenPageLoads": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "columnTemplates": {
+    "columnTemplateCondition1": null,
+    "columnTemplateCondition2": null,
+    "columnTemplateCondition3": null,
+    "columnTemplateCondition4": null
+  },
+  "rowHighlighting": {
+    "backgroundColorForCurrentRow": null,
+    "backgroundColorForCheckedRow": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

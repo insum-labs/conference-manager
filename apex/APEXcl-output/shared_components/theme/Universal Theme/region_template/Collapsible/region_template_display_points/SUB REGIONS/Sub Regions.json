@@ -1,0 +1,8 @@
+{
+  "name": "Sub Regions",
+  "placeholder": "SUB_REGIONS",
+  "hasGridSupport": "Y",
+  "glvNewRow": "Y",
+  "maxFixedGridColumns": 12,
+  "componentComment": null
+}

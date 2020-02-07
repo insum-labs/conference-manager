@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "daActionType": "PLUGIN_PRETIUS_APEX_NESTED_REPORTS"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Drill Into Sessions",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N"
+  },
+  "attributes": {
+    "attribute01": "select nvl(t.alias, t.name) \"Track\"\n     , s.session_num \"Session Num\"\n     , s.presenter \"Presenter\", s.company \"Company\", s.title \"Title\"\n  from ks_sessions s\n     , ks_event_tracks t\n where s.event_id = t.event_id\n   and s.event_track_id = t.id\n   and s.event_id = :P1040_EVENT_ID\n   and s.presenter_user_id = #ID#\n  order by 1, 2",
+    "attribute02": "CE:AA:CR",
+    "attribute03": "DTDC",
+    "attribute04": null,
+    "attribute05": null,
+    "attribute06": "#EBEBEB",
+    "attribute07": "300",
+    "attribute08": "#c5c5c5",
+    "attribute09": "#e3e3e3",
+    "attribute10": null
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Alert Type",
+  "name": "WARNING",
+  "displayName": "Warning",
+  "cssClasses": "t-Alert--warning",
+  "helpText": "Show a warning alert.",
+  "isAdvanced": "No"
+}

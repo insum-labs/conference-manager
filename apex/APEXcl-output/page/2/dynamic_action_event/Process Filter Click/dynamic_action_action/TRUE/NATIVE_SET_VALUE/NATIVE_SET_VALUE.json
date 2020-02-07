@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "daActionType": "Set Value"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P2_C"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Process Filter Click",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "setType": "JAVASCRIPT_EXPRESSION",
+    "value": null,
+    "plsqlExpression": null,
+    "itemsToSubmit": null,
+    "escapeSpecialCharacters": null,
+    "suppressChangeEvent": "N",
+    "returnItem": null
+  }
+}

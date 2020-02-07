@@ -1,0 +1,24 @@
+{
+  "identification": {
+    "name": "Go to page 5120"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "branchPoint": "Processing"
+  },
+  "behavior": {
+    "branchType": "Page or URL (Redirect)",
+    "target": "f?p=&APP_ID.:5120:&SESSION.::&DEBUG.:RP,5120:P5120_EVENT_ID,P5120_USERNAME,P5120_TRACK_ID,P5120_VOTING_ROLE:&P5115_EVENT_ID.,&P5115_USERNAME.,&P5115_TRACK_ID.,&P5115_VOTING_ROLE.&success_msg=#SUCCESS_MSG#",
+    "saveStateBeforeBranch": "N"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "SWITCH_ROLE",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

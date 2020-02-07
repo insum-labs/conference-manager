@@ -1,0 +1,8 @@
+{
+  "group": "Login Header",
+  "name": "LOGIN_HEADER_TITLE",
+  "displayName": "Title",
+  "cssClasses": "t-Login-region--headerTitle",
+  "helpText": "Displays only the Region Title in the Login region.",
+  "isAdvanced": null
+}

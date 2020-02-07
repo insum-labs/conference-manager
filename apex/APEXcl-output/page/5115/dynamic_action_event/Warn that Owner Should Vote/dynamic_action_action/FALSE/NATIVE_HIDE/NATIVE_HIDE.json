@@ -1,0 +1,20 @@
+{
+  "identification": {
+    "daActionType": "Hide"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5115_OWER_WARNING"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Warn that Owner Should Vote",
+    "fireWhenEventResultIs": "False",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "hideAllPageItemsOnTheSameLine": "N"
+  }
+}

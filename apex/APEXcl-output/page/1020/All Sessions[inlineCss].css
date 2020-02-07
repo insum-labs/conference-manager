@@ -1,0 +1,16 @@
+#P1020_EVENT_ID_CONTAINER .t-Form-labelContainer {
+    width: auto;
+}
+
+/* Gray out the links on "Rejected" sessions */
+.rule_44088850439870827468 td a {
+    color: #D9C1D9 !important;
+}
+
+td[headers~="STATUS_CODE"] {white-space: nowrap;}
+
+.otherTracks {cursor: pointer;}
+
+.aceBadge {
+    width: 20px;
+}

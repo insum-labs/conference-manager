@@ -1,0 +1,36 @@
+{
+  "identification": {
+    "buttonName": "DELETE_EMPTY_TAGS",
+    "buttonLabel": "Remove Empty Tags"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_NEXT"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--warning:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-tag"
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": "SQL UPDATE action"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

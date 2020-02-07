@@ -1,0 +1,16 @@
+#P1_SELECT_REPORT_CONTAINER {margin-left: 0;}
+#P1_SELECT_REPORT_CONTAINER .t-Form-labelContainer {
+ width: auto;
+}
+th#COMMUNITY_NAME {width: 235px;}
+td[headers="TRACK_NAME"] {width: 268px;}
+
+.rowDetailsContainer .tracksDrillReport.t-Report-report tr .t-Report-cell {
+    background-color: #fcfcfc;
+}
+
+
+#eventStatsRegion {
+    position: relative;
+    left: 25%;
+}

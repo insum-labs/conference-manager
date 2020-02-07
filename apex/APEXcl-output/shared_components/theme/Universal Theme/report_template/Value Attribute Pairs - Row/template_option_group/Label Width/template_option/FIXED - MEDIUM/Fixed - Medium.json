@@ -1,0 +1,8 @@
+{
+  "group": "Label Width",
+  "name": "FIXED_MEDIUM",
+  "displayName": "Fixed - Medium",
+  "cssClasses": "t-AVPList--fixedLabelMedium",
+  "helpText": null,
+  "isAdvanced": null
+}

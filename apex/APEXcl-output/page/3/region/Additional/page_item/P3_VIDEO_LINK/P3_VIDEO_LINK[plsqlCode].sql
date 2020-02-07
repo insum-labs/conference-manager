@@ -1,0 +1,1 @@
+htp.p (ks_session_api.parse_video_link ('&P3_VIDEO_LINK.'));

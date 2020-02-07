@@ -1,0 +1,8 @@
+{
+  "group": "Region Title",
+  "name": "CONTENT_TITLE_H3",
+  "displayName": "Heading Level 3",
+  "cssClasses": "t-ContentBlock--h3",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "ADD_BODY_PADDING",
+  "displayName": "Add Body Padding",
+  "cssClasses": "t-ContentBlock--padded",
+  "helpText": "Adds padding to the region's body container.",
+  "isAdvanced": null
+}

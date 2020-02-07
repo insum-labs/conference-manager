@@ -1,0 +1,24 @@
+[
+  {
+    "lovDispSequence": 1,
+    "lovDispValue": "Track",
+    "lovReturnValue": "BY_TRACK",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  },
+  {
+    "lovDispSequence": 2,
+    "lovDispValue": "Community",
+    "lovReturnValue": "BY_COMMUNITY",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "TIMER",
+  "displayName": "Timer",
+  "templateTypes": "REGION",
+  "helpText": "Sets the timer for when to automatically navigate to the next region within the Carousel Region.",
+  "nullText": "No Timer",
+  "isAdvanced": "N"
+}

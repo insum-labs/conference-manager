@@ -1,0 +1,8 @@
+{
+  "group": "Label Width",
+  "name": "FIXED_SMALL",
+  "displayName": "Fixed - Small",
+  "cssClasses": "t-AVPList--fixedLabelSmall",
+  "helpText": null,
+  "isAdvanced": null
+}

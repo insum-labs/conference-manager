@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "name": "Application Express Authentication",
+    "schemeType": "Application Express Accounts"
+  },
+  "sessionNotValid": {
+    "verifyFunctionName": null
+  },
+  "loginProcessing": {
+    "preAuthenticationProcedure": null,
+    "postAuthenticationProcedure": "ks_sec.post_login",
+    "switchInSession": "Disabled",
+    "helpText": null
+  },
+  "postLogoutUrl": {
+    "goTo": "Login Page"
+  },
+  "sessionSharing": {
+    "type": "Application (No Sharing)",
+    "cookieName": null,
+    "cookiePath": null,
+    "cookieDomain": null,
+    "secure": "No"
+  },
+  "comments": {
+    "comments": null
+  }
+}

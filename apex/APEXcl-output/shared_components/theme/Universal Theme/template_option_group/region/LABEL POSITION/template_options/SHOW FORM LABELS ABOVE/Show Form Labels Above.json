@@ -1,0 +1,7 @@
+{
+  "name": "SHOWFORMLABELSABOVE",
+  "displayName": "Show Form Labels Above",
+  "cssClasses": "t-Form--labelsAbove",
+  "helpText": "Show form labels above input fields.",
+  "isAdvanced": "No"
+}

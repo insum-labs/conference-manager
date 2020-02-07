@@ -1,0 +1,36 @@
+{
+  "identification": {
+    "buttonName": "CANCEL",
+    "buttonLabel": "Back"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_CLOSE"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--iconLeft",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-chevron-left"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5025:&SESSION.::&DEBUG.:RP::",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

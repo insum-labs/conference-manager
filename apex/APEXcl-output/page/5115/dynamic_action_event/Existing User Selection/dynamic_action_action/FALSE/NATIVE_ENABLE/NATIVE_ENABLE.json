@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Enable"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5115_EMAIL,P5115_FIRST_NAME,P5115_LAST_NAME,P5115_EXTERNAL_SYS_REF"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Existing User Selection",
+    "fireWhenEventResultIs": "False",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

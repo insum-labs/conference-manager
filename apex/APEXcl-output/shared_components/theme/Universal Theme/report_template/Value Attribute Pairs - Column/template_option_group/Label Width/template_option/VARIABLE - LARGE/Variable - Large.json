@@ -1,0 +1,8 @@
+{
+  "group": "Label Width",
+  "name": "VARIABLE_LARGE",
+  "displayName": "Variable - Large",
+  "cssClasses": "t-AVPList--variableLabelLarge",
+  "helpText": null,
+  "isAdvanced": null
+}

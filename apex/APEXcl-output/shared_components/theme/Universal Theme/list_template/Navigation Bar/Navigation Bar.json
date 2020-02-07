@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "NAVIGATION_BAR",
+    "templateClass": 20,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": "</ul></div></li>",
+  "attributeDescriptions": {
+    "a01Label": "Badge Value",
+    "a02Label": "List  Item CSS Classes",
+    "a03Label": null,
+    "a04Label": null,
+    "a05Label": null,
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

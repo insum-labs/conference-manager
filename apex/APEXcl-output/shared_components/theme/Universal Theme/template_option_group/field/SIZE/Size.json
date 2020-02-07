@@ -1,0 +1,8 @@
+{
+  "name": "SIZE",
+  "displayName": "Size",
+  "templateTypes": "FIELD",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

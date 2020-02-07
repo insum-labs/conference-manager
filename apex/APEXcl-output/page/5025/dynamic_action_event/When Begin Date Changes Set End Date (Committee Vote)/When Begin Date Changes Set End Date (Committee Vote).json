@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "When Begin Date Changes Set End Date (Committee Vote)"
+  },
+  "executionOptions": {
+    "executionSequence": 80
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5025_COMMITTEE_VOTE_BEGIN_DT"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

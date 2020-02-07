@@ -1,0 +1,17 @@
+Instructions:<br>
+<ul style="list-style-type:circle">
+    <li>Select an Event from the list.</li>
+    <li>Click on <b>"Export All Votes"</b> to download the report as a CSV file.</li>
+</ul><br>
+
+Aditional Information:<br>
+<ul style="list-style-type:circle">
+    <li>ESID: corresponds to the Session ID.</li>
+    <li>SESSION_NUM: Public number for the session.</li>
+    <li>SESSION: name of the session.</li>
+    <li>VOTER: name of the user who voted.</li>
+    <li>UID: ID of the user who voted.</li>
+    <li>VOTE_TYPE: type of the vote.</li>
+    <li>VOTEVAL: value of the vote.</li>
+    <li>COMMENT: comment added by the user who voted.</li>
+</ul>

@@ -1,0 +1,8 @@
+{
+  "group": "Size",
+  "name": "LARGE",
+  "displayName": "Large",
+  "cssClasses": "t-MediaList--large force-fa-lg",
+  "helpText": "Increases the size of the text and icons in the list.",
+  "isAdvanced": null
+}

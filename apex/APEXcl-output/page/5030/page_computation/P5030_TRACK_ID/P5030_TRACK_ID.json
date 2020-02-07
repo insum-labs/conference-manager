@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "computationItemName": "P5030_TRACK_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 20,
+    "computationPoint": "After Header"
+  },
+  "computation": {
+    "computationType": "Item",
+    "computationItemValue": "P1_TRACK_ID"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P5030_TRACK_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "identification": {
+    "buttonName": "SAVE_INTERNAL",
+    "buttonLabel": "Save"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_CREATE",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "Y",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-check"
+  },
+  "behavior": {
+    "buttonAction": "Submit Page",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": "SQL UPDATE action"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID"
+  },
+  "security": {
+    "authorizationScheme": "EDIT"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

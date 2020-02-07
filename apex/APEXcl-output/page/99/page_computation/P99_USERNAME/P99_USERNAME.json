@@ -1,0 +1,22 @@
+{
+  "identification": {
+    "computationItemName": "P99_USERNAME"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "Before Header"
+  },
+  "computation": {
+    "computationType": "Item",
+    "computationItemValue": "APP_USER"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

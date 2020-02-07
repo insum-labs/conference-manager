@@ -1,0 +1,58 @@
+{
+  "identification": {
+    "title": "Data Validation",
+    "regionType": "Classic Report"
+  },
+  "source": {
+    "sourceLocation": "Local Database",
+    "sourceQueryType": "SQL Query",
+    "sourcePageItemsToSubmit": null,
+    "optimizerHint": null
+  },
+  "layout": {
+    "regionPosition": "BODY",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "regionTemplate": "Standard",
+    "templateOptions": "#DEFAULT#:t-Region--scrollBody",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "itemDisplayPosition": "Above Content"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": "style=\"width:100%;max-width:none;\" ",
+    "regionImage": null,
+    "imageTagAttributes": null,
+    "regionDisplaySelector": "N",
+    "schemaOverrideItem": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "customization": {
+    "customizable": "Not Customizable By End Users"
+  },
+  "pagination": {
+    "paginationType": "Row Ranges 1-15 16-30 in select list (with pagination)",
+    "paginationDisplayPosition": "Bottom - Right",
+    "partialPageRefresh": "N"
+  }
+}

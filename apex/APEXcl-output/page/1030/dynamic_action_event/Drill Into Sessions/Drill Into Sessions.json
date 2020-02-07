@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Drill Into Sessions"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".showSessions"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

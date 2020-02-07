@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Community Nested Expand/Collapse All"
+  },
+  "executionOptions": {
+    "executionSequence": 90
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".expand-collapse-all"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": "#communityReport"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

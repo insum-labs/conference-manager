@@ -1,0 +1,32 @@
+{
+  "reportTemplate": {
+    "identifier": "VALUE_ATTRIBUTE_PAIRS_COLUMN",
+    "templateType": "Generic Columns (column template)",
+    "templateClass": 6,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null,
+    "executeWhenPageLoads": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "columnTemplates": {
+    "columnTemplateCondition1": null,
+    "columnTemplateCondition2": null,
+    "columnTemplateCondition3": null,
+    "columnTemplateCondition4": null
+  },
+  "rowHighlighting": {
+    "backgroundColorForCurrentRow": null,
+    "backgroundColorForCheckedRow": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-AVPList--leftAligned"
+  },
+  "comments": {
+    "comment": null
+  }
+}

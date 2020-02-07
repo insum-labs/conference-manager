@@ -1,0 +1,70 @@
+{
+  "identification": {
+    "itemName": "P3_SESSION_NUM",
+    "itemType": "Number Field"
+  },
+  "label": {
+    "label": "Session Num",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "labelColumnSpan": 1,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "formatMaskNumber": null,
+    "elementWidth": 8,
+    "elementValuePlaceholder": null
+  },
+  "validation": {
+    "valueRequired": "Y",
+    "elementMaxCharacters": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "SESSION_NUM",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": "Item is NOT NULL",
+    "readOnlyConditionItem1": "P3_ID",
+    "readOnlyHtmlAttributes": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Checksum Required - Session Level",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "minimumValue": null,
+    "maximumValue": null,
+    "numberAlignment": "right"
+  }
+}
