@@ -26,7 +26,7 @@
     "readOnlyConditionType": null
   },
   "security": {
-    "authorizationScheme": null,
+    "authorizationScheme": "EVENT_ADMIN_ANY",
     "pageAuthentication": "Page Requires Authentication",
     "rejoinExistingSessions": null,
     "deepLinking": null,

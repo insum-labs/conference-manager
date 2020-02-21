@@ -6,6 +6,8 @@ select
   , s.sub_category
   , s.session_type
   , s.title
+  , s.session_length
+  , s.ranking
   , s.session_summary
   , s.session_abstract
   , s.presenter
