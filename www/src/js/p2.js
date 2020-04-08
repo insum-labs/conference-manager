@@ -51,10 +51,9 @@ function toggleBodySide(state) {
     $side.animate({width: openSide}, 'fast');
     $body.animate({'margin-left': openMargin}, 'fast', 
       function(){
-        $expandBtn.show();
+        $expandBtn.hide();
         _syncSizes();
       });
-    $expandBtn.hide();   
   }
 
 }
