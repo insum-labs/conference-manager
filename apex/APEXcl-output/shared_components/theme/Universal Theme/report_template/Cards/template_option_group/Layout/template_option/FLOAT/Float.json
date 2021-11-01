@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "FLOAT",
+  "displayName": "Float",
+  "cssClasses": "t-Cards--float",
+  "helpText": null,
+  "isAdvanced": null
+}

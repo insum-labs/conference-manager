@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Load Mappings"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Make Report Sortable",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

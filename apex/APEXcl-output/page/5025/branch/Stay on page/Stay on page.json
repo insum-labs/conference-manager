@@ -1,0 +1,24 @@
+{
+  "identification": {
+    "name": "Stay on page"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "branchPoint": "After Processing"
+  },
+  "behavior": {
+    "branchType": "Page or URL (Redirect)",
+    "target": "f?p=&APP_ID.:5025:&SESSION.:CREATED:&DEBUG.:RP,5025:P5025_ID:&P5025_ID.&success_msg=#SUCCESS_MSG#",
+    "saveStateBeforeBranch": "N"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "CREATE",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

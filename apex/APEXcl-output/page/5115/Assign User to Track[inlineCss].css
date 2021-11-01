@@ -1,0 +1,6 @@
+#P5115_OWER_WARNING {
+    position: relative;
+    top: -10px;
+    left: 110px;
+}
+#P5115_OWER_WARNING .fa:before {color: orange;}

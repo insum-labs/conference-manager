@@ -1,0 +1,30 @@
+{
+  "identification": {
+    "name": "Existing User Selection"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5115_EXISTING_USER"
+  },
+  "clientSideCondition": {
+    "jsCondition": "Item is not null",
+    "jsConditionItem": "P5115_EXISTING_USER",
+    "jsConditionElementType": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

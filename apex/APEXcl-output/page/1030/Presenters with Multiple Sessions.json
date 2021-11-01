@@ -1,0 +1,50 @@
+{
+  "identification": {
+    "name": "Presenters with Multiple Sessions",
+    "pageAlias": null,
+    "title": "Presenters with Multiple Sessions",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Normal",
+    "pageTemplate": null,
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "Do not focus cursor",
+    "pageWarnOnUnsavedChanges": "N",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT_ADMIN_ANY",
+    "pageAuthentication": "Page Requires Authentication",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Arguments Must Have Checksum",
+    "formAutoComplete": "Off",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Only for Success"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

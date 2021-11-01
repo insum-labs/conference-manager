@@ -1,0 +1,8 @@
+{
+  "name": "TYPE",
+  "displayName": "Type",
+  "templateTypes": "BUTTON",
+  "helpText": null,
+  "nullText": "Normal",
+  "isAdvanced": "N"
+}

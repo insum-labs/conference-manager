@@ -1,0 +1,8 @@
+{
+  "group": "Tab Style",
+  "name": "SIMPLE",
+  "displayName": "Simple",
+  "cssClasses": "t-TabsRegion-mod--simple",
+  "helpText": null,
+  "isAdvanced": null
+}

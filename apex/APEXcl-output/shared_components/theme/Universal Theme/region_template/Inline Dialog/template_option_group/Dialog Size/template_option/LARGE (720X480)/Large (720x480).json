@@ -1,0 +1,8 @@
+{
+  "group": "Dialog Size",
+  "name": "LARGE_720X480",
+  "displayName": "Large (720x480)",
+  "cssClasses": "js-dialog-size720x480",
+  "helpText": null,
+  "isAdvanced": null
+}

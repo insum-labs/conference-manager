@@ -1,0 +1,8 @@
+{
+  "name": "DELETE_CONFIRM_MSG",
+  "type": "Text with JavaScript Escaped Single Quotes",
+  "shortcut": "Would you like to perform this delete action?",
+  "errorText": null,
+  "buildOption": null,
+  "comments": null
+}

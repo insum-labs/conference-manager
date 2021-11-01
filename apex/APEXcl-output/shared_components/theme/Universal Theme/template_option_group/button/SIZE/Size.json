@@ -1,0 +1,8 @@
+{
+  "name": "SIZE",
+  "displayName": "Size",
+  "templateTypes": "BUTTON",
+  "helpText": "Sets the size of the button.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

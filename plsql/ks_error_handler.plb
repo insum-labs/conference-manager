@@ -394,7 +394,8 @@ l_logger_scope := to_char(sysdate,'YYYY-MM-DD HH24.MI.SS')||':'||v('APP_USER')||
 -- but remove the HTML
 l_logger_message := replace(l_logger_message, '<BR/>', chr(10));
 -- logger.log_error(p_text => l_logger_message, p_scope => l_logger_scope);
-                            
+ks_log.log(l_logger_message, l_logger_scope);
+
 -- Now return the result record to the caller.
  
   RETURN l_result;

@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "INLINE_DIALOG",
+    "templateClass": 24,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": "js-modal:js-draggable:js-resizable",
+    "presetTemplateOptions": "js-dialog-size600x400"
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

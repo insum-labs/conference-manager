@@ -1,0 +1,8 @@
+{
+  "name": "ALERT_ICONS",
+  "displayName": "Alert Icons",
+  "templateTypes": "REGION",
+  "helpText": "Sets how icons are handled for the Alert Region.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

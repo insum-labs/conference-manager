@@ -1,0 +1,8 @@
+{
+  "name": "LABEL_DISPLAY",
+  "displayName": "Label Display",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": null,
+  "isAdvanced": "N"
+}

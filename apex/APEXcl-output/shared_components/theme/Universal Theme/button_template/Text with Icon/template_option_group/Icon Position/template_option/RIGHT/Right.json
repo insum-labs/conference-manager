@@ -1,0 +1,8 @@
+{
+  "group": "Icon Position",
+  "name": "RIGHTICON",
+  "displayName": "Right",
+  "cssClasses": "t-Button--iconRight",
+  "helpText": null,
+  "isAdvanced": "No"
+}

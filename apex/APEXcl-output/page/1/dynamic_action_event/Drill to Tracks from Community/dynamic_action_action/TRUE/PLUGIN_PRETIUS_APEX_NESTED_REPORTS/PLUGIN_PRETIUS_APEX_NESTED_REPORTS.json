@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "daActionType": "PLUGIN_PRETIUS_APEX_NESTED_REPORTS"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Drill to Tracks from Community",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N"
+  },
+  "attributes": {
+    "attribute01": "with session_counts_records as (\n select  s.event_id\n       , s.event_track_id\n       , count(*) loaded_sessions\n       , count(distinct s.presenter_user_id) speakers\n       , sum(decode(s.status_code, 'ACCEPTED', 1, 0)) accepted_sessions\n       , (select count(distinct ss.presenter_user_id) from ks_sessions ss where ss.event_track_id = s.event_track_id and ss.status_code = 'ACCEPTED') as accepted_speakers\n       , sum(decode(s.status_code, null, 1, 0)) sessions_no_status \n    from ks_sessions s  \n   group by s.event_id, s.event_track_id\n)\n, event_comps as (\n  select c.event_track_id\n       , sum(c.presenter_comp) comps_speakers\n    from ks_events_comps_v c \n   where c.event_id = to_number(:P1_SELECT_EVENT_ID)\n   group by c.event_track_id\n)\nselect  ctv.track_id\n      , nvl(ctv.track_alias, ctv.track_name) track_name\n      , ctv.max_sessions\n      , ctv.max_comps\n      , scr.loaded_sessions\n      , scr.speakers\n      , scr.accepted_sessions\n      , scr.accepted_speakers\n      , to_char(c.comps_speakers, :G_NUMBER_FORMAT_MASK) comps\n      , scr.sessions_no_status\n  from ks_events_communities_tracks_v ctv\n  left outer join session_counts_records scr on (ctv.track_id = scr.event_track_id)\n  left outer join event_comps c on (ctv.track_id = c.event_track_id)\n where ctv.event_id = to_number (:P1_SELECT_EVENT_ID)\n   and ctv.event_community_id = #ID#\n   and ctv.track_active_ind = 'Y'\norder by ctv.track_display_seq",
+    "attribute02": "AA:LI",
+    "attribute03": "CTDC",
+    "attribute04": "<table class=\"tracksDrillReport t-Report-report pretius--strechReport\">\n<thead>\n<tr>\n  <th class=\"t-Report-colHead\">Track</th>\n  <th class=\"t-Report-colHead\">Max Sessions</th>\n  <th class=\"t-Report-colHead\">Max Comps</th>\n  <th class=\"t-Report-colHead\">Loaded Sessions</th>\n  <th class=\"t-Report-colHead\">Speakers</th>\n  <th class=\"t-Report-colHead\">Accepted Sessions</th>\n  <th class=\"t-Report-colHead\">Comps</th>\n  <th class=\"t-Report-colHead\">Accepted Speakers</th>\n  <th class=\"t-Report-colHead\">Sessions No Status</th>\n</tr>\n</thead>\n<tbody>\n{{#data}}\n<tr>\n  <td class=\"t-Report-cell\" headers=\"TRACK_NAME\">\n    <a href='javascript:apex.submit({ request:\"P1_TRACK_ID_AND_GO\", set:{\"P1_SELECT_TRACK_ID\":{{TRACK_ID}}}, showWait:true});'>{{TRACK_NAME}}</a>\n  </td>\n  <td class=\"t-Report-cell u-tR\" headers=\"MAX_SESSIONS\">{{MAX_SESSIONS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"MAX_COMPS\">{{MAX_COMPS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"LOADED_SESSIONS\">{{LOADED_SESSIONS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"SPEAKERS\">{{SPEAKERS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"ACCEPTED_SESSIONS\">{{ACCEPTED_SESSIONS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"COMPS\">{{COMPS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"ACCEPTED_SPEAKERS\">{{ACCEPTED_SPEAKERS}}</td>\n  <td class=\"t-Report-cell u-tR\" headers=\"SESSIONS_NO_STATUS\">{{SESSIONS_NO_STATUS}}</td>\n</tr>\n{{/data}}\n</tbody>\n</table>\n",
+    "attribute05": null,
+    "attribute06": "#CCCCCC",
+    "attribute07": null,
+    "attribute08": "#c5c5c5",
+    "attribute09": "#e3e3e3",
+    "attribute10": null
+  }
+}

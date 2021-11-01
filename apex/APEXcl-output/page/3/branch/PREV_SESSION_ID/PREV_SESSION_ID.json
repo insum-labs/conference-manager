@@ -1,0 +1,24 @@
+{
+  "identification": {
+    "name": "PREV_SESSION_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 30,
+    "branchPoint": "After Processing"
+  },
+  "behavior": {
+    "branchType": "Page or URL (Redirect)",
+    "target": "f?p=&APP_ID.:3:&SESSION.::&DEBUG.::P3_ID:&P3_ID_PREV.&success_msg=#SUCCESS_MSG#",
+    "saveStateBeforeBranch": "N"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "GET_PREVIOUS_SESSION_ID",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

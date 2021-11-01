@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Dialog Closed on Tracks Region"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "Region",
+    "whenRegion": "Tracks"
+  },
+  "clientSideCondition": {
+    "jsCondition": "JavaScript expression"
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

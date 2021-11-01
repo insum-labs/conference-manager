@@ -1,0 +1,7 @@
+{
+  "name": "FORMSLIMPADDING",
+  "displayName": "Slim Padding",
+  "cssClasses": "t-Form--slimPadding",
+  "helpText": "Reduces form item padding to 4px.",
+  "isAdvanced": "No"
+}

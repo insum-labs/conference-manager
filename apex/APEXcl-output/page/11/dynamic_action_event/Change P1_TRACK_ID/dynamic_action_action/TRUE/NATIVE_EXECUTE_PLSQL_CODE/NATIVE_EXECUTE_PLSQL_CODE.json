@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "daActionType": "Execute PL/SQL Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Change P1_TRACK_ID",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "itemsToSubmit": "P11_SELECT_TRACK_ID",
+    "itemsToReturn": "P1_TRACK_ID",
+    "suppressChangeEvent": "N"
+  }
+}

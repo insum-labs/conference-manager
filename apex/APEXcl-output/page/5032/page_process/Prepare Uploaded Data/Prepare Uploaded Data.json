@@ -1,0 +1,31 @@
+{
+  "identification": {
+    "name": "Prepare Uploaded Data",
+    "pageProcessType": "Load Uploaded Data"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "NEXT",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "dataLoadDefinition": "176518723514061296108",
+    "insertCountItem": "P5033_INSERT_COUNT",
+    "updateCountItem": "P5033_UPDATE_COUNT",
+    "errorCountItem": "P5033_ERROR_COUNT",
+    "reviewCountItem": "P5033_REVIEW_COUNT"
+  }
+}

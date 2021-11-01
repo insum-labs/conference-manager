@@ -1,0 +1,25 @@
+{
+  "item": {
+    "name": "A_NICE_USERNAME",
+    "sequence": 10
+  },
+  "frequency": {
+    "computationPoint": "After Authentication"
+  },
+  "computation": {
+    "computationType": "PL/SQL Expression",
+    "computationErrorMessage": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "conditions": {
+    "conditionType": null
+  },
+  "authorization": {
+    "authorizationScheme": null
+  },
+  "comments": {
+    "computationComment": null
+  }
+}

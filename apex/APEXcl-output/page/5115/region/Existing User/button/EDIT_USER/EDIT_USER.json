@@ -1,0 +1,42 @@
+{
+  "identification": {
+    "buttonName": "EDIT_USER",
+    "buttonLabel": "Edit User"
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "Y",
+    "column": 3,
+    "columnSpan": 2,
+    "columnCssClasses": null,
+    "columnAttributes": null,
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--small:t-Button--simple:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-user-edit"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:5105:&SESSION.::&DEBUG.:RP,5105:P5105_ID,P5105_CALLING_PAGE:&P5115_USER_ID.,",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

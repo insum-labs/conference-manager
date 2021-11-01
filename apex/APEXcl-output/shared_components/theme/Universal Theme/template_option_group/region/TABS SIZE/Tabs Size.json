@@ -1,0 +1,8 @@
+{
+  "name": "TABS_SIZE",
+  "displayName": "Tabs Size",
+  "templateTypes": "REGION",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

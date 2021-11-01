@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Scheduled Dates (of same type) Can't Overlap"
+  },
+  "executionOptions": {
+    "executionSequence": 40
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "PL/SQL Function Body (returning Boolean)",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": null
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Request is contained in Value",
+    "conditionValue1": "CREATE, SAVE"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "FLOATITEMS",
+  "displayName": "Float Items",
+  "cssClasses": "t-BadgeList--float",
+  "helpText": null,
+  "isAdvanced": "No"
+}

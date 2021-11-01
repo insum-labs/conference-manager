@@ -1,0 +1,8 @@
+{
+  "group": "Alert Title",
+  "name": "HIDDENHEADERNOAT",
+  "displayName": "Hidden",
+  "cssClasses": "t-Alert--removeHeading",
+  "helpText": "Hides the Alert Title from being displayed.",
+  "isAdvanced": null
+}

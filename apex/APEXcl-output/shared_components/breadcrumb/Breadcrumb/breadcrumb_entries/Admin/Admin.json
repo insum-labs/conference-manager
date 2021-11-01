@@ -1,0 +1,9 @@
+{
+  "sequence": 10,
+  "shortName": "Admin",
+  "link": "f?p=&APP_ID.:5000:&SESSION.",
+  "page": 5000,
+  "conditionType": null,
+  "authorizationScheme": null,
+  "buildOption": null
+}

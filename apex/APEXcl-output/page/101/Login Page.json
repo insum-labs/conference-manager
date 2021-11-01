@@ -1,0 +1,50 @@
+{
+  "identification": {
+    "name": "Login Page",
+    "pageAlias": "LOGIN_DESKTOP",
+    "title": "ODTUG Abstract Review - Log In",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Normal",
+    "pageTemplate": "Login",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "First item on page",
+    "pageWarnOnUnsavedChanges": "N",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "pageAuthentication": "Page Is Public",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Unrestricted",
+    "formAutoComplete": "Off",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Only for Success"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

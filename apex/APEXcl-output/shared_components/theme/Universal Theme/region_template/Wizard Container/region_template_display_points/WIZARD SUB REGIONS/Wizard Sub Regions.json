@@ -1,0 +1,8 @@
+{
+  "name": "Wizard Sub Regions",
+  "placeholder": "SUB_REGIONS",
+  "hasGridSupport": "Y",
+  "glvNewRow": "N",
+  "maxFixedGridColumns": null,
+  "componentComment": null
+}

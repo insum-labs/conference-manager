@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Close Dialog",
+    "pageProcessType": "Close Dialog"
+  },
+  "executionOptions": {
+    "executionSequence": 40,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Request is contained in Value",
+    "conditionValue1": "CREATE,SAVE,DELETE"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "itemsToReturn": null
+  }
+}

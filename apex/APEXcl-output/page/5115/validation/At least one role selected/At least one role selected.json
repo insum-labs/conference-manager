@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "At least one role selected"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "PL/SQL Expression",
+    "alwaysExecute": "Y"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline in Notification",
+    "associatedItem": null
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Request is contained in Value",
+    "conditionValue1": "CREATE,SAVE"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

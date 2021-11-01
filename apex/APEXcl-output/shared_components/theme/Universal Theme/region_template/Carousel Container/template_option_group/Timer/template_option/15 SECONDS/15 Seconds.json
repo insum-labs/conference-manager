@@ -1,0 +1,8 @@
+{
+  "group": "Timer",
+  "name": "15_SECONDS",
+  "displayName": "15 Seconds",
+  "cssClasses": "js-cycle15s",
+  "helpText": null,
+  "isAdvanced": null
+}

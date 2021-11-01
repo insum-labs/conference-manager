@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "STRETCH_TO_FIT_WINDOW",
+  "displayName": "Stretch to Fit Window",
+  "cssClasses": "ui-dialog--stretch",
+  "helpText": "Stretch the dialog to fit the browser window.",
+  "isAdvanced": null
+}

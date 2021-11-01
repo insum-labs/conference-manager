@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "STACKED_FEATURED",
+  "displayName": "Stacked Featured",
+  "cssClasses": "t-HeroRegion--featured t-HeroRegion--centered",
+  "helpText": null,
+  "isAdvanced": null
+}

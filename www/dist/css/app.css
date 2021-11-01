@@ -65,12 +65,21 @@
 .cfa-note_Y:before {
   content: "\f075";
 }
+.cfa-other_Y:before {
+  content: "\f111";
+  color: #cc9633;
+}
 
 /*
  Font Awesome Customizations - END
 */
 
 .delete-btn {color: #e53935;}
+
+.hide {display: none;}
+
+/* Center all IR edit columns */
+td[headers="LINK"] {text-align: center;}
 
 /**
  * Static pie charts
@@ -89,7 +98,6 @@
   line-height: 30px;
   border-radius: 50%;
   background:#DDD;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(0, yellowgreen));
   background-image: linear-gradient(to right, transparent 50%, yellowgreen 0);
   color: transparent;
   text-align: center;
@@ -99,7 +107,6 @@
 }
 .pie.overtime {
   /*Flip color, make overtime orange*/
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, transparent), color-stop(0, orange));
   background-image: linear-gradient(to right, transparent 50%, orange 0);
   background-color: yellowgreen;
 }
@@ -168,9 +175,35 @@
 }
 
 
+.drag-handle {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 20px;
+  margin: 3px 0px;
+  background-image: url("../img/drag-handle.png");
+  background-repeat: repeat-y;
+  background-position: center center;
+  z-index: 1;
+}
+.drag-handle {
+  cursor: move;
+}
+.disabled-handle,
+.drag-handle.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+.dragging {
+  opacity: 0.5;
+  filter: "alpha(opacity=50)";
+}
+
+
 
 /* jQuery Tooltip */
-.ksjqTooltip {padding: 0; font: normal 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif; -webkit-box-shadow: 5px 5px 10px #AAA; box-shadow: 5px 5px 10px #AAA;}
+.ksjqTooltip {padding: 0; font: normal 13px/16px "Helvetica Neue",Helvetica,Arial,sans-serif; box-shadow: 5px 5px 10px #AAA;}
 
 .ksjqTooltip .ui-dialog-content {background: #F2F2F2!important;overflow:auto;}
 .ksjqTooltip h1 {font-weight: bold;font-size: 1.2em;margin-top: 6px;}

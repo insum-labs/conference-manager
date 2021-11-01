@@ -1,0 +1,8 @@
+{
+  "name": "PRESERVE_LABEL_SPACING",
+  "displayName": "Preserve Label Spacing",
+  "templateTypes": "FIELD",
+  "helpText": "Preserves the label space and enables use of the Label Column Span property.",
+  "nullText": "Yes",
+  "isAdvanced": "N"
+}

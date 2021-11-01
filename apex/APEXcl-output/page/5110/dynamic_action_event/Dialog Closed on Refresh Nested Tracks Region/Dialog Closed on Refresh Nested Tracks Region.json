@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Dialog Closed on Refresh Nested Tracks Region"
+  },
+  "executionOptions": {
+    "executionSequence": 30
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".trackEventEdit"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": "body"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

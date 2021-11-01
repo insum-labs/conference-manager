@@ -1,0 +1,1 @@
+delete from ks_event_admins where id = :P5025_ADMIN_TO_DELETE_ID;

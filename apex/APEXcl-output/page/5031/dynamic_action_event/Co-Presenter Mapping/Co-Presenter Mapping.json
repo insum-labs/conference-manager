@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Co-Presenter Mapping"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "when": {
+    "event": "change",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": "#id1_13"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

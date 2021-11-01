@@ -1,0 +1,44 @@
+{
+  "identification": {
+    "name": "Submissions"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "source": {
+    "chartSourceLocation": "Local Database",
+    "sourceQueryType": "SQL Query",
+    "sourcePageItemsToSubmit": null,
+    "optimizerHint": null
+  },
+  "columnMapping": {
+    "seriesNameColumnName": "EVENT_NAME",
+    "itemsLabelColumnName": "EVENT_NAME",
+    "itemsShortDescColumnName": null,
+    "customColumnName": null
+  },
+  "link": {
+    "linkTargetType": null
+  },
+  "appearance": {
+    "jetSeriesColor": null
+  },
+  "label": {
+    "itemsLabelRendered": "N"
+  },
+  "performance": {
+    "maximumRowCount": null
+  },
+  "advanced": {
+    "staticId": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

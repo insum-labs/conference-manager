@@ -1,0 +1,1 @@
+return ks_util.get_param('ADMIN_APP_ID');

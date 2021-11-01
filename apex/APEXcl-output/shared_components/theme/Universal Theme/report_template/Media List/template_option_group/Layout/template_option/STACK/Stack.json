@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "STACK",
+  "displayName": "Stack",
+  "cssClasses": "t-MediaList--stack",
+  "helpText": null,
+  "isAdvanced": null
+}

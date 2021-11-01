@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "BADGE_LIST",
+    "templateClass": 3,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": null,
+  "attributeDescriptions": {
+    "a01Label": "Value",
+    "a02Label": "List item CSS Classes",
+    "a03Label": "Link Attributes",
+    "a04Label": "Link Classes",
+    "a05Label": null,
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-BadgeList--large:t-BadgeList--cols t-BadgeList--3cols:t-BadgeList--circular"
+  },
+  "comments": {
+    "comment": "A01: Large Number\nA02: List Item Classes\nA03: Link Attributes"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "CLEAR_BUTTON",
+  "type": "PL/SQL Function Body",
+  "shortcut": "return '\n<a class=\"a-Button a-Button--popupLOV lov-clear\" aria-label=\"' || apex_lang.lang('Clear') || '\" title=\"' || apex_lang.lang('Clear') || '\" href=\"javascript:$s(''#CURRENT_ITEM_NAME#'','''');\">\n  <span class=\"fa fa-close\"></span>\n</a>';",
+  "errorText": null,
+  "buildOption": null,
+  "comments": null
+}

@@ -1,0 +1,1 @@
+ks_sec.get_name_from_user(:APP_USER);

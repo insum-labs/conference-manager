@@ -1,0 +1,7 @@
+{
+  "name": "SMALLLEFTMARGIN",
+  "displayName": "Small",
+  "cssClasses": "t-Button--padLeft",
+  "helpText": null,
+  "isAdvanced": "No"
+}

@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "daActionType": "Execute PL/SQL Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 50,
+    "daEvent": "Sections \"Check All\"",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "itemsToSubmit": "P2_C,P2_ID,P2_S,P1_TRACK_ID",
+    "itemsToReturn": null,
+    "suppressChangeEvent": null
+  }
+}

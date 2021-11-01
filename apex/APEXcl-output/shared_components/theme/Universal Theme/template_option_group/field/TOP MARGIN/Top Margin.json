@@ -1,0 +1,8 @@
+{
+  "name": "TOP_MARGIN",
+  "displayName": "Top Margin",
+  "templateTypes": "FIELD",
+  "helpText": "Set the top margin for this field.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Icons",
+  "name": "DISPLAY_INITIALS",
+  "displayName": "Display Initials",
+  "cssClasses": "t-Cards--displayInitials",
+  "helpText": null,
+  "isAdvanced": null
+}

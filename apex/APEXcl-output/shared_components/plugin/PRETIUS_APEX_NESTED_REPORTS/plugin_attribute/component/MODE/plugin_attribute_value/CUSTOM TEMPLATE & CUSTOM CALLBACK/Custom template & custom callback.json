@@ -1,0 +1,7 @@
+{
+  "displayValue": "Custom template & custom callback",
+  "returnValue": "CTCC",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "When this option is selected, developer decides how template for resulting rows of data is build and how results should be displayed after receiving rows from database."
+}

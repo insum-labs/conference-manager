@@ -1,0 +1,35 @@
+{
+  "identification": {
+    "buttonName": "CANCEL",
+    "buttonLabel": "Cancel"
+  },
+  "layout": {
+    "buttonPosition": "REGION_TEMPLATE_CLOSE"
+  },
+  "appearance": {
+    "buttonTemplate": "Text",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null
+  },
+  "behavior": {
+    "buttonAction": "Defined by Dynamic Action",
+    "buttonExecuteValidations": "Y",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

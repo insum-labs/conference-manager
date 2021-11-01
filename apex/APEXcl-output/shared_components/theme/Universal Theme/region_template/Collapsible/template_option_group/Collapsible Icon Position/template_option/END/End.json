@@ -1,0 +1,8 @@
+{
+  "group": "Collapsible Icon Position",
+  "name": "CONRTOLS_POSITION_END",
+  "displayName": "End",
+  "cssClasses": "t-Region--controlsPosEnd",
+  "helpText": "Position the expand / collapse button to the end of the region header.",
+  "isAdvanced": null
+}

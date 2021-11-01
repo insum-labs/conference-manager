@@ -1,0 +1,24 @@
+{
+  "identification": {
+    "name": "Go to page 5040"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "branchPoint": "After Processing"
+  },
+  "behavior": {
+    "branchType": "Page or URL (Redirect)",
+    "target": "f?p=&APP_ID.:5040:&SESSION.::&DEBUG.:RP::&success_msg=#SUCCESS_MSG#",
+    "saveStateBeforeBranch": "N"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

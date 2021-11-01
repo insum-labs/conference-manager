@@ -1,0 +1,8 @@
+{
+  "name": "ITEM_PADDING",
+  "displayName": "Item Padding",
+  "templateTypes": "REGION",
+  "helpText": "Sets the padding around items within this region.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Master Detail",
+  "templateSubstitution": "REGION_POSITION_02",
+  "gridSupport": "Yes",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": 8
+}

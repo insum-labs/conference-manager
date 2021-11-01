@@ -1,0 +1,8 @@
+{
+  "group": "Tab Style",
+  "name": "PILL",
+  "displayName": "Pill",
+  "cssClasses": "t-TabsRegion-mod--pill",
+  "helpText": null,
+  "isAdvanced": null
+}

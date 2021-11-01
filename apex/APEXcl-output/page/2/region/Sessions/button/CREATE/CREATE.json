@@ -1,0 +1,41 @@
+{
+  "identification": {
+    "buttonName": "CREATE",
+    "buttonLabel": "Add Session"
+  },
+  "layout": {
+    "buttonPosition": "Right of Interactive Report Search Bar",
+    "startNewRow": null,
+    "column": null,
+    "columnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-plus"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:3:&SESSION.::&DEBUG.:RP,3:P3_EVENT_ID,P3_EVENT_TRACK_ID:&P1_EVENT_ID.,&P1_TRACK_ID.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": "title=\"Are you sure?\"",
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

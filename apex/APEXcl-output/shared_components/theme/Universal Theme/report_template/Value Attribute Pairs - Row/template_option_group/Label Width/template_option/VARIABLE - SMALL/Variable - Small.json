@@ -1,0 +1,8 @@
+{
+  "group": "Label Width",
+  "name": "VARIABLE_SMALL",
+  "displayName": "Variable - Small",
+  "cssClasses": "t-AVPList--variableLabelSmall",
+  "helpText": null,
+  "isAdvanced": null
+}

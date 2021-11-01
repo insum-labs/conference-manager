@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Open Event Admin Dialog"
+  },
+  "executionOptions": {
+    "executionSequence": 100
+  },
+  "when": {
+    "event": "click",
+    "whenType": "Button",
+    "whenButton": "ADD_EVENT_ADMIN"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

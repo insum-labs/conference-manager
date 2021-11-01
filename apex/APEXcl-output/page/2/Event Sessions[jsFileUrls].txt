@@ -1,0 +1,2 @@
+#APP_IMAGES#js/cm#MIN#.js
+#APP_IMAGES#js/p&APP_PAGE_ID.#MIN#.js

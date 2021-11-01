@@ -1,0 +1,8 @@
+{
+  "group": "Header",
+  "name": "HIDEREGIONHEADER",
+  "displayName": "Hidden but accessible",
+  "cssClasses": "t-Region--hideHeader",
+  "helpText": "This option will hide the region header.  Note that the region title will still be audible for Screen Readers. Buttons placed in the region header will be hidden and inaccessible.",
+  "isAdvanced": "No"
+}

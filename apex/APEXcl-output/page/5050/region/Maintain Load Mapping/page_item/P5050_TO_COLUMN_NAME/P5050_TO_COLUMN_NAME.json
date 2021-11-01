@@ -1,0 +1,79 @@
+{
+  "identification": {
+    "itemName": "P5050_TO_COLUMN_NAME",
+    "itemType": "PLUGIN_BE.CTB.SELECT2"
+  },
+  "label": {
+    "label": "DB Column",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "displayExtraValues": "N",
+    "displayNullValue": "Y",
+    "nullDisplayValue": "&LOV_NULL_TEXT.",
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "TO_COLUMN_NAME",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "escapeSpecialCharacters": "Y",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "attribute01": "SINGLE",
+    "attribute02": null,
+    "attribute03": null,
+    "attribute04": null,
+    "attribute05": null,
+    "attribute06": null,
+    "attribute07": null,
+    "attribute08": "CIC",
+    "attribute09": null,
+    "attribute10": "300px",
+    "attribute11": null
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "identification": {
+    "name": "Fetch Row from KS_USERS",
+    "pageProcessType": "Automatic Row Fetch [Legacy]"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "processPoint": "After Header",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "tableOwner": null,
+    "tableName": "KS_USERS",
+    "primaryKeyItem": "P5105_ID",
+    "primaryKeyColumn": "ID",
+    "secondaryKeyItem": null,
+    "secondaryKeyColumn": null,
+    "rowVersionColumn": null,
+    "runtimeWhereClause": null,
+    "fetchMode": null
+  }
+}

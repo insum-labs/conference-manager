@@ -1,4 +1,4 @@
-
+-- alter session set PLSQL_CCFLAGS='VERBOSE_OUTPUT:TRUE';
 PROMPT ks_tags_api body
 create or replace package body ks_tags_api
 is
@@ -30,7 +30,13 @@ as
 begin
   -- we call tag_sync form a trigger, so lets not call logger unless we need to.
   -- logger.append_param(l_params, 'p_option_name', p_option_name);
+    $IF $$VERBOSE_OUTPUT $THEN
     ks_log.log('START', l_scope);
+    ks_log.log('p_content_type: ' || p_content_type, l_scope);
+    ks_log.log('  p_content_id: ' || p_content_id, l_scope);
+    ks_log.log('p_new_tags: ' || p_new_tags, l_scope);
+    ks_log.log('p_old_tags: ' || p_old_tags, l_scope);
+    $END
 
     l_old_tags := apex_util.string_to_table(p_old_tags,':');
     l_new_tags := apex_util.string_to_table(p_new_tags,':');
@@ -62,32 +68,53 @@ begin
             end;
         end loop;
     else --just do inserts
+        $IF $$VERBOSE_OUTPUT $THEN
+        ks_log.log('insert: ' || l_new_tags.count, l_scope);
+        $END
         for i in 1..l_new_tags.count loop
             insert into ks_tags (tag, content_id, content_type )
                 values (l_new_tags(i), p_content_id, p_content_type );
             l_merge_tags(l_merge_tags.count + 1) := l_new_tags(i);
         end loop;
     end if;
-    for i in 1..l_merge_tags.count loop
+
+    for i in 1..l_merge_tags.count 
+    loop
+        $IF $$VERBOSE_OUTPUT $THEN
+        ks_log.log('merging(' || i || '): ' || l_merge_tags(i), l_scope);
+        ks_log.log('merging ks_tag_type_sums', l_scope);
+        $END
         merge into ks_tag_type_sums s
         using (select count(*) tag_count
                  from ks_tags
-                where tag = l_merge_tags(i) and content_type = p_content_type ) t
+                where tag = l_merge_tags(i) 
+                  and content_type = p_content_type ) t
            on (s.tag = l_merge_tags(i) and s.content_type = p_content_type )
-         when not matched then insert (tag, content_type, tag_count)
-                               values (l_merge_tags(i), p_content_type, t.tag_count)
-         when matched then update set s.tag_count = t.tag_count;
+         when not matched then
+           insert (tag, content_type, tag_count)
+           values (l_merge_tags(i), p_content_type, t.tag_count)
+         when matched then
+           update set s.tag_count = t.tag_count;
+
+
+        $IF $$VERBOSE_OUTPUT $THEN
+        ks_log.log('merging ks_tag_sums', l_scope);
+        $END
         merge into ks_tag_sums s
         using (select sum(tag_count) tag_count
                  from ks_tag_type_sums
                 where tag = l_merge_tags(i) ) t
            on (s.tag = l_merge_tags(i) )
-         when not matched then insert (tag, tag_count)
-                               values (l_merge_tags(i), t.tag_count)
-         when matched then update set s.tag_count = t.tag_count;
+         when not matched then
+           insert (tag, tag_count)
+           values (l_merge_tags(i), t.tag_count)
+         when matched then
+           update set s.tag_count = t.tag_count;
     end loop;
 
-    ks_log.log('START', l_scope);
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('END', l_scope);
+    $END
 
 end tag_sync;
 

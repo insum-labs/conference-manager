@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Generate Uppercase Code"
+  },
+  "executionOptions": {
+    "executionSequence": 40
+  },
+  "when": {
+    "event": "keyup",
+    "whenType": "Item(s)",
+    "whenItems": "P5105_EMAIL"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P5105_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

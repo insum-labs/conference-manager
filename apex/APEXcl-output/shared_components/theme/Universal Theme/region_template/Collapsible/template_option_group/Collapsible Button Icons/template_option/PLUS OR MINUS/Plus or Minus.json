@@ -1,0 +1,8 @@
+{
+  "group": "Collapsible Button Icons",
+  "name": "ICONS_PLUS_OR_MINUS",
+  "displayName": "Plus or Minus",
+  "cssClasses": "t-Region--hideShowIconsMath",
+  "helpText": "Use the plus and minus icons for the expand and collapse button.",
+  "isAdvanced": null
+}

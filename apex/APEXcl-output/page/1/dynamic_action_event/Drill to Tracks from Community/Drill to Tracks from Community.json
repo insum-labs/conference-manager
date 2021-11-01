@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Drill to Tracks from Community"
+  },
+  "executionOptions": {
+    "executionSequence": 120
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".showChildren"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": "#communityReport"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

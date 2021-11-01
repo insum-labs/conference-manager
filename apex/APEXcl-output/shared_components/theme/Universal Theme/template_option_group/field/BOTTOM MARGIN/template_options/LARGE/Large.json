@@ -1,0 +1,7 @@
+{
+  "name": "FBM_LARGE",
+  "displayName": "Large",
+  "cssClasses": "margin-bottom-lg",
+  "helpText": "Adds a large bottom margin for this field.",
+  "isAdvanced": null
+}

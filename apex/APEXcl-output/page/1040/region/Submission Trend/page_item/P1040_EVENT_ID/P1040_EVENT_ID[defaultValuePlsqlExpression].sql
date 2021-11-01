@@ -1,0 +1,1 @@
+apex_util.get_preference('DEFAULT_EVENT_ID')

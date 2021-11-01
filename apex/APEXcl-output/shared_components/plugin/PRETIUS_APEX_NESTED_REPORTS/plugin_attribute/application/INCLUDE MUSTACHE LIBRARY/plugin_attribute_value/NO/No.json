@@ -1,0 +1,7 @@
+{
+  "displayValue": "No",
+  "returnValue": "N",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "Mustache library won't be included. This library is essential for the plugin to work."
+}

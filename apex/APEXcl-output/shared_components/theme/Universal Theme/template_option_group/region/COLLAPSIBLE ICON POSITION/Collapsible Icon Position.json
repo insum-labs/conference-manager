@@ -1,0 +1,8 @@
+{
+  "name": "COLLAPSIBLE_ICON_POSITION",
+  "displayName": "Collapsible Icon Position",
+  "templateTypes": "REGION",
+  "helpText": "Determines the position of the expand and collapse toggle for the region.",
+  "nullText": "Start",
+  "isAdvanced": "N"
+}

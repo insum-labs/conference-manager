@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "CARDS",
+    "templateClass": 4,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": null,
+  "attributeDescriptions": {
+    "a01Label": "Description",
+    "a02Label": "Secondary Information",
+    "a03Label": "Initials",
+    "a04Label": "List Item CSS Classes",
+    "a05Label": "Link Attributes",
+    "a06Label": "Card Color Class",
+    "a07Label": "Subtitle",
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-Cards--animColorFill:t-Cards--3cols:t-Cards--basic"
+  },
+  "comments": {
+    "comment": null
+  }
+}

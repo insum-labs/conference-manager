@@ -1,0 +1,8 @@
+{
+  "group": "Alert Title",
+  "name": "HIDDENHEADER",
+  "displayName": "Hidden but Accessible",
+  "cssClasses": "t-Alert--accessibleHeading",
+  "helpText": "Visually hides the alert title, but assistive technologies can still read it.",
+  "isAdvanced": null
+}

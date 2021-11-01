@@ -1,0 +1,7 @@
+{
+  "displayValue": "Default template & default callback",
+  "returnValue": "DTDC",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "Default plugin behaviour. Resulting rows of data are rendered in default template (table of data) along with default callback settings."
+}

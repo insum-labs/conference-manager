@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "SPAN_HORIZONTAL",
+  "displayName": "Span Horizontal",
+  "cssClasses": "t-MediaList--horizontal",
+  "helpText": null,
+  "isAdvanced": null
+}

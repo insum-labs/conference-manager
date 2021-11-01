@@ -1,0 +1,13 @@
+a.nestedreport--slideup {
+  float: right;
+}
+
+#tracksRegion .t-Report-wrap {
+    min-width: 650px;
+}
+#tracksRegion .t-Report-report {
+    width: 100%;
+}
+#P5110_EVENT_ID_CONTAINER .t-Form-labelContainer {
+    width: auto;
+}

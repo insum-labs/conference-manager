@@ -1,0 +1,1 @@
+RETURN NOT apex_authorization.is_authorized('EDIT');

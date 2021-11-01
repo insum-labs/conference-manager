@@ -1,0 +1,70 @@
+{
+  "identification": {
+    "itemName": "P5026_ACTIVE_IND",
+    "itemType": "PLUGIN_COM.ORACLE.APEX.SIMPLE_CHECKBOX"
+  },
+  "label": {
+    "label": "Active?",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": 3,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Required",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null
+  },
+  "validation": {
+    "valueRequired": "Y"
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Database Column",
+    "sourceDbColumn": "ACTIVE_IND",
+    "sourceUsed": "Always, replacing any existing value in session state",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "attribute01": "Y",
+    "attribute02": "N",
+    "attribute03": null,
+    "attribute04": null,
+    "attribute05": null,
+    "attribute06": null,
+    "attribute07": null,
+    "attribute08": null,
+    "attribute09": null,
+    "attribute10": null,
+    "attribute11": null
+  }
+}

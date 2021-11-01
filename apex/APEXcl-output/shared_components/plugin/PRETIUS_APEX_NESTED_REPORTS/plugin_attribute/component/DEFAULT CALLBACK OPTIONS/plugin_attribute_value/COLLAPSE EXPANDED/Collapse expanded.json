@@ -1,0 +1,7 @@
+{
+  "displayValue": "Collapse expanded",
+  "returnValue": "CE",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option checked, every expanded row will be collapsed before new row is expanded."
+}

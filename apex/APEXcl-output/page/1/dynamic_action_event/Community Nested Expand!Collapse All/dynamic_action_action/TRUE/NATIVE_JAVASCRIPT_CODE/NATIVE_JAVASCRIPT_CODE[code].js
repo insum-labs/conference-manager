@@ -1,0 +1,1 @@
+cm.theme.expandCollapseAll(this.triggeringElement);

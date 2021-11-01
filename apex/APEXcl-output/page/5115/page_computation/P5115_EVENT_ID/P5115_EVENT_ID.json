@@ -1,0 +1,22 @@
+{
+  "identification": {
+    "computationItemName": "P5115_EVENT_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "Before Regions"
+  },
+  "computation": {
+    "computationType": "SQL Query (return single value)"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P5115_ID"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

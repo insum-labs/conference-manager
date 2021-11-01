@@ -1,0 +1,7 @@
+{
+  "name": "FTM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-top-sm",
+  "helpText": "Adds a small top margin for this field.",
+  "isAdvanced": null
+}

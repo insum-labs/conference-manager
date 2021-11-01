@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Change in Event Selection"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5110_EVENT_ID"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

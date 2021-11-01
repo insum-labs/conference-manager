@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "STANDARD",
+    "templateClass": 8,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-Region--scrollBody"
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

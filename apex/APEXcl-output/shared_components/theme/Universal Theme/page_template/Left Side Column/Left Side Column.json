@@ -1,0 +1,59 @@
+{
+  "name": {
+    "identifier": "LEFT_SIDE_COLUMN",
+    "templateType": "Normal Page",
+    "templateClass": 17,
+    "tranlatable": "N"
+  },
+  "javascript": {
+    "fileUrls": null,
+    "functionDeclaration": null,
+    "executeWhenPageLoads": "apex.theme42.initializePage.leftSideCol();",
+    "dialogInitializationCode": "apex.navigation.dialog(#PAGE_URL#,{title:#TITLE#,height:#DIALOG_HEIGHT#,width:#DIALOG_WIDTH#,maxWidth:#DIALOG_MAX_WIDTH#,modal:#IS_MODAL#,dialog:#DIALOG#,#DIALOG_ATTRIBUTES#},#DIALOG_CSS_CLASSES#,#TRIGGERING_ELEMENT#);",
+    "dialogClosureCode": "apex.navigation.dialog.close(#IS_MODAL#,#TARGET#);",
+    "dialogCancelCode": "apex.navigation.dialog.cancel(#IS_MODAL#);"
+  },
+  "css": {
+    "fileUrls": null,
+    "inline": null
+  },
+  "standardTabAttributes": {
+    "currentTabFontAttr": null,
+    "nonCurrentTabFontAttr": null
+  },
+  "imageBasedTabAttributes": {
+    "currentImageTab": null,
+    "nonCurrentImageTab": null
+  },
+  "parentTabAttributes": {
+    "parentCurrentTabFontAttr": null,
+    "parentNonCurrentTabFontAttr": null
+  },
+  "layout": {
+    "type": "Fixed Number of Columns",
+    "maximumColumns": 12,
+    "alwaysUseMaxColumns": "Yes",
+    "hasColumnSpan": "Yes",
+    "alwaysRenderLayout": "Yes",
+    "emitEmptyLeadingColumns": "Yes",
+    "emitEmptyTrailingColumns": "No",
+    "defaultLabelColumnSpan": 2,
+    "firstColumnAttributes": "alpha",
+    "lastColumnAttributes": "omega",
+    "javascriptDebugCode": null
+  },
+  "dialog": {
+    "width": null,
+    "maximumWidth": null,
+    "height": null,
+    "cssClasses": null,
+    "allowEmbedInFrame": "MODAL"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

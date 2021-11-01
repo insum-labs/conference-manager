@@ -1,0 +1,1 @@
+:P99_PASSWORD is not null and (:REQUEST = 'SAVE' or :REQUEST like 'P99_PASSWORD%')

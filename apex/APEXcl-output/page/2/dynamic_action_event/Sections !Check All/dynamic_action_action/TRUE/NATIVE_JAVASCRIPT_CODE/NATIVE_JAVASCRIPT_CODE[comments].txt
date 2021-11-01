@@ -1,0 +1,1 @@
+Check or uncheck the option and open the section if it's not open already.

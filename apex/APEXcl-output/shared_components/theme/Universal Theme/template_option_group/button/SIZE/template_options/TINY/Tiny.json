@@ -1,0 +1,7 @@
+{
+  "name": "TINY",
+  "displayName": "Tiny",
+  "cssClasses": "t-Button--tiny",
+  "helpText": "A very small button.",
+  "isAdvanced": null
+}

@@ -1,0 +1,28 @@
+{
+  "attributes": {
+    "name": "No Authentication",
+    "schemeType": "No Authentication"
+  },
+  "sessionNotValid": {
+    "verifyFunctionName": null
+  },
+  "loginProcessing": {
+    "preAuthenticationProcedure": null,
+    "postAuthenticationProcedure": null,
+    "switchInSession": "Disabled",
+    "helpText": null
+  },
+  "postLogoutUrl": {
+    "goTo": null
+  },
+  "sessionSharing": {
+    "type": "Application (No Sharing)",
+    "cookieName": null,
+    "cookiePath": null,
+    "cookieDomain": null,
+    "secure": "No"
+  },
+  "comments": {
+    "comments": null
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "identification": {
+    "title": "Filters",
+    "regionType": "List"
+  },
+  "source": {
+    "sourceList": "Session Tag Filter"
+  },
+  "layout": {
+    "regionPosition": "REGION_POSITION_02"
+  },
+  "appearance": {
+    "regionTemplate": "Blank with Attributes",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "itemDisplayPosition": "Above Content"
+  },
+  "advanced": {
+    "staticId": "searchFilters",
+    "customAttributes": null,
+    "regionImage": null,
+    "imageTagAttributes": null,
+    "regionDisplaySelector": "Y"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "customization": {
+    "customizable": "Not Customizable By End Users"
+  }
+}

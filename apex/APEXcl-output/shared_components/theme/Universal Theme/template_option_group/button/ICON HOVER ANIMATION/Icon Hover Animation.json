@@ -1,0 +1,8 @@
+{
+  "name": "ICON_HOVER_ANIMATION",
+  "displayName": "Icon Hover Animation",
+  "templateTypes": "BUTTON",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "link": {
+      "irLinkColumn": "Link to Custom Target",
+      "linkTarget": "f?p=&APP_ID.:5160:&SESSION.::&DEBUG.:RP,5160:P5160_ID:#EVENT_COMMUNITY_ID#",
+      "linkIcon": "&EDIT_BUTTON.",
+      "linkAttributes": null,
+      "linkAuthorizationScheme": null,
+      "linkConditionType": null
+    },
+    "appearance": {
+      "showNullValuesAs": "-"
+    },
+    "pagination": {
+      "irPaginationType": "Row Ranges X to Y",
+      "paginationDisplayPosition": "Bottom - Right"
+    },
+    "messages": {
+      "whenNoDataFoundMessage": null,
+      "whenMoreDataFoundMessage": null
+    },
+    "searchBar": {
+      "includeSearchBar": "Y",
+      "showSearchTextbox": "Y",
+      "showFinderDropDown": "Y",
+      "showReportsSelectList": "TABS",
+      "showDisplayRowCount": "N",
+      "searchButtonLabel": null,
+      "maximumRowsPerPage": null
+    },
+    "actionsMenu": {
+      "showActionsMenu": "Y",
+      "showFilter": "Y",
+      "showSelectColumns": "Y",
+      "showRowsPerPage": "Y",
+      "showSort": "Y",
+      "showControlBreak": "Y",
+      "showHighlight": "Y",
+      "showComputation": "Y",
+      "showAggregate": "Y",
+      "showChart": "Y",
+      "showGroupBy": "Y",
+      "showPivot": "Y",
+      "showFlashback": "Y",
+      "allowUsersToSaveReports": "Y",
+      "allowUsersToSavePublicReport": "N",
+      "showReset": "Y",
+      "showHelp": "Y",
+      "showNotify": "Y",
+      "showDownload": "Y"
+    },
+    "download": {
+      "downloadFormats": "CSV:HTML:EMAIL:XLS:PDF:RTF",
+      "downloadFilename": null,
+      "supplementalText": null
+    },
+    "heading": {
+      "fixedHeader": "Page"
+    },
+    "iconView": {
+      "iconViewEnabled": "N",
+      "iconViewLinkColumn": null,
+      "iconViewImageSourceColumn": null,
+      "iconViewLabelColumn": null,
+      "iconViewImageAttributes": null,
+      "iconViewHtmlAltText": null,
+      "iconViewHtmlTitleText": null
+    },
+    "detailView": {
+      "detailViewEnabled": "N"
+    },
+    "advanced": {
+      "reportAlias": null,
+      "reportIdItem": null,
+      "emailFromAddress": null,
+      "oracleTextIndexColumn": null
+    },
+    "performance": {
+      "maximumRowCount": "1000000"
+    },
+    "attributes": {
+      "description": null
+    }
+  }
+]

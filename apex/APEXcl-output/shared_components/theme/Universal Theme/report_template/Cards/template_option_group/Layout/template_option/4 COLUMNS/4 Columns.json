@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "4_COLUMNS",
+  "displayName": "4 Columns",
+  "cssClasses": "t-Cards--4cols",
+  "helpText": null,
+  "isAdvanced": null
+}

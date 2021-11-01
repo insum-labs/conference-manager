@@ -1,0 +1,30 @@
+{
+  "identification": {
+    "name": "Add Event Admin and Close Dialog"
+  },
+  "executionOptions": {
+    "executionSequence": 110
+  },
+  "when": {
+    "event": "click",
+    "whenType": "Button",
+    "whenButton": "ADD"
+  },
+  "clientSideCondition": {
+    "jsCondition": "Item is not null",
+    "jsConditionItem": "P5025_NEW_ADMIN_ID",
+    "jsConditionElementType": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

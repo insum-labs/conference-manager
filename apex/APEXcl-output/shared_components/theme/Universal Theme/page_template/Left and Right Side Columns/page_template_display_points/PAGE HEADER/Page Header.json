@@ -1,0 +1,7 @@
+{
+  "name": "Page Header",
+  "templateSubstitution": "REGION_POSITION_07",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": null
+}

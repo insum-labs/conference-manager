@@ -1,0 +1,7 @@
+{
+  "displayValue": "Extend default template",
+  "returnValue": "EDT",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option is checked, default template can be extended with additional HTML before and after nested report. See <strong>Default template HTML</strong> attribute for more informations."
+}

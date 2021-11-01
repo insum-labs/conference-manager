@@ -1,0 +1,80 @@
+{
+  "identification": {
+    "itemName": "P5115_EXISTING_USER",
+    "itemType": "PLUGIN_BE.CTB.SELECT2"
+  },
+  "label": {
+    "label": "Existing User",
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "elementFieldAlignment": "Left",
+    "startNewRow": "Y",
+    "column": null,
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": "Optional",
+    "templateOptions": "#DEFAULT#:t-Form-fieldContainer--stretchInputs",
+    "appearanceCssClasses": null
+  },
+  "validation": {
+    "valueRequired": "N"
+  },
+  "listOfValues": {
+    "namedLov": "USERS",
+    "displayExtraValues": "N",
+    "displayNullValue": "Y",
+    "nullDisplayValue": "- Choose -",
+    "nullReturnValue": null,
+    "cascadingLovParentItems": null
+  },
+  "advanced": {
+    "advancedCssClasses": null,
+    "customAttributes": null,
+    "elementOptionHtmlAttributes": null,
+    "itemWarnOnUnsavedChanges": null
+  },
+  "source": {
+    "sourceType": "Null",
+    "sourceUsed": "Only when current value in session state is null",
+    "maintainSessionState": "Per Session (Disk)"
+  },
+  "default": {
+    "defaultValueType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P5115_ID"
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "encryptSessionState": "N",
+    "escapeSpecialCharacters": "Y",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "attribute01": "SINGLE",
+    "attribute02": null,
+    "attribute03": null,
+    "attribute04": null,
+    "attribute05": null,
+    "attribute06": null,
+    "attribute07": null,
+    "attribute08": "CIC",
+    "attribute09": null,
+    "attribute10": "100%",
+    "attribute11": null
+  }
+}

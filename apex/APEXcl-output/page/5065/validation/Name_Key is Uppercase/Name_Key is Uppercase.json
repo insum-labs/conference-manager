@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Name_Key is Uppercase"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "Item matches Regular Expression",
+    "valRegularExpression": "[A-Z1-9\\_\\-]+",
+    "regionValRegularExpression": "[A-Z1-9\\_\\-]+",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": null
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

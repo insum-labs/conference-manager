@@ -1,0 +1,8 @@
+{
+  "name": "ICON_STYLE",
+  "displayName": "Icon Style",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": null,
+  "isAdvanced": "N"
+}

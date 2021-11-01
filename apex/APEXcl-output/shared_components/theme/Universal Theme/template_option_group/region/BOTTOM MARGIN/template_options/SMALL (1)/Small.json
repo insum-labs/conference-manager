@@ -1,0 +1,7 @@
+{
+  "name": "RBM_SMALL",
+  "displayName": "Small",
+  "cssClasses": "margin-bottom-sm",
+  "helpText": "Adds a small bottom margin to the region.",
+  "isAdvanced": null
+}

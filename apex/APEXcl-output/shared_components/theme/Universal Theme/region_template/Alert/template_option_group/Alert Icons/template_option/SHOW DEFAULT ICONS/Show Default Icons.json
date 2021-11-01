@@ -1,0 +1,8 @@
+{
+  "group": "Alert Icons",
+  "name": "USEDEFAULTICONS",
+  "displayName": "Show Default Icons",
+  "cssClasses": "t-Alert--defaultIcons",
+  "helpText": "Uses default icons for alert types.",
+  "isAdvanced": "No"
+}

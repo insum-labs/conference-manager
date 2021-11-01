@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "REMOVEBORDERS",
+  "displayName": "Remove Borders",
+  "cssClasses": "t-IRR-region--noBorders",
+  "helpText": "Removes borders around the Interactive Report",
+  "isAdvanced": "No"
+}

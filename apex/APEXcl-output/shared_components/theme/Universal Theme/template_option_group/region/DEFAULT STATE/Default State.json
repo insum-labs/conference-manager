@@ -1,0 +1,8 @@
+{
+  "name": "DEFAULT_STATE",
+  "displayName": "Default State",
+  "templateTypes": "REGION",
+  "helpText": "Sets the default state of the region.",
+  "nullText": null,
+  "isAdvanced": "N"
+}

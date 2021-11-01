@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Toggle View Icon on collapse"
+  },
+  "executionOptions": {
+    "executionSequence": 70
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": ".nestedCollapseBtn"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": "#tracksRegion"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

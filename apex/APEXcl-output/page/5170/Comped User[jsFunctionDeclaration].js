@@ -1,0 +1,1 @@
+var page_delete_message='Would you like to remove this user from Comped Users list?';

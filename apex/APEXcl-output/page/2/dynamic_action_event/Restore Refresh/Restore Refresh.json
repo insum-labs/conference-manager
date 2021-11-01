@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Restore Refresh"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "apexafterrefresh",
+    "whenType": "Region",
+    "whenRegion": "Sessions"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

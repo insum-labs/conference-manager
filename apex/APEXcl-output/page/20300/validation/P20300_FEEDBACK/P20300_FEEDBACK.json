@@ -1,0 +1,27 @@
+{
+  "identification": {
+    "name": "P20300_FEEDBACK"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "Item is NOT NULL",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": "P20300_FEEDBACK"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "SUBMIT",
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

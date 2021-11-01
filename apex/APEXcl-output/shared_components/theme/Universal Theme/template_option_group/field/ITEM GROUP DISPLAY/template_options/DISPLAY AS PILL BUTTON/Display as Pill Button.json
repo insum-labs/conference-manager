@@ -1,0 +1,7 @@
+{
+  "name": "DISPLAY_AS_PILL_BUTTON",
+  "displayName": "Display as Pill Button",
+  "cssClasses": "t-Form-fieldContainer--radioButtonGroup",
+  "helpText": "Displays the radio buttons to look like a button set / pill button.  Note that the the radio buttons must all be in the same row for this option to work.",
+  "isAdvanced": null
+}

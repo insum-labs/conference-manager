@@ -1,0 +1,8 @@
+{
+  "group": "Callout Position",
+  "name": "INSIDE",
+  "displayName": "Inside",
+  "cssClasses": "js-popup-pos-inside",
+  "helpText": "Positions the callout inside of the parent. This is useful when the parent is sufficiently large, such as a report or large region.",
+  "isAdvanced": null
+}

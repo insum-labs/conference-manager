@@ -1,0 +1,1 @@
+Derive the EVENT_ID from: 1) The track that was defaulted in.  2) The event that is selected on the calling page

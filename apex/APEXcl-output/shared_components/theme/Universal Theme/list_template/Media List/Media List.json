@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "MEDIA_LIST",
+    "templateClass": 5,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": null,
+  "attributeDescriptions": {
+    "a01Label": "Description",
+    "a02Label": "Badge Value",
+    "a03Label": "Link Attributes",
+    "a04Label": "List Item CSS Classes",
+    "a05Label": "Link Class",
+    "a06Label": "Icon Color Class",
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": "t-MediaList--showIcons:t-MediaList--showDesc",
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

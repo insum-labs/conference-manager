@@ -1,0 +1,1 @@
+apex.util.getTopApex().jQuery("#eventsRegion").trigger("apexrefresh");

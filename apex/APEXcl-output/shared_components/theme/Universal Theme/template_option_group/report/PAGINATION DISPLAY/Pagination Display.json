@@ -1,0 +1,8 @@
+{
+  "name": "PAGINATION_DISPLAY",
+  "displayName": "Pagination Display",
+  "templateTypes": "REPORT",
+  "helpText": "Controls the display of pagination for this region.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

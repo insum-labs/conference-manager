@@ -1,0 +1,16 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Notify for Track Change",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

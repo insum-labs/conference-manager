@@ -1,0 +1,8 @@
+{
+  "name": "BODY_HEIGHT",
+  "displayName": "Body Height",
+  "templateTypes": "REGION",
+  "helpText": "Sets the Region Body height. You can also specify a custom height by modifying the Region's CSS Classes and using the height helper classes \"i-hXXX\" where XXX is any increment of 10 from 100 to 800.",
+  "nullText": "Auto - Default",
+  "isAdvanced": "N"
+}

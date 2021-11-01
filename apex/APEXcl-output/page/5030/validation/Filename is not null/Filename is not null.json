@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Filename is not null"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "Item is NOT NULL",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": "P5030_FILE_NAME"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": "NEXT",
+    "conditionType": "Item = Value",
+    "conditionItem1": "P5030_IMPORT_FROM",
+    "conditionValue2": "UPLOAD"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

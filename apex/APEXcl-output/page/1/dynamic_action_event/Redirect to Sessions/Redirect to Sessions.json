@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Redirect to Sessions"
+  },
+  "executionOptions": {
+    "executionSequence": 130
+  },
+  "when": {
+    "event": "click",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": "a.redirectToSessions"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN"
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

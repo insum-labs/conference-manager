@@ -1,0 +1,1 @@
+This event has sessions already. If you really want to delete <button class="t-Button t-Button--danger" onclick="apex.submit('DELETE_FORCE');" type="button"><span class="t-Button-label">Delete Sessions & Votes</span></button>

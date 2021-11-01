@@ -1,0 +1,31 @@
+{
+  "sessionManagement": {
+    "maximumSessionLengthSeconds": 43200,
+    "sessionTimeoutUrl": null,
+    "maximumSessionIdleSeconds": 0,
+    "sessionIdleTimeoutUrl": null
+  },
+  "authentication": {
+    "publicUser": "APEX_PUBLIC_USER",
+    "authenticationScheme": "ODTUG Security"
+  },
+  "authorization": {
+    "sourceForRole": "Authentication Scheme",
+    "runOnPublicPages": "No",
+    "rejoinSessions": "Disabled"
+  },
+  "databaseSession": {
+    "runtimeApiUsage": null
+  },
+  "sessionStateProtection": {
+    "bookmarkHashFunction": "SHA-2, 512 bit (requires 12c)",
+    "sessionStateProtection": "Enabled"
+  },
+  "browserSecurity": {
+    "cache": "Disabled",
+    "embedInFrame": "Deny",
+    "deepLinking": "Disabled",
+    "htmlEscapingMode": "Extended",
+    "httpResponseHeaders": null
+  }
+}

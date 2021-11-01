@@ -1,0 +1,32 @@
+{
+  "reportTemplate": {
+    "identifier": "CARDS",
+    "templateType": "Named Column (row template)",
+    "templateClass": 7,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null,
+    "executeWhenPageLoads": null
+  },
+  "css": {
+    "cssFileUrls": null
+  },
+  "columnTemplates": {
+    "columnTemplateCondition1": ":CARD_LINK is not null",
+    "columnTemplateCondition2": null,
+    "columnTemplateCondition3": null,
+    "columnTemplateCondition4": null
+  },
+  "rowHighlighting": {
+    "backgroundColorForCurrentRow": null,
+    "backgroundColorForCheckedRow": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "t-Cards--animColorFill:t-Cards--3cols:t-Cards--basic"
+  },
+  "comments": {
+    "comment": null
+  }
+}

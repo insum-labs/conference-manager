@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "STYLE_COMPACT",
+  "displayName": "Compact",
+  "cssClasses": "t-ContentRow--styleCompact",
+  "helpText": "This option reduces the padding and font sizes to present a compact display of the same information.",
+  "isAdvanced": null
+}

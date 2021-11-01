@@ -1,0 +1,64 @@
+{
+  "name": {
+    "themeNumber": 42,
+    "userInterface": "Desktop",
+    "navigationType": "List",
+    "navigationBarImplementation": "List",
+    "identifier": "UNIVERSAL_THEME",
+    "description": null
+  },
+  "dialogDefaults": {
+    "dialogPage": "Modal Dialog",
+    "dialogContentRegion": "Blank with Attributes",
+    "dialogButtonRegion": "Buttons Container"
+  },
+  "componentDefaults": {
+    "errorPage": "Login",
+    "printerFriendlyPage": "Standard",
+    "loginPage": "Login",
+    "button": "Text with Icon",
+    "region": "Standard",
+    "classicReport": "Standard",
+    "defaultLabel": "Optional",
+    "breadcrumb": "Breadcrumb",
+    "legacyCalendar": "Calendar",
+    "list": "Links List",
+    "navigationMenuListPosition": "Side",
+    "navigationMenuListTop": "Top Navigation Menu",
+    "navigationMenuListSide": "Side Navigation Menu",
+    "optionalLabel": "Optional",
+    "requiredLabel": "Required",
+    "headerToolbar": null,
+    "footerToolbar": null,
+    "navigationBarList": "Navigation Bar"
+  },
+  "regionDefaults": {
+    "charts": "Standard",
+    "forms": "Standard",
+    "reports": "Standard",
+    "tabularForms": "Standard",
+    "wizards": "Standard",
+    "breadcrumbs": "Title Bar",
+    "lists": "Standard",
+    "interactiveReports": "Interactive Report"
+  },
+  "image": {
+    "newImage": null,
+    "customImage": "No"
+  },
+  "files": {
+    "filePrefix": "#IMAGE_PREFIX#themes/theme_42/1.4/"
+  },
+  "icons": {
+    "datePickerIconName": null,
+    "datePickerIconAttributes": null,
+    "customClasses": null,
+    "customLibraryFileUrls": null,
+    "customPrefixClass": null,
+    "library": "Font APEX"
+  },
+  "javascriptAndCss": {
+    "javascriptFileUrls": "#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.stickyWidget#MIN#.js?v=#APEX_VERSION#\n#THEME_IMAGES#js/theme42#MIN#.js?v=#APEX_VERSION#",
+    "cssFileUrls": "#THEME_IMAGES#css/Core#MIN#.css?v=#APEX_VERSION#"
+  }
+}

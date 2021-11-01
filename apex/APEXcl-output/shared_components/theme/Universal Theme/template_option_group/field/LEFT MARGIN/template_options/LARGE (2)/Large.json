@@ -1,0 +1,7 @@
+{
+  "name": "FLM_LARGE",
+  "displayName": "Large",
+  "cssClasses": "margin-left-lg",
+  "helpText": "Adds a large left margin for this field.",
+  "isAdvanced": null
+}

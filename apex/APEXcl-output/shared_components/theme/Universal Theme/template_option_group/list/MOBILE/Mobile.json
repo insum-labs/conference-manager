@@ -1,0 +1,8 @@
+{
+  "name": "MOBILE",
+  "displayName": "Mobile",
+  "templateTypes": "LIST",
+  "helpText": "Determines the display for a mobile-sized screen",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

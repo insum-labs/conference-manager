@@ -1,0 +1,44 @@
+{
+  "name": {
+    "identifier": "MENU_BAR",
+    "templateClass": 20,
+    "translateThisTemplate": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": "var e = apex.jQuery(\"##PARENT_STATIC_ID#_menubar\", apex.gPageContext$);\nif (e.hasClass(\"js-addActions\")) {\n  apex.actions.addFromMarkup( e );\n}\ne.menu({\n  behaveLikeTabs: e.hasClass(\"js-tabLike\"),\n  menubarShowSubMenuIcon: e.hasClass(\"js-showSubMenuIcons\") || null,\n  iconType: 'fa',\n  slide: e.hasClass(\"js-slide\"),\n  menubar: true,\n  menubarOverflow: true,\n  callout: e.hasClass(\"js-menu-callout\")\n});",
+  "css": {
+    "cssFileUrls": null
+  },
+  "sublistAfterRows": "</ul></li>",
+  "attributeDescriptions": {
+    "a01Label": null,
+    "a02Label": null,
+    "a03Label": null,
+    "a04Label": null,
+    "a05Label": null,
+    "a06Label": null,
+    "a07Label": null,
+    "a08Label": null,
+    "a09Label": null,
+    "a10Label": null,
+    "a11Label": null,
+    "a12Label": null,
+    "a13Label": null,
+    "a14Label": null,
+    "a15Label": null,
+    "a16Label": null,
+    "a17Label": null,
+    "a18Label": null,
+    "a19Label": null,
+    "a20Label": null
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": "js-showSubMenuIcons",
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

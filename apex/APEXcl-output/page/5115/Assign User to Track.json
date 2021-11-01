@@ -1,0 +1,58 @@
+{
+  "identification": {
+    "name": "Assign User to Track",
+    "pageAlias": null,
+    "title": "User Assignment",
+    "pageGroup": null
+  },
+  "appearance": {
+    "userInterface": "Desktop",
+    "pageMode": "Modal Dialog",
+    "dialogTemplate": null,
+    "templateOptions2": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "mediaType": null
+  },
+  "dialog": {
+    "dialogWidth": null,
+    "dialogHeight": null,
+    "dialogMaxWidth": null,
+    "dialogAttributes": null,
+    "dialogCssClasses": null,
+    "dialogChained": "N"
+  },
+  "navigationMenu": {
+    "overwriteNavigationList": "N"
+  },
+  "navigation": {
+    "cursorFocus": "Do not focus cursor",
+    "pageWarnOnUnsavedChanges": "Y",
+    "pageTransition": null,
+    "popupTransition": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": "EVENT ADMIN",
+    "pageAuthentication": "Page Requires Authentication",
+    "rejoinExistingSessions": null,
+    "deepLinking": null,
+    "pageAccessProtection": "Arguments Must Have Checksum",
+    "formAutoComplete": "Off",
+    "browserCache": null
+  },
+  "advanced": {
+    "allowDuplicatePageSubmit": "Yes - Enable page to be re-posted",
+    "reloadOnSubmit": "Only for Success"
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "errorHandling": {
+    "errorHandlingFunc": null
+  }
+}

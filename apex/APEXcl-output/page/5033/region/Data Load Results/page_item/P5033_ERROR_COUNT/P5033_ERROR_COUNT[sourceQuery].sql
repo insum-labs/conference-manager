@@ -1,0 +1,1 @@
+select count(*) c from apex_collections where collection_name = 'LOAD_CONTENT' and c047 = 'FAILED'

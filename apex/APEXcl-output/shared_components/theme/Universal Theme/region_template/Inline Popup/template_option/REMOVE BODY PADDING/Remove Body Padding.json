@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "REMOVE_BODY_PADDING",
+  "displayName": "Remove Body Padding",
+  "cssClasses": "t-DialogRegion--noPadding",
+  "helpText": "Removes the padding around the region body.",
+  "isAdvanced": null
+}

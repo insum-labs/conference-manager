@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Close Dialog",
+    "pageProcessType": "Close Dialog"
+  },
+  "executionOptions": {
+    "executionSequence": 50,
+    "processPoint": "Processing",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "Inline in Notification"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Request is contained in Value",
+    "conditionValue1": "CREATE,SAVE,DELETE,RESET_PASSWORD"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "itemsToReturn": "P5115_USER_ID"
+  }
+}

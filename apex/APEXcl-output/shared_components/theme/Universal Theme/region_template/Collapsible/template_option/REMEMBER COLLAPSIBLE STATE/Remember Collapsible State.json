@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "REMEMBER_COLLAPSIBLE_STATE",
+  "displayName": "Remember Collapsible State",
+  "cssClasses": "js-useLocalStorage",
+  "helpText": "This option saves the current state of the collapsible region for the duration of the session.",
+  "isAdvanced": null
+}

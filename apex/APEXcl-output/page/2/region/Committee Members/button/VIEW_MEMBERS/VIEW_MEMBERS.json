@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "buttonName": "VIEW_MEMBERS",
+    "buttonLabel": "View Members"
+  },
+  "layout": {
+    "buttonPosition": "Below Region",
+    "horizontalAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Text with Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--noUI:t-Button--iconRight",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-users"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to Page in this Application",
+    "buttonTarget": "f?p=&APP_ID.:8:&SESSION.::&DEBUG.:RP:P8_EVENT_TRACK_ID:&P1_TRACK_ID.",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": "title=\"Define your track goals\"",
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

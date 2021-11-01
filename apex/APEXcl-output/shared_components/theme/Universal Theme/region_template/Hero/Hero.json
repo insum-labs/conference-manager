@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "HERO",
+    "templateClass": 22,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

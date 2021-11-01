@@ -1,0 +1,7 @@
+{
+  "name": "Right Column",
+  "templateSubstitution": "REGION_POSITION_03",
+  "gridSupport": "No",
+  "newRow": "No",
+  "maximumFixedGridColumns": 4
+}

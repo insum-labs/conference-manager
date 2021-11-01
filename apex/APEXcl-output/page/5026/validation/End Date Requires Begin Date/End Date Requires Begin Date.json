@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "End Date Requires Begin Date"
+  },
+  "executionOptions": {
+    "executionSequence": 20
+  },
+  "validation": {
+    "validationRegion": null,
+    "validationType": "PL/SQL Function Body (returning Boolean)",
+    "alwaysExecute": "N"
+  },
+  "error": {
+    "errorMessageDisplayLocation": "Inline with Field and in Notification",
+    "associatedItem": null
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": "Request is contained in Value",
+    "conditionValue1": "CREATE, SAVE"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

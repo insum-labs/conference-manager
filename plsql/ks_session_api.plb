@@ -21,27 +21,77 @@ gc_token_exceptions constant varchar2(4000) := 'oracle|apex|epm|and|its|it|of';
 gc_parameter_tokens_name constant ks_parameters.name_key%type := 'ANONYMIZE_EXTRA_TOKENS';
 
 
+
+/**
+ * Private function, checks if the speaker/presenter is comped, i.e. is added to the list of comped users for the event
+ *
+ * @example
+ *
+ * @issue #36
+ *
+ * @author Ramona Birsan
+ * @created October 8, 2019
+ * @param p_presenter_user_id
+ * @return 1 if speaker/presenter is comped
+ */
+function is_speaker_comped (
+    p_event_id in ks_sessions.event_id%type
+  , p_presenter_user_id in ks_sessions.presenter_user_id%type
+) return number
+is
+  pragma UDF;
+  l_scope  ks_log.scope := gc_scope_prefix || 'is_speaker_comped';
+  -- l_params logger.tab_param; 
+  l_is_comped number(1) := 0;
+begin
+  -- logger.append_param(l_params, 'p_event_id', p_event_id);
+  -- logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  $IF $$VERBOSE_OUTPUT $THEN
+  ks_log.log('START', l_scope);
+  $END
+ 
+  select 1 into l_is_comped
+    from ks_event_comp_users cu 
+    join ks_users u on (u.id = cu.user_id)
+   where cu.event_id = p_event_id
+     and u.external_sys_ref = p_presenter_user_id;
+     
+  return l_is_comped;
+  
+  exception 
+    when no_data_found then
+      return 0;
+    when others then
+      ks_log.log('Unhandled Exception ', l_scope);
+      raise;
+end is_speaker_comped;
+
+
+
+
+
+
 ------------------------------------------------------------------------------
 /**
  *  Output of the form:
  *    apex_json.open_object;
- *    apex_json.write('presenter', p_presenter);
+ *    apex_json.write('p_presenter_user_id', p_presenter_user_id);
  *    apex_json.write('trackList', '<ul><li>Track 1</li></ul>');
  *    apex_json.close_object;
  *
  * @example
  *
- * @issue
+ * @issue #36 - use presenter_user_id to fetch the list of tracks
  *
  * @author Jorge Rimblas
  * @created September 9, 2016
  * @param p_event_id
- * @param p_presenter
+ * @param p_presenter_user_id
  * @return
  */
 procedure presenter_tracks_json(
     p_event_id  in ks_events.id%TYPE
-  , p_presenter in ks_sessions.presenter%TYPE)
+  , p_presenter_user_id in ks_sessions.presenter_user_id%TYPE)
 is
   -- l_scope logger_logs.scope%type := gc_scope_prefix || 'presenter_tracks_json';
   -- l_params logger.tab_param;
@@ -49,12 +99,12 @@ is
   list_cur sys_refcursor;
 begin
   -- logger.append_param(l_params, 'p_event_id', p_event_id);
-  -- logger.append_param(l_params, 'p_presenter', p_presenter);
+  -- logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
   -- logger.log('BEGIN', l_scope, null, l_params);
 
   open list_cur for
-    select p_presenter "presenter"
-         , '<ul><li>' ||listagg(n || ' in ' || p || ' (' || status || ')', '</li><li>') within group (order by display_seq) || '</li></ul>' "trackList"
+    select p_presenter_user_id "presenter_user_id"
+          ,'<ul><li>' ||listagg(n || ' in ' || p || ' (' || status || ')', '</li><li>') within group (order by display_seq) || '</li></ul>' "trackList"
     from (
       select t.display_seq, nvl(t.alias, t.name) p, count(*) n
            , listagg(nvl(st.name, '?'), ',') within group (order by st.display_seq) status
@@ -63,7 +113,7 @@ begin
            , ks_session_status st
        where t.id = s.event_track_id
          and s.event_id = to_number(p_event_id)
-         and s.presenter = p_presenter
+         and s.presenter_user_id = p_presenter_user_id
          and s.status_code = st.code (+)
        group by t.display_seq, nvl(t.alias, t.name)
     );
@@ -77,7 +127,7 @@ exception
     -- logger.log_error('Unhandled Exception', l_scope, null, l_params);
     apex_json.open_array;
     apex_json.open_object;
-    apex_json.write('presenter', p_presenter);
+    apex_json.write('p_presenter_user_id', p_presenter_user_id);
     apex_json.write('trackList', 'Unable to fetch list:<br>' || sqlerrm || '<br>');
     apex_json.close_object;
     apex_json.close_array;
@@ -138,22 +188,27 @@ end switch_votes;
 
 
 --==============================================================================
--- Function: html_whitelist_clob
+-- Function: html_whitelist_tokenize
 -- Purpose: returns a varchar2 where every chunk of 4000 characters has been html_whitelisted and tokenized
 --
 -- Inputs:  p_string - the clob or varchar2 to be escaped/tokenized
 --          p_session_id - the session id. We use this to get the name of the presenter/company/co-presenter
 --          p_anonymize - whether to hide the info
+--          p_escape_html - 
+--          p_sql_trim  - If Y return only 4000 chars so tat SQL doesn't fail
 -- Output:
 -- Scope: Publicly accessible
 -- Errors: Logged and Raised.
 -- Notes:
 -- Author: Ben Shumway (Insum Solutions) - Oct/26/2017
 --==============================================================================
-function html_whitelist_tokenize (p_string in varchar2,
-                                  p_session_id in number,
-                                  p_anonymize in varchar2 default 'N',
-                                  p_escape_html in varchar2 default 'Y')
+function html_whitelist_tokenize (
+    p_string      in clob
+  , p_session_id  in number
+  , p_anonymize   in varchar2 default 'N'
+  , p_escape_html in varchar2 default 'Y'
+  , p_sql_trim    in varchar2 default 'N'
+)
   return varchar2
 is
   l_scope ks_log.scope := gc_scope_prefix || 'html_whitelist_tokenize';
@@ -166,6 +221,7 @@ is
 begin
   $IF $$VERBOSE_OUTPUT $THEN
   ks_log.log('START', l_scope);
+  ks_log.log('p_session_id:' || p_session_id, l_scope);
   $END
 
   --The id is usually null when the user's session got reset
@@ -177,12 +233,21 @@ begin
 
   if p_escape_html = 'Y' then
     l_output := apex_escape.html_whitelist(p_string, gc_html_whitelist_tags);
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..output escaped', l_scope);
+    $END
   else
     l_output := p_string;
   end if;
   l_output := regexp_replace(l_output, '_x000D_', '', 1, 0, 'i');
+  $IF $$VERBOSE_OUTPUT $THEN
+  ks_log.log('..weird delimiters removed', l_scope);
+  $END
 
-  if p_anonymize = 'Y' then
+  if p_anonymize = 'Y' and nvl(ks_util.get_param('ANONYMIZE_TOKENS'), 'YES') = 'YES' then
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..anonymizing', l_scope);
+    $END
     select s.presenter, s.company, s.co_presenter
       into l_presenter, l_company, l_co_presenter
       from ks_sessions s
@@ -195,7 +260,18 @@ begin
 
   end if;
 
+  if p_sql_trim = 'Y' then
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..trimming for SQL', l_scope);
+    ks_log.log('..l_output:' || length(l_output), l_scope);
+    $END
 
+    l_output := substr(l_output,1,3700);
+    $IF $$VERBOSE_OUTPUT $THEN
+    ks_log.log('..New l_output:' || length(l_output), l_scope);
+    $END
+
+  end if;
 
   return l_output;
 exception
@@ -203,6 +279,7 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end  html_whitelist_tokenize;
+
 
 
 
@@ -419,6 +496,7 @@ end is_session_owner;
 
 
 
+
 /**
  * Parse the "video link" text returning one line per link and formatting the link as an html anchor tag when applied.
  *
@@ -477,6 +555,98 @@ exception
     ks_log.log_error('Unhandled Exception', l_scope);
     raise;
 end parse_video_link;
+
+
+
+
+
+
+/**
+ * The function returns presenter's comp per track - this is identical for all tracks 
+ * for which the user has submitted sessions.
+ * Assumes that it will be called from within a SQL query, hence no track validation.
+ * And the UDF pragma
+ * 
+ * @example - Displays presenter's comp for each associated track
+    select  s.event_track_id
+          , s.presenter_user_id
+          , ks_session_api.get_presenter_comp(s.event_id, s.event_track_id , s.presenter_user_id) as presenter_comp
+       from ks_sessions s
+      where s.event_id = :p_event_id
+        and s.presenter_user_id = :p_presenter_user_id
+   group by s.event_id, s.event_track_id, s.presenter_user_id
+   order by s.event_track_id
+ *
+ * @issue #36
+ *
+ * @author Ramona Birsan
+ * @created October 7, 2019
+ * @param p_event_id   
+ * @param p_event_track_id
+ * @param p_presenter_user_id
+ * @return number
+ */
+function get_presenter_comp (
+    p_event_id in ks_sessions.event_id%type 
+  , p_event_track_id in ks_sessions.event_track_id%type    
+  , p_presenter_user_id in ks_sessions.presenter_user_id%type 
+) return number
+is 
+  pragma UDF;
+
+  l_scope  ks_log.scope := gc_scope_prefix || 'get_presenter_comp';
+  -- l_params logger.tab_param;
+  l_presenter_comp number(3,2) := 0;
+begin
+  -- logger.append_param(l_params, 'p_event_id', p_event_id);
+  -- logger.append_param(l_params, 'p_event_track_id', p_event_track_id);
+  -- logger.append_param(l_params, 'p_presenter_user_id', p_presenter_user_id);
+  $IF $$VERBOSE_OUTPUT $THEN
+  ks_log.log('START', l_scope);
+  $END
+  
+  if is_speaker_comped (p_event_id, p_presenter_user_id) = 1 then 
+    l_presenter_comp := 0;
+  else
+    -- "distinct event_track_id" is used because we calculate the total number of 
+    -- tracks which have at least one session accepted
+    with speaker_comp_track_ratio as (
+      select  r.presenter_user_id
+            , round(1/sum (r.track_comp),2) as speaker_comp_ratio
+        from (
+             select s.presenter_user_id
+                  , count(distinct s.event_track_id) as track_comp
+               from ks_sessions s
+              where s.status_code = 'ACCEPTED' 
+                and s.event_id = p_event_id 
+              group by s.event_track_id, s.presenter_user_id 
+         ) r
+       group by r.presenter_user_id
+      having r.presenter_user_id = p_presenter_user_id
+    )
+    select count (*) * tr.speaker_comp_ratio 
+      into l_presenter_comp
+      from speaker_comp_track_ratio tr
+     where exists ( select 1
+                      from ks_sessions ss
+                     where ss.status_code = 'ACCEPTED'
+                       and ss.event_id = p_event_id
+                       and ss.event_track_id = p_event_track_id
+                       and ss.presenter_user_id = p_presenter_user_id)
+     group by tr.speaker_comp_ratio;
+      
+  end if;
+  
+  return l_presenter_comp;
+
+  exception
+    when no_data_found then
+      return l_presenter_comp;
+    when others then
+      ks_log.log_error('Unhandled Exception ', l_scope);
+      raise;
+end get_presenter_comp;
+
 
 
 end ks_session_api;

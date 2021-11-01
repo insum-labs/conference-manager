@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "daActionType": "Set Value"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5105_USERNAME"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Generate Uppercase Code",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "setType": "JAVASCRIPT_EXPRESSION",
+    "value": null,
+    "plsqlExpression": null,
+    "itemsToSubmit": null,
+    "escapeSpecialCharacters": null,
+    "suppressChangeEvent": "Y",
+    "returnItem": null
+  }
+}

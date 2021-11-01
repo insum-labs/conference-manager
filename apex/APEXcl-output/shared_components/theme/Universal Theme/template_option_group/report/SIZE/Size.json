@@ -1,0 +1,8 @@
+{
+  "name": "SIZE",
+  "displayName": "Size",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

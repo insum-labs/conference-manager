@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "STACKED",
+  "displayName": "Stack Region",
+  "cssClasses": "t-Region--stacked",
+  "helpText": "Removes side borders and shadows, and can be useful for accordions and regions that need to be grouped together vertically.",
+  "isAdvanced": "No"
+}

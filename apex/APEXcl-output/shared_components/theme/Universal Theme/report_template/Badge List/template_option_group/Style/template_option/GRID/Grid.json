@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "GRID",
+  "displayName": "Grid",
+  "cssClasses": "t-BadgeList--dash",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Actions",
+  "name": "ACTIONS_HIDDEN",
+  "displayName": "Hidden",
+  "cssClasses": "t-ContentRow--hideActions",
+  "helpText": "Hides the Actions column from being rendered on the screen.",
+  "isAdvanced": null
+}

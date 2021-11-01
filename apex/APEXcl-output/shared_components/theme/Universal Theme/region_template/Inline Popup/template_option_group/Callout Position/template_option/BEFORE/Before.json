@@ -1,0 +1,8 @@
+{
+  "group": "Callout Position",
+  "name": "BEFORE",
+  "displayName": "Before",
+  "cssClasses": "js-popup-pos-before",
+  "helpText": "Positions the callout before or typically to the left of the parent.",
+  "isAdvanced": null
+}

@@ -66,6 +66,8 @@ function replace_tokens (p_string in varchar2,
 function clob_to_varchar2_table (p_clob in out nocopy clob)
   return gc_clob_arr_type;
 
-
+function ir_has_filters(
+    p_ir_t      in apex_ir.t_report) 
+  return boolean;
 end ks_util;
 /

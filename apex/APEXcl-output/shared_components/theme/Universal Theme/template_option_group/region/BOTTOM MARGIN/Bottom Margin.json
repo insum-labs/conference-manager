@@ -1,0 +1,8 @@
+{
+  "name": "REGION_BOTTOM_MARGIN",
+  "displayName": "Bottom Margin",
+  "templateTypes": "REGION",
+  "helpText": "Set the bottom margin for this region.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

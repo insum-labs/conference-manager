@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5025_COMMITTEE_VOTE_END_DT"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "When Begin Date Changes Set End Date (Committee Vote)",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

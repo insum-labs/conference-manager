@@ -1,0 +1,7 @@
+{
+  "name": "WARNING",
+  "displayName": "Warning",
+  "cssClasses": "t-Button--warning",
+  "helpText": null,
+  "isAdvanced": "No"
+}

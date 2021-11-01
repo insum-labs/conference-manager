@@ -1,0 +1,8 @@
+{
+  "name": "RADIO_GROUP_DISPLAY",
+  "displayName": "Item Group Display",
+  "templateTypes": "FIELD",
+  "helpText": "Determines the display style for radio and check box items.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

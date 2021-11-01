@@ -1,0 +1,8 @@
+{
+  "name": "CALLOUT_POSITION",
+  "displayName": "Callout Position",
+  "templateTypes": "REGION",
+  "helpText": "Determines where the callout for the popup will be positioned relative to its parent.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

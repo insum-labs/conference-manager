@@ -1,0 +1,14 @@
+{
+  "name": {
+    "identifier": "ICON",
+    "templateclass": "Button, Alternative 2",
+    "translatable": "No"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

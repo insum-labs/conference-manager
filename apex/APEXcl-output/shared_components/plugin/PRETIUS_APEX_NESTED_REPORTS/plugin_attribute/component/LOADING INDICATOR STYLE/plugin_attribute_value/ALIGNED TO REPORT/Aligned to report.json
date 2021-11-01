@@ -1,0 +1,7 @@
+{
+  "displayValue": "Aligned to report",
+  "returnValue": "ATR",
+  "quickPick": "Yes",
+  "deprecated": "No",
+  "helpText": "Loading indicator is aligned to center of affected elements."
+}

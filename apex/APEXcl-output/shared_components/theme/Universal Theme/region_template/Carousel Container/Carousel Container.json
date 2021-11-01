@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "CAROUSEL_CONTAINER",
+    "templateClass": 5,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": "#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#\n#IMAGE_PREFIX#plugins/com.oracle.apex.carousel/1.1/com.oracle.apex.carousel#MIN#.js?v=#APEX_VERSION#"
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": "t-Region--showCarouselControls",
+    "presetTemplateOptions": "t-Region--hiddenOverflow"
+  },
+  "comments": {
+    "templateComment": null
+  }
+}

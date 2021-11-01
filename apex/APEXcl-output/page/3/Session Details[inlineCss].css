@@ -1,0 +1,52 @@
+#detailsRegion .col-2 {width: 10%;} /* For Avg and Total */
+td[headers="FULL_NAME"] {white-space: nowrap;}
+#P3_OTHER_SESSIONS_DISPLAY, #P3_OTHER_SESSIONS_LABEL {color: #cc9633; font-weight: bold;}
+td[headers~="VOTE"] {width: 85px;}
+td[headers~="BAR"] {width: 80px;}
+
+#P3_PRESENTER_CONTAINER .t-Form-itemText--post {position: relative;}
+.aceLogo {
+    width: 20px;
+    position: absolute;
+    top: 2px;
+    left: 37px;
+}
+#P3_PRESENTED_BEFORE_IND_DISPLAY,
+#P3_PRESENTED_ANYTHING_IND_DISPLAY{
+  padding-right: .3rem;
+  padding-top: .1rem;
+}
+
+#P3_PRESENTED_BEFORE_IND_DISPLAY:after, 
+#P3_PRESENTED_ANYTHING_IND_DISPLAY:after {
+  content: ":";
+}
+
+
+#voteStatsRegion .t-Report-wrap {
+    margin: 0 auto;
+    width: 250px;
+    float: none;
+    padding-bottom: 15px;
+}
+
+#voteStatsRegion .t-Report-colHead {
+  padding: 3px 7px;
+}
+#voteStatsRegion .t-Report-cell {
+  padding: 1px 5px;
+}
+#voteStatsRegion .a-Report-percentChart {
+  height: 10px;
+}
+#voteStatsRegion .a-Report-percentChart-fill {
+  height: 10px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.kv-solid-background .t-Region-header,
+.kv-solid-background .t-Region-bodyWrap {
+background-color: white!important;
+}
+

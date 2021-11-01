@@ -1,0 +1,8 @@
+{
+  "group": "Badge Size",
+  "name": "64PX",
+  "displayName": "64px",
+  "cssClasses": "t-BadgeList--large",
+  "helpText": null,
+  "isAdvanced": "No"
+}

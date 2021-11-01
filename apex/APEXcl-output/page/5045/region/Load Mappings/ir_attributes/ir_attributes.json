@@ -1,0 +1,85 @@
+[
+  {
+    "link": {
+      "irLinkColumn": "Link to Custom Target",
+      "linkTarget": "f?p=&APP_ID.:5050:&SESSION.::&DEBUG.:RP,5050:P5050_ID,P5050_TO_COLUMN_NAME:#ID#,#TO_COLUMN_NAME#",
+      "linkIcon": "&EDIT_BUTTON.",
+      "linkAttributes": "data-id=\"#ID#\" class=\"#DISABLED_CLASS#\"",
+      "linkAuthorizationScheme": null,
+      "linkConditionType": null
+    },
+    "appearance": {
+      "showNullValuesAs": "-"
+    },
+    "pagination": {
+      "irPaginationType": "Row Ranges X to Y of Z",
+      "paginationDisplayPosition": "Bottom - Right"
+    },
+    "messages": {
+      "whenNoDataFoundMessage": null,
+      "whenMoreDataFoundMessage": null
+    },
+    "searchBar": {
+      "includeSearchBar": "Y",
+      "showSearchTextbox": "Y",
+      "showFinderDropDown": "Y",
+      "showReportsSelectList": "TABS",
+      "showDisplayRowCount": "N",
+      "searchButtonLabel": null,
+      "maximumRowsPerPage": null
+    },
+    "actionsMenu": {
+      "showActionsMenu": "Y",
+      "showFilter": "Y",
+      "showSelectColumns": "Y",
+      "showRowsPerPage": "Y",
+      "showSort": "Y",
+      "showControlBreak": "Y",
+      "showHighlight": "Y",
+      "showComputation": "Y",
+      "showAggregate": "Y",
+      "showChart": "Y",
+      "showGroupBy": "Y",
+      "showPivot": "Y",
+      "showFlashback": "N",
+      "allowUsersToSaveReports": "Y",
+      "allowUsersToSavePublicReport": "N",
+      "showReset": "Y",
+      "showHelp": "Y",
+      "showNotify": "N",
+      "showDownload": "Y"
+    },
+    "download": {
+      "downloadFormats": "CSV:HTML:EMAIL:XLS:PDF:RTF",
+      "downloadFilename": null,
+      "supplementalText": null
+    },
+    "heading": {
+      "fixedHeader": "Page"
+    },
+    "iconView": {
+      "iconViewEnabled": "N",
+      "iconViewLinkColumn": null,
+      "iconViewImageSourceColumn": null,
+      "iconViewLabelColumn": null,
+      "iconViewImageAttributes": null,
+      "iconViewHtmlAltText": null,
+      "iconViewHtmlTitleText": null
+    },
+    "detailView": {
+      "detailViewEnabled": "N"
+    },
+    "advanced": {
+      "reportAlias": null,
+      "reportIdItem": null,
+      "emailFromAddress": null,
+      "oracleTextIndexColumn": null
+    },
+    "performance": {
+      "maximumRowCount": "1000000"
+    },
+    "attributes": {
+      "description": null
+    }
+  }
+]

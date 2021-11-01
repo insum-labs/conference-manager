@@ -1,0 +1,8 @@
+{
+  "name": "ALERT_TITLE",
+  "displayName": "Alert Title",
+  "templateTypes": "REGION",
+  "helpText": "Determines how the title of the alert is displayed.",
+  "nullText": "Visible - Default",
+  "isAdvanced": "N"
+}

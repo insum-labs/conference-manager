@@ -1,0 +1,8 @@
+{
+  "group": "Region Title",
+  "name": "GET_TITLE_FROM_BREADCRUMB",
+  "displayName": "Use Current Breadcrumb Entry",
+  "cssClasses": "t-BreadcrumbRegion--useBreadcrumbTitle",
+  "helpText": null,
+  "isAdvanced": null
+}

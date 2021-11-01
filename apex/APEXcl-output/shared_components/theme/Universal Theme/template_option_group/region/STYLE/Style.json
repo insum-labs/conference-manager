@@ -1,0 +1,8 @@
+{
+  "name": "STYLE",
+  "displayName": "Style",
+  "templateTypes": "REGION",
+  "helpText": "Determines how the region is styled. Use the \"Remove Borders\" template option to remove the region's borders and shadows.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

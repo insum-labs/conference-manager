@@ -1,0 +1,7 @@
+{
+  "displayValue": "Default template & custom callback",
+  "returnValue": "DTCC",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "When this option is selected, resulting rows of data are rendered with template provided in custom template attribute."
+}

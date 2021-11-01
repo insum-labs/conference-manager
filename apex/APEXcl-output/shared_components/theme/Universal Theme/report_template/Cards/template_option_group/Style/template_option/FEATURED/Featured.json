@@ -1,0 +1,8 @@
+{
+  "group": "Style",
+  "name": "FEATURED",
+  "displayName": "Featured",
+  "cssClasses": "t-Cards--featured force-fa-lg",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -1,0 +1,46 @@
+{
+  "identification": {
+    "title": "Buttons",
+    "regionType": "Static Content"
+  },
+  "layout": {
+    "regionPosition": "REGION_POSITION_03"
+  },
+  "appearance": {
+    "regionTemplate": "Buttons Container",
+    "templateOptions": "#DEFAULT#",
+    "appearanceCssClasses": null,
+    "iconCssClasses": null,
+    "itemDisplayPosition": "Above Content"
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "regionImage": null,
+    "imageTagAttributes": null,
+    "regionDisplaySelector": "N"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "readOnly": {
+    "readOnlyConditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "serverCache": {
+    "cacheMode": "Disabled"
+  },
+  "customization": {
+    "customizable": "Not Customizable By End Users"
+  },
+  "attributes": {
+    "expandShortcuts": "N",
+    "outputAs": "TEXT",
+    "showLineBreaks": "Y"
+  }
+}

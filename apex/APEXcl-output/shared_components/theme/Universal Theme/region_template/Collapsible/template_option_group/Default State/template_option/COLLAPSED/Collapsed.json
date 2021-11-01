@@ -1,0 +1,8 @@
+{
+  "group": "Default State",
+  "name": "COLLAPSED",
+  "displayName": "Collapsed",
+  "cssClasses": "is-collapsed",
+  "helpText": null,
+  "isAdvanced": null
+}

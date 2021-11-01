@@ -1,0 +1,7 @@
+{
+  "name": "FRM_MEDIUM",
+  "displayName": "Medium",
+  "cssClasses": "margin-right-md",
+  "helpText": "Adds a medium right margin for this field.",
+  "isAdvanced": null
+}

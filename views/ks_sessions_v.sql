@@ -21,7 +21,8 @@ select  s.id
       , s.co_presenter
       , s.status_code
       , s.notes
-      , s.tags      
+      , s.tags
+      , s.session_length
       , t.votes_total
       , t.votes_average
       , s.presenter_email
@@ -62,6 +63,7 @@ select  s.id
       , s.room_size_code
       , s.presented_anything_ind
       , s.presented_anything_where
+      , s.ranking
       , s.created_by
       , s.created_on
       , s.updated_by

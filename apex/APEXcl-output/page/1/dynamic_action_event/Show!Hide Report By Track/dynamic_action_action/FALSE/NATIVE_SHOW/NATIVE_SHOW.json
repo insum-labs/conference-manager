@@ -1,0 +1,20 @@
+{
+  "identification": {
+    "daActionType": "Show"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "{By Community}"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Show/Hide Report By Track",
+    "fireWhenEventResultIs": "False",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "showAllOnTheSameLine": "N"
+  }
+}

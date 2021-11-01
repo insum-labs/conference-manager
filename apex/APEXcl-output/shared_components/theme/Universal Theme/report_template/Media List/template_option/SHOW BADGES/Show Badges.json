@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_BADGES",
+  "displayName": "Show Badges",
+  "cssClasses": "t-MediaList--showBadges",
+  "helpText": null,
+  "isAdvanced": null
+}

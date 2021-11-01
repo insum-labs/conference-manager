@@ -1,0 +1,22 @@
+{
+  "name": {
+    "identifier": "COLLAPSIBLE",
+    "templateClass": 1,
+    "translatable": "No"
+  },
+  "javascript": {
+    "javascriptFileUrls": null
+  },
+  "executeWhenPageLoads": null,
+  "css": {
+    "cssFileUrls": null
+  },
+  "htmlTableAttributes": null,
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": "is-expanded:t-Region--scrollBody"
+  },
+  "comments": {
+    "templateComment": "Red Theme"
+  }
+}

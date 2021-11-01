@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "AUTO_HEIGHT_INLINE_DIALOG",
+  "displayName": "Auto Height",
+  "cssClasses": "js-dialog-autoheight",
+  "helpText": "This option will set the height of the dialog to fit its contents.",
+  "isAdvanced": null
+}

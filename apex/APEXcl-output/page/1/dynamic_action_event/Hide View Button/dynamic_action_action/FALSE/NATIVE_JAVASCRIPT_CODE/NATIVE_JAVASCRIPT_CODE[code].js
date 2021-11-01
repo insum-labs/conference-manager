@@ -1,0 +1,1 @@
+shakeTimer = setTimeout( function() { apex.event.trigger('body', 'shake-shake-button'); }, 3500);

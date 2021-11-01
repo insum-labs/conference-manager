@@ -41,8 +41,8 @@ is
 begin
   ks_log.log('BEGIN', l_scope);
 
-  select  t.template_text 
-  into    l_msg 
+  select  t.template_text
+  into    l_msg
   from    ks_email_templates t
   where   t.name = p_template_name;
 
@@ -72,7 +72,7 @@ end replace_substr_template;
  *
  *
  * @example
- * 
+ *
  * @issue
  *
  * @author Juan Wall
@@ -84,7 +84,7 @@ procedure fetch_user_substitions (
   p_id in ks_users.id%type
  ,p_substrings in out nocopy t_WordList
 )
-is 
+is
   l_scope ks_log.scope := gc_scope_prefix || 'fetch_user_substitions';
 begin
   ks_log.log('BEGIN', l_scope);
@@ -117,12 +117,70 @@ begin
   where   u.id = p_id;
 
   ks_log.log('END', l_scope);
-  
+
 end fetch_user_substitions;
 
+/**
+ * Fetch session details/data
+ *
+ * @example
+ *
+ * @issue #35
+ *
+ * @author Ramona Birsan
+ * @created September 30, 2019
+ * @param p_id
+ * @return ks_sessions%rowtype
+ */
+function fetch_session_details(p_id in ks_sessions.id%type)
+return ks_sessions%rowtype
+is
 
+  l_scope  ks_log.scope := gc_scope_prefix || 'fetch_session_details';
+  l_session_info ks_sessions%rowtype;
+begin
+  ks_log.log('START', l_scope);
+  ks_log.log('param p_id : ' ||p_id, l_scope);
 
+  select * into l_session_info
+    from ks_sessions
+   where id = p_id;
 
+  ks_log.log('END', l_scope);
+  return l_session_info;
+
+end fetch_session_details;
+
+/**
+ * Fetch track details/data
+ *
+ * @example
+ *
+ * @issue #35
+ *
+ * @author Ramona Birsan
+ * @created September 30, 2019
+ * @param p_id
+ * @return ks_event_tracks%rowtype
+ */
+function fetch_track_details(p_id in ks_event_tracks.id%type)
+return ks_event_tracks%rowtype
+is
+
+  l_scope  ks_log.scope := gc_scope_prefix || 'fetch_track_details';
+  l_track_details ks_event_tracks%rowtype;
+begin
+  ks_log.log('START', l_scope);
+  ks_log.log('param p_id : ' ||p_id, l_scope);
+
+  select * into l_track_details
+    from ks_event_tracks
+   where id = p_id;
+
+  ks_log.log('END', l_scope);
+  return l_track_details;
+
+end fetch_track_details;
 /**
  * Fetch common substitution strings that can be used on a template.
  *   * VOTING_APP_LINK
@@ -130,7 +188,7 @@ end fetch_user_substitions;
  *
  *
  * @example
- * 
+ *
  * @issue
  *
  * @author Jorge Rimblas
@@ -160,7 +218,7 @@ end fetch_common_links;
  * and `p_body_html` parameters are ignored and only the template is used.
  * If present, the `p_substrings` "word list" values will be used to merge with the template.
  * Leave `p_template_name` empty to use the `p_body` and `p_body_html` parameters.
- * If all three destination `p_to`, `p_cc` and `p_bcc` are null, the procedure 
+ * If all three destination `p_to`, `p_cc` and `p_bcc` are null, the procedure
  * exits without error.
  *
  *
@@ -191,20 +249,20 @@ is
 begin
   ks_log.log('BEGIN', l_scope);
 
-  if trim (p_to) is null 
+  if trim (p_to) is null
       and trim (p_cc) is null
-      and trim (p_bcc) is null then 
+      and trim (p_bcc) is null then
     return;
   end if;
 
-  if p_template_name is not null then 
+  if p_template_name is not null then
     l_body := replace_substr_template (
       p_template_name => p_template_name
      ,p_substrings => p_substrings
     );
 
     l_body_html := replace (l_body, chr(10), '<br>');
-  else 
+  else
     l_body := p_body;
     l_body_html := p_body_html;
   end if;
@@ -231,12 +289,12 @@ end send_email;
 
 
 /**
- * 
+ *
  * Notify users of newly loaded sessions. The loaded sessions are found in `ks_session_load_coll_v`
  * Only the users for the tracks marked during the Load Session Wizard (`ks_session_load_coll_v.notify_ind`) will be notified.
  *
  * @example
- * 
+ *
  * @issue
  *
  * @author Juan Wall (Insum Solutions)
@@ -267,16 +325,16 @@ begin
     with user_emails as (
       select  sl.track_name
              ,sl.session_count
-             ,u.email 
+             ,u.email
       from    ks_user_event_track_roles uetr
-      join    ks_users u 
+      join    ks_users u
       on      uetr.username = u.username
-      join    ks_session_load_coll_v sl 
+      join    ks_session_load_coll_v sl
       on      sl.track_id = uetr.event_track_id
       where   sl.notify_ind = 'Y'
       and     u.email is not null
       and     (
-        ('OWNER' = p_notify_owner 
+        ('OWNER' = p_notify_owner
           and uetr.selection_role_code is not null)
         or
         ('VOTER' = p_notify_voter
@@ -289,13 +347,13 @@ begin
     select    ue.track_name
              ,ue.session_count
              ,listagg (ue.email,',') within group (order by ue.email desc) as email
-    from      user_emails ue 
+    from      user_emails ue
     group     by ue.track_name
              ,ue.session_count
   )
   loop
     ks_log.log (rec.track_name || '-' || rec.session_count || '-' || rec.email, l_scope);
-    
+
     l_substrings('SESSION_COUNT') := rec.session_count;
     l_substrings('TRACK_NAME') := rec.track_name;
 
@@ -306,7 +364,7 @@ begin
       ,p_from => l_from
       ,p_cc => null
       ,p_bcc => null
-      ,p_subject => l_subject 
+      ,p_subject => l_subject
       ,p_body => null
       ,p_body_html => null
       ,p_template_name =>  l_template_name
@@ -325,15 +383,15 @@ end notify_track_session_load;
 
 
 /**
- * 
- * Send a user an email/notification with their new temporary password after a 
+ *
+ * Send a user an email/notification with their new temporary password after a
  * "Reset Password" (by an Admin) or a "Forgot Password" action (by a user)
  *
- * The text of the email is defined by the template mentioned in the 
- * `RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE` system parameter 
+ * The text of the email is defined by the template mentioned in the
+ * `RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE` system parameter
  *
  * @example
- * 
+ *
  * @issue
  *
  * @author Juan Wall (Insum Solutions)
@@ -377,7 +435,7 @@ begin
     ,p_from => l_from
     ,p_cc => null
     ,p_bcc => null
-    ,p_subject => l_subject 
+    ,p_subject => l_subject
     ,p_body => null
     ,p_body_html => null
     ,p_template_name =>  l_template_name
@@ -395,13 +453,13 @@ end notify_reset_pwd_request;
 
 
 /**
- * 
+ *
  * Notify a user after their password has been successfully changed (Reset Password)
- * The text of the email is defined by the template mentioned in the 
- * `RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE` system parameter 
+ * The text of the email is defined by the template mentioned in the
+ * `RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE` system parameter
  *
  * @example
- * 
+ *
  * @issue
  *
  * @author Juan Wall (Insum Solutions)
@@ -438,7 +496,7 @@ begin
     ,p_from => l_from
     ,p_cc => null
     ,p_bcc => null
-    ,p_subject => l_subject 
+    ,p_subject => l_subject
     ,p_body => null
     ,p_body_html => null
     ,p_template_name =>  l_template_name
@@ -456,6 +514,111 @@ end notify_reset_pwd_done;
 
 
 
+
+
+/**
+ * Notify track owners and/or voters when a session is moved between tracks.
+ *
+ * @example
+ *
+ * @issue #35
+ *
+ * @author Ramona Birsan
+ * @created September 30, 2019
+ * @param p_id
+ * @param p_event_track_id
+ * @param p_old_event_track_id
+ * @param p_notify_owners_ind when 'Y', the notification will be send to track owners
+ * @param p_notify_voters_ind when 'Y', the notification will be send to all voters
+ */
+procedure notify_session_move (
+    p_id in ks_sessions.id%type
+   ,p_event_track_id in ks_sessions.event_track_id%type
+   ,p_old_event_track_id in ks_sessions.event_track_id%type
+   ,p_notify_owners_ind in varchar2
+   ,p_notify_voters_ind in varchar2
+)
+is
+  l_scope ks_log.scope := gc_scope_prefix || 'notify_session_move';
+  c_subject_notification constant varchar2(30) := 'Session Moved Between Tracks';
+
+  cursor email_list_c
+  is
+    with user_emails as (
+    select distinct u.email
+      from ks_user_event_track_roles uetr
+      join ks_users u
+        on uetr.username = u.username
+     where u.email is not null
+       and (
+            ( p_notify_owners_ind = 'Y'
+              and uetr.selection_role_code in ('OWNER'))
+            or
+            ( p_notify_voters_ind = 'Y'
+               and uetr.voting_role_code is not null))
+       and uetr.event_track_id in (p_event_track_id, p_old_event_track_id)
+      )
+    select listagg ( ue.email,',') within group (order by ue.email desc) as email_list
+      from user_emails ue;
+
+
+  l_to varchar2(4000);
+  l_from ks_parameters.value%type;
+  l_subject ks_parameters.value%type;
+  l_template_name ks_parameters.value%type;
+
+  l_substrings t_WordList;
+  l_session ks_sessions%rowtype;
+  l_event_track ks_event_tracks%rowtype;
+begin
+  ks_log.log('START', l_scope);
+  ks_log.log('param session id : ' || p_id, l_scope);
+  ks_log.log('param current event track id : ' || p_event_track_id, l_scope);
+  ks_log.log('param old event track id : ' || p_old_event_track_id, l_scope);
+  ks_log.log('param p_notify_owners_ind : ' || p_notify_owners_ind, l_scope);
+  ks_log.log('param p_notify_voters_ind : ' || p_notify_voters_ind, l_scope);
+
+  open email_list_c;
+  fetch email_list_c into l_to;
+  close email_list_c;
+  ks_log.log('email list : ' || l_to, l_scope);
+
+  if l_to is not null then
+    l_session := fetch_session_details (p_id);
+    l_substrings('SESSION_TITLE') := l_session.title;
+    l_substrings('SUB_CATEGORY') := nvl(l_session.sub_category, '-');
+    l_substrings('SESSION_TYPE') := nvl(l_session.session_type, '-');
+    l_substrings('SPEAKER') := l_session.presenter;
+
+    l_event_track := fetch_track_details (p_event_track_id);
+    l_substrings('TO_TRACK') := l_event_track.name;
+
+    l_event_track := fetch_track_details (p_old_event_track_id);
+    l_substrings('FROM_TRACK') := l_event_track.name;
+
+    l_from := ks_util.get_param('EMAIL_FROM_ADDRESS');
+    l_subject := c_subject_notification;
+    l_template_name := ks_util.get_param('SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE');
+
+    send_email (
+      p_to => l_to
+     ,p_from => l_from
+     ,p_cc => null
+     ,p_bcc => null
+     ,p_subject => l_subject
+     ,p_body => null
+     ,p_body_html => null
+     ,p_template_name =>  l_template_name
+     ,p_substrings => l_substrings
+   );
+  end if;
+
+  ks_log.log('END', l_scope);
+  exception
+    when others then
+      ks_log.log('Unhandled Exception ', l_scope);
+      raise;
+end notify_session_move;
 
 end ks_notification_api;
 /

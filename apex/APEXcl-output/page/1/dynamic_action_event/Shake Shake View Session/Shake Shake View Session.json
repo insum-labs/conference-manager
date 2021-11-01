@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Shake Shake View Session"
+  },
+  "executionOptions": {
+    "executionSequence": 70
+  },
+  "when": {
+    "event": "custom",
+    "customEvent": "shake-shake-button",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": "body"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

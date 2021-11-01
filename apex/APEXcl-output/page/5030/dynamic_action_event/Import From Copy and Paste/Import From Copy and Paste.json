@@ -1,0 +1,31 @@
+{
+  "identification": {
+    "name": "Import From Copy and Paste"
+  },
+  "executionOptions": {
+    "executionSequence": 10
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5030_IMPORT_FROM"
+  },
+  "clientSideCondition": {
+    "jsCondition": "Item = Value",
+    "jsConditionItem": "P5030_IMPORT_FROM",
+    "jsCondValue": "PASTE",
+    "jsConditionElementType": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

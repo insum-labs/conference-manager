@@ -1,0 +1,20 @@
+{
+  "name": {
+    "identifier": "BREADCRUMB",
+    "themeClass": 1,
+    "translatable": "No"
+  },
+  "linkAttributes": {
+    "breadcrumbLinkAttributes": null
+  },
+  "templateType": {
+    "startWith": "Parent to Leaf (breadcrumb style)"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comments": null
+  }
+}

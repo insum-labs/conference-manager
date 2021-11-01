@@ -1,0 +1,7 @@
+{
+  "displayValue": "Set max height",
+  "returnValue": "SMH",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "If this option checked, max-height property is added to expanded row. Value in pixels must be provided in <strong>Set max height</strong> attribute."
+}

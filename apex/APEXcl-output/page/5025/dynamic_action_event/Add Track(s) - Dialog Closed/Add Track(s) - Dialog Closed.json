@@ -1,0 +1,29 @@
+{
+  "identification": {
+    "name": "Add Track(s) - Dialog Closed"
+  },
+  "executionOptions": {
+    "executionSequence": 50
+  },
+  "when": {
+    "event": "apexafterclosedialog",
+    "whenType": "jQuery Selector",
+    "whenJquerySelector": "#communities-ir"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Dynamic",
+    "staticContainerJquery": "#communities-ir"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

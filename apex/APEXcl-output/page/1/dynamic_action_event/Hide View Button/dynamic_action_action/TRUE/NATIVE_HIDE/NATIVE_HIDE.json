@@ -1,0 +1,20 @@
+{
+  "identification": {
+    "daActionType": "Hide"
+  },
+  "affectedElements": {
+    "affectedType": "Button",
+    "affectedButton": "VIEW_SESSIONS"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Hide View Button",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "hideAllPageItemsOnTheSameLine": "N"
+  }
+}

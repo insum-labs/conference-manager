@@ -1,0 +1,8 @@
+{
+  "name": "HEADER",
+  "displayName": "Header",
+  "templateTypes": "REGION",
+  "helpText": "Determines the display of the Region Header which also contains the Region Title.",
+  "nullText": "Visible - Default",
+  "isAdvanced": "N"
+}

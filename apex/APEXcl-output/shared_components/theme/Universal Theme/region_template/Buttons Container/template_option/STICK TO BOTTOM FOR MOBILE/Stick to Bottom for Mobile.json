@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "STICK_TO_BOTTOM",
+  "displayName": "Stick to Bottom for Mobile",
+  "cssClasses": "t-ButtonRegion--stickToBottom",
+  "helpText": "This will position the button container region to the bottom of the screen for small screens.",
+  "isAdvanced": null
+}

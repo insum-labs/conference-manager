@@ -1,0 +1,45 @@
+{
+  "identification": {
+    "buttonName": "GET_NEXT_SESSION_ID",
+    "buttonLabel": "Next"
+  },
+  "layout": {
+    "buttonPosition": "Items",
+    "startNewRow": "N",
+    "column": 9,
+    "newColumn": null,
+    "columnSpan": 1,
+    "columnCssClasses": null,
+    "columnAttributes": null,
+    "elementFieldAlignment": "Right"
+  },
+  "appearance": {
+    "buttonTemplate": "Icon",
+    "buttonIsHot": "N",
+    "templateOptions": "#DEFAULT#:t-Button--pillEnd",
+    "appearanceCssClasses": null,
+    "iconCssClasses": "fa-chevron-right"
+  },
+  "behavior": {
+    "buttonAction": "Redirect to URL",
+    "buttonTarget": "javascript:htmldb_goSubmit('GET_NEXT_SESSION_ID')",
+    "buttonExecuteValidations": "Y",
+    "buttonWarnOnUnsavedChanges": "Do Not Check",
+    "buttonDatabaseAction": null
+  },
+  "advanced": {
+    "staticId": null,
+    "customAttributes": null,
+    "buttonRequestSourceType": null
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NOT NULL",
+    "conditionItem1": "P3_ID_NEXT"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

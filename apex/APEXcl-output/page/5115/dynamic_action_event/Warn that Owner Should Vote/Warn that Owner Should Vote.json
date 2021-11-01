@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Warn that Owner Should Vote"
+  },
+  "executionOptions": {
+    "executionSequence": 40
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5115_SELECTION_ROLE,P5115_VOTING_ROLE"
+  },
+  "clientSideCondition": {
+    "jsCondition": "JavaScript expression"
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

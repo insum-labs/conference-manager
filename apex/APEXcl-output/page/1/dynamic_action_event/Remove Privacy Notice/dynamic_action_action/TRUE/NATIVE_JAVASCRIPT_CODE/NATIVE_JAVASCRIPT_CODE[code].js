@@ -1,0 +1,1 @@
+$(this.affectedElements[0]).slideUp();

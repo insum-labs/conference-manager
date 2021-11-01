@@ -1,0 +1,8 @@
+{
+  "name": "COL_CONTENT_TITLE",
+  "displayName": "Title",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

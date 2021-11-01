@@ -1,0 +1,7 @@
+{
+  "name": "Breadcrumb Bar",
+  "templateSubstitution": "REGION_POSITION_01",
+  "gridSupport": "No",
+  "newRow": "Yes",
+  "maximumFixedGridColumns": null
+}

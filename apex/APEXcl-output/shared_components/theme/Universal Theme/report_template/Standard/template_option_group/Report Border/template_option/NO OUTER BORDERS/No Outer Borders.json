@@ -1,0 +1,8 @@
+{
+  "group": "Report Border",
+  "name": "REMOVEOUTERBORDERS",
+  "displayName": "No Outer Borders",
+  "cssClasses": "t-Report--inline",
+  "helpText": null,
+  "isAdvanced": "No"
+}

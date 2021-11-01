@@ -1,4 +1,4 @@
-PRO Installing 3.0.0 (Kscope19)
+PRO Installing 4.0.0 (Kscope20)
 
 --  sqlblanklines - Allows for SQL statements to have blank lines
 set sqlblanklines on
@@ -6,142 +6,129 @@ set sqlblanklines on
 set define '^'
 
 
+PRO _________________________________________________
+PRO . TABLES and DDL
 
--- *** DDL ***
-
--- #17
-alter table ks_events add blind_vote_flag varchar2(1);
-comment on column ks_events.blind_vote_begin_date is 'begin date of Public voting';
-comment on column ks_events.blind_vote_end_date is 'end date of Public voting';
-comment on column ks_events.blind_vote_flag is 'Indicates that the Public Voting will be "blind"';
-
--- #11
-alter table ks_sessions add room_size_code varchar2(20);
-comment on column ks_sessions.room_size_code is 'Define the size for a room S|M|L';
-
--- #13
-alter table ks_users add expired_passwd_flag varchar2(1);
-alter table ks_users add login_attempts number;
-alter table ks_users add last_login_date date;
-comment on column ks_users.expired_passwd_flag is 'Set to Y when the account password is expired.';
-comment on column ks_users.login_attempts is 'Number of unsuccessful login attempts since last login';
-comment on column ks_users.last_login_date is 'Date the user was las successful login in';
+PRO .. ks_session_votes_mv
+@../views/ks_session_votes_mv.sql
 
 
--- #16
--- Changes made by Ben Shumway
-alter table ks_full_session_load add presented_anything_ind varchar2(4000);
-alter table ks_full_session_load add presented_anything_where varchar2(4000);
-comment on column ks_full_session_load.presented_anything_ind is 'Whether the presenter has ever done a live presentation, anywhere for anything.';
-comment on column ks_full_session_load.presented_anything_where is 'Where the presenter has done live presentations (of any kind).';
+-- #2
+@../install/ks_event_communities.sql
+@../install/ks_event_community_tracks.sql
 
-alter table ks_sessions add presented_anything_ind varchar2(1);
-alter table ks_sessions add presented_anything_where varchar2(4000);
-alter table ks_sessions add constraint ks_sessions_pres_any_yn check (presented_anything_ind in ('Y','N'));
-comment on column ks_sessions.presented_anything_ind is 'Whether the presenter has ever done a live presentation(s), anywhere for anything.';
-comment on column ks_sessions.presented_anything_where is 'Where the presenter has done live presentation (of any kind)';
-
-comment on column ks_sessions.presented_before_ind is 'Whether the session has been presented before';
-comment on column ks_sessions.presented_before_where is 'Where the presentaton been done before';
+-- #42
+alter table ks_sessions add ranking number;
+comment on column ks_sessions.ranking is 'Used to specify the rank for a group of sessions.';
 
 
--- #20
-alter table ks_session_votes add decline_vote_flag varchar2(1);
-comment on column ks_session_votes.decline_vote_flag is 'Used when a user abstains form voting on a session.';
+-- #36
+create index ks_users_i01
+  on ks_users(external_sys_ref)
+/
 
-create index ks_session_votes_i01 on ks_session_votes(session_id);
+@../install/ks_event_comp_users.sql
 
--- #3
-@../install/ks_event_admins.sql
-@../install/ks_email_templates.sql
+
+--
+PRO .. Allow multi-byte chars for tags
+-- alter table ks_tags modify tag varchar2(255);
+-- alter table ks_tag_sums modify tag varchar2(255);
+-- alter table ks_tag_type_sums modify tag varchar2(255);
+
+
+-- #44
+PRO .. Session Length
+alter table ks_full_session_load add session_length varchar2(500);
+alter table ks_sessions add session_length varchar2(500);
 
 
 
+PRO _________________________________________________
+PRO . VIEW
 
--- *** Views ***
-
--- #3
+@../views/ks_sessions_v.sql
 @../views/ks_users_v.sql
 
-@../views/ks_events_tracks_v.sql
-@../views/ks_events_sec_v.sql
-@../views/ks_events_allowed_v.sql
-
--- #16
-@../views/ks_session_load_coll_v.sql
-
--- #32 
-@../views/ks_sessions_v.sql
+-- #2
+@../views/ks_events_communities_v.sql
+@../views/ks_events_communities_tracks_v.sql
 
 
 
 
+PRO _________________________________________________
+PRO . PACKAGES
 
--- *** Objects ***
-
--- Added ks_log calls
-@../plsql/ks_tags_api.plb
-
--- #4
-@../plsql/ks_error_handler.plb
-
--- #1, #22, #20, #32
-@../plsql/ks_session_api.pls
-@../plsql/ks_session_api.plb
-
--- #16
-@../plsql/ks_session_load_api.pls
-@../plsql/ks_session_load_api.plb
-
--- #6, #13
-@../plsql/ks_email_api.pls
-@../plsql/ks_email_api.plb
+-- #35
 @../plsql/ks_notification_api.pls
 @../plsql/ks_notification_api.plb
 
--- #13
-@../plsql/ks_sec.pls
-@../plsql/ks_sec.plb
+-- #36
+@../plsql/ks_session_api.pls
+@../plsql/ks_session_api.plb
+
+
+-- #44
+@../plsql/ks_session_load_api.pls
+@../plsql/ks_session_load_api.plb
+
+
+@../plsql/ks_util.pls
+@../plsql/ks_util.plb
+
+
+@../plsql/ks_tags_api.plb
+
+-- #43 
+@../plsql/pretius_apex_nested_reports.pls
+@../plsql/pretius_apex_nested_reports.plb
+
+-- #43 
+@../plsql/ks_plugins.pls
+@../plsql/ks_plugins.plb
+
+
+@../views/ks_events_comps_v.sql
+
+
+PRO _________________________________________________
+PRO . DML
+
+PRO .. Make presenter_user_id mandatory
+@../conversion/populate_presenter_user_id.sql
+
+alter table ks_sessions modify presenter_user_id not null;
 
 
 
+-- #2
+insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_U01','That track is already part of the community.');
+insert into constraint_lookup (constraint_name,message) values ('KS_COMMUNITY_TRACKS_FK','The community cannot be removed when it has tracks.');
+insert into constraint_lookup (constraint_name,message) values ('KS_EVENT_COMMUNITY_TRACKS_FK', 'The track cannot be removed if it is associated with a community.');
+-- #35
+insert into ks_parameters (category, name_key, value, description) values ('Notifications','SESSION_MOVED_BETWEEN_TRACKS_TEMPLATE','SESSION_MOVED_BETWEEN_TRACKS','Name of email template for when a session is moved between tracks');
 
--- *** DML ***
-insert into constraint_lookup (constraint_name,message) values ('KS_USERNAME_U','User already exists.');
+insert into ks_parameters (category, name_key, value, description) values ('SYSTEM','ANONYMIZE_TOKENS','NO','YES|NO Set to NO to override anonimizing tokens, even for Blind Voting');
 
-delete from ks_parameters where name_key in ('ADMIN_APP_ID');
-insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'ADMIN_APP_ID', '83791', 'ID of Admin app');
+delete from ks_email_templates where name = 'SESSION_MOVED_BETWEEN_TRACKS';
+insert into ks_email_templates (name, template_text)
+ values ('SESSION_MOVED_BETWEEN_TRACKS'
+  , q'{The session <i>"#SESSION_TITLE#"</i> from #SPEAKER# has been moved from <i>#FROM_TRACK#</i> to <b>#TO_TRACK#</b>
 
-delete from ks_parameters where name_key in ('SERVER_URL');
-insert into ks_parameters(category, name_key, value, description) values ('SYSTEM', 'SERVER_URL', 'https://apex.oracle.com/pls/apex/f?p=', 'Server URL');
+Sub Category : <i>#SUB_CATEGORY#</i>
+Session Type : <i>#SESSION_TYPE#</i>
 
-delete from ks_parameters where name_key in ('LOAD_NOTIFICATION_TEMPLATE');
-insert into ks_parameters(category, name_key, value, description) values ('Notifications', 'LOAD_NOTIFICATION_TEMPLATE', 'SESSION_LOAD', 'Name of email template for load notifications');
+All existing votes from <i>#FROM_TRACK#</i> track have been removed.
+Tags most likely should be revised.
+}');
 
-
-insert into ks_parameters (category,name_key,value,description) values ('Notifications','RESET_PASSWORD_DONE_NOTIFICATION_TEMPLATE','RESET_PASSWORD_DONE_NOTIFICATION','Name of email template for when a reset password is executed');
-insert into ks_parameters (category,name_key,value,description) values ('Notifications','RESET_PASSWORD_REQUEST_NOTIFICATION_TEMPLATE','RESET_PASSWORD_REQUEST_NOTIFICATION','Name of email template for reset password request notifications');
-
-
-update ks_roles
-   set name = 'Public Voter'
- where role_type = 'VOTING'
-   and code = 'BLIND';
-
-
--- #16
--- New columns presented_anything_ind, presented_anything_where
--- fix order
+-- ## 44
 @../conversion/seed_ks_load_mapping.sql
-@../conversion/seed_ks_email_templates.sql
 
 
--- New Status
-insert into ks_session_status (display_seq, code, name, active_ind) values (25, 'CANCELED', 'Canceled', 'Y');
-  
 -- DO NOT TOUCH/UPDATE BELOW THIS LINE
 
 
 PRO Recompiling objects
 exec dbms_utility.compile_schema(schema => user, compile_all => false);
-

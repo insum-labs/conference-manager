@@ -1,0 +1,8 @@
+{
+  "group": "Body Height",
+  "name": "320PX",
+  "displayName": "320px",
+  "cssClasses": "i-h320",
+  "helpText": "Sets region body height to 320px.",
+  "isAdvanced": "No"
+}

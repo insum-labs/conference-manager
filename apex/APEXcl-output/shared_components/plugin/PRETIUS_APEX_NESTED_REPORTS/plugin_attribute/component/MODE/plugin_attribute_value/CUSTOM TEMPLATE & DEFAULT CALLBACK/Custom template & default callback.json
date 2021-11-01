@@ -1,0 +1,7 @@
+{
+  "displayValue": "Custom template & default callback",
+  "returnValue": "CTDC",
+  "quickPick": "No",
+  "deprecated": "No",
+  "helpText": "When this option is selected, resulting rows of data are rendered with default template and custom JS callback function defined in custom callback attribute."
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Alert Type",
+  "name": "SUCCESS",
+  "displayName": "Success",
+  "cssClasses": "t-Alert--success",
+  "helpText": "Show success alert.",
+  "isAdvanced": "No"
+}

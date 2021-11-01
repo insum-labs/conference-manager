@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "When Begin Date Changes Set End Date"
+  },
+  "executionOptions": {
+    "executionSequence": 70
+  },
+  "when": {
+    "event": "change",
+    "whenType": "Item(s)",
+    "whenItems": "P5025_BEGIN_DATE"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

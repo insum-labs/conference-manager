@@ -7,6 +7,7 @@ select u.id
      , u.first_name
      , u.last_name
      , u.first_name || nvl2(u.last_name, ' ' || u.last_name, '') full_name
+     , u.first_name || nvl2(u.last_name, ' ' || u.last_name, '')  || nvl2(u.first_name || u.last_name, ' (','') || u.username || nvl2(u.first_name || u.last_name, ')','') full_name_extended
      , u.email
      , u.active_ind
      , u.admin_ind

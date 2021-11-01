@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "computationItemName": "P1_SELECT_EVENT_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "Before Regions"
+  },
+  "computation": {
+    "computationType": "PL/SQL Expression"
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "identification": {
+    "daActionType": "Execute JavaScript Code"
+  },
+  "affectedElements": {
+    "affectedType": "Region",
+    "affectedRegion": "Privacy Information Notice"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Remove Privacy Notice",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  }
+}

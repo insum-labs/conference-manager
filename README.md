@@ -1,4 +1,4 @@
-[![APEX Community](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/78c5adbe/badges/apex-community-badge.svg)](https://github.com/Dani3lSun/apex-github-badges) [![APEX 18.2](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_2-badge.svg)](https://github.com/Dani3lSun/apex-github-badges) [![APEX Built with Love](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/7919f913/badges/apex-love-badge.svg)](https://github.com/Dani3lSun/apex-github-badges)
+[![APEX Community](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/78c5adbe/badges/apex-community-badge.svg)](https://github.com/Dani3lSun/apex-github-badges) [![APEX 18.2](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/2fee47b7/badges/apex-18_2-badge.svg)](https://github.com/Dani3lSun/apex-github-badges) [![APEX 19.1](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/4e79ac25/badges/apex-19_1-badge.svg)](https://github.com/Dani3lSun/apex-github-badges) [![APEX Built with Love](https://cdn.rawgit.com/Dani3lSun/apex-github-badges/7919f913/badges/apex-love-badge.svg)](https://github.com/Dani3lSun/apex-github-badges)
 
 # Conference Manager
 Open Source Conference Abstract Voting and Content Selection Apps
@@ -17,6 +17,7 @@ Run the following scripts in order:
 @release/master_install.sql
 @release/master_release_v0200.sql
 @release/master_release_v0300.sql
+@release/master_release_v0400.sql
 ```
 
 

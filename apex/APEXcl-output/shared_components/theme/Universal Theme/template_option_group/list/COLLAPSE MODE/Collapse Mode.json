@@ -1,0 +1,8 @@
+{
+  "name": "COLLAPSE_STYLE",
+  "displayName": "Collapse Mode",
+  "templateTypes": "LIST",
+  "helpText": null,
+  "nullText": "Icon (Default)",
+  "isAdvanced": "N"
+}

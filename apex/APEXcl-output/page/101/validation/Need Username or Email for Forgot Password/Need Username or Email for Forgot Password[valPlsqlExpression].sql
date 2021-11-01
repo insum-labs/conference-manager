@@ -1,0 +1,1 @@
+:P101_USERNAME is not null

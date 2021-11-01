@@ -1,0 +1,28 @@
+{
+  "identification": {
+    "name": "Start Shake Shake Timer"
+  },
+  "executionOptions": {
+    "executionSequence": 80
+  },
+  "when": {
+    "event": "ready"
+  },
+  "clientSideCondition": {
+    "jsCondition": null
+  },
+  "advanced": {
+    "eventScope": "Static"
+  },
+  "serverSideCondition": {
+    "conditionType": "User Preference != Value",
+    "conditionPreference": "VIEW_SESSION_BUTTON_USED",
+    "conditionValue2": "YES"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

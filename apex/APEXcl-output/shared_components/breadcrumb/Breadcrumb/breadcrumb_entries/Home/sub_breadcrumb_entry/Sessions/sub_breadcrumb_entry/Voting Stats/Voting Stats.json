@@ -1,0 +1,9 @@
+{
+  "sequence": 10,
+  "shortName": "Voting Stats",
+  "link": "f?p=&APP_ID.:20:&SESSION.::&DEBUG.:::",
+  "page": 20,
+  "conditionType": null,
+  "authorizationScheme": null,
+  "buildOption": null
+}

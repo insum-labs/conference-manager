@@ -1,0 +1,22 @@
+{
+  "attributes": {
+    "name": "VALIDATE_P1_SELECT_TRACK_ID",
+    "sequence": 1,
+    "processPoint": "Ajax Callback: Run this application process when requested by a page process."
+  },
+  "source": {
+    "processErrorMessage": null
+  },
+  "conditions": {
+    "conditionType": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "authorization": {
+    "authorizationScheme": null
+  },
+  "comments": {
+    "comments": null
+  }
+}

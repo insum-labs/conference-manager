@@ -1,0 +1,8 @@
+{
+  "name": "ITEM_SIZE",
+  "displayName": "Item Size",
+  "templateTypes": "REGION",
+  "helpText": "Sets the size of the form items within this region.",
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

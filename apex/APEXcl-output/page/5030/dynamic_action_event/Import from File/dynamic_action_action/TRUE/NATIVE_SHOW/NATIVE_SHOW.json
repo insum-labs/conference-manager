@@ -1,0 +1,20 @@
+{
+  "identification": {
+    "daActionType": "Show"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5030_FILE_NAME"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Import from File",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": null
+  },
+  "attributes": {
+    "showAllOnTheSameLine": "Y"
+  }
+}

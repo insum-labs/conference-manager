@@ -1,0 +1,24 @@
+[
+  {
+    "lovDispSequence": 10,
+    "lovDispValue": "Upload file, comma separated (*.csv) or tab delimited",
+    "lovReturnValue": "UPLOAD",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  },
+  {
+    "lovDispSequence": 20,
+    "lovDispValue": "Copy and Paste",
+    "lovReturnValue": "PASTE",
+    "lovTemplate": null,
+    "lovDispCondType": null,
+    "lovDispCond": null,
+    "lovDispCond2": null,
+    "buildOption": null,
+    "lovDataComment": null
+  }
+]

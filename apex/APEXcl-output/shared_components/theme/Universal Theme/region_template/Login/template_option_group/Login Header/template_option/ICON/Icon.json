@@ -1,0 +1,8 @@
+{
+  "group": "Login Header",
+  "name": "LOGIN_HEADER_ICON",
+  "displayName": "Icon",
+  "cssClasses": "t-Login-region--headerIcon",
+  "helpText": "Displays only the Region Icon in the Login region.",
+  "isAdvanced": null
+}

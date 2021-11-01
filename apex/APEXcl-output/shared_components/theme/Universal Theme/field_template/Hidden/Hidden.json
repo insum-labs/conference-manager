@@ -1,0 +1,14 @@
+{
+  "name": {
+    "themeClass": 13,
+    "identifier": "HIDDEN",
+    "translatable": "No"
+  },
+  "templateOptions": {
+    "defaultTemplateOptions": null,
+    "presetTemplateOptions": null
+  },
+  "comments": {
+    "comment": null
+  }
+}

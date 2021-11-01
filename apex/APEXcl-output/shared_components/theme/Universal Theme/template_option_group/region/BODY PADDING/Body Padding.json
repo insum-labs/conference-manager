@@ -1,0 +1,8 @@
+{
+  "name": "BODY_PADDING",
+  "displayName": "Body Padding",
+  "templateTypes": "REGION",
+  "helpText": "Sets the Region Body padding for the region.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

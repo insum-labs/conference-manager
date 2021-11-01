@@ -1,0 +1,8 @@
+{
+  "name": "Body",
+  "placeholder": "BODY",
+  "hasGridSupport": "N",
+  "glvNewRow": "Y",
+  "maxFixedGridColumns": null,
+  "componentComment": null
+}

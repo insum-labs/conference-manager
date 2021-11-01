@@ -1,0 +1,8 @@
+{
+  "group": "Region Title",
+  "name": "REGION_HEADER_VISIBLE",
+  "displayName": "Use Region Title",
+  "cssClasses": "t-BreadcrumbRegion--useRegionTitle",
+  "helpText": null,
+  "isAdvanced": null
+}

@@ -43,12 +43,21 @@
 .cfa-note_Y:before {
   content: "\f075";
 }
+.cfa-other_Y:before {
+  content: "\f111";
+  color: #cc9633;
+}
 
 /*
  Font Awesome Customizations - END
 */
 
 .delete-btn {color: #e53935;}
+
+.hide {display: none;}
+
+/* Center all IR edit columns */
+td[headers="LINK"] {text-align: center;}
 
 /**
  * Static pie charts
@@ -131,6 +140,32 @@
 }
 .color1 .a-Report-percentChart-fill {
   background-color: #E4746B;
+}
+
+
+.drag-handle {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  width: 20px;
+  margin: 3px 0px;
+  background-image: url("../img/drag-handle.png");
+  background-repeat: repeat-y;
+  background-position: center center;
+  z-index: 1;
+}
+.drag-handle {
+  cursor: move;
+}
+.disabled-handle,
+.drag-handle.disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+.dragging {
+  opacity: 0.5;
+  filter: "alpha(opacity=50)";
 }
 
 

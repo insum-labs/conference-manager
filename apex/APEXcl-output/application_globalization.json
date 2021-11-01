@@ -1,0 +1,15 @@
+{
+  "globalization": {
+    "applicationPrimaryLanguage": "English (en)",
+    "flowLanguageDerivedFrom": "FLOW_PRIMARY_LANGUAGE",
+    "applicationDateFormat": null,
+    "applicationDateTimeFormat": null,
+    "applicationTimestampFormat": null,
+    "timestampTimezoneFormat": null,
+    "characterValueComparison": null,
+    "characterComparisonBehavior": null,
+    "documentDirection": "Left-To-Right",
+    "automaticCsvEncoding": "Yes",
+    "automaticTimeZone": "No"
+  }
+}

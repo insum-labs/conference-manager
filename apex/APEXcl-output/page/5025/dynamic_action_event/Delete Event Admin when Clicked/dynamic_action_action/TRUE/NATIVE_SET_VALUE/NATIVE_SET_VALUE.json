@@ -1,0 +1,26 @@
+{
+  "identification": {
+    "daActionType": "Set Value"
+  },
+  "affectedElements": {
+    "affectedType": "Item(s)",
+    "affectedItems": "P5025_ADMIN_TO_DELETE_ID"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "Delete Event Admin when Clicked",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "N",
+    "stopExecutionOnError": "N",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "setType": "JAVASCRIPT_EXPRESSION",
+    "value": null,
+    "plsqlExpression": null,
+    "itemsToSubmit": null,
+    "escapeSpecialCharacters": null,
+    "suppressChangeEvent": "N",
+    "returnItem": null
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "identification": {
+    "irSavedVisibility": "Alternative Default",
+    "name": "View Errors",
+    "irSavedReportAlias": "5755108"
+  },
+  "link": {
+    "linkExample": "f?p=&APP_ID.:1050:&APP_SESSION.:IR_5755108"
+  }
+}

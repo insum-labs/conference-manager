@@ -1,0 +1,8 @@
+{
+  "group": "Icon Shape",
+  "name": "ICONS_ROUNDED",
+  "displayName": "Rounded Corners",
+  "cssClasses": "t-Comments--iconsRounded",
+  "helpText": "The icons are displayed within a square with rounded corners.",
+  "isAdvanced": null
+}

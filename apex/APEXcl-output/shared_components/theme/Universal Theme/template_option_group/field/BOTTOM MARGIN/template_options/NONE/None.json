@@ -1,0 +1,7 @@
+{
+  "name": "FBM_NONE",
+  "displayName": "None",
+  "cssClasses": "margin-bottom-none",
+  "helpText": "Removes the bottom margin for this field.",
+  "isAdvanced": null
+}

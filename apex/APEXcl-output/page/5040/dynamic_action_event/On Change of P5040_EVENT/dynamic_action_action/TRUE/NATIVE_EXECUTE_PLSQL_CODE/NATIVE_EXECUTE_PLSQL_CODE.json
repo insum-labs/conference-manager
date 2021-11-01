@@ -1,0 +1,21 @@
+{
+  "identification": {
+    "daActionType": "Execute PL/SQL Code"
+  },
+  "affectedElements": {
+    "affectedType": null
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "daEvent": "On Change of P5040_EVENT",
+    "fireWhenEventResultIs": "True",
+    "fireOnPageLoad": "Y",
+    "stopExecutionOnError": "Y",
+    "waitForResult": "Y"
+  },
+  "attributes": {
+    "itemsToSubmit": "P5040_EVENT_ID",
+    "itemsToReturn": "P5040_POPULATED_WARNING",
+    "suppressChangeEvent": "N"
+  }
+}

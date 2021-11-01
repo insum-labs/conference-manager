@@ -1,0 +1,3 @@
+If you wish to send email notifications:<br><br>
+1. Select the tracks that should be notified.<br>
+2. Decide who should be notified: Track Owners, Voters, or both.

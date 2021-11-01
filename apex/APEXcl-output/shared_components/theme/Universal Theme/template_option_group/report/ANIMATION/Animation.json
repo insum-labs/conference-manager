@@ -1,0 +1,8 @@
+{
+  "name": "ANIMATION",
+  "displayName": "Animation",
+  "templateTypes": "REPORT",
+  "helpText": "Sets the hover and focus animation.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

@@ -1,0 +1,23 @@
+{
+  "identification": {
+    "computationItemName": "P1030_COUNT"
+  },
+  "executionOptions": {
+    "executionSequence": 10,
+    "computationPoint": "Before Regions"
+  },
+  "computation": {
+    "computationType": "Static Value",
+    "computationStaticValue": "4"
+  },
+  "serverSideCondition": {
+    "conditionType": "Item is NULL",
+    "conditionItem1": "P1030_COUNT"
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

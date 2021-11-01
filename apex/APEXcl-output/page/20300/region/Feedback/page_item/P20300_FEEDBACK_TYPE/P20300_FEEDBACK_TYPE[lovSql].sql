@@ -1,0 +1,1 @@
+select the_name, id from APEX_FEEDBACK_TYPES order by id

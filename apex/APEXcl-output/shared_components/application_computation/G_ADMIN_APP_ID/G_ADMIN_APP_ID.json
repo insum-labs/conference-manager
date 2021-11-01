@@ -1,0 +1,25 @@
+{
+  "item": {
+    "name": "G_ADMIN_APP_ID",
+    "sequence": 10
+  },
+  "frequency": {
+    "computationPoint": "On New Instance (new session)"
+  },
+  "computation": {
+    "computationType": "PL/SQL Function Body",
+    "computationErrorMessage": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "conditions": {
+    "conditionType": null
+  },
+  "authorization": {
+    "authorizationScheme": null
+  },
+  "comments": {
+    "computationComment": null
+  }
+}

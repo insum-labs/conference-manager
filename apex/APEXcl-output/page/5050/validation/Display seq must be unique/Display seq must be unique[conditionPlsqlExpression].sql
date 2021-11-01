@@ -1,0 +1,1 @@
+:P5050_DISPLAY_SEQ is not null and ks_util.is_number(:P5050_DISPLAY_SEQ)

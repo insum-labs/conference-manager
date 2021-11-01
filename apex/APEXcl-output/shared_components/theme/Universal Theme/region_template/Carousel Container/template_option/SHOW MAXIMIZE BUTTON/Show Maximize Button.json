@@ -1,0 +1,8 @@
+{
+  "group": null,
+  "name": "SHOW_MAXIMIZE_BUTTON",
+  "displayName": "Show Maximize Button",
+  "cssClasses": "js-showMaximizeButton",
+  "helpText": "Displays a button in the Region Header to maximize the region. Clicking this button will toggle the maximize state and stretch the region to fill the screen.",
+  "isAdvanced": null
+}

@@ -1,0 +1,8 @@
+{
+  "group": "Region Title",
+  "name": "CONTENT_TITLE_H2",
+  "displayName": "Heading Level 2",
+  "cssClasses": "t-ContentBlock--h2",
+  "helpText": null,
+  "isAdvanced": null
+}

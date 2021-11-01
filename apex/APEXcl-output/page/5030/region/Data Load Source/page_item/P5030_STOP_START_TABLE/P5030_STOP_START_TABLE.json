@@ -1,0 +1,37 @@
+{
+  "identification": {
+    "itemName": "P5030_STOP_START_TABLE",
+    "itemType": "Stop and Start Grid Layout [Deprecated]"
+  },
+  "label": {
+    "label": null,
+    "labelAlignment": "Left",
+    "fieldTableCellAttributes": null
+  },
+  "layout": {
+    "startNewRow": "N",
+    "column": null,
+    "newColumn": "Y",
+    "columnSpan": null,
+    "labelColumnSpan": null,
+    "columnCssClasses": null,
+    "columnAttributes": null
+  },
+  "appearance": {
+    "fieldTemplate": null
+  },
+  "advanced": {
+    "itemWarnOnUnsavedChanges": null
+  },
+  "serverSideCondition": {
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null,
+    "sessionStateProtection": "Unrestricted",
+    "restrictedCharacters": null
+  },
+  "configuration": {
+    "buildOption": null
+  }
+}

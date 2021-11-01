@@ -1,0 +1,8 @@
+{
+  "name": "REPORT_BORDER",
+  "displayName": "Report Border",
+  "templateTypes": "REPORT",
+  "helpText": "Controls the display of the Report's borders.",
+  "nullText": "Default",
+  "isAdvanced": "N"
+}

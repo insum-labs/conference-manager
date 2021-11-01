@@ -1,0 +1,7 @@
+{
+  "name": "STRETCH_FORM_FIELDS",
+  "displayName": "Stretch Form Fields",
+  "cssClasses": "t-Form--stretchInputs",
+  "helpText": null,
+  "isAdvanced": null
+}

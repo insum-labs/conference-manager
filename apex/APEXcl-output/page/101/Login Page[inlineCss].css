@@ -1,0 +1,17 @@
+.app-community-requests {
+    background-image: url(#IMAGE_PREFIX#apex_ui/img/icons_src/pkg-apps/app-community-requests.svg);
+    background-repeat: no-repeat;
+}
+.t-Login-region {
+    background-color: #e0e6eb;
+}
+.t-Login-logo {
+    background-image: url(#APP_IMAGES#img/logo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.page-101 .t-Login-logo {
+    width: 347px;
+    height: 73px;
+    border-radius: 0;
+}

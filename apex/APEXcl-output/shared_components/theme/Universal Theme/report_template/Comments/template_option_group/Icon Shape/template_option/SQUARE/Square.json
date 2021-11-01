@@ -1,0 +1,8 @@
+{
+  "group": "Icon Shape",
+  "name": "ICONS_SQUARE",
+  "displayName": "Square",
+  "cssClasses": "t-Comments--iconsSquare",
+  "helpText": "The icons are displayed within a square shape.",
+  "isAdvanced": null
+}

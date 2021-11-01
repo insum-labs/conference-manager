@@ -1,0 +1,8 @@
+{
+  "group": "Layout",
+  "name": "FILL_TAB_LABELS",
+  "displayName": "Fill Tab Labels",
+  "cssClasses": "t-TabsRegion-mod--fillLabels",
+  "helpText": null,
+  "isAdvanced": null
+}

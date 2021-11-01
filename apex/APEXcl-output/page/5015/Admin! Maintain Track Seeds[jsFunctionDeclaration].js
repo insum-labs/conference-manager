@@ -1,0 +1,1 @@
+var htmldb_delete_message='"DELETE_CONFIRM_MSG"';

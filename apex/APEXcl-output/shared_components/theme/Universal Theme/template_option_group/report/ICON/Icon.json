@@ -1,0 +1,8 @@
+{
+  "name": "COL_ICON",
+  "displayName": "Icon",
+  "templateTypes": "REPORT",
+  "helpText": null,
+  "nullText": "Default",
+  "isAdvanced": "Y"
+}

@@ -1,0 +1,9 @@
+select "ID", 
+"NAME",
+"TEMPLATE_TEXT",
+"CREATED_BY",
+"CREATED_ON",
+"UPDATED_BY",
+"UPDATED_ON"
+from "#OWNER#"."KS_EMAIL_TEMPLATES" 
+  

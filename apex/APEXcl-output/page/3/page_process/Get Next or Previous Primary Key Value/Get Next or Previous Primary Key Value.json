@@ -1,0 +1,40 @@
+{
+  "identification": {
+    "name": "Get Next or Previous Primary Key Value",
+    "pageProcessType": "Form Pagination [Legacy]"
+  },
+  "executionOptions": {
+    "executionSequence": 11,
+    "processPoint": "After Header",
+    "runProcess": "Once Per Page Visit (default)"
+  },
+  "error": {
+    "processErrorDisplayLocation": "On Error Page"
+  },
+  "serverSideCondition": {
+    "whenButtonPressed": null,
+    "conditionType": null
+  },
+  "security": {
+    "authorizationScheme": null
+  },
+  "configuration": {
+    "buildOption": null
+  },
+  "attributes": {
+    "tableOwner": null,
+    "tableName": "KS_SESSIONS_V",
+    "primaryKeyItem": "P3_ID",
+    "primaryKeyColumn": "ID",
+    "secondaryKeyItem": null,
+    "secondaryKeyColumn": null,
+    "navigationOrderColumn": "PRESENTER",
+    "secondaryNavigationOrderColumn": "VOTES_AVERAGE",
+    "nextPrimaryKeyItem": "P3_ID_NEXT",
+    "previousPrimaryKeyItem": "P3_ID_PREV",
+    "nextSecondaryKeyItem": null,
+    "previousSecondaryKeyItem": null,
+    "currentRowCountItem": "P3_ID_COUNT",
+    "runtimeWhereClause": "presenter_user_id = :P3_PRESENTER_USER_ID\nand event_track_id = to_number(:P3_EVENT_TRACK_ID)"
+  }
+}
